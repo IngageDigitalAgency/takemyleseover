@@ -1,0 +1,10 @@
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			<i class="fa fa-bars"></i>
+		</button>
+		<a class="navbar-brand non-sticky" href="/">%%img_image%%</a>
+		<a class="navbar-brand sticky" href="/">%%img_rollover_image%%</a>
+	</div>
+	<div class="collapse navbar-collapse" id="navbar-menu">
+		%%menu%%
+	</div>

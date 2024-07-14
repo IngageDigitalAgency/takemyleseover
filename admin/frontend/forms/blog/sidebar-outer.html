@@ -1,0 +1,20 @@
+<h4>%%title%%</h4>
+<div class="dropdown" id="blog-menu-container">
+	<div class="mobile">
+		<button data-toggle="dropdown" id="blog-menu-dropdown" type="button" class="btn btn-default dropdown-toggle mobile-dropdown" style="display:none;">
+		-- Select a Category --<span class="caret"></span>
+		</button>
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				%%listing%%
+			</div>
+		</div>
+	</div>
+	<div class="normal">
+		%%listing%%
+	</div>
+</div>
+<script type="text/javascript">
+$("#blog-menu-container a.active").parent().addClass("active");
+//$("#blog-menu-container .mobile ul").chosen();
+</script>

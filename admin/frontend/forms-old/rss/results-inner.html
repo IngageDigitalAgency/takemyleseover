@@ -1,0 +1,19 @@
+<div class="row item">
+	<div class="col-sm-offset-1 col-sm-7 col-md-5 image col-xs-16">
+		<div class="no-gutter">
+			<div class="col-xs-12 p-img-scalewidth">%%img_image1%%</div>
+			<div class="col-xs-4 pubdate">
+				<div class="month"><!@@(date("M",strtotime("%%created%%")))@@!></div>
+				<div class="day"><!@@(date("d",strtotime("%%created%%")))@@!></div>
+				<div class="year"><!@@(date("Y",strtotime("%%created%%")))@@!></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="col-sm-8 col-md-10 content col-xs-16">
+		<h1 class="title">%%title%%</h1>
+		<div class="date"><!@@(date("F d Y",strtotime("%%created%%")))@@!></div>
+		<div class="teaser tinymce">%%teaser%%</div>
+		<div class="link"><a href="%%url%%" class="button btn">LISTEN NOW</a></div>
+	</div>
+</div>

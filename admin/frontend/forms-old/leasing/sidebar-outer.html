@@ -1,0 +1,48 @@
+<div id="searchForm" class="sidebar">
+	<div class="row">
+		<div class="col-xs-16">
+			<h1>Search for a lease</h1>
+			<h2>Each dropdown can support multiple selections</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-16 text-center">%%errorMessage%%</div>
+	</div>
+	<form method="post" action="/search-results">
+		<div class="wrapper">
+			<h3>Vehicle Search</h3>
+			<div class="row">
+				<div class="col-xs-16">
+					<div class='prompt form-group'>CHOOSE VEHICLE</div>
+					<div class='input form-group'>%%body_style%%</div>
+				</div>
+				<div class="col-xs-16">
+					<div class='prompt form-group'>CHOOSE A DOMESTIC</div>
+					<div class='input form-group'>%%domestic%%</div>
+				</div>
+				<div class="col-xs-16">
+					<div class='prompt form-group'>CHOOSE AN IMPORT</div>
+					<div class='input form-group'>%%import%%</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-16">
+					<div class="prompt form-group">SEARCH AREA</div>
+					<div class="input form-group">%%province_id%%</div>
+				</div>
+				<div class="col-xs-16">
+					<div class="prompt form-group">ALREADY KNOW THE LISTING?</div>
+					<div class="input form-group">%%lease_id%%</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-16 text-center">%%submit%%%%search%%</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+$(window).load(function() {
+	$("#searchForm .input select").chosen();
+});
+</script>

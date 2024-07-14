@@ -1,0 +1,85 @@
+<div id="myWork">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4 text-center title">Edit a Portfolio</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4 text-center">%%errorMessage%%</div>
+	</div>
+	<div class="row bottom20">
+		<div class="col-xs-16">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#" onclick="setTab('details');return false;">Portfolio Details</a></li>
+				<li><a href="#" onclick="setTab('content');return false;">Portfolio Contents</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="details">
+		<form method="post" action="/ajax/render?t_id=%%module:fetemplate_id%%" onsubmit="savePortfolio(this);return false;" class="bottom40">
+			<div class="row">
+				<div class="col-xs-16 form-group">
+					<label>Title</label>
+					%%title%%
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-16 form-group">
+					<label>A short description of this work</label>
+					%%teaser%%
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-16 form-group">
+					<label>The complete description of the work</label>
+					%%description%%
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-8 p-img-scalewidth form-group">
+					<label>The Image to display</label>
+		<!if(strlen("%%field:tag^image1%%")==0)!>
+					<a href="#" onclick="setImage(this,'portfolios/');return false;"><img src="/images/unknown.jpg" />%%image1%%</a>
+		<!else!>
+					<a href="#" onclick="setImage(this,'portfolios/');return false;"><img src="%%field:tag^image1%%" />%%image1%%</a>
+		<!fi!>
+				</div>
+				<div class="col-sm-8 text-center">
+					<label class="bottom20">Enabled?</label>
+					%%enabled%%
+					%%save%%%%editPortfolio%%%%id%%
+					<a href="#" class="btn btn-default top20 form-control" onclick="showWork();return false;">Back to your Portfolio List</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div id="content">
+		<div class="row top20 bottom20">
+			<div class="col-xs-8 col-xs-offset-4 text-center title">Work in this Portfolio</div>
+		</div>
+		<div class="list">
+			%%items,false%%
+		</div>
+	<!if("%%field:tag^id%%"!="")!>
+		<div class="row top20 bottom20">
+			<div class="col-xs-8 col-xs-offset-4 text-center title">
+				<a href="#" class="btn btn-default top20 form-control" onclick="editItem(%%field:tag^id%%,0);return false;">Add to this Portfolio</a>
+			</div>
+		</div>	
+	<!fi!>
+	</div>
+</div>
+<script type="text/javascript">
+initTinyMCE();
+balanceItems("#content .item");
+$("#content").hide();
+setTab = function(id) {
+	if (id=="details") {
+		$("#content").hide();
+		$("#details").show();
+	}
+	else {
+		$("#details").hide();
+		$("#content").show();
+	}
+}
+$.scrollTo($("#myWork"),500,{axis:'y'});
+</script>

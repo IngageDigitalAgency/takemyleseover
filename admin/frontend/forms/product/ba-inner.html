@@ -1,0 +1,42 @@
+<div id='payment'>
+	<div class="row">
+		<div class="col-md-12">
+			<!-- Note: Make sure there is no white between the ending </li> and starting <li>; Inline-Block is a whitespace dependent method. -->
+			<h4 class="mobile-show text-center">Checkout Step</h4>
+			<ul id="checkout-steps">
+				<li>
+					<a title="Review Your Order" href="#">
+						<span class="step-number">1</span>
+						<span class="step-txt">Review Your Order</span>
+					</a>
+				</li><li>
+					<a title="Billing Information" href="#">
+						<span class="step-number">2</span>
+						<span class="step-txt">Billing Information</span>
+					</a>
+				</li><li>
+					<a title="Pay For Your Order" href="#">
+						<span class="step-number">3</span>
+						<span class="step-txt">Pay For Your Order</span>
+					</a>
+				</li><li class="active">
+					<a title="View Your Receipt" href="#">
+						<span class="step-number">4</span>
+						<span class="step-txt">View Your Receipt</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	%%errorMessage%%
+	<div class='pmtOptions success'>
+		<div class='header'>
+			<div class='alert alert-success'>Thank you for your order.<br/>For your records, the Billing Agreement is %%BAID%%</div>
+		</div>
+		<div class='links'>
+			%%receipt%%
+			<a href='/my-account' class='submit'>Your Orders</a>
+			<div class='clearfix'></div>
+		</div>
+	</div>
+</div>

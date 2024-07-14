@@ -1,0 +1,32 @@
+<script type="text/javascript" src="/js/chosen.jquery.js"></script>
+<link rel="stylesheet" href="/css/chosen.css">
+<script type="text/javascript">
+	apptSubmit = function(el) {
+		$(el).closest("form").ajaxSubmit({
+			success: function( obj, status, xhr ) {
+				try {
+					h = eval("("+obj+")");
+					$(".appoinment-section").replaceWith(h.html);
+					$("select[multiple]").chosen({width:"100%"});
+				}
+				catch(err) {
+				}
+			}
+		});
+	}
+</script>
+<section class="appoinment-section sec-pad">
+	<div class="container">
+		<div class="sec-title">
+			<div class="inner">
+				<span class="tag-line">Feel free to ask anything</span>
+				<h2>Make an Appoinment</h2>
+				<span class="decor-line"></span>
+			</div><!-- /.inner-->
+		</div><!-- /.sec-title-->
+		%%form%%
+	</div><!-- /.container -->
+</section>
+<script type="text/javascript">
+$("select[multiple]").chosen({width:"100%"});
+</script>

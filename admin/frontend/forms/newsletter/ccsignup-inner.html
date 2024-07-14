@@ -1,0 +1,59 @@
+<div class="form col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+	<form method="post" action="/ajax/render">
+		<a href="#" class="closer" onclick="hideCC(this);return false;"><i class="fa fa-close"></i></a>
+		<div class="row text-center">
+			<div class="left20 right20">%%errorMessage%%</div>
+		</div>
+		<div class="row info">
+			<div class="col-sm-4 desktop third" style="background-image:url(/images/news/Pictures%20of%20janine/dr-janine-bowring-whole-foods-supplement-doctor.png)">
+			</div>
+			<div class="col-sm-4 third">
+				<div class="text-center">
+					<h1>Welcome to the Vitatree Family!</h1>
+					<h2>We're glad you found us!</h2>
+				</div>
+				<h4>You'll Receive:</h4>
+				<ul>
+					<li>Exclusive Offers and Discounts</li>
+					<li>Free Health Information, Tips and Videos</li>
+					<li>Free Access to Dr. Bowring and her Team of Experts for all your health questions and concerns.</li>
+				</ul>
+			</div>
+			<div class="col-sm-4 grey text-center third">
+				<h3>Please Sign Up Now!</h3>
+				<div class="row no-gutters">
+					<div class="col-sm-6">
+						<div class="form-group">%%firstname%%</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group">%%lastname%%</div>
+					</div>
+				</div>
+				<div class="row no-gutters">
+					<div class="col-sm-12">
+						<div class="form-group">%%email%%</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="optIn">
+							%%optIn%%
+							<span>I agree to accept emails,<br/>you can unsubscribe yourself at any time</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						%%accept%%
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<a class="button" type="button" onclick="optOut();return false;">No Thank You</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" name="t_id" value="171" /> %%constantContact%%
+	</form>
+</div>

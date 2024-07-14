@@ -1,0 +1,5 @@
+<div id="home-thin">
+	<div class="container" style="background-image:url(%%image%%);">
+		%%menu%%
+	</div>
+</div>

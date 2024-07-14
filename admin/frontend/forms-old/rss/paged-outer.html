@@ -1,0 +1,29 @@
+<div id="podcastArchive">
+	<div class="row hidden-xs">
+		<div class="col-xs-16">
+			<h1>Podcast Archive</h1>
+		</div>
+	</div>
+	%%items%%
+	<div class="row">
+		<div class="col-xs-16 text-right">
+			<span>WANT EVEN MORE DEPTH <span class="light">></span> </span>%%pagination%%
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+pagination = function(pg,el) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:%%module:fetemplate_id%%,pagenum:pg,folder_id:%%id%%},
+		success: function( obj, status, xhr) {
+			try {
+				obj = eval("("+obj+")");
+				$("#podcastArchive").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

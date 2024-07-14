@@ -1,0 +1,41 @@
+<div id="myBio">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4 text-center title">About Me</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4 text-center">%%errorMessage%%</div>
+	</div>
+	</div>
+	<form method="post" action="/ajax/render?t_id=%%module:fetemplate_id%%" onsubmit="setBio(this);return false;">
+		<div class="row bottom40">
+			<div class="col-xs-16">
+				%%biography%%
+				<div class="hint text-center">Your Biography</div>
+				<div class="hint">This is where you can describe who you are, what you do etc.</div>
+			</div>
+		</div>
+		<div class="row bottom40">
+			<div class="col-sm-5">
+				<div class="form-group">
+					%%folder_id%%
+					<div class="hint text-center">Choose your categories</div>
+				</div>
+			</div>
+			<div class="col-sm-10 col-xs-offset-1 p-img-scalewidth">
+	<!if(strlen("%%field:tag^image2%%")==0)!>
+				<a href="#" onclick="setImage(this);return false;"><img src="/images/unknown.jpg" />%%image2%%</a>
+	<!else!>
+				<a href="#" onclick="setImage(this);return false;"><img src="%%field:tag^image2%%" />%%image2%%</a>
+	<!fi!>
+				<div class="hint text-center">Your Primary Work Piece</div>
+				<div class="hint">This is the first image the public will see of your work. The recommended size is xXy.</div>
+			</div>
+		</div>
+		<div class="row"><div class="col-xs-4 col-xs-offset-6">%%save%%%%myBio%%</div></div>
+	</form>
+</div>
+<script type="text/javascript">
+initTinyMCE();
+$("select").chosen({disable_search_threshold: 99, width:"100%"});
+$.scrollTo($("#myBio"),500,{axis:'y'});
+</script>

@@ -1,0 +1,7 @@
+<div id="topnav">
+	<div class="container" id="topnav">
+		<div class="row p-img-scale-width text-center">
+			%%menu%%
+		</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+<script src="https://pwcpsb.chase.com/pwc/checkout/js/v20170521/list.action?type=raw&applId=PWC&channelId=CWC&version=1"></script>
+<div id="payment">
+	<div class="row heading">
+		<div class="col-xs-12 text-center"><h2>Save & Send the Quote</h2></div>
+	</div>
+	<div class="row top40">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+			%%ecomErrors,false%%
+			%%errorMessage%%
+<!if("0%%session:user:info:id%%"=="0")!>
+			<div class="alert alert-danger">You are not logged in</div>
+<!else!>
+<!if("0%%session:cart:header:total%%" == "0")!>
+			<div class="alert alert-danger">Your cart is empty</div>
+<!fi!>
+<!fi!>
+		</div>
+	</div>
+<!if("0%%session:user:info:id%%"!="0" && "0%%session:cart:header:total"!="0")!>
+	%%other%%
+<!fi!>
+</div>

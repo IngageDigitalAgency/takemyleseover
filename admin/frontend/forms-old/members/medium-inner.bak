@@ -1,0 +1,16 @@
+<div class="item">
+	<div class="single-testimonial-two mt0">
+		<div class="text-box">
+			<div class="tinymce">%%biography%%</div>
+		</div><!-- /.text-box -->
+		<div class="name-box">
+			<div class="icon-box">
+				%%img_image%%
+			</div><!-- /.icon-box -->
+			<div class="title-box">
+				<h3 class="secondary-font">%%firstname%% %%lastname%%</h3>
+				<span class="secondary-font">%%company%%</span>
+			</div><!-- /.title-box -->
+		</div><!-- /.name-box -->
+	</div><!-- /.single-testimonial-two -->
+</div><!-- /.item -->

@@ -1,0 +1,30 @@
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<div id="search-results" class="top20 p-bottom20">
+	<div class="title text-center">Your Search Results</div>
+	<div class="results">
+		%%results%%
+	</div>
+	<div class="row text-center">
+		<div class="col-xs-16 text-center">%%pagination%%</div>
+	</div>
+	<form method="post" action="/ajax/render" class="hidden">
+		%%siteSearchForm%%%%siteSearchText%%
+		<input type="hidden" name="t_id" value="%%module:fetemplate_id%%" />
+		%%pagenum%%
+	</form>
+</div>
+<script type="text/javascript">
+pagination = function(pg) {
+	f = $("#search-results form");
+	$(f).find("input[name='pagenum']").val(pg);
+	$(f).ajaxSubmit({
+		success: function(obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#search-results").replaceWith(h.html);
+			} catch(err) {
+			}
+		}
+	});
+}
+</script>

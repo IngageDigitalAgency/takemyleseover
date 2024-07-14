@@ -1,0 +1,4 @@
+<div id='news-latest'>
+	<h2 class="widget-title">%%title%%</h2>
+	%%articles%%
+</div>

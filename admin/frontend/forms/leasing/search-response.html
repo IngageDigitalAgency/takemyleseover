@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-xs-16 text-center">
+		%%errorMessage%%
+<!if(%%count%%==0)!>
+		<div class="alert alert-warning">Your search returned no results. <a href="/search-now">Search again?</a></div>
+<!else!>
+		<div class="alert alert-info">Your search returned %%count%% results.</div>
+<!fi!>
+	</div>
+</div>
+<div class="results">
+	%%leases%%
+</div>
+<div class="row">
+	<div class="col-xs-16 text-center">
+		%%pagination%%
+	</div>
+</div>
+<script type="text/javascript">
+	scrollToItem("#searchResults",-$("#header").height());
+</script>

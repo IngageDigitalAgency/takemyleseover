@@ -1,0 +1,41 @@
+<div class="col-md-4 product-item-recommended">
+	<div class="row">
+		<div class="col-md-6 product-item-left p-img-scale-width">
+			<a href="%%url%%">%%img_image1%%</a>
+		</div>
+		<div class="col-md-6 product-item-right">
+			<div class="product-item-top">
+				<h4 class="title"><a href="%%url%%">%%name%%</a></h4>
+<!if("%%onSale%%"==1)!>
+				<h5 class="sub-title"><span class="strike">%%regularPriceFormatted%%</span> regular price</h5>
+<!else!>
+				<h5 class="sub-title">&nbsp;</h5>
+<!fi!>
+			</div>
+			<div class="product-item-bottom">
+				<div class="top40">
+					<span class="brandon_black fontsize16">%%price_fmt%%</span><br>
+<!if("%%onSale%%"==1)!>
+					<span class="fontsize16 green text-uppercase">You Save %%salePercentFormatted%%%</span>
+<!else!>
+					<span class="fontsize16 green text-uppercase"> </span>
+<!fi!>
+				</div>
+				<div class="top10">
+<!if(%%reviews%%>0)!>
+						<span class="rating star%%rating%%"></span><br/>
+						 <a href="%%url%%">%%reviews%% Review<!if(%%reviews%% != 1)!>s<!fi!></a>
+<!fi!> 
+				</div>
+				<div class="top5">
+					<form method="POST" action="/shopping-cart">
+						<a title="Add to Cart" href="#" onclick="formSubmit(this);" class="button button-green button-fluid fontsize12">Add to Cart</a>
+						%%addToCart%%
+						%%product_id%%
+						<input type="hidden" name="product_quantity" value="1" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

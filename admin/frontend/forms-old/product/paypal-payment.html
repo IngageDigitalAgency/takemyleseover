@@ -1,0 +1,46 @@
+<div id='paypal'>
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-2 text-center">
+			%%ecomErrors%%
+			%%errorMessage%%
+<!if("0%%session:user:info:id%%" == "0")!>
+			<div class='alert alert-error'>You are not logged in</div>
+<!else!>
+<!if("0%%session:cart:header:total%%" == "0")!>
+			<div class='alert alert-error'>Your cart is empty</div>
+<!fi!>
+<!fi!>
+		</div>
+	</div>
+<!if("0%%session:user:info:id%%" != "0" && "0%%session:cart:header:total" != "0" )!>
+	<div class="row">
+		<div class="col-sm-16 text-center">
+			<form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr" class="paypal-button" target="_top">
+<!if(defined("DEV")&&DEV==1)!>
+				<input type="hidden" name="env" value="www.sandbox">
+				<input type="hidden" name="notify_url" value="http://%%FULLDOMAIN%%/secure-checkout">
+<!else!>
+				<input type="hidden" name="notify_url" value="https://%%FULLDOMAIN%%/secure-checkout">
+<!fi!>
+				<input type="hidden" name="tax" value="%%header:taxes%%">
+				<input type="hidden" name="shipping" value="%%header:shipping%%">
+				<input type="hidden" name="currency_code" value="CAD">
+				<input type="hidden" name="amount" value="%%header:value%%">
+				<input type="hidden" name="item_name" value="%%SITENAME%% Order #%%header:order_id%%">
+				<input type="hidden" name="button" value="buynow">
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="business" value="%%merchant%%">
+				<input type="hidden" name="bn" value="JavaScriptButton_buynow">
+				<input type="image" src="/images/nav/paypal.png" />
+			</form>
+		</div>
+	</div>
+	<div class="row top20">
+		<div class="col-xs-6 col-xs-offset-1 text-right text">
+			Our Processing is handled via PayPal<br/>We do not collect or store any of your credit card information without notification. All payments are processed through PayPal
+		</div>
+		<div class="col-xs-2 divider"></div>
+		<div class="col-xs-6"><img src="/images/nav/paypal.jpg" /></div>
+	</div>
+<!fi!>
+</div>

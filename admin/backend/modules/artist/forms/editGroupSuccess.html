@@ -1,0 +1,56 @@
+<div class="title">Add/Edit a Group Profile - %%title%%</div>
+<div id='groupTabs'>
+	%%errorMessage%%
+	<ul>
+		<li><a href="#tabs-p1">Profile</a></li>
+		<li><a href="#tabs-p2">Images</a></li>
+		<li><a href="#tabs-p3">Portfolios</a></li>
+		%%customTab%%
+	</ul>
+	<form method='%%form:method%%' name='%%form:name%%' onsubmit='formCheck("%%form:name%%","%%form:action%%","altPopup");return false;' id='%%form:name%%' action='' class="bottom0">
+		<div id='tabs-p1'>
+			<div class='title'>Teaser<span class='errorMessage'> %%teaserError%%</span></div>
+			%%teaser%%
+			<div class='title'>Group Specific Profile<span class='errorMessage'> %%profileError%%</span></div>
+			%%profile%%
+		</div>
+		<div id='tabs-p2'>
+			<table>
+				<tr>
+					<th>Image 1:</th>
+					<td>
+						<a href="#" onclick="setImage(this,'members/%%field:tag^member_id%%/%%folder_id%%/');return false;">%%imagesel_c%%</a> <span class='errorMessage'>%%image1Error%%</span><br/>
+						<input id="image_c" type="hidden" name="image1" value="%%image1%%" />
+						<a href="#" onclick="setImage(this,'members/%%field:tag^member_id%%/%%folder_id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+					</td>
+				</tr>
+				<tr>
+					<th>Image 2:</th>
+					<td>
+						<a href="#" onclick="setImage(this,'members/%%field:tag^member_id%%/%%folder_id%%/');return false;">%%imagesel_d%%</a> <span class='errorMessage'>%%image2Error%%</span><br/>
+						<input id="image_d" type="hidden" name="image2" value="%%image2%%" />
+						<a href="#" onclick="setImage(this,'members/%%field:tag^member_id%%/%%folder_id%%/);return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id='tabs-p3'>
+<!if(%%id%%!=0)!>
+			<div class="row">
+				%%portfolios%%
+			</div>
+			<div class="row">
+				<div class="col-xs-8 form-group"><a href="#" class="btn" onclick="fnEditPortfolio(%%id%%,0);return false;">Add a Portfolio</a></div>
+			</div>
+<!fi!>
+		</div>
+		%%customInfo%%
+		%%submit%% %%g_id%% %%member_id%% %%editGroup%%
+		<div class="clearfix"></div>
+	</form>
+</div>
+<code>
+	$('#groupTabs').tabs();
+	initTinyMCE();
+	fnReloadPortfolios(%%field:tag^member_id%%);
+</code>

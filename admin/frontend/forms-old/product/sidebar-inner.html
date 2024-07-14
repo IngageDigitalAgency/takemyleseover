@@ -1,0 +1,14 @@
+	<section class="lift plan-tier bottom20">
+		<div class="img p-img-scale-width">
+			%%img_image1%%
+<!if("%%onSale%%"=="1")!>
+			<div class="discount">%%salePercentFormatted%%% OFF</div>
+<!fi!>
+		</div>
+		<div class="details">
+			<h4 class="top20 bottom20">%%name%%<div class="subtitle">%%subtitle%%</div></h4>
+			<div class="tinymce teaser bottom20">%%teaser%%</div>
+			<h5 class="plan-price text-center"><!@@($this->my_money_format("%%price%%"))@@!></h5>
+			<a href="%%url%%" class="read-more btn btn-default text-center form-control">DETAILS</a>
+		</div>
+	</section>

@@ -1,0 +1,71 @@
+<div id="searchForm" class="mobile refiner">
+	<div class="icon text-center"><a href="#" onclick="toggleSearch(this);return false;"><i class="fa fa-search"></i></a></div>
+	<div class="form closed">
+		<form method="post" action="/search-results">
+			<h2>SORT YOUR SEARCH</h2>
+			<div class="row sorting">
+				<div class="col-xs-16">
+					%%sort_by%%
+				</div>
+			</div>
+			<h2>REFINE YOUR SEARCH</h2>
+			<h3>EFFECTIVE MONTHLY PAYMENT</h3>
+			<div class="row">
+				<div class="col-xs-8">
+					%%amt_from%%
+				</div>
+				<div class="col-xs-8">
+					%%amt_to%%
+				</div>
+			</div>
+			<h3>MONTHS REMAINING</h3>
+			<div class="row">
+				<div class="col-xs-8">
+					%%months_from%%
+				</div>
+				<div class="col-xs-8">
+					%%months_to%%
+				</div>
+			</div>
+			<h3>CURRENT MILEAGE</h3>
+			<div class="row">
+				<div class="col-xs-8">
+					%%km_from%%
+				</div>
+				<div class="col-xs-8">
+					%%km_to%%
+				</div>
+			</div>
+			<h3>EXTERIOR COLOR</h3>
+			<div class="row">
+				<div class="col-xs-16">
+					%%exterior_color%%
+				</div>
+			</div>
+			<h3>TRANSMISSION</h3>
+			<div class="row">
+				<div class="col-xs-16">
+					%%transmission%%
+				</div>
+			</div>
+			<hr/>
+			<div class="row">
+				<div class="col-xs-8">
+					%%submit%%%%search%%
+				</div>
+				<div class="col-xs-8">
+					<a class="button" href="/search-now">NEW SEARCH</a>
+				</div>
+			</div>
+			<div class="hidden">
+				%%body_style%%%%domestic%%%%import%%%%province_id%%%%lease_id%%
+			</div>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+toggleSearch = function(el) {
+$("#searchForm.mobile .form").toggleClass("closed");
+$("#searchForm.mobile .icon").toggleClass("active");
+}
+</script>

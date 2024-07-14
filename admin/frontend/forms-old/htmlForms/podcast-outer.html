@@ -1,0 +1,45 @@
+<div id="podcastSearch" class="row">
+	<div class="col-md-7 col-xs-10">
+		<span>ACHIEVE DEPTH</span><span class="red"> | PODCASTS</span>
+	</div>
+	<div class="col-md-6 col-xs-6 form">
+		<div class="hidden-xs">
+			<form method="post" action="/podcast-search">
+				%%podcastSearchForm%%
+				<div class="row">
+					<div class="col-xs-16">
+						<div class="form-group">
+							<div class="form-control">%%searchText%%%%searchButton,false%%%%rssSearch%%</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="mobile-toggle hidden-sm hidden-md hidden-lg">
+			<a href="#" onclick="toggleSearch(this);return false;">
+				<i class="fa fa-search"></i>
+			</a>
+		</div>
+	</div>
+	<div class="col-md-3 col-xs-16">
+		<div class="icon"><i class="fa fa-rss"></i></div>
+		<div class="link"><a href="#">subscribe</a></div>
+	</div>
+	<div class="col-xs-16 hidden-sm hidden-md hidden-lg hidden mobile-form">
+		<form method="post" action="/podcast-search">
+			%%podcastSearchForm%%
+			<div class="row">
+				<div class="col-xs-16">
+					<div class="form-group">
+						<div class="form-control">%%siteSearchText%%%%searchButton,false%%</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+toggleSearch = function(el) {
+	$("#podcastSearch .mobile-form").toggleClass("hidden");
+}
+</script>

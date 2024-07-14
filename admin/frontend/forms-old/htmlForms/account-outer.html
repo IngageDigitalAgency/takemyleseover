@@ -1,0 +1,66 @@
+<div id="editProfile">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-16 text-center">%%errorMessage%%</div>
+		</div>
+		<div class="row bottom40">
+			<div class="col-sm-5 left">
+				<div class="row">
+					<div class="col-xs-16 title">Account Settings</div>
+				</div>
+				<div class="box">
+					<div class="row">
+						<div class="col-xs-8 p-img-scalewidth">
+							<img src="%%image1%%" />
+						</div>
+						<div class="col-xs-8 name">
+							<div>%%firstname%%</div>
+							<div>%%lastname%%</div>
+						</div>
+					</div>
+					<div class="menu">
+						<ul>
+							<li><a href="#" onclick="showOrders();return false;">ORDER HISTORY</a></li>
+							<li><a href="#" onclick="renewAccount();return false;">RENEW ACCOUNT</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-11 right">
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+showOrders = function() {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:56},
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+renewAccount = function() {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:63},
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+showOrders();
+</script>

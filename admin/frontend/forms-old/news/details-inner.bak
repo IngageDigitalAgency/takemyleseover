@@ -1,0 +1,13 @@
+<div class="sec-title medium">
+	<h2><span class="black-color-text">%%title%%</span> <span class="base-color-text">%%alternatetitle%%</span></h2>
+</div>
+<div class="item">
+<!if(strlen("%%video:id%%")>0)!>
+<div class="videoWrapper">
+    %%video:embed_code%%
+</div>
+<!else!>
+	<div class="image" style="background-image:url(%%image1%%);"></div>
+<!fi!>
+	<div class="sec-title pb0 tinymce">%%body%%</div>
+</div>

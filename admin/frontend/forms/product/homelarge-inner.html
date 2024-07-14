@@ -1,0 +1,31 @@
+%%products%%
+<div id="frontpage-product-promo-item">
+	<div class="table">
+		<div class="table-row">
+			<div id="frontpage-product-promo-item-img" class="col-sm-6">
+				<a href="%%url%%">%%img_image1%%</a>
+			</div>
+			<div id="frontpage-product-promo-item-pricing" class="col-sm-6">
+				<div class="bold fontsize18 text-uppercase"><a href="%%url%%">%%name%%</a></div>
+<!if("%%onSale%%"=="1")!>
+				<div class="gray italic"><span class="strike">%%regularPriceFormatted%%</span> CAD regular price</div>
+<!fi!>
+				<div class="bold fontsize20 top40">%%price_fmt%% CAD</div>
+<!if("%%onSale%%"=="1")!>
+				<div class="fontsize16 green thin text-uppercase">You Save %%salePercentFormatted%%%</div>
+<!fi!>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="frontpage-product-promo-item-txt">
+	%%teaser%%
+	<br>
+	<form method="post" action="/shopping-cart">
+		<input type="hidden" class="def_field_input" name="product_quantity" value="1">
+		<input type="hidden" name="product_id" value="%%id%%" class="def_field_input">
+		<input type="hidden" name="options_id" value="0" class="def_field_input">
+		<input type="hidden" name="addToCart" value="1" class="def_field_input">
+		<a title="Add to Cart" href="#" class="button button-green" onclick="formSubmit(this);return false;">Add to Cart</a>
+	</form>
+</div>

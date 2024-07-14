@@ -1,0 +1,6 @@
+<aside class="widget bottom40">
+<h3 class="widgettitle"> <a href="#"> %%title%% </a> </h3>
+<ul>
+%%articles%%
+</ul>
+</aside>

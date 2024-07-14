@@ -1,0 +1,343 @@
+<script type="text/javascript" src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+
+<script type="text/javascript" src="/tinymce/plugins/moxiemanager/js/moxman.loader.min.js"></script>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<div id="editProfile">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-16 text-center messages">%%errorMessage%%</div>
+		</div>
+		<div class="row bottom40">
+			<div class="col-sm-5 left">
+				<div class="row">
+					<div class="col-xs-16 title">My Profile</div>
+				</div>
+				<div class="box">
+					<div class="row">
+						<div class="col-xs-8 p-img-scalewidth">
+							<form method="post" action="/ajax/render" onsubmit="setPhoto(this);return false;">
+								<div class="img">
+									<div class="hover">
+										<a href="#" onclick="setImage(this);return false;">
+											<i class="fa fa-pencil"></i>
+<!if(strlen("%%field:tag^image1%%")>0)!>
+											<img src="%%field:tag^image1%%" />
+<!else!>
+											<img src="/images/unknown.jpg" />
+<!fi!>%%image1%%
+										</a>
+									</div>
+								</div>
+								%%save%%<input type="hidden" name="t_id" value="%%module:fetemplate_id%%" />%%editProfile%%
+							</form>
+						</div>
+						<div class="col-xs-8 name">
+							<div>%%firstname%%</div>
+							<div>%%lastname%%</div>
+						</div>
+					</div>
+					<div class="menu">
+						<ul>
+							<li><a href="#" onclick="editBio();return false;">ABOUT ME</a></li>
+							<li><a href="#" onclick="editLinks();return false;">ON THE WEB</a></li>
+							<li><a href="#" onclick="showWork();return false;">MY WORK</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-11 right">
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+clearTinyMCE = function() {
+	tinyMCE.triggerSave();
+	for(var idx in tinymce.editors) {
+		tinymce.editors[idx].remove();
+	}
+}
+setPhoto = function(el) {
+	f = $(el).closest("form");
+	$(f).ajaxSubmit({
+		success: function( obj, xhr, status ) {
+			try {
+				h = eval("("+obj+")");
+				//$("#editProfile").replaceWith(h.html);
+				//editBio();
+				d = $("<div></div>").html(h.html);
+				$("#editProfile .messages").html($(d).find(".messages"));
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+editLinks = function() {
+	clearTinyMCE();
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:51},
+		success: function( obj, xhr, status ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+editBio = function() {
+	clearTinyMCE();
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:50},
+		success: function( obj, xhr, status ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+setBio = function(el) {
+	f = $(el).closest("form");
+	clearTinyMCE();
+	$(f).ajaxSubmit({
+		success: function( obj, xhr, status ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+editBio();
+function initTinyMCE(e_id) {
+	tinymce.init({
+		selector:'textarea.mceAdvanced,textarea.mceSimple',
+		content_css:"/css/tinymce.css",
+		image_advtab:true,
+		importcss_file_filter: "/css/tinymce.css",
+		importcss_append:true,
+		moxiemanager_image_settings : { 
+			view : 'thumbs', 
+			extensions : 'jpg,png,gif',
+			moxiemanager_rootpath:'/<!@@(SITE_ROOT)@@!>/images/members/%%id%%/'
+		},
+		relative_urls: false,
+		remove_script_host:true,
+		plugins: [
+			"template"
+		],
+		templates: [
+		    {title: 'Bootstrap Mobile Compatible', description: 'Some desc 2', url: '/files/mobile.html'}
+		],
+		toolbar: "undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image insertimage | code"
+	});
+}
+function setImage(el,root) {
+	if (root == null) {
+		moxman.browse({
+			myparms:[el],
+			rootpath:'/<!@@(SITE_ROOT)@@!>/images/members/%%id%%/',
+			document_base_url:'<!@@(SITE_ROOT)@@!>',
+			no_host:true,
+			view:'thumbs',
+			oninsert: function(args) {
+				if (args.files[0].isDirectory) {
+					alert("You must select a file, not a directory");
+				}
+				else {
+					$(this.myparms[0]).parent().find("img")[0].src = args.files[0].meta.url;
+					$(this.myparms[0]).parent().find("input[type=hidden]").val(args.files[0].meta.url);
+				}
+			}
+		})
+	}
+	else {
+		moxman.browse({
+			myparms:[el],
+			rootpath:'/<!@@(SITE_ROOT)@@!>/images/members/%%id%%/'.concat(root),
+			document_base_url:'<!@@(SITE_ROOT)@@!>',
+			no_host:true,
+			view:'thumbs',
+			oninsert: function(args) {
+				if (args.files[0].isDirectory) {
+					alert("You must select a file, not a directory");
+				}
+				else {
+					$(this.myparms[0]).parent().find("img")[0].src = args.files[0].meta.url;
+					$(this.myparms[0]).parent().find("input[type=hidden]").val(args.files[0].meta.url);
+				}
+			}
+		})
+	}
+}
+editLink = function(id) {
+$.ajax({
+	url: "/ajax/render",
+	data: {t_id:51, e_id:id},
+	success: function( obj, status, xhr ) {
+		try {
+			h = eval("("+obj+")");
+			$("#editProfile .right").html(h.html);
+			eval(h.code);
+		}
+		catch(err) {
+		}
+	}
+});
+}
+
+deleteLink = function(id) {
+	$.ajax({
+		url: "/ajax/render",
+		method: "POST",
+		data: {t_id:51, e_id:id, deleteIt:1, mySocial:1},
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+
+setLink = function(el) {
+	clearTinyMCE();
+	f = $(el).closest("form");
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+
+showWork = function() {
+	clearTinyMCE();
+$.ajax({
+	url: "/ajax/render",
+	data: {t_id:52},
+	success: function( obj, status, xhr ) {
+		try {
+			h = eval("("+obj+")");
+			$("#editProfile .right").html(h.html);
+			eval(h.code);
+		}
+		catch(err) {
+		}
+	}
+});
+}
+
+editPortfolio = function(id,m) {
+	clearTinyMCE();
+$.ajax({
+	url: "/ajax/render",
+	data: {t_id:53,p_id:id},
+	context: { m:m },
+	success: function( obj, status, xhr ) {
+		try {
+			h = eval("("+obj+")");
+			$("#editProfile .right").html(h.html);
+			eval(h.code);
+			if (this.m) setTab("content");
+		}
+		catch(err) {
+		}
+	}
+});
+}
+
+savePortfolio = function(el) {
+	clearTinyMCE();
+	f = $(el).closest("form");
+	$(f).ajaxSubmit({
+		success: function( obj, xhr, status ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+
+editItem = function(p_id,id) {
+	clearTinyMCE();
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:54,p_id:p_id,id:id},
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+
+saveItem = function(el) {
+	clearTinyMCE();
+	f = $(el).closest("form");
+	$(f).ajaxSubmit({
+		success: function( obj, xhr, status ) {
+			try {
+				h = eval("("+obj+")");
+				$("#editProfile .right").html(h.html);
+				eval(h.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+
+deleteItem = function(p_id,id) {
+	clearTinyMCE();
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:54,p_id:p_id,id:id,deleteIt:1, editItem:1},
+		method:"POST",
+		success: function( obj, status, xhr ) {
+			try {
+				//h = eval("("+obj+")");
+				//$("#editProfile .right").html(h.html);
+				//eval(h.code);
+				editPortfolio(p_id,1);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+
+resetSocial = function(el) {
+	f = $(el).closest("form");
+	$(f).find("input[name='social_link']")[0].value = "";
+	$(f).find("input[name='id']")[0].value = "0";
+}
+</script>

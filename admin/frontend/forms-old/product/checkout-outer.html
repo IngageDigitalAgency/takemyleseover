@@ -1,0 +1,38 @@
+<ul class="nav nav-pills">
+	<li><a href="#cart" data-toggle="tab">Cart</a></li>
+	<li class="active"><a href="#address" data-toggle="tab">Address</a></li>
+</ul>
+<div class="tab-content nm">
+	<div class="tab-pane" id="cart">
+		<div id="my-cart">
+			<div class="ecom">
+				%%errorMessage%%
+				%%ecomErrors%%
+				<div class="myAlert col-sm-6 col-sm-offset-3"></div>
+			<!if(%%session:cart:header:total%% <= 0)!>
+				<div class='products'>
+					<h3>Your Quote is empty</h3>
+				</div>
+			<!fi!>
+				<table class="table table-striped table-hover products">
+					<thead>
+						<tr>
+							<th class="col-md-4">Product Description</th>
+							<th class="col-md-2 text-center">Quantity</th>
+							<th class="col-md-2 text-center">Cost</th>
+							<th class="col-md-2 text-center">Extended</th>
+						</tr>
+					</thead>
+					<tbody>
+						%%products%%
+						%%totals%%
+					</tbody>
+				</table>
+				%%notes%%
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane active" id="address">
+		%%address%%
+	</div>
+</div>

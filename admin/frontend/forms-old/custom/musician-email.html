@@ -1,0 +1,69 @@
+<h1>Musician Application</h1>
+<table>
+	<tr>
+		<th>Band Name:</th><td>{{bandname}}</td>
+	</tr>
+	<tr>
+		<th>Contact/Agent Name:</th><td>{{contactname}}</td>
+	</tr>
+	<tr>
+		<th>Telephone:</th><td>{{phone}}</td>
+	</tr>
+	<tr>
+		<th>Cell:</th><td>{{cell}}</td>
+	</tr>
+	<tr>
+		<th>Street Address:</th><td>{{formattedAddress:line1}}</td>
+	</tr>
+	<tr>
+		<th>City:</th><td>{{formattedAddress:city}}</td>
+	</tr>
+	<tr>
+		<th>Postal/Zip:</th><td>{{formattedAddress:postalcode}}</td>
+	</tr>
+	<tr>
+		<th>Province:</th><td>{{formattedAddress:province}}</td>
+	</tr>
+	<tr>
+		<th>Country:</th><td>{{formattedAddress:country}}</td>
+	</tr>
+	<tr>
+		<th>Email:</th><td>{{email}}</td>
+	</tr>
+	<tr>
+		<th>Music Performed:</th><td><!@@(implode(", ",array_values($_REQUEST["music_performed"])))@@!></td>
+	</tr>
+	<tr>
+		<th>Music Genres:</th><td><!@@(implode(", ",array_values($_REQUEST["music_genres"])))@@!></td>
+	</tr>
+	<tr>
+		<th>Music Genres (other):</th><td>{{music_other}}</td>
+	</tr>
+	<tr>
+		<th>Music Genres Continued:</th><td>{{music_additional}}</td>
+	</tr>
+	<tr>
+		<th>Performance Type:</th><td><!@@(implode(", ",array_values($_REQUEST["performance_type"])))@@!></td>
+	</tr>
+	<tr>
+		<th>Performance Type (other):</th><td>{{performance_other}}</td>
+	</tr>
+	<tr>
+		<th>Target Audience:</th><td>{{target_audience}}</td>
+	</tr>
+	<tr>
+		<th>Expected Compensation:</th><td>{{compensation}}</td>
+	</tr>
+	<tr>
+		<th>Venue Type:</th><td><!@@(implode(", ",array_values($_REQUEST["venue_type"])))@@!></td>
+	</tr>
+	<tr>
+		<th>Web Site:</th><td>{{website}}</td>
+	</tr>
+	<tr>
+		<th>Social Media Links:</th><td>{{facebook}}</td>
+	</tr>
+	<tr>
+		<th>Signature:</th><td>{{name_and_date}}</td>
+	</tr>
+</table>

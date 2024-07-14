@@ -1,0 +1,15 @@
+<div class='row'>
+	<div class="column one-third">%%img_image1%%&nbsp;</div>
+	<div class="column two-third last">
+		<div class="name"><a href="%%url%%">%%name%%</a></div>
+		<div class="info">
+			<form method="POST" action="/ajax/render">
+				%%formattedPrice%% x %%quantity%% %%product_id%% <a href="#" onclick='removeMini(this);return false;'><i class="icon-ban-circle"></i></a>
+				<input type="hidden" name="removeProduct[%%key%%]" value="1" />
+				<input type="hidden" name="t_id" value="" />
+				<input type="hidden" name="updateCart" value="1" />
+			</form>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+</div>

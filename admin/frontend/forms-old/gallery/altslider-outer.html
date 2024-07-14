@@ -1,0 +1,22 @@
+<section id="slider">
+	<div id="layerslider-container-fw">
+		<div class="root">
+			%%images%%
+		</div>
+	</div>
+</section>
+<script>
+$(document).ready(function(){
+	$('#layerslider-container-fw .root').layerSlider({
+		skinsPath : '/css/skins/',
+		skin : 'fullwidthdark',
+		thumbnailNavigation : 'hover',
+		hoverPrevNext : false,
+		responsive : false,
+		xxresponsiveUnder : 1120,
+		xxsublayerContainer : 1060,
+		width : '100%',
+		height : '500px'
+	});
+});		
+</script>

@@ -1,0 +1,1423 @@
+<?php
+
+class leasing extends Backend {
+
+	private $m_tree = 'lease_folders';
+	private $m_content = 'leases';
+	private $m_junction = 'lease_by_folder';
+	private $m_perrow = 5;
+
+	public function __construct() {
+		$this->M_DIR = 'backend/modules/leasing/';
+		$this->M_ROOT = '/images/leasings/originals/';
+		$this->setTemplates(
+			array(
+				'deleteItem'=>$this->M_DIR.'forms/deleteItem.html',
+				'deleteItemResult'=>$this->M_DIR.'forms/deleteItemResult.html',
+				'main'=>$this->M_DIR.'leasing.html',
+				'form'=>$this->M_DIR.'forms/form.html',
+				'showContentTree'=>$this->M_DIR.'forms/contenttree.html',
+				'leasingInfo'=>$this->M_DIR.'forms/leasingInfo.html',
+				'folderProperties'=>$this->M_DIR.'forms/folder.html',
+				'showFolderContent'=>$this->M_DIR.'forms/folderContent.html',
+				'folderInfo'=>$this->M_DIR.'forms/folderInfo.html',
+				'articleList'=>$this->M_DIR.'forms/articleList.html',
+				'showSearchForm'=>$this->M_DIR.'forms/searchForm.html',
+				'addContent'=>$this->M_DIR.'forms/addContent.html',
+				'leasingByFolder'=>$this->M_DIR.'forms/leasingList.html',
+				'addFolder'=>$this->M_DIR.'forms/addFolder.html',
+				'addProduct'=>$this->M_DIR.'forms/addProduct.html',
+				'editItem'=>$this->M_DIR.'forms/editItem.html',
+				'header'=>$this->M_DIR.'forms/heading.html',
+				'getModels'=>$this->M_DIR.'forms/getModels.html',
+				'getModelYears'=>$this->M_DIR.'forms/getModelYears.html',
+				'addMake'=>$this->M_DIR.'forms/addMake.html',
+				'addModel'=>$this->M_DIR.'forms/addModel.html',
+				'showMakes'=>$this->M_DIR.'forms/showMakes.html',
+				'showMakesRow'=>$this->M_DIR.'forms/showMakesRow.html',
+				'loadModels'=>$this->M_DIR.'forms/loadModels.html',
+				'loadModelsRow'=>$this->M_DIR.'forms/loadModelsRow.html',
+				'editMake'=>$this->M_DIR.'forms/editMake.html',
+				'editModel'=>$this->M_DIR.'forms/editModel.html',
+				'editModelSuccess'=>$this->M_DIR.'forms/editModelSuccess.html',
+				'checkImages'=>$this->M_DIR.'forms/checkImages.html',
+				'checkImagesRow'=>$this->M_DIR.'forms/checkImagesRow.html'
+			)
+		);
+		$this->setFields(array(
+			'deleteItem'=>array(
+				'options'=>array('name'=>'deleteItem','database'=>false),
+				'j_id'=>array('type'=>'tag'),
+				'deleteItem'=>array('type'=>'hidden','value'=>1),
+				'cancel'=>array('type'=>'radiobutton','name'=>'action','value'=>'cancel','checked'=>'checked'),
+				'one'=>array('type'=>'radiobutton','name'=>'action','value'=>'one'),
+				'all'=>array('type'=>'radiobutton','name'=>'action','value'=>'all')
+			),
+			'leasingByFolder'=>array(
+			),
+			'addContent'=>array(
+				'options'=>array('method'=>'post','action'=>'/modit/ajax/addContent/leasing'),
+				'owner_id'=>array('type'=>'select','sql'=>'select id, concat(lastname,", ",firstname) from members where id = %%owner_id%%','value'=>0,'id'=>'owner_id'),
+				'contact_id'=>array('type'=>'select','sql'=>'select id, concat(lastname,", ",firstname) from members where id = %%contact_id%%','value'=>0,'id'=>'contact_id'),
+				'dealership'=>array('type'=>'textfield','required'=>true),
+				'dealership_contact'=>array('type'=>'textfield','required'=>true),
+				'lease_company'=>array('type'=>'textfield','required'=>true),
+				'lease_pre_tax'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'lease_taxes_inc'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'downpayment'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'buyout'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'km_allowance'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'km_overage'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'lease_term'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'lease_expiry'=>array('type'=>'datepicker','required'=>true,'validation'=>'number'),
+				'cash_incentive'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'recoup'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'downpayment'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'transfer_date'=>array('type'=>'datepicker'),
+				'deposit'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'transfer_costs'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'id'=>array('type'=>'tag','database'=>false),
+				'make'=>array('type'=>'select','sql'=>'select id, name from lease_make order by name','onchange'=>'getModels(this);return false;','required'=>true),
+				'model'=>array('type'=>'select','onchange'=>'getModelYears(this);return false;','required'=>true),
+				'year'=>array('type'=>'select','required'=>true,'sequence'=>sprintf("2005|%d",date("Y",strtotime("today + 1 year")))),
+				'body_style'=>array('type'=>'select','name'=>'tbl[body_style]','idlookup'=>'body_style','required'=>true,'database'=>false),
+				'transmission'=>array('type'=>'select','name'=>'tbl[transmission]','idlookup'=>'transmission','required'=>true,'database'=>false),
+				'exterior_color'=>array('type'=>'select','name'=>'tbl[exterior_color]','idlookup'=>'exterior_color','required'=>true,'database'=>false),
+				'interior_color'=>array('type'=>'select','name'=>'tbl[interior_color]','idlookup'=>'interior_color','required'=>true,'database'=>false),
+				'engine_size'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'cylinders'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'mileage'=>array('type'=>'textfield','required'=>true,'validation'=>'number'),
+				'teaser'=>array('type'=>'textarea','required'=>false,'class'=>'mceSimple'),
+				'created'=>array('type'=>'datetimestamp','database'=>false),
+				'lease_expiry'=>array('type'=>'datepicker','required'=>true,'id'=>'addEndDate'),
+				'featured'=>array('type'=>'checkbox','required'=>false,'value'=>1),
+				'deleted'=>array('type'=>'checkbox','required'=>false,'value'=>1),
+				'published'=>array('type'=>'checkbox','required'=>false,'value'=>1),
+				'description'=>array('type'=>'textarea','required'=>false,'id'=>'leasingBody','class'=>'mceAdvanced','prettyName'=>'Description'),
+				'enabled'=>array('type'=>'checkbox','required'=>false,'value'=>1,'checked'=>'checked'),
+				'image1'=>array('type'=>'tag','required'=>false,'prettyName'=>'Image 1'),
+				'image2'=>array('type'=>'tag'),
+				'image3'=>array('type'=>'tag'),
+				'image4'=>array('type'=>'tag'),
+				'image5'=>array('type'=>'tag'),
+				'image6'=>array('type'=>'tag'),
+				'image7'=>array('type'=>'tag'),
+				'image8'=>array('type'=>'tag'),
+				'image9'=>array('type'=>'tag'),
+				'image10'=>array('type'=>'tag'),
+				'imagesel_a'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_a'),
+				'imagesel_b'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_b'),
+				'imagesel_c'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_c'),
+				'imagesel_d'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_d'),
+				'imagesel_e'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_e'),
+				'imagesel_f'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_f'),
+				'imagesel_g'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_g'),
+				'imagesel_h'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_h'),
+				'imagesel_i'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_i'),
+				'imagesel_j'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_j'),
+				'addContent'=>array('type'=>'hidden','value'=>1,'database'=>false),
+				'leasingFolders'=>array('type'=>'select','database'=>false,'id'=>'leasingFolderSelector','reformatting'=>false,'options'=>$this->nodeSelect(0,$this->m_tree,2,false,false,null,null)),
+				'destFolders'=>array('name'=>'destFolders','type'=>'select','multiple'=>'multiple','required'=>true,'id'=>'destFolders','database'=>false,'options'=>$this->nodeSelect(0, $this->m_tree, 2, false, false,null,null),'reformatting'=>false,'prettyName'=>'Member Of'),
+				'twitterPublish'=>array('type'=>'checkbox','database'=>false,'value'=>1),
+				'facebookPublish'=>array('type'=>'checkbox','database'=>false,'value'=>1),
+				'heating___air'=>array('type'=>'select','idlookup'=>'heating___air','required'=>true,'name'=>'tbl[heating___air]','database'=>false),
+				'tires___wheels'=>array('type'=>'select','idlookup'=>'tires___wheels','required'=>true,'name'=>'tbl[tires___wheels]','database'=>false),
+				'chrome_wheels'=>array('type'=>'checkbox','value'=>1),
+				'tire_type'=>array('type'=>'select','idlookup'=>'tire_type','required'=>true,'name'=>'tbl[tire_type]','database'=>false),
+				'winter_wheels'=>array('type'=>'checkbox','value'=>1),
+				'winter_tires'=>array('type'=>'checkbox','value'=>1),
+				'stereo_system'=>array('type'=>'select','idlookup'=>'stereo_system','required'=>true,'name'=>'tbl[stereo_system]','database'=>false),
+				'audio___video'=>array('type'=>'select','idlookup'=>'audio___video','required'=>false,'name'=>'tbl[audio___video][]','multiple'=>'multiple','database'=>false,'prettyName'=>'Audio/Video'),
+				'power_features'=>array('type'=>'select','idlookup'=>'power_features','required'=>false,'name'=>'tbl[power_features][]','multiple'=>'multiple','database'=>false),
+				'air_bags'=>array('type'=>'select','idlookup'=>'air_bags','required'=>true,'name'=>'tbl[air_bags]','required'=>true,'database'=>false),
+				'safety___security'=>array('type'=>'select','idlookup'=>'safety___security','required'=>false,'name'=>'tbl[safety___security][]','multiple'=>'multiple','database'=>false,'prettyName'=>'Safety/Security'),
+				'seating'=>array('type'=>'select','idlookup'=>'seating','required'=>true,'name'=>'tbl[seating][]','multiple'=>'multiple','database'=>false),
+				'fabric'=>array('type'=>'select','idlookup'=>'fabric','required'=>true,'name'=>'tbl[fabric][]','multiple'=>'multiple','database'=>false),
+				'convenience_features'=>array('type'=>'select','idlookup'=>'convenience_features','required'=>false,'name'=>'tbl[convenience_features][]','multiple'=>'multiple','database'=>false,'prettyName'=>'Convenience Features'),
+				'warranty'=>array('type'=>'select','idlookup'=>'warranties','required'=>true,'name'=>'warranty','class'=>'form-control','prettyName'=>'Warranty'),
+				'other_warranties'=>array('type'=>'select','idlookup'=>'other_warranties','required'=>false,'name'=>'tbl[other_warranties][]','class'=>'form-control','prettyName'=>'Other Warranties','multiple'=>'multiple','database'=>false),
+				'aftermarket'=>array('type'=>'select','idlookup'=>'aftermarket','required'=>false,'name'=>'tbl[aftermarket][]','multiple'=>'multiple','database'=>false),
+				'pu_van_suv_accessories'=>array('type'=>'select','idlookup'=>'pu_van_suv_accessories','required'=>false,'name'=>'tbl[pu_van_suv_accessories][]','multiple'=>'multiple','database'=>false),
+				'submit'=>array('type'=>'submitbutton','value'=>'Save','database'=>false),
+				'meta_description'=>array('name'=>'meta_description','type'=>'textarea','required'=>false),
+				'social_description'=>array('name'=>'social_description','type'=>'textarea','required'=>false),
+				'meta_keywords'=>array('name'=>'meta_keywords','type'=>'textarea','required'=>false),
+				'browser_title'=>array('name'=>'browser_title','type'=>'textfield','required'=>false),
+				'adword_conversion'=>array('type'=>'textarea','required'=>false)
+			),
+			'showSearchForm'=>array(
+				'options'=>array('action'=>'showSearchForm','name'=>'searchForm','id'=>'search_form'),
+				'opt_created'=>array('type'=>'select','name'=>'opt_created','lookup'=>'search_options'),
+				'created'=>array('type'=>'datepicker','required'=>false),
+				'opt_lease_expiry'=>array('type'=>'select','name'=>'opt_lease_expiry','lookup'=>'search_options'),
+				'lease_expiry'=>array('type'=>'datepicker','required'=>false,'id'=>'searchExpires'),
+				'make'=>array('type'=>'select','sql'=>'select id, name from lease_make order by name'),
+				'model'=>array('type'=>'select','sql'=>'select id, model from lease_model order by model'),
+				'enabled'=>array('type'=>'select','lookup'=>'boolean'),
+				'published'=>array('type'=>'select','lookup'=>'boolean'),
+				'deleted'=>array('type'=>'select','lookup'=>'boolean'),
+				'featured'=>array('type'=>'select','lookup'=>'boolean'),
+				'showSearchForm'=>array('type'=>'hidden','value'=>1),
+				'pagenum'=>array('type'=>'hidden','value'=>1),
+				'sortby'=>array('type'=>'hidden','value'=>'created'),
+				'sortorder'=>array('type'=>'hidden','value'=>'desc'),
+				'folder'=>array('type'=>'select','optionslist' => array('table'=>$this->m_tree,'root'=>0,'indent'=>2,'inclusive'=>false),'database'=>false),
+				'quicksearch'=>array('type'=>'input','name'=>'quicksearch','required'=>false),
+				'opt_quicksearch'=>array('type'=>'hidden','value'=>'like'),
+				'pager'=>array('type'=>'select','required'=>true,'value'=>$this->m_perrow,'lookup'=>'paging','id'=>'pager'),
+				'owner'=>array('type'=>'textfield','required'=>false),
+				'opt_owner'=>array('type'=>'hidden','value'=>'like'),
+				'submit'=>array('type'=>'submitbutton','value'=>'Search')
+			),
+			'showFolderContent'=>array(
+				'options'=>array('action'=>'showPageContent'),
+				'description'=>array('type'=>'tag','reformatting'=>false),
+				'image'=>array('type'=>'image','unknown'=>true),
+				'rollover_image'=>array('type'=>'image','unknown'=>true),
+				'sortby'=>array('type'=>'hidden','value'=>'created'),
+				'sortorder'=>array('type'=>'hidden','value'=>'desc'),
+				'pagenum'=>array('type'=>'hidden','value'=>1),
+				'pager'=>array('type'=>'select','required'=>true,'value'=>$this->m_perrow,'lookup'=>'paging','id'=>'pager'),
+				'showFolderContent'=>array('type'=>'hidden','value'=>1)
+			),
+			'main' => array(
+				'test'=>array('type'=>'tag')
+			),
+			'form' => array(),
+			'folderProperties' => array(
+				'options'=>array(
+					'action'=>'/modit/leasing/showPageProperties',
+					'method'=>'post',
+					'name'=>'folderData'
+				),
+				'title'=>array('type'=>'textfield','required'=>true,'prettyName'=>'Title'),
+				'showPageProperties'=>array('type'=>'hidden','value'=>1, 'database'=>false),
+				'alternate_title'=>array('type'=>'textfield','required'=>false),
+				'p_id'=>array('type'=>'select','required'=>true,'database'=>false,'optionslist'=>array('table'=>$this->m_tree,'root'=>0,'indent'=>2,'inclusive'=>true)),
+				'enabled'=>array('type'=>'checkbox','required'=>false,'value'=>1),
+				'notes'=>array('type'=>'textarea','required'=>false,'class'=>'mceNoEditor'),
+				'description'=>array('type'=>'textarea','required'=>false, 'id'=>'folderDescription','class'=>'mceAdvanced'),
+				'teaser'=>array('type'=>'textarea','required'=>false, 'id'=>'folderTeaser','class'=>'mceSimple'),
+				'image'=>array('type'=>'tag'),
+				'rollover_image'=>array('type'=>'tag'),
+				'imagesel_a'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_a'),
+				'imagesel_b'=>array('type'=>'image','unknown'=>true,'database'=>false,'id'=>'imagesel_b'),
+				'template_id'=>array('type'=>'select','required'=>false,'sql'=>'select template_id,title from templates group by title order by title'),
+				'leasingFolders'=>array('type'=>'select','database'=>false,'id'=>'leasingFolderSelector','reformatting'=>false,'options'=>$this->nodeSelect(0,$this->m_tree,2,false,false)),
+				'submit'=>array('type'=>'submitbutton','value'=>'Save','database'=>false),
+				'meta_description'=>array('name'=>'meta_description','type'=>'textarea','required'=>false),
+				'meta_keywords'=>array('name'=>'meta_keywords','type'=>'textarea','required'=>false),
+				'browser_title'=>array('name'=>'browser_title','type'=>'textfield','required'=>false)
+			),
+			'showContentTree' => array(),
+			'leasingInfo' => array(),
+			'showProductContent' => array(),
+			'folderInfo' => array(
+				'title'=>array('type'=>'tag'),
+				'alternate_title'=>array('type'=>'tag'),
+				'notes'=>array('type'=>'tag','reformatting'=>false),
+				'description'=>array('type'=>'tag','reformatting'=>false),
+				'image' => array('type'=>'image','unknown'=>true),
+				'rollover_image'=>array('type'=>'image','unknown'=>true)
+			),
+			'articleList' => array(
+				'id'=>array('type'=>'tag'),
+				'title'=>array('type'=>'tag'),
+				'created'=>array('type'=>'datetimestamp'),
+				'lease_expiry'=>array('type'=>'datestamp','suppressNull'=>true),
+				'published'=>array('type'=>'booleanIcon'),
+				'enabled'=>array('type'=>'booleanIcon'),
+				'deleted'=>array('type'=>'booleanIcon')
+			),
+			'getModels'=>array(
+				'model'=>array('type'=>'select','name'=>'model','required'=>true,'onchange'=>'getModelYears(this);return false;')
+			),
+			'getModelYears'=>array(
+				'year'=>array('type'=>'select','name'=>'year','required'=>true)
+			),
+			'showMakes'=>array(
+				'pagenum'=>array('type'=>'hidden','value'=>1),
+				'pager'=>array('type'=>'select','required'=>true,'value'=>$this->m_perrow,'lookup'=>'paging','id'=>'pager'),
+				'showMakes'=>array('type'=>'hidden','value'=>1)
+			),
+			'showMakesRow'=>array(
+				'domestic'=>array('type'=>'booleanIcon'),
+				'enabled'=>array('type'=>'booleanIcon')
+			),
+			'loadModels'=>array(
+				'loadModels'=>array('type'=>'hidden','value'=>1),
+				'sortby'=>array('type'=>'hidden','value'=>'model'),
+				'sortdir'=>array('type'=>'hidden','value'=>'asc'),
+				'pagenum'=>array('type'=>'hidden','value'=>0),
+				'p_id'=>array('type'=>'hidden','value'=>0),
+				'perpage'=>array('type'=>'hidden','value'=>10)
+			),
+			'loadModelsRow'=>array(
+				'deleted'=>array('type'=>'booleanIcon'),
+				'enabled'=>array('type'=>'booleanIcon')
+			),
+			'editMake'=>array(
+				'editMake'=>array('type'=>'hidden','value'=>1,'database'=>false),
+				'p_id'=>array('type'=>'hidden','database'=>false,'value'=>'%%id%%'),
+				'name'=>array('type'=>'textfield','required'=>true),
+				'enabled'=>array('type'=>'checkbox','value'=>1),
+				'domestic'=>array('type'=>'checkbox','value'=>1),
+				'submit'=>array('type'=>'submitbutton','database'=>false,'value'=>'Save')
+			),
+			'editModel'=>array(
+				'editModel'=>array('type'=>'hidden','value'=>1,'database'=>false),
+				'p_id'=>array('type'=>'hidden','database'=>false,'value'=>'%%id%%'),
+				'm_id'=>array('type'=>'hidden','value'=>'%%make_id%%','name'=>'make_id'),
+				'model'=>array('type'=>'textfield','required'=>true),
+				'start_year'=>array('type'=>'textfield','required'=>true,'validation'=>'number','maxlength'=>4),
+				'end_year'=>array('type'=>'textfield','required'=>true,'validation'=>'number','maxlength'=>4),
+				'enabled'=>array('type'=>'checkbox','value'=>1),
+				'deleted'=>array('type'=>'checkbox','value'=>1),
+				'submit'=>array('type'=>'submitbutton','database'=>false,'value'=>'Save')
+			)
+		));
+	
+		parent::__construct ();
+	}
+	
+	function __destruct() {
+	
+	}
+
+	function show($injector = null) {
+		$this->logMessage('show',sprintf('injector [%s]',$injector),2);
+		$form = new Forms();
+		$form->init($this->getTemplate('main'),array('name'=>'adminMenu'));
+		$frmFields = $this->getFields('main');
+		$form->buildForm($frmFields);
+		if ($injector == null || strlen($injector) == 0) {
+			$injector = $this->moduleStatus(true);
+		}
+		$form->addTag('injector', $injector, false);
+		return $form->show();
+	}
+
+	function showForm() {
+		$form = new Forms();
+		$form->init($this->getTemplate('form'),array('name'=>'adminMenu'));
+		$form->buildForm($this->getFields('form'));
+		$form->getField('contenttree')->addAttribute('value',$this->buildTree($this->m_tree));
+		if (count($_POST) > 0) {
+			$form->addData($_POST);
+			if ($form->validate()) {
+				$this->addMessage('Validated');
+				$tmp = array();
+				foreach($_POST as $key=>$value) {
+					$fld = new tag();
+					$tmp[] = $fld->show(sprintf('name: %s value: [%s] post: [%s]', $key, $form->getData($key), $value));
+				}
+				$form->addTag('info', implode('<br/>',$tmp), false);
+			}
+			else {
+				$this->addError('Validation failed');
+			}
+		}
+		return $form->show();
+	}
+
+	function showContentTree() {
+		$form = new Forms();
+		$form->init($this->getTemplate('showContentTree'),array());
+		$form->addTag('tree',$this->buildTree($this->m_tree, array(), "ajaxBuild", array(0=>"<ol>%s</ol>",1=>"<li class='collapsed'>%s%s</li>",3=>"")),false);
+		if ($this->isAjax())
+			return $this->ajaxReturn(array('status'=>'true','html'=>$form->show()));
+		else
+			return $form->show();
+	}
+
+	function showPageProperties($fromMain = false) {
+		$result = array();
+		$return = 'true';
+		if (!(array_key_exists('id',$_REQUEST) && $data = $this->fetchSingle(sprintf('select * from %s where id = %d',$this->m_tree, $_REQUEST['id']))))
+			$data = array('enabled'=>1,'id'=>0,'p_id'=>0,'image'=>'','rollover_image'=>'');
+		else {
+			//
+			//	get the parent node as well
+			//
+			$data['p_id'] = 0;
+			if ($data['level'] > 1) {
+				if ($p = $this->fetchSingle(sprintf('select * from %s where level = %d and left_id < %d and right_id > %d', $this->m_tree, $data['level'] - 1, $data['left_id'], $data['right_id'])))
+					$data['p_id'] = $p['id'];
+			}
+		}
+		$form = new Forms();
+		$form->init($this->getTemplate('folderProperties'),array('name'=>'folderProperties'));
+		$frmFlds = $this->getFields('folderProperties');
+		$form->buildForm($frmFlds);
+		$data['imagesel_a'] = $data['image'];
+		$data['imagesel_b'] = $data['rollover_image'];
+		$form->addData($data);
+		if (count($_POST) > 0 && array_key_exists('showPageProperties',$_POST)) {
+			$_POST['imagesel_a'] = $_POST['image'];
+			$_POST['imagesel_b'] = $_POST['rollover_image'];
+			$form->addData($_POST);
+			$valid = $form->validate();
+			if ($valid) {
+				if (array_key_exists('options',$frmFlds)) unset($frmFlds['options']);
+				$values = array();
+				$flds = array();
+				if ($data['id'] == 0) {
+					$mptt = new mptt($this->m_tree);
+					$data['id'] = $mptt->add($_POST['p_id'],999,array('title'=>'to be replaced'));
+				} 
+				else {
+					//
+					//	did we move the parent folder?
+					//
+					if ($data['level'] > 1)
+						$parent = $this->fetchSingle(sprintf('select * from %s where level = %d and left_id < %d and right_id > %d', $this->m_tree, $data['level'] - 1, $data['left_id'], $data['right_id']));
+					else $parent['id'] = 0;
+					if ($_POST['p_id'] != $parent['id']) {
+						$this->logMessage('showPageProperties', sprintf('moving [%d] to [%d] posted[%d]',$data['id'],$parent['id'], $_POST['p_id']), 1);
+						$mptt = new mptt($this->m_tree);
+						$mptt->move($data['id'], $_POST['p_id']);
+					}
+				}
+				foreach($frmFlds as $key=>$fld) {
+					if (!(array_key_exists('database',$fld) && $fld['database'] == false)) {
+						$values[] = $form->getData($fld['name']);
+						if ($data['id'] > 0)
+							$flds[] = sprintf('%s = ?',$fld['name']);
+						else
+							$flds[] = $fld['name'];
+					}
+				}
+				$stmt = $this->prepare(sprintf('update %s set %s where id = %d',$this->m_tree,implode(',',$flds),$data['id']));
+				$stmt->bindParams(array_merge(array(str_repeat('s', count($flds))),$values));
+				$status = $stmt->execute();
+				if ($status) {
+					if ($this->isAjax()) {
+						$this->logMessage('showPageProperties', 'executing ajax success return', 3);
+						$this->addMessage('Record successfully added');
+						return $this->ajaxReturn(array(
+								'status'=>'true',
+								'html'=>'',
+								'url'=>'/modit/leasing?p_id='.$data['id']
+						));
+					}
+				} else {
+					$this->addError('Error occurred');
+					$form->addTag('errorMessage',$this->showErrors(),false);
+					if ($this->isAjax()) {
+						$this->logMessage('showPageProperties', 'executing ajax error return', 3);
+						return $this->ajaxReturn(array(
+								'status'=>'false',
+								'html'=>$form->show()
+						));
+					}
+				}
+				$form->addTag('errorMessage','Record added succesfully');
+			}
+			else {
+				$return = 'false';
+				$form->addTag('errorMessage','Form validation failed');
+			}
+		}
+	
+		if ($this->isAjax())
+			return $this->ajaxReturn(array(
+					'status'=>$return,
+					'html'=>$form->show()
+			));
+		elseif ($fromMain)
+		return $form->show();
+		else
+			$this->show($form->show());
+	}
+
+	function ajaxBuild($data, $table, $wrappers, $submenu) {
+		switch($table) {
+			case $this->m_tree:
+				$value = new tag(false);
+				$mptt = new mptt($table);
+				$children = $mptt->fetchChildren($data['id']);
+				if (count($_REQUEST) > 0 && array_key_exists('p_id',$_REQUEST)) {
+					$expanded = $_REQUEST['p_id'] == $data['id'] ?  'active' : '';
+				}
+				else $expanded='';
+				if (count($submenu) > 0) {
+					$return = array('value'=>sprintf('<div class="wrapper"><div class="spacer"><a href="#" class="toggler" onclick="toggle(this);return false;">+</a></div><a href="#" id="li_%d" class="%s icon_%s info">%s</a></div>',$data['id'], $expanded, 
+						'folder', htmlspecialchars($data['title'])),'submenu'=>$submenu);
+				}
+				else {
+					$return = array('value'=>sprintf('<div class="wrapper"><div class="spacer">&nbsp;</div><a href="#" id="li_%d" class="%s icon_%s info">%s</a></div>',$data['id'], $expanded, 
+						'folder', htmlspecialchars($data['title'])),'submenu'=>array());
+				}
+				break;
+			default:
+				$value = new tag(false);
+				$mptt = new mptt($table);
+				$children = $mptt->fetchChildren($data['id']);
+				$expanded='';
+				if (count($submenu) > 0) {
+					$return = array('value'=>sprintf('<div class="wrapper"><a href="#" class="toggler" onclick="toggle(this);return false;">+</a>&nbsp;<a href="#" id="li_%d" class="%s icon_folder info">%s</a></div>',$data['id'], $expanded, htmlspecialchars($data['title'])),'submenu'=>$submenu);
+				}
+				else {
+					$return = array('value'=>sprintf('<div class="wrapper"><a href="#" id="%s_li_%d" class="%s icon_folder info">%s</a></div>',$table,$data['id'], $expanded, htmlspecialchars($data['title'])),'submenu'=>array());
+				}
+				break;
+		}
+		return $return;
+	}
+
+	function getFolderInfo($fromMain = false) {
+		if (array_key_exists('p_id',$_REQUEST)) {
+			if ($data = $this->fetchSingle(sprintf('select * from %s where id = %d',$this->m_tree,$_REQUEST['p_id']))) {
+				$form = new Forms();
+				$data['notes'] = nl2br($data['notes']);
+				$template = 'folderInfo';
+				$frmFields = $this->getFields($template);
+				$form->init($this->getTemplate($template), array());
+				$form->buildForm($frmFields);
+				$form->addData($data);
+				if ($this->isAjax())
+					return $this->ajaxReturn(array('status'=>'true','html'=>$form->show()));
+				elseif ($fromMain)
+				return $form->show();
+				else
+					return $this->show($form->show());
+			}
+		}
+	}
+
+	function showPageContent($fromMain = false) {
+		$p_id = array_key_exists('p_id',$_REQUEST) ? $_REQUEST['p_id'] : 0;
+		$form = new Forms();
+		$perPage = $this->m_perrow;
+		if ($p_id > 0 && $data = $this->fetchSingle(sprintf('select * from %s where id = %d',$this->m_tree,$p_id))) {
+			if (strlen($data['alternate_title']) > 0) $data['connector'] = '&nbsp;-&nbsp;';
+			$form->init($this->getTemplate('showFolderContent'),array('name'=>'showFolderContent'));
+			$frmFields = $this->getFields('showFolderContent');
+			$form->buildForm($frmFields);
+			if (array_key_exists('pagenum',$_REQUEST)) 
+				$pageNum = $_REQUEST['pagenum'];
+			else
+				$pageNum = 1;	// no 0 based calcs
+			if ($pageNum <= 0) $pageNum = 1;
+			if (array_key_exists('pager',$_REQUEST)) 
+				$perPage = $_REQUEST['pager'];
+			else {
+				$tmp = $this->checkArray("formData:leasingSearchForm:pager",$_SESSION);
+				if ($tmp > 0) 
+					$perPage = $tmp;
+				else
+				$perPage = $this->m_perrow;
+			}
+			$form->setData('pager',$perPage);
+			$count = $this->fetchScalar(sprintf('select count(n.id) from %s n where n.id in (select f.lease_id from %s f where f.folder_id = %d) and n.deleted = 0', $this->m_content, $this->m_junction, $_REQUEST['p_id']));
+			$pagination = $this->pagination($count, $perPage, $pageNum, 
+				array('prev'=>$this->M_DIR.'forms/paginationPrev.html','next'=>$this->M_DIR.'forms/paginationNext.html',
+				'pages'=>$this->M_DIR.'forms/paginationPage.html', 'wrapper'=>$this->M_DIR.'forms/paginationWrapper.html'),
+				array('url'=>'/modit/ajax/showPageContent/leasing','destination'=>'middleContent'));
+			$start = ($pageNum-1)*$perPage;
+			$sortby = 'sequence';
+			$sortorder = 'asc';
+			if (count($_POST) > 0 && array_key_exists('showFolderContent',$_POST)) {
+				$sortby = $_POST['sortby'];
+				$sortorder = $_POST['sortorder'];
+				$form->addData($_POST);
+			}
+			$sql = sprintf('select a.*, f.id as j_id, c1.name as make, c2.model, m1.firstname, m1.lastname, m2.firstname as cfname, m2.lastname as clname, m2.id as c_id from %s a left join %s f on a.id = f.lease_id left join members m2 on m2.id = a.contact_id, lease_make c1, lease_model c2, members m1 where m1.id = a.owner_id and c1.id = a.make and c2.id = a.model and a.deleted = 0 and f.folder_id = %d order by %s %s limit %d,%d',  $this->m_content, $this->m_junction, $_REQUEST['p_id'],$sortby, $sortorder, $start,$perPage);
+			$leasings = $this->fetchAll($sql);
+			$this->logMessage('showPageContent', sprintf('sql [%s], records [%d]',$sql, count($leasings)), 2);
+			$articles = array();
+			foreach($leasings as $leasing) {
+				$frm = new Forms();
+				$tmp = $this->getFields('articleList');
+				$frm->init($this->getTemplate('articleList'),array());
+				$frm->buildForm($tmp);
+				$frm->addData($leasing);
+				$articles[] = $frm->show();
+			}
+			$form->addTag('articles',implode('',$articles),false);
+			$form->addTag('pagination',$pagination,false);
+			$form->addData($data);
+		}
+		$form->addTag('heading',$this->getHeader(),false);
+		if (array_key_exists('formData',$_SESSION) && array_key_exists('leasingSearchForm', $_SESSION['formData']))
+			$_SESSION['formData']['leasingSearchForm']['pager'] = $perPage;
+		if ($this->isAjax()) {
+			$tmp = $form->show();
+			return $this->ajaxReturn(array('status'=>'true','html'=>$tmp)); 
+		}
+		elseif ($fromMain)
+		return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function showSearchForm($fromMain = false,$msg = '') {
+		$form = new Forms();
+		$form->init($this->getTemplate('showSearchForm'),array('name'=>'showSearchForm','persist'=>true));
+		$frmFields = $this->getFields('showSearchForm');
+		$form->buildForm($frmFields);
+		if (count($_POST) == 0)
+			if (array_key_exists('formData',$_SESSION) && array_key_exists('leasingSearchForm', $_SESSION['formData']))
+				$_POST = $_SESSION['formData']['leasingSearchForm'];
+			else
+				$_POST = array('showSearchForm'=>1,'n.deleted'=>0,'sortby'=>'published','sortorder'=>'asc');
+		if (count($_POST) > 0 && array_key_exists('showSearchForm',$_POST)) {
+			$form->addData($_POST);
+			if ($form->validate()) {
+				if (strlen($form->getData("quicksearch")) > 0) {
+					$_SESSION['formData']['leasingSearchForm'] = array('showSearchForm'=>1,'opt_quicksearch'=>'like','quicksearch'=>$form->getData("quicksearch"),'pager'=>$form->getData("pager"));
+				}
+				else
+					$_SESSION['formData']['leasingSearchForm'] = $form->getAllData();
+				$srch = array("c1.id = n.make","c2.id = n.model");
+				foreach($frmFields as $key=>$value) {
+					switch($key) {
+						case 'quicksearch':
+							if (array_key_exists('opt_quicksearch',$_POST) && $_POST['opt_quicksearch'] != null && $value = $form->getData($key)) {
+								$tmp = array();
+								if ((int)$value > 0) {
+									$tmp[] = sprintf(" n.id = %d", $value);
+								}
+								else {
+									if ($_POST['opt_quicksearch'] == 'like' && strpos($value,'%',0) === false) {
+										$value = '%'.$value.'%';
+									}
+									$tmp[] = sprintf(' c1.name like "%s"', $this->escape_string($value));
+									$tmp[] = sprintf(' c2.model like "%s"', $this->escape_string($value));
+									$tmp[] = sprintf(' description %s "%s"',$_POST['opt_quicksearch'],$this->escape_string($value));
+								}
+								$srch = array(sprintf('(%s)',implode(' or ',$tmp)),'n.deleted = 0',"c1.id = n.make","c2.id = n.model");
+								continue;
+							}
+							break;
+						case 'owner':
+							if (strlen($value = $form->getData($key)) > 0) {
+								$srch[] = sprintf(" owner_id in (select id from members where instr(concat(firstname,' ',lastname),'%s') > 0)",$value);
+							}
+							break;
+						case 'make':
+						case 'model':
+							if (($value = $form->getData($key)) > 0) {
+								$srch[] = sprintf(' n.%s = %d',$key,$value);
+							}
+							break;
+						case 'created':
+						case 'lease_expiry':
+							if (array_key_exists('opt_'.$key,$_POST) && $_POST['opt_'.$key] != null && $value = $form->getData($key)) {
+								if ($_POST['opt_'.$key] == 'like') {
+									$this->addError('Like is not supported for dates');
+								}
+								else
+									$srch[] = sprintf(' n.%s %s "%s"',$key, $_POST['opt_'.$key],$this->escape_string($value));
+							}
+							break;
+						case 'folder':
+							if (($value = $form->getData($key)) > 0) {
+								$srch[] = sprintf(' n.id in (select lease_id from %s where folder_id = %d) ', $this->m_junction, $value);
+							}
+							break;
+						case 'published':
+						case 'featured':
+						case 'enabled':
+						case 'deleted':
+							if (!is_null($value = $form->getData($key)))
+								if (strlen($value) > 0)
+									$srch[] = sprintf(' n.%s = %s',$key,$this->escape_string($value));
+							break;
+						default:
+							break;
+					}
+				}
+				if (count($srch) > 0) {
+					if (array_key_exists('pagenum',$_REQUEST))
+						$pageNum = $_REQUEST['pagenum'];
+					else
+						$pageNum = 1;	// no 0 based calcs
+					if (array_key_exists('pager',$_REQUEST)) 
+						$perPage = $_REQUEST['pager'];
+					else {
+						$tmp = $this->checkArray("formData:leasingSearchForm:pager",$_SESSION);
+						if ($tmp > 0) 
+							$perPage = $tmp;
+						else
+						$perPage = $this->m_perrow;
+					}
+					$form->setData('pager',$perPage);
+					$count = $this->fetchScalar(sprintf('select count(n.id) from %s n, lease_make c1, lease_model c2 where 1=1 and %s', $this->m_content, implode(' and ',$srch)));
+					$pageNum = max(1,min($pageNum, (floor(($count-1)/$perPage)+1)));
+					$form->setData('pagenum', $pageNum);
+					$pagination = $this->pagination($count, $perPage, $pageNum,
+							array('prev'=>$this->M_DIR.'forms/paginationPrev.html','next'=>$this->M_DIR.'forms/paginationNext.html',
+							'pages'=>$this->M_DIR.'forms/paginationPage.html', 'wrapper'=>$this->M_DIR.'forms/paginationWrapper.html'),
+							array('url'=>'/modit/ajax/showSearchForm/leasing','destination'=>'middleContent')
+						);
+					$start = ($pageNum-1)*$perPage;
+					$sortorder = 'desc';
+					$sortby = 'created';
+					if (array_key_exists('sortby',$_POST)) {
+						$sortby = $_POST['sortby'];
+						$sortorder = $_POST['sortorder'];
+					}
+					$sql = sprintf('select n.*, c1.name as make, c2.model, m1.firstname, m1.lastname, 0 as j_id, m2.firstname as cfname, m2.lastname as clname, m2.id as c_id from %s n left join members m2 on m2.id = n.contact_id, lease_make c1, lease_model c2, members m1 where m1.id = n.owner_id and c1.id = n.make and c2.id = n.model and %s order by %s %s limit %d,%d',
+						 $this->m_content, implode(' and ',$srch),$sortby, $sortorder, $start,$perPage);
+					$recs = $this->fetchAll($sql);
+					$this->logMessage('showSearchForm', sprintf('sql [%s] records [%d]',$sql,count($recs)), 2);
+					$articles = array();
+					foreach($recs as $article) {
+						$frm = new Forms();
+						$tmp = $this->getFields('articleList');
+						$frm->init($this->getTemplate('articleList'),array());
+						$frm->buildForm($tmp);
+						$frm->addData($article);
+						$articles[] = $frm->show();
+					}
+					$form->addTag('articles',implode('',$articles),false);
+					$form->addTag('pagination',$pagination,false);
+					$form->addTag('statusMessage',sprintf('We found %d record%s matching the criteria',$count,$count != 1 ? 's' : ''));
+				}
+			}
+		}
+		$form->addTag('heading',$this->getHeader(),false);
+		if (strlen($msg) > 0) $form->addTag('statusMessage',$msg,false);
+		if ($this->isAjax()) {
+			$tmp = $form->show();
+			return $this->ajaxReturn(array('status'=>'true','html'=>$tmp));
+		}
+		elseif ($fromMain)
+			return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function showSearchResults($fromMain = false) {
+		$form = new Forms();
+		$form->init($this->getTemplate('showSearchResults'),array('name'=>'showSearchResults','persist'=>true));
+		$frmFields = $this->getFields('showSearchResults');
+		$form->buildForm($frmFields);
+		if ($this->isAjax()) {
+			$tmp = $form->show();
+			return $this->ajaxReturn(array('status'=>'true','html'=>$tmp));
+		}
+		elseif ($fromMain)
+			return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function addContent($fromMain = false) {
+		$form = new Forms();
+		$form->init($this->getTemplate('addContent'),array('name'=>'addContent'));
+		$frmFields = $this->getFields('addContent');
+		$p_id = array_key_exists('p_id',$_REQUEST) ? $_REQUEST["p_id"] : 0;
+		if (!$data = $this->fetchSingle(sprintf('select * from %s where id = %d', $this->m_content, $p_id))) {
+			$data = array('id'=>0,'published'=>true,'enabled'=>true,'image1'=>'','image2'=>'','image3'=>'','image4'=>'','owner_id'=>0,"make"=>$this->fetchScalar("select id from lease_make order by name limit 1"));
+		}
+		$frmFields["model"]["sql"] = sprintf("select id, model from lease_model where make_id = %d",$data["make"]);
+		if (!($rec = $this->fetchSingle(sprintf("select * from lease_model where id = %d",$data["make"]))))
+			$rec = array("start_year"=>"2005","end_year"=>date("Y",strtotime("today + 1 year")));
+		$frmFields["year"]["sequence"] = sprintf("%d|%d",$rec["start_year"],$rec["end_year"] == "9999" ? date("Y",strtotime("today + 1 year")) : $rec["end_year"]);
+		$tbl = $this->fetchAll(sprintf("select lo.* from lease_options lo where lo.lease_id = %d order by code_table",$p_id));
+		$data["tbl"] = array();
+		foreach($tbl as $key=>$value) {
+			$tst = $frmFields[$value["code_table"]];
+			if (array_key_exists("multiple",$tst) && $tst["multiple"]) {
+				if (!array_key_exists($value["code_table"],$data["tbl"])) $data["tbl"][$value["code_table"]] = array();
+				$data["tbl"][$value["code_table"]][] = $value["code_id"];
+			}
+			else $data["tbl"][$value["code_table"]] = $value["code_id"];
+		}
+		if (count($_REQUEST) > 0 && array_key_exists('destFolders',$_REQUEST) || $data['id'] > 0) {
+			$ids = array();
+			if (array_key_exists('destFolders',$_REQUEST)) {
+				$ids = $_REQUEST['destFolders'];
+				if (!is_array($ids)) $ids = array($ids);
+			}
+			if ($data['id'] > 0) {
+				$tmp = $this->fetchScalarAll(sprintf('select folder_id from %s where lease_id = %d', $this->m_junction, $data['id']));
+				$ids = array_merge($ids,$tmp);
+			}
+			if (count($ids) > 0) {
+				$data['destFolders'] = $ids;
+			}
+		}
+		$this->logMessage(__FUNCTION__,sprintf("data is [%s]",print_r($data,true)),1);
+		$customFields = new custom();
+		if (method_exists($customFields,'leasingDisplay')) {
+			$custom = $customFields->leasingDisplay();
+			$form->addTag('customTab',sprintf('<li><a href="#tabs-custom">%s</a></li>',$custom['description']),false);
+			$html = $form->getHTML();
+			$html = str_replace('%%customInfo%%',$custom['form'],$html);
+			$form->setHTML($html);
+			$frmFields = array_merge($frmFields,$custom['fields']);
+		}
+		$data['imagesel_a'] = $data['image1'];
+		$data['imagesel_b'] = $data['image2'];
+		$data['imagesel_c'] = $data['image3'];
+		$data['imagesel_d'] = $data['image4'];
+		$data['imagesel_e'] = $data['image5'];
+		$data['imagesel_f'] = $data['image6'];
+		$data['imagesel_g'] = $data['image7'];
+		$data['imagesel_h'] = $data['image8'];
+		$data['imagesel_i'] = $data['image9'];
+		$data['imagesel_j'] = $data['image10'];
+		$form->addData($data);
+		$form->buildForm($frmFields);
+		$status = 'false';	//assume it failed
+		if (count($_POST) > 0 && array_key_exists(__FUNCTION__,$_POST)) {
+			if ((!array_key_exists("owner_id",$_POST)) || $_POST["owner_id"] == "") $_POST["owner_id"] = 0;
+			$_POST['imagesel_a'] = $_POST['image1'];
+			$_POST['imagesel_b'] = $_POST['image2'];
+			$_POST['imagesel_c'] = $_POST['image3'];
+			$_POST['imagesel_d'] = $_POST['image4'];
+			$_POST['imagesel_e'] = $_POST['image5'];
+			$_POST['imagesel_f'] = $_POST['image6'];
+			$_POST['imagesel_g'] = $_POST['image7'];
+			$_POST['imagesel_h'] = $_POST['image8'];
+			$_POST['imagesel_i'] = $_POST['image9'];
+			$_POST['imagesel_j'] = $_POST['image10'];
+			$form->addData($_POST);
+			$status = $form->validate();
+			if (array_key_exists('video',$_POST) && count($_POST['video']) > 0) {
+				$status = $status && $this->validateVideo($form);
+				$form->addTag('video',$this->getVideo($data['id'],true),false);
+			}
+			if ($status) {
+				$id = $_POST['p_id'];
+				unset($frmFields['p_id']);
+				unset($frmFields['options']);
+				foreach($frmFields as $key=>$fld) {
+					if (!(array_key_exists('database',$fld) && $fld['database'] == false)) {
+						$values[] = $form->getData($fld['name']);	//$_REQUEST[$fld['name']];
+						$flds[$fld['name']] = $form->getData($fld['name']);//$_REQUEST[$fld['name']];
+					}
+				}
+				if ($id == 0) {
+					$flds['created'] = date('c');
+					$stmt = $this->prepare(sprintf('insert into %s(%s) values(%s)', $this->m_content, implode(', ',array_keys($flds)), str_repeat('?,', count($flds)-1).'?'));
+					$stmt->bindParams(array_merge(array(str_repeat('s', count($flds))),array_values($flds)));
+					$this->addMessage('adding record');
+				}
+				else {
+					$stmt = $this->prepare(sprintf('update %s set %s where id = %d', $this->m_content, implode('=?, ',array_keys($flds)).'=?',$data['id']));
+					$stmt->bindParams(array_merge(array(str_repeat('s', count($flds))),array_values($flds)));
+					$this->addMessage('updating record');
+				}
+				$this->beginTransaction();
+				if ($status = $stmt->execute()) {
+					if ($id == 0) {
+						$id = $this->insertId();
+						$form->setData('id',$id);
+					}
+					$destFolders = $_POST['destFolders'];
+					if (!is_array($destFolders)) $destFolders = array($destFolders);
+					//
+					//	delete folders we are no longer a member of
+					//
+					$this->execute(sprintf('delete from %s where lease_id = %d and folder_id not in (%s)', $this->m_junction, $id,implode(',',$destFolders)));
+					$new = $this->fetchScalarAll(sprintf('select id from %s where id in (%s) and id not in (select folder_id from %s where lease_id = %d and folder_id in (%s))',
+						$this->m_tree,implode(',',$destFolders),$this->m_junction,$id,implode(',',$destFolders)));
+					foreach($new as $key=>$folder) {
+						$obj = new preparedStatement(sprintf('insert into %s(lease_id,folder_id) values(?,?)',$this->m_junction));
+						$obj->bindParams(array('dd',$id,$folder));
+						$status = $status && $obj->execute();
+					}
+					$tbl = $_POST["tbl"];
+					foreach($tbl as $key=>$value) {
+						$tmp = is_array($value) ? $value : array(0=>$value);
+						$this->execute(sprintf("delete from lease_options where lease_id = %d and code_table = '%s' and id not in (%s)",$id,$key,implode(",",$tmp)));
+						foreach($tmp as $skey=>$svalue) {
+							$stmt = $this->prepare(sprintf("replace into lease_options(lease_id,code_table,code_id) values(?, ?, ?)"));
+							$stmt->bindParams(array("dsd",$id,$key,$svalue));
+							$status &= $stmt->execute();
+						}
+					}
+					if ($status) {
+						$base_dir = sprintf('../images/leases/%d',$id);
+						if (!file_exists($base_dir)) mkdir($base_dir);
+						$this->commitTransaction();
+						if ($form->getData('twitterPublish') != 0) {
+							$data = $form->getAllData();
+							if ($data['published'] == 0 || $data['enabled'] == 0) {
+								$this->addError('Cannot tweet an unpublished or disabled item');
+								$status = false;
+							}
+							else {
+								if (!$status = $this->twitterPost($data['name'], $data['teaser'],sprintf('http://%s%s',HOSTNAME,$this->getUrl('leasing',$id,$data)),$data))
+									$this->addError('Error posting to Twitter');
+							}
+						}
+						if ($form->getData('facebookPublish') != 0) {
+							$data = $form->getAllData();
+							if ($data['published'] == 0 || $data['enabled'] == 0) {
+								$this->addError('Cannot post an unpublished or disabled item to Facebook');
+								$status = false;
+							}
+							else {
+								if (!$status = $this->facebookPost($data['name'], $data['teaser'],sprintf('http://%s%s',HOSTNAME,$this->getUrl('leasing',$id,$data)),$data))
+									$this->addError('Error posting to Facebook');
+							}
+						}
+						if ($status) {
+							return $this->ajaxReturn(array(
+								'status' => 'true',
+								'url' => sprintf('/modit/leasing?p_id=%d',$destFolders[0])
+							));
+						}
+					}
+					else {
+						$this->rollbackTransaction();
+						$this->addError('An Error occurred');
+					}
+				} else {
+					$this->rollbackTransaction();
+					$this->addError('An Error occurred');
+				}
+			}
+			else {
+				$this->addError('Form Validation Failed');
+			}
+			$form->addTag('errorMessage',$this->showMessages(),false);
+		}
+		if ($this->isAjax()) {
+			$tmp = $form->show();
+			return $this->ajaxReturn(array(
+				'status' => $status,
+				'html' => $tmp
+			));
+		}
+		elseif ($fromMain)
+			return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function moveArticle() {
+		$src = 0;
+		$dest = 0;
+		if (array_key_exists('src',$_REQUEST)) $src = $_REQUEST['src'];
+		if (array_key_exists('dest',$_REQUEST)) $dest = $_REQUEST['dest'];
+		if ($_REQUEST['type'] == 'tree') {
+			if ($src == 0 || $dest == 0 || !array_key_exists('type',$_REQUEST)) {
+				$this->addError('Either source or destination was missing');
+				return $this->ajaxReturn(array('status' => 'false'));
+			}
+			if ($folder = $this->fetchSingle(sprintf('select * from %s where id = %d',$this->m_tree,$dest))) {
+				$curr = $this->fetchScalar(sprintf('select lease_id from %s where id = %d',$this->m_junction,$src));
+				$status = true;
+				if (array_key_exists('move',$_REQUEST)) {
+					//
+					//	move it - delete all other folders
+					//
+					$this->logMessage('moveArticle', sprintf('moving leasing %d to folder %d',$src,$dest),2);
+					$this->beginTransaction();
+					if ($status = $this->execute(sprintf('delete from %s where id = %d', $this->m_junction, $src))) {
+						if (!$this->fetchSingle(sprintf('select * from %s where lease_id = %d and folder_id = %d',$this->m_junction,$curr,$dest))) {
+							$obj = new preparedStatement(sprintf('insert into %s(lease_id,folder_id) values(?,?)',$this->m_junction));
+							$obj->bindParams(array('dd',$curr,$dest));
+							$status = $obj->execute();
+						}
+					}
+					if ($status)
+						$this->commitTransaction();
+					else
+						$this->rollbackTransaction();
+				}
+				else {
+					//
+					//	add it - if it doesn't already exist
+					//
+					$curr = $src;
+					$this->logMessage('moveArticle', sprintf('cloning leasing %d to folder %d',$curr,$dest),2);
+					if (!($this->fetchSingle(sprintf('select * from %s where lease_id = %d and folder_id = %d',$this->m_junction,$curr,$dest)))) {
+						$obj = new preparedStatement(sprintf('insert into %s(lease_id,folder_id) values(?,?)',$this->m_junction));
+						$obj->bindParams(array('dd',$curr,$dest));
+						$status = $obj->execute();
+					}
+				}
+			} else {
+				$status = false;
+				$this->addError('Could not locate the destination folder');
+			}
+		}
+		else {
+			if ($src == 0 || $dest < 0) {
+				$this->addMessage('Either source or destination was missing');
+				return $this->ajaxReturn(array('status' => 'false'));
+			}
+			$src = $this->fetchSingle(sprintf('select * from %s where id = %d',$this->m_junction,$src));
+			$sql = sprintf('select * from %s where folder_id = %d order by sequence limit %d,1',$this->m_junction,$src['folder_id'],$dest);
+			$dest = $this->fetchSingle($sql);
+			$this->logMessage("moveArticle",sprintf("move src [%s] to dest [%s] sql [%s]",print_r($src,true),print_r($dest,true),$sql),2);
+			if (count($src) == 0 || count($dest) == 0) {
+				$status = false;
+				$this->addMessage('Either the source or destination article was not found');
+			}
+			else {
+				//
+				//	swap the order of the images
+				//
+				$this->logMessage('moveArticle', sprintf('swap the sort order of %d and %d',$src['id'],$dest['id']),2);
+				$this->beginTransaction();
+				$sql = sprintf('update %s set sequence = %d where id = %s',
+					$this->m_junction, $src['sequence'] < $dest['sequence'] ? $dest['sequence']+1 : $dest['sequence']-1, $src['id']);
+				if ($this->execute($sql)) {
+					$this->resequence($src['folder_id']);
+					$this->commitTransaction();
+					$status = true;
+				}
+				else {
+					$this->rollbackTransaction();
+					$status = false;
+				}					
+			}
+		}
+		return $this->ajaxReturn(array(
+				'status'=>$status?'true':'false'
+		));
+	}
+	
+	function resequence($folder) {
+		$this->logMessage('resequence', "resequencing folder $folder", 2);
+		$articles = $this->fetchAll(sprintf('select * from %s where folder_id = %d order by sequence',$this->m_junction,$folder));
+		$seq = 10;
+		foreach($articles as $article) {
+			$this->execute(sprintf('update %s set sequence = %d where id = %d',$this->m_junction,$seq,$article['id']));
+			$seq += 10;
+		}
+	}
+
+	function deleteArticle() {
+		$form = new Forms();
+		$form->init($this->getTemplate('deleteItem'));
+		$flds = $this->getFields('deleteItem');
+		$form->buildForm($flds);
+		if (count($_REQUEST) > 0 && $_REQUEST['j_id'] == 0)
+			$form->getField('one')->addAttribute('disabled','disabled');
+		$form->addData($_REQUEST);
+		if (count($_REQUEST) > 0 && array_key_exists('deleteItem',$_REQUEST)) {
+			if ($form->validate()) {
+				$type = $form->getData('action');
+				switch($type) {
+					case 'cancel':
+						return $this->ajaxReturn(array('status'=>'true','code'=>'closePopup();'));
+						break;
+					case 'all':
+						$this->execute(sprintf('delete from %s where lease_id = %d',$this->m_junction,$_REQUEST['p_id']));
+						$this->execute(sprintf('update %s set deleted = 1 where id = %d',$this->m_content,$_REQUEST['p_id']));
+						break;
+					case 'one':
+						$status = $this->execute(sprintf('delete from %s where id = %d',$this->m_junction,$_REQUEST['j_id']));
+						$ct = $this->fetchScalar(sprintf('select count(0) from %s where lease_id = %d',$this->m_junction,$_REQUEST['p_id']));
+						if ($ct == 0)
+							$this->execute(sprintf('update %s set deleted = 1 where id = %d',$this->m_content,$_REQUEST['p_id']));
+						break;
+					default:
+						break;
+				}
+				$form->init($this->getTemplate('deleteItemResult'));
+			}
+		}
+		return $this->ajaxReturn(array('status'=>'true','html'=>$form->show()));
+	}
+
+	function deleteContent() {
+		if (array_key_exists('p_id',$_REQUEST)) {
+			$ct = $this->fetchScalar(sprintf('select count(0) from %s where folder_id = %d',$this->m_junction,$_REQUEST['p_id']));
+			if ($ct > 0) {
+				$this->addError('Products are still attached to this folder');
+				return $this->ajaxReturn(array('status'=>'false'));
+			}
+			$ct = $this->fetchScalar(sprintf('select count(0) from %s t1, %s t2 where t2.id = %d and t1.left_id > t2.left_id and t1.right_id < t2.right_id and t1.level > t2.level',$this->m_tree, $this->m_tree, $_REQUEST['p_id']));
+			if ($ct > 0) {
+				$this->addError('Other categories are still attached to this folder');
+				return $this->ajaxReturn(array('status'=>'false'));
+			}
+			if (!$this->deleteCheck('leasing',$_REQUEST['p_id'],$inUse)) {
+				$this->addError('Some Pages or Templates still use this folder');
+				foreach($inUse as $key=>$value) {
+					$this->addError($value);
+				}
+				return $this->ajaxReturn(array('status'=>'false'));
+			}
+			$mptt = new mptt($this->m_tree);
+			$mptt->delete($_REQUEST['p_id']);
+			return $this->ajaxReturn(array('status'=>'true'));
+		}
+	}
+
+	function leasingList() {
+		if (array_key_exists('f_id',$_REQUEST) && $_REQUEST['f_id'] > 0) {
+			$tmp = parent::leasingList($_REQUEST['f_id'],$this->getTemplate('leasingByFolder'),$this->getFields('leasingByFolder'));
+			return $this->ajaxReturn(array('status'=>'true','html'=>$tmp));
+		}
+		else return $this->ajaxReturn(array('status'=>'true','html'=>''));
+	}
+
+	function addFolder($fromMain = false) {
+		$form = new Forms();
+		$form->init($this->getTemplate('addFolder'));
+		if ($fromMain)
+			return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function addProduct($fromMain = false) {
+		$form = new Forms();
+		$form->init($this->getTemplate('addProduct'));
+		if ($fromMain)
+			return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function edit() {
+		if (array_key_exists('e_id',$_REQUEST) && $data = $this->fetchSingle(sprintf('select * from %s where id = %d',$this->m_content,$_REQUEST['e_id']))) {
+			$f = new Forms();
+			$f->init($this->getTemplate('editItem'));
+			$f->addData($data);
+			return $this->show($f->show());
+		}
+		else
+			return $this->show();
+	}
+
+	function moduleStatus($fromMain = 0) {
+		if (array_key_exists('formData',$_SESSION) && array_key_exists('leasingSearchForm', $_SESSION['formData'])) {
+			$_POST = $_SESSION['formData']['leasingSearchForm'];
+			$msg = '';
+		}
+		else {
+			$ct = $this->fetchScalar(sprintf('select count(0) from %s where (enabled = 0 or published = 0) and deleted = 0',$this->m_content));
+			$_POST = array('showSearchForm'=>1,'deleted'=>0,'sortby'=>'created','sortorder'=>'desc','pager'=>$this->m_perrow);
+			$msg = "Showing latest leasings added";
+		}
+		$result = $this->showSearchForm($fromMain,$msg);
+		return $result;
+	}
+
+	function getHeader() {
+		$form = new Forms();
+		$form->init($this->getTemplate('header'));
+		$flds = $this->getFields('showSearchForm');
+		$form->buildForm($flds);
+		if (count($_POST) > 0 && array_key_exists('showSearchForm',$_POST))
+			$form->addData($_POST);
+		return $form->show();
+	}
+
+	function hasFunctionAccess($method) {
+		$this->logMessage("hasFunction Access",sprintf("looking for method [$method]"),2);
+		if (parent::hasFunctionAccess($method)) return true;
+		return true;
+	}
+
+	function moveOption() {
+		$src = 0;
+		$dest = 0;
+		if (array_key_exists('src',$_REQUEST)) $src = $_REQUEST['src'];
+		if (array_key_exists('dest',$_REQUEST)) $dest = $_REQUEST['dest'];
+		if ($src == 0 || $dest < 0) {
+			$this->addMessage('Either source or destination was missing');
+			return $this->ajaxReturn(array('status' => 'false'));
+		}
+		$src = $this->fetchSingle(sprintf('select * from leasing_options where id = %d',$src));
+		$sql = sprintf('select * from leasing_options where lease_id = %d order by sequence limit %d,1',$src['lease_id'],$dest);
+		$dest = $this->fetchSingle($sql);
+		$this->logMessage(__FUNCTION__,sprintf("move src [%s] to dest [%s] sql [%s]",print_r($src,true),print_r($dest,true),$sql),2);
+		if (count($src) == 0 || count($dest) == 0) {
+			$status = false;
+			$this->addMessage('Either the source or destination article was not found');
+		}
+		else {
+			$this->logMessage(__FUNCTION__, sprintf('swap the sort order of %d and %d',$src['id'],$dest['id']),2);
+			$this->beginTransaction();
+			$sql = sprintf('update leasing_options set sequence = %d where id = %s',
+				$src['sequence'] < $dest['sequence'] ? $dest['sequence']+1 : $dest['sequence']-1, $src['id']);
+			if ($this->execute($sql)) {
+				$this->resequenceOptions($src['lease_id']);
+				$this->commitTransaction();
+				$status = true;
+			}
+			else {
+				$this->rollbackTransaction();
+				$status = false;
+			}					
+		}
+		return $this->ajaxReturn(array(
+				'status'=>$status?'true':'false'
+		));
+	}
+
+	function resequenceOptions($p_id) {
+		$recs = $this->fetchAll(sprintf('select * from leasing_options where lease_id = %d order by sequence',$p_id));
+		$seq = 10;
+		foreach($recs as $rec) {
+			if ($rec['sequence'] != $seq) $this->execute(sprintf('update leasing_options set sequence = %d where id = %d',$seq,$rec['id']));
+			$seq += 10;
+		}
+		return;
+	}
+
+	function getModels() {
+		$m_id = array_key_exists("m_id",$_REQUEST) ? $_REQUEST["m_id"] : 0;
+		$flds = $this->getFields(__FUNCTION__);
+		$flds["model"]["sql"] = sprintf("select id, model from lease_model where make_id = %d order by model",$m_id);
+		$form = new Forms();
+		$form->init($this->getTemplate(__FUNCTION__));
+		$form->buildForm($flds);
+		$this->logMessage(__FUNCTION__,sprintf("returning [%s] from [%s]",$form->show(),print_r($form,true)),1);
+		return $this->ajaxReturn(array('status'=>true,'html'=>$form->show()));
+	}
+
+	function getModelYears() {
+		$m_id = array_key_exists("m_id",$_REQUEST) ? $_REQUEST["m_id"] : 0;
+		$flds = $this->getFields(__FUNCTION__);
+		if (!($rec = $this->fetchSingle(sprintf("select * from lease_model where id = %d",$m_id))))
+			$rec = array("start_year"=>"2005","end_year"=>date("Y",strtotime("today + 1 year")));
+		$flds["year"]["sequence"] = sprintf("%d|%d",$rec["start_year"],$rec["end_year"] == "9999" ? date("Y",strtotime("today + 1 year")) : $rec["end_year"]);
+		$form = new Forms();
+		$form->init($this->getTemplate(__FUNCTION__));
+		$form->buildForm($flds);
+		$this->logMessage(__FUNCTION__,sprintf("returning [%s] from [%s]",$form->show(),print_r($form,true)),1);
+		return $this->ajaxReturn(array('status'=>true,'html'=>$form->show()));
+	}
+
+	function getNames() {
+		$query = $_REQUEST['s'];
+		$member = $this->fetchScalar(sprintf("select owner_id from leases where id = %d",$_REQUEST['m']));
+		$select = new select();
+		$select->addAttributes(array("sql"=>sprintf("select id, concat(lastname,', ',firstname,if(id=%d,'*','')) from members where (firstname like '%%%s%%' or lastname like '%%%s%%' or id = %d) and deleted = 0 and enabled = 1 order by lastname, firstname", $member, $query, $query, $member ),"name"=>"member_id"));
+		return $this->ajaxReturn(array('status'=>true,'html'=>$select->show()));
+	}
+
+	function addMake($fromMain = false) {
+		$form = new Forms();
+		$form->init($this->getTemplate(__FUNCTION__));
+		if ($fromMain)
+			return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function addModel($fromMain = false) {
+		$form = new Forms();
+		$form->init($this->getTemplate(__FUNCTION__));
+		if ($fromMain)
+			return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function showMakes($fromMain = false) {
+		$form = new Forms();
+		$form->init($this->getTemplate(__FUNCTION__));
+		$flds = $this->getFields(__FUNCTION__);
+		$form->buildForm($flds);
+		$sql = sprintf("select * from lease_make order by name");
+		$perPage = $this->m_perrow;
+		if (array_key_exists('pagenum',$_REQUEST)) 
+			$pageNum = $_REQUEST['pagenum'];
+		else
+			$pageNum = 1;	// no 0 based calcs
+		if ($pageNum <= 0) $pageNum = 1;
+		if (array_key_exists('pager',$_REQUEST)) 
+			$perPage = $_REQUEST['pager'];
+		else {
+			$tmp = $this->checkArray("formData:leasingSearchForm:pager",$_SESSION);
+			if ($tmp > 0) 
+				$perPage = $tmp;
+			else
+			$perPage = $this->m_perrow;
+		}
+		$form->setData('pager',$perPage);
+		$count = $this->fetchScalar(sprintf('select count(n.id) from lease_make n '));
+		$pagination = $this->pagination($count, $perPage, $pageNum, 
+			array('prev'=>$this->M_DIR.'forms/paginationPrev.html','next'=>$this->M_DIR.'forms/paginationNext.html',
+			'pages'=>$this->M_DIR.'forms/paginationPage.html', 'wrapper'=>$this->M_DIR.'forms/paginationWrapper.html'),
+			array('url'=>'/modit/ajax/showMakes/leasing','destination'=>'middleContent'));
+		$start = ($pageNum-1)*$perPage;
+		$sortby = 'name';
+		$sortorder = 'asc';
+		if (count($_POST) > 0 && array_key_exists(__FUNCTION__,$_POST)) {
+			$sortby = $_POST['sortby'];
+			$sortorder = $_POST['sortorder'];
+			$form->addData($_POST);
+		}
+		$sql = sprintf('select a.* from lease_make a order by %s %s limit %d,%d', $sortby, $sortorder, $start,$perPage);
+		$models = $this->fetchAll($sql);
+		$this->logMessage(__FUNCTION__, sprintf('sql [%s], records [%d]',$sql, count($models)), 2);
+		$articles = array();
+		$frm = new Forms();
+		$tmp = $this->getFields(__FUNCTION__."Row");
+		$frm->init($this->getTemplate(__FUNCTION__."Row"),array());
+		$frm->buildForm($tmp);
+		foreach($models as $model) {
+			$frm->reset();
+			$frm->addData($model);
+			$articles[] = $frm->show();
+		}
+		$form->addTag('makes',implode('',$articles),false);
+		$form->addTag('pagination',$pagination,false);
+		$this->logMessage(__FUNCTION__,sprintf("outer [%s]",print_r($form,true)),1);
+		if ($this->isAjax()) {
+			return $this->ajaxReturn(array('status'=>'true','html'=>$form->show())); 
+		}
+		elseif ($fromMain)
+			return $form->show();
+		else
+			return $this->show($form->show());
+	}
+
+	function editMake() {
+		$outer = new Forms();
+		$outer->init($this->getTemplate(__FUNCTION__));
+		$flds = $this->getFields(__FUNCTION__);
+		$outer->buildForm($flds);
+		if (!($data = $this->fetchSingle(sprintf("select * from lease_make where id = %d",array_key_exists("p_id",$_REQUEST) ? $_REQUEST["p_id"] : 0)))) {
+			$data = array("id"=>0);
+		}
+		$outer->addData($data);
+		if (count($_POST) > 0 && array_key_exists(__FUNCTION__,$_POST)) {
+			$outer->addData($_POST);
+			if ($outer->validate()) {
+				$db = array();
+				foreach($flds as $key=>$fld) {
+					if ((!array_key_exists("database",$fld)) || $fld["database"] == true) {
+						$db[$fld["name"]] = $outer->getData($fld["name"]);
+					}
+				}
+				if ($data["id"] == 0)
+					$stmt = $this->prepare(sprintf("insert into lease_make(%s) values(%s?)", implode(", ",array_keys($db)), str_repeat("?, ",count($db)-1)));
+				else {
+				 	$stmt = $this->prepare(sprintf("update lease_make set %s=? where id = %d",implode("=?, ",array_keys($db)),$data["id"]));
+				}
+				$stmt->bindParams(array_merge(array(str_repeat("s",count($db))),array_values($db)));
+				if ($stmt->execute()) {
+					if ($data["id"] == 0) {
+						$data["id"] = $this->insertId();
+						$outer->setData("id",$data["id"]);
+					}
+					$outer->addFormSuccess("Record Added/Updated");
+				}
+			}
+		}
+		$outer->addTag("models",$this->loadModels(true,$data["id"]),false);
+		return $this->ajaxReturn(array("status"=>true,"html"=>$outer->show()));
+	}
+
+	function editModel() {
+		$outer = new Forms();
+		$outer->init($this->getTemplate(__FUNCTION__));
+		$flds = $this->getFields(__FUNCTION__);
+		$outer->buildForm($flds);
+		if (!($data = $this->fetchSingle(sprintf("select * from lease_model where id = %d",array_key_exists("p_id",$_REQUEST) ? $_REQUEST["p_id"] : 0)))) {
+			$data = array("id"=>0,"make_id"=>array_key_exists("g_id",$_REQUEST) ? $_REQUEST["g_id"] : 0);
+		}
+		$outer->addData($data);
+		if (count($_POST) > 0 && array_key_exists(__FUNCTION__,$_POST)) {
+			$outer->addData($_POST);
+			$status = $outer->validate();
+			if ($status) {
+				if ($rec = $this->fetchSingle(sprintf("select * from lease_model where model = '%s' and id != %d", $outer->getData("model"),$data["id"]))) {
+					$status = false;
+					$outer->addFormError("This model already exists");
+				}
+			}
+			if ($status) {
+				$db = array();
+				foreach($flds as $key=>$fld) {
+					if ((!array_key_exists("database",$fld)) || $fld["database"] == true) {
+						$db[$fld["name"]] = $outer->getData($fld["name"]);
+					}
+				}
+				if ($data["id"] == 0)
+					$stmt = $this->prepare(sprintf("insert into lease_model(%s) values(%s?)", implode(", ",array_keys($db)), str_repeat("?, ",count($db)-1)));
+				else {
+				 	$stmt = $this->prepare(sprintf("update lease_model set %s=? where id = %d",implode("=?, ",array_keys($db)),$data["id"]));
+				}
+				$stmt->bindParams(array_merge(array(str_repeat("s",count($db))),array_values($db)));
+				if ($stmt->execute()) {
+					if ($data["id"] == 0) {
+						$data["id"] = $this->insertId();
+						$outer->setData("id",$data["id"]);
+						$outer->setData("p_id",$data["id"]);
+						$this->logMessage(__FUNCTION__,sprintf("added result is [%s] show [%s]",print_r($outer,true),$outer->show()),1);
+					}
+					$outer->init($this->getTemplate(__FUNCTION__."Success"));
+					$outer->addFormSuccess("Record Added/Updated");
+				}
+			}
+		}
+		return $this->ajaxReturn(array("status"=>true,"html"=>$outer->show()));
+	}
+
+	function loadModels($fromMain = false, $id = 0) {
+		if (!$fromMain) $id = array_key_exists("p_id",$_REQUEST) ? $_REQUEST["p_id"] : 0;
+		$outer = new Forms();
+		$outer->init($this->getTemplate(__FUNCTION__));
+		$inner = new Forms();
+		$inner->init($this->getTemplate(__FUNCTION__."Row"));
+		$iFlds = $this->getFields(__FUNCTION__);
+		$outer->buildForm($iFlds);
+		$outer->addData(array("sortby"=>"model","pagenum"=>1,"perpage"=>10,"p_id"=>$id,"id"=>$id));
+		if (array_key_exists(__FUNCTION__,$_REQUEST)) {
+			$outer->addData($_REQUEST);
+		}
+		$iFlds = $this->getFields(__FUNCTION__."Row");
+		$inner->buildForm($iFlds);
+		$count = $this->fetchScalar(sprintf("select count(0) from lease_model where make_id = %d",$id));
+		$this->logMessage(__FUNCTION__,sprintf("testing [%s]",print_r($outer,true)),1);
+		$perPage = $outer->getData("perpage");
+		$this->logMessage(__FUNCTION__,sprintf("testing [%s]",print_r($perPage,true)),1);
+		$pageNum = $outer->getData("pagenum");
+		$this->logMessage(__FUNCTION__,sprintf("testing [%s]",print_r($pageNum,true)),1);
+		$pagination = $this->pagination($count, $perPage, $pageNum, 
+			array('prev'=>$this->M_DIR.'forms/paginationPrev.html','next'=>$this->M_DIR.'forms/paginationNext.html',
+			'pages'=>$this->M_DIR.'forms/paginationPage.html', 'wrapper'=>$this->M_DIR.'forms/paginationWrapper.html'),
+			array('url'=>'/modit/ajax/loadModels/leasing','destination'=>'modelList'));
+		$this->logMessage(__FUNCTION__,sprintf("testing [%s]",print_r($pagination,true)),1);
+		$start = ($pageNum-1)*$perPage;
+		$models = $this->fetchAll(sprintf("select * from lease_model where make_id = %d order by %s %s, model asc limit %d,%d", $id, $outer->getData("sortby"), $outer->getData("sortdir"), $start, $perPage));
+		$iData = array();
+		foreach($models as $key=>$model) {
+			$inner->addData($model);
+			$iData[] = $inner->show();
+		}
+		$outer->addTag("pagination",$pagination,false);
+		$outer->addTag("models",implode("",$iData),false);
+		if ($fromMain)
+			return $outer->show();
+		else return $this->ajaxReturn(array("status"=>true,"html"=>$outer->show()));
+	}
+
+	function checkImages() {
+		$outer = new Forms();
+		$outer->init($this->getTemplate(__FUNCTION__));
+		if (count($_POST) > 0 && array_key_exists(__FUNCTION__,$_POST)) {
+			foreach($_POST["delete"] as $key=>$value) {
+				unlink("../files/".$value);
+			}
+		}
+		$root = "../files/";
+		$images = array();
+		$d = dir($root);
+		while (false != ($e = $d->read())) {
+			if (!($e == "." || $e == ".." || is_dir($root.$e))) {
+				$images[] = $e;
+			}
+		}
+		$inner = new Forms();
+		$inner->init($this->getTemplate(__FUNCTION__."Row"));
+		$result = array();
+		foreach($images as $key=>$img) {
+			$this->logMessage(__FUNCTION__,sprintf("dir entry is [%s]",print_r($img,true)),1);
+			$inner->addData(array("dir"=>"/files/","name"=>$img));
+			$result[] = $inner->show();
+		}
+		$outer->addTag("images",implode("",$result),false);
+		return $this->show($outer->show());
+	}
+}
+
+?>

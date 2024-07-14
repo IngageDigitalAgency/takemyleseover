@@ -1,0 +1,24 @@
+<!if("%%session:viewed%%"!="1")!>
+<script type="text/javascript">
+$(window).ready(function() {
+	$(".overlay").removeClass("hidden");
+});
+closePopup = function() {
+	$(".overlay").addClass("hidden");
+	$("#popup").remove();
+	$.ajax({
+		url: "/ajax/render",
+		data:{t_id:35},
+		success: function(obj, status, xhr ) {
+		}
+	});
+}
+</script>
+<div id="popup">
+	<div class="container">
+		<div class="row">
+			%%ads%%
+		</div>
+	</div>
+</div>
+<!fi!>

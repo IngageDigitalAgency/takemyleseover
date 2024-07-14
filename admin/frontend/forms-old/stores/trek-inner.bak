@@ -1,0 +1,36 @@
+<div class="item">
+	<ul class="contact-infos">
+		<li>
+			<div class="icon-box">
+				<i class="lsp-icon-signs"></i>
+			</div><!-- /.icon-box -->
+			<div class="text-box">
+				<p>%%storeaddress:line1%%,<br />%%storeaddress:city%%, %%storeaddress:provinceCode%% %%storeaddress:postalcode%%</p>
+			</div><!-- /.text-box -->
+		</li>
+		<li>
+			<div class="icon-box">
+				<i class="lsp-icon-technology"></i>
+			</div><!-- /.icon-box -->
+			<div class="text-box">
+				<p>Call us: <a href="tel:%%phone1%%">%%phone1%%</a></p>
+			</div><!-- /.text-box -->
+		</li>
+		<li>
+			<div class="icon-box">
+				<i class="lsp-icon-note"></i>
+			</div><!-- /.icon-box -->
+			<div class="text-box">
+				<p>Mail us : <a href="mailto:%%email%%">%%email%%</a></p>
+			</div><!-- /.text-box -->
+		</li>
+		<li>
+			<div class="icon-box">
+				<i class="lsp-icon-clock"></i>
+			</div><!-- /.icon-box -->
+			<div class="text-box">
+				<p>Mon - Sat 9.00 - 20.00,<br />Sunday CLOSED</p>
+			</div><!-- /.text-box -->
+		</li>
+	</ul><!-- /.contact-infos -->
+</div><!-- /.item -->

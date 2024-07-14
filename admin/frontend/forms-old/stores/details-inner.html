@@ -1,0 +1,31 @@
+<div class="col-sm-4">
+	<div class="cont-single">
+		<div class="icon-container">
+			<i class="ion-location"></i>
+		</div>
+		<h5 class="section-title">Address</h5>
+		<p><b>%%storeaddress:line1%%
+<!if(strlen("%%storeaddress:line2%%")>0)!>
+<br>%%storeaddress:line2%%
+<!fi!>
+<br>%%storeaddress:city%% %%storeaddress:postalcode%%</b></p>
+	</div>
+</div>
+<div class="col-sm-4">
+	<div class="cont-single">
+		<div class="icon-container">
+			<i class="ion-android-alarm-clock"></i>
+		</div>
+		<h5 class="section-title">Business Hour</h5>
+		<div class="hours tinymce">%%hours%%</div>
+	</div>
+</div>
+<div class="col-sm-4">
+	<div class="cont-single">
+		<div class="icon-container">
+			<i class="ion-android-call"></i>
+		</div>
+		<h5 class="section-title">Phone</h5>
+		<p><b class="phone">%%storeaddress:phone1%%</b></p>
+		<p><b class="phone">%%storeaddress:phone2%%</b></p>
+	</div>

@@ -1,0 +1,73 @@
+<script src="/tinymce/plugins/moxiemanager/js/moxman.loader.min.js"></script>
+<script type="text/javascript">
+function setImage(el,root) {
+	moxman.browse({
+		myparms:[el],
+		rootpath:"/<!@@(SITE_ROOT)@@!>/images/members/%%session:user:info:id%%",
+		document_base_url:"<!@@(SITE_ROOT)@@!>",
+		no_host:true,
+		view:'thumbs',
+		oninsert: function(args) {
+			if (args.files[0].isDirectory) {
+				alert("You must select a file, not a directory");
+			}
+			else {
+				$(this.myparms[0]).parent().find("img")[0].src = args.files[0].meta.url;
+				$(this.myparms[0]).parent().find("input[type=hidden]").val(args.files[0].meta.url);
+			}
+		}
+	})
+}
+function clearImage(el) {
+	$(el).parent().find("img")[0].src = "/images/unknown.jpg";
+	$(el).parent().find("input[type=hidden]").val("");
+}
+</script>
+<div id="my-cart">
+	<div class="ecom">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				%%errorMessage%%
+				%%ecomErrors%%
+			</div>
+		</div>
+		<div class="myAlert col-sm-6 col-sm-offset-3"></div>
+	<!if(%%session:cart:header:total%% <= 0)!>
+		<div class='products'>
+			<h3>Your Quote is empty</h3>
+		</div>
+	<!fi!>
+		<form method="post" enctype="multipart/form-data">
+			<table class="table table-striped table-hover products">
+				<thead>
+					<tr>
+						<th class="col-md-4">Product Description</th>
+						<th class="col-md-2 text-center">Quantity</th>
+						<th class="col-md-2 text-center">Cost</th>
+						<th class="col-md-2 text-center">Extended</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					%%products%%
+					%%totals%%
+				</tbody>
+			</table>
+			<input type='hidden' name='updateCart' value='1' />
+			<input type='hidden' name='discount_code' value='%%session:cart:header:discount_code%%' />
+			<div class='clearfix'></div>
+			%%notes%%
+			%%images%%
+			<div class='buttons text-right'>
+				<hr/>
+				<input type="submit" value="Update Cart" class="btn btn-primary" />
+	<!if("0%%session:user:info:id%%" != "0" && %%session:cart:header:total%% > 0)!>
+				<a title="Save Quote" href="/submit-quote" class="btn btn-default">Save Quote</a>
+	<!fi!>
+	<!if("0%%session:user:info:id%%" == "0")!>
+				<a title="Checkout [Stage 1]" href="/login" class="btn btn-default">Login to Continue</a>
+	<!fi!>
+			</div>
+		</form>
+	</div>
+</div>

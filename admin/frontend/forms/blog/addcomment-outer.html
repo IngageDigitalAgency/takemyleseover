@@ -1,0 +1,21 @@
+<div id='add-a-comment'>
+	<h3 class="green text-center">Have a Comment?</h3>
+	<div class="col-sm-8 col-sm-offset-2">
+		%%errorMessage%%
+		%%form%%
+	</div>
+</div>
+<script type="text/javascript">
+blogSubmit = function(el) {
+	$(el).closest("form").ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#add-a-comment").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

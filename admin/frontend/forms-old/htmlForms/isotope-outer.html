@@ -1,0 +1,48 @@
+<script type="text/javascript">
+var $container;
+isotopeCfg = {
+	itemSelector: '.item',
+	filter: '.home',
+	transitionDuration: '0.4s',
+	masonry: {
+		columnWidth: '.grid-sizer',
+		gutterWidth: 0
+	},
+	layoutMode: 'masonry',
+	columnWidth:250
+}
+$(".item").hover(
+	function() {$(this).addClass("roll-over");}, 
+	function() {$(this).removeClass("roll-over");}
+);
+<!if(defined("FRONTEND"))!>
+$(window).load(function() {
+	/* Homepage Isotope */
+	$container = $('.isotope').isotope(isotopeCfg);
+	var filterFns = {};
+	var filters, filters_length, filterValue, href, i, l;
+	if (f.length) {
+		$container.isotope({filter: '.' + f});
+		$('a[data-filter=".' + f + '"]').addClass('active');
+		if (f.match('^men-black-eye-')) {
+			$('a[data-filter=".men-black-eye"]').addClass('active');
+		}
+		else if (f.match('^men-golden-eye-')) {
+			$('a[data-filter=".men-golden-eye"]').addClass('active');
+		}
+		else if (f.match('^men-red-eye-')) {
+			$('a[data-filter=".men-red-eye"]').addClass('active');
+		}
+		else if (f.match('^women-black-eye-')) {
+			$('a[data-filter=".women-black-eye"]').addClass('active');
+		}
+		else if (f.match('^women-golden-eye-')) {
+			$('a[data-filter=".women-golden-eye"]').addClass('active');
+		}
+		else if (f.match('^women-red-eye-')) {
+			$('a[data-filter=".women-red-eye"]').addClass('active');
+		}
+	}
+});
+<!fi!>
+</script>

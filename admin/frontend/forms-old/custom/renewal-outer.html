@@ -1,0 +1,49 @@
+<div id="renewal">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4 text-center">
+			<div class="title">Subscription Renewal</div>
+		</div>
+	</div>
+<!if("%%custom_expiry_date%%" > "<!@@(date("Y-m-d",strtotime("today+2 weeks")))@@!>")!>
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-3 text-center">
+			<div class="alert alert-info text-center">Your account does not need a renewal yet.<br/>
+Your current expiry is <!@@(date("d-M-Y",strtotime("%%custom_expiry_date%%")))@@!></div>
+		</div>
+	</div>
+<!else!>
+	<!if("%%custom_expiry_date%%" == "0000-00-00")!>
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-3 text-center">
+			<div class="alert alert-warning text-center">
+Your are currently registered with a free listing
+			</div>
+		</div>
+	</div>
+	<!else!>
+		<!if("%%custom_expiry_date%%" <= "<!@@(date("Y-m-d"))@@!>")!>
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-3 text-center">
+			<div class="alert alert-danger text-center">
+Your account expired on <!@@(date("d-M-Y",strtotime("%%custom_expiry_date%%")))@@!>
+			</div>
+		</div>
+	</div>
+		<!else!>
+			<!if("%%custom_expiry_date%%" <= "<!@@(date("Y-m-d",strtotime("today + 1 week")))@@!>")!>
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-3 text-center">
+			<div class="alert alert-warning text-center">
+Your account is set to expire on <!@@(date("d-M-Y",strtotime("%%custom_expiry_date%%")))@@!>
+			</div>
+		</div>
+	</div>
+			<!fi!>
+		<!fi!>
+	<!fi!>
+	<div class="renewal">%%renewal%%</div>
+<!fi!>
+</div>
+<script type="text/javascript">
+$.scrollTo("#renewal");
+</script>

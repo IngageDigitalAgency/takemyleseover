@@ -1,0 +1,17 @@
+<div id="header-newsletter">
+	%%form%%
+</div>
+<script type="text/javascript">
+hdrSignup = function(el) {
+	$(el).closest("form").ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#header-newsletter").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

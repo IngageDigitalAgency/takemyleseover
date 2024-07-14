@@ -1,0 +1,84 @@
+<div id="my-cart">
+	%%header%%
+	%%errorMessage%%
+	%%ecomErrors%%
+	<div class="myAlert"></div>
+<!if(%%session:cart:header:total%% <= 0)!>
+	<div class='products'>
+		<h3>Your Cart is empty</h3>
+	</div>
+<!fi!>
+	<form method="post">
+		%%products%%
+		%%addToCart%%
+		<input type='hidden' name='discount_code' value='%%session:cart:header:discount_code%%' />
+		<div class='clearfix'></div>
+		<div class='buttons text-right'>
+			<hr/>
+			<a title="Continue Shopping" href="/products" class="button button-gray fontsize10">Continue Shopping</a>
+			<a title="Update Cart" href="#" onclick="setCart(this);return false;" class="button button-gray fontsize10" id="updateCart">Update Cart</a>
+<!if("0%%session:user:info:id%%" != "0" && %%session:cart:header:total%% > 0)!>
+			<a title="Checkout [Stage 1]" href="/checkout" class="button button-red fontsize10 left5">Checkout [Stage 2]</a>
+<!fi!>
+<!if("0%%session:user:info:id%%" == "0")!>
+			<a title="Checkout [Stage 1]" href="/login" class="button button-red fontsize10 left5">Login to Continue</a>
+<!fi!>
+		</div>
+		%%xxshipping%%
+		<div class='clearfix'></div>
+	</form>
+</div>
+<script type="text/javascript">
+$("select[name^='options_id']").change(function() {
+	setAlert(this);
+});
+function setAlert(obj) {
+	d = $("<div class='text-center alert alert-info'>Don't forget to update your cart</div>");
+	$("#my-cart .myAlert").html(d);
+}
+function removeProduct(el) {
+		$(el).closest(".product").find("input[type=checkbox]")[0].checked = "checked";
+		formSubmit($(el).closest("form"));
+}
+function recalc(obj) {
+	var p = $(obj).closest('.product');
+	var o_id = 0, r_id = 0, p_id = 0, key = Array(), s = "", q = 0;
+	p.find("select").each(function(idx,el) {
+		if (el.name.indexOf("options_id") >= 0)
+			o_id = el.value;
+		if (el.name.indexOf("recurring_period") >= 0)
+			r_id = el.value;
+		s = el.name;
+	});
+	p.find("input").each(function(idx,el) {
+		if (el.name.indexOf("quantity") >= 0)
+			q = el.value;
+	});
+	key = s.split("[");
+	key = key[1].split("]");
+	key = key[0].split("|");
+	p_id = key[0];
+	$.ajax({
+		url: '/ajax/render',
+		data: {"t_id":63,"o_id":o_id,"p_id":p_id,"r_id":r_id,"extend":1,"qty":q},
+		context: p,
+		success:function(obj,status,xhr) {
+			obj = eval('('+obj+')');
+			eval(obj.code);
+		}
+	});
+}
+function setCart(el) {
+	$(el).closest("form").find(".product").each(function(idx,p) {
+		var k = $(p).find("input[name=key]").val();
+		var rp = $(p).find("select[name='recurring_period".concat(k,"']"));
+		var rq = $(p).find("input[name='recurring_qty".concat(k,"']"));
+		var q = $(p).find("input[name='quantity".concat(k,"']"));
+		if (rp.length == 0 || rp[0].selectedIndex < 1)
+			rq[0].value = 0;
+		else
+			rq[0].value = q[0].value;
+	});
+	formSubmit(el);
+}
+</script>

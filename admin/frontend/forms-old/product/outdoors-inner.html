@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col-xs-2">
+<!if(array_key_exists("outdoors",$_REQUEST) && strpos(implode("|",array_values($_REQUEST["outdoors"])),"%%field:tag^name%%")!==false)!>
+	<input type="checkbox" name="outdoors[]" value="%%field:tag^name%%" checked="checked" class="form-control">
+<!else!>
+		%%name%%
+<!fi!>
+	</div>
+	<div class="col-xs-14 col-form-label">
+		%%field:tag^name%% - %%regularPriceFormatted%%
+	</div>
+</div>

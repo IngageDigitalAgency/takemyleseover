@@ -1,0 +1,81 @@
+<div class="row">
+	<div class="col-md-12">
+		<ul class="nav nav-pills">
+			<li class="active"><a href="#order-history" data-toggle="tab">Order History</a></li>
+			<li><a href="#edit-account" data-toggle="tab">Edit Account</a></li>
+		</ul>
+	</div>
+</div>
+<div class="tab-content">
+	<div id="order-history" class="tab-pane fade in active">
+		<div class="row">
+			<div class="col-xs-16">
+				<h3>Order History</h3>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th class="col-md-2 text-center">Order ID</th>
+							<th class="col-md-3 text-center">Order Date</th>
+							<th class="col-md-3 text-center">Status</th>
+							<th class="col-md-1 text-center">Total</th>
+							<th class="col-md-1 text-center"></th>
+						</tr>
+					</thead>
+					<tbody>
+						%%orders%%
+					</tbody>
+				</table>
+				<hr>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-xs-16">
+				%%pagination%%
+			</div>
+		</div>
+		<div id="order-details" class="top40"></div>
+	</div>
+	%%account%%
+</div>
+<script>
+$("#order-history tbody .order-status").each(function(idx,el) {
+	$(el).html($(el).html().replace(/,/g,"<br/>"));
+});
+$("#order-history tbody tr:odd").addClass('odd');
+viewOrder = function(o_id) {
+	var retStatus = $.ajax({
+		url: '/ajax/render',
+		data: {'t_id':59,'o_id':o_id},
+		type: 'POST',
+		success: function(obj,status,xhr) {
+			try {
+				var obj = eval('('+retStatus.responseText+')');
+				$('#order-details').html(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+pagination = function(p_id,el) {
+	$.ajax({
+		url: '/ajax/render',
+		data: {t_id:%%module:fetemplate_id%%,pagenum:p_id},
+		success:function(obj,status,xhr) {
+			try {
+				obj = eval('('+obj+')');
+				if (obj.status == 'true') {
+					obj.html = obj.html;
+					tmp = $("<div></div>").append(obj.html);
+					$('#order-history').replaceWith($(tmp).find("#order-history"));
+					eval(obj.code);
+				}
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+$.scrollTo("#order-history");
+</script>

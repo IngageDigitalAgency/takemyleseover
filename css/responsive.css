@@ -1,0 +1,83 @@
+/* Large desktop */
+@media (min-width: 993px) and (max-width: 1200px) {
+	#hdr-login li { margin-left:10px; }
+	.left-sidebar #main-wrapper { padding-top:150px; }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 992px) {
+	#hdr-logo img { width:100%; left:0%; position:relative; }
+	#inner hdr-contact { display:none; }
+	#hdr-login .action span { display:none; }
+	#ribbon-nav { display: none; }
+	#inner #header .logo { display:none; }
+	#hdr-login .action { float:right; }
+	header .grey.desktop { display:none; }
+	header .grey.mobile { display:block; }
+	#mobile-nav .nav-control { margin: 5px 15px; }
+	#refinement { display:none; }
+	#searchForm.refiner .form { left:0;padding:10px;width:400%; }
+	#searchForm.sidebar { display:none; }
+	#home-2x2 .image { width:70%; margin-left:15%; }
+	.desktop { display:none; }
+	.mobile { display:block; }
+	#xxhdr-login { text-align:left; }
+	#vehicleInfo .center { text-align:center; }
+	#vehicleInfo .right { text-align:right; }
+	#home-2x2 .middle img { width:150%;position:relative;left:-25%; }
+	#home-testimonial .title { font-size:22px; }
+	#home-testimonial .teaser { font-size:16px; }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	#hdr-logo img { width:100%; left:0%; position:relative; }
+	#frontpage #hdr-contact { 
+		text-align:center; 
+		background: -webkit-linear-gradient(#fefefe, #dee0e1); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(#fefefe, #dee0e1); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(#fefefe, #dee0e1); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(#fefefe, #dee0e1); /* Standard syntax */
+		padding:10px;
+		margin:0;
+		display:block;
+	}
+	#inner #hdr-contact { display:none; }
+	#hdr-login .action span { display:none; }
+	#ribbon-nav { display: none; }
+	#xxheader .logo { display:none; }
+	#hdr-login .action { float:right; }
+	header .grey.desktop { display:none; }
+	header .grey.mobile { display:block; }
+	#xxrefinement { display:none; }
+	#mobile-nav .menu { width:300%; right:0px; }
+	#searchForm.sidebar { display:none; }
+	#frontpage #hdr-login li { width:100%;margin:0;text-align:center;font-size:14px; margin-left:5px; margin-bottom:3px; }
+	#frontpage header .mobile { display: block; }
+	#home-2x2 .image { width:50%; margin-left:25%; }
+	#home-thin .container { text-align:center; }
+	#topnav .spacer { display:none; }
+	#xxheader.sticky { position:inherit; }
+	#topnav { padding-top:0px; }
+	.left-sidebar #main-wrapper { padding-top:20px; }
+	.button, button.button, a.button { padding:7px 15px; }
+	.featured-list .money { font-size:12px; }
+	.desktop { display:none; }
+	.mobile { display:block; }
+	#inner #main-wrapper,
+	#frontpage #main-wrapper { margin-top:120px; } 
+	#hdr-login { text-align:left; }
+	#vehicleInfo .center { text-align:center; }
+	#vehicleInfo .right { text-align:right; }
+	#home-sponsors.col-xs-16 { width:70%; left:15%; position:relative; }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	#searchForm.mobile .form { width:400%; }
+	#searchForm.refiner .form { width:500%; }
+	#mobile-nav .menu { width:500%; right:0px; }
+	#searchForm.sidebar { display:none; }
+	#home-testimonial .title { font-size:20px; text-align:center; }
+	#home-sponsors.col-xs-16 { width:100%; left:0; }
+}

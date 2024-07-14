@@ -1,0 +1,24 @@
+<section class="service-box-one-wrapper sec-pad">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="left-text">
+					<div class="sec-title outer-stroke">
+						<div class="inner">
+							<span class="tag-line">%%title%%</span>
+							<h2>%%alternate_title%%</h2>
+							<span class="decor-line"></span>
+						</div><!-- /.inner-->
+					</div><!-- /.sec-title-->
+					<div class="text-box tinymce">
+						%%teaser%%
+					</div><!-- /.text-box -->
+				</div><!-- /.left-text -->
+			</div><!-- /.col-md-4 -->
+			<div class="col-md-8">
+				<div class="row single-service-box-wrapper">
+				</div><!-- /.row -->
+			</div><!-- /.col-md-8 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /.service-box-one-wrapper -->

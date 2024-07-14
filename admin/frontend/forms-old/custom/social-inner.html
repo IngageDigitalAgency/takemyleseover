@@ -1,0 +1,14 @@
+<div class="row form-group">
+	<div class="col-xs-1 text-center"><i class="%%extra%%"></i></div>
+	<div class="col-xs-3">%%value%%</div>
+	<div class="col-xs-6">%%social_link%%</div>
+	<div class="col-xs-2 text-center">
+<!if("%%enabled%%"=="1")!>
+		<i class="fa fa-check"></i>
+<!else!>
+		<i class="fa fa-close"></i>
+<!fi!>
+	</div>
+	<div class="col-xs-1 text-center"><a href="#" onclick="editLink(%%id%%);return false;"><i class="fa fa-pencil-square-o"></i></a></div>
+	<div class="col-xs-1 text-center"><a href="#" onclick="deleteLink(%%id%%);return false;"><i class="fa fa-trash-o"></i></a></div>
+</div>

@@ -1,0 +1,15 @@
+<div id="myWork">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4 text-center title">My Work</div>
+	</div>
+	<div class="row">
+		%%works,false%%
+	</div>
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-5 form-group"><a href="#" onclick="editPortfolio(0);return false;" class="btn btn-default form-control">Create New Work</a></div>
+	</div>
+</div>
+<script type="text/javascript">
+balanceItems("#myWork .portfolio");
+$.scrollTo($("#myWork"),500,{axis:'y'});
+</script>

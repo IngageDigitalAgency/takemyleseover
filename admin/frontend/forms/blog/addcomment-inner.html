@@ -1,0 +1,23 @@
+<div class="text-center">%%errorMessage%%</div>
+<form method='post' id='commentForm' action="/ajax/render?t_id=147">
+	<div class="row top20">
+		<div class="col-sm-6">%%firstname%%</div>
+		<div class="col-sm-6">%%lastname%%</div>
+	</div>
+	<div class="row top20">
+		<div class="col-sm-12">%%email%%</div>
+	</div>
+	<div class="row top20">
+		<div class="col-sm-12">
+			%%content%%
+		</div>
+	</div>
+	%%addComment%%
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<input type="hidden" name="blog_id" value="%%blog_id%%" />
+			<button class="button button-green top20" onClick="blogSubmit(this);return false;">SUBMIT</button>
+		</div>
+	</div>
+	%%r_id%%
+</form>

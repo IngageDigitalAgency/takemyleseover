@@ -1,0 +1,59 @@
+<div id="blog-items-search-results">
+	<h3 class="green text-center">Your search found %%count%% item%%plural%%.</h3>
+	%%errorMessage%%
+	<div id="blog-items-container">
+		%%entries%%
+	</div>
+	<div class="blog-pagination">
+		%%pagination%%
+	</div>
+	<form method="post" style="display:none" action="/ajax/render">
+		%%blogSearchText%% 
+		%%blogSearchForm%% 
+		<input type="textfield" name="pagenum" value="0" />
+		<input type="text" name="t_id" value="149" />
+		<input type="text" name="folder_id" value="%%id%%" />
+		<input type="text" name="include_subfolders" value="1" />
+	</form>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	$container = $("#blog-items-container")
+	$container.imagesLoaded(function(){
+		$container.masonry({
+			itemSelector : '.blog-item-container',
+			gutter : 15,
+			isFitWidth : true,
+			isAnimated : true,
+			animationOptions: {
+				duration: 400
+			}
+		});
+	}); 
+});
+pagination = function(pg,el) {
+	f = $("#blog-items-search-results form");
+	$(f).find("input[name=pagenum]").val(pg);
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$new = $("<div></div>").append(obj.html).find("div.blog-item-container");
+				$p = $("<div></div>").append(obj.html).find("div.blog-pagination");
+				$("div.blog-pagination").replaceWith($p);
+				var $newElems = $( $new ).css({ opacity: 0 });
+				$container.append($newElems);
+				// ensure that images load before adding to masonry layout
+				$newElems.imagesLoaded(function(){
+					// show elems now they're ready
+					$newElems.animate({ opacity: 1 });
+					$container.masonry( 'appended', $newElems, true ); 
+				});
+			}
+			catch(err) {
+				alert(err);
+			}
+		}
+	});
+}
+</script>

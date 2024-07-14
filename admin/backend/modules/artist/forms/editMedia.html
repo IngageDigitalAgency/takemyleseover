@@ -1,0 +1,68 @@
+<div class='title'>Add/Edit Media</div>
+<form method='POST' name='editMedia' action='' onsubmit='formCheck("editMedia","/modit/ajax/editMedia/artist","altPopup");return false;' id='editMedia' enctype="multipart/form-data">
+	<div class='errorMessage centered'>%%errorMessage%%</div>
+	<div id='alt-tabs' class='propertyEditing'>
+		<ul>
+			<li><a href="#tabs-1">Main Info</a></li>
+			<li><a href="#tabs-2">Description</a></li>
+			<li><a href="#tabs-3">Media</a></li>
+		</ul>
+		<div id='tabs-1'>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Name:</div>
+				<div class="col-xs-12">%%name%% %%nameError%%</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Enabled:</div>
+				<div class="col-xs-12">%%enabled%% %%enabledError%%</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Deleted:</div>
+				<div class="col-xs-12">%%deleted%% %%deletedError%%</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Sort Order:</div>
+				<div class="col-xs-12">%%seq%% %%seqError%%</div>
+			</div>
+		</div>
+		<div id='tabs-2'>
+			<div class='title'>Teaser</div>
+			%%teaser%% <span class='errorMessage'>%%teaserError%%</span>
+			<div class='title'>Description</div>
+			%%description%% <span class='errorMessage'>%%descriptionError%%</span>
+		</div>
+		<div id="tabs-3">
+			<div class="row form-group">
+				<div class="col-xs-4">Media Type:</div>
+				<div class="col-xs-12">%%media_type%%</div>
+			</div>
+			<div class="image">
+				<div class="row form-group">
+					<div class="col-xs-4">Image 1:</div>
+					<div class="col-xs-12">
+						<a href="#" onclick="setImage(this,'members/%%parent:member_id%%/portfolios/');return false;">%%imagesel_c%%</a> <span class='errorMessage'>%%image1Error%%</span><br/>
+						<input id="image_c" type="hidden" name="image1" value="%%image1%%" />
+						<a href="#" onclick="setImage(this,'members/%%parent:member_id%%/portfolios/');return false;" class="btn">select image</a> | <a href="#" onclick="clearImage(this);return false;" class="btn">set no image</a>
+					</div>
+				</div>
+			</div>
+			<div class="external hidden">
+				<div class="row form-group">
+					<div class="col-xs-4">External Link:</div>
+					<div class="col-xs-12">%%external_data%%</div>
+				</div>
+			</div>
+		</div>
+		%%submit%%
+		%%editMedia%% %%g_id%% %%m_id%%
+		<div class='break'></div>
+	</div>
+</form>
+<code>
+	$('#alt-tabs').tabs();
+	initTinyMCE();
+	$("select[name='media_type']").change(function() {
+		toggleMedia(this);
+	});
+	toggleMedia($("select[name='media_type']")[0]);
+</code>

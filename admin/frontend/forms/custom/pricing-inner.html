@@ -1,0 +1,10 @@
+<!if("%%product:onSale%%"=="1")!>
+					<span class="fontsize16"><span class="brandon_black">%%formattedRegularExtended%%</span> regular price</span><br>
+					<span class="fontsize16 text-uppercase">Your Price <span class="brandon_black red">%%formattedPrice%% (Save %%formattedPct%%%)</span></span>
+<!else!>
+					<span class="fontsize16 text-uppercase">Your Price <span class="brandon_black red">%%formattedPrice%%</span></span>
+<!fi!>
+<code>
+var fmtPrice = "%%formattedPrice%%";
+var fmtPct = "%%formattedPct%%";
+</code>

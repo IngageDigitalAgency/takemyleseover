@@ -1,0 +1,86 @@
+<div class="row">
+	<div class="col-sm-12 col-sm-offset-4 text-center">%%errorMessage%%</div>
+</div>
+<form method="post">
+	<div class="row form-group">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-2">%%agreement%%</div>
+				<div class="col-xs-11 col-xs-offset-1">
+					<label class="col-form-label">I have read and agree to the Guidelines <a href="/files/Festival-Guidelines-Final.pdf" target="_new" class="red">(Read here)</a></label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%mediumError%%</span>Medium Type:</label></div>
+		<div class="col-xs-12">%%medium,false%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%nameError%%</span>Your Name:</label></div>
+		<div class="col-xs-12">%%name%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%phoneError%%</span>Telephone:</label></div>
+		<div class="col-xs-12">%%phone%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%cellError%%</span>Cell Phone:</label></div>
+		<div class="col-xs-12">%%cell%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%addressError%%</span>Street Address:</label></div>
+		<div class="col-xs-12">%%line1%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%cityError%%</span>City:</label></div>
+		<div class="col-xs-12">%%city%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%postalCodeError%%</span>Postal Code:</label></div>
+		<div class="col-xs-12">%%postalCode%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%province_idError%%</span>Province:</label></div>
+		<div class="col-xs-12"><div id="province">%%province_id%%</div></div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%country_idError%%</span>Country:</label></div>
+		<div class="col-xs-12">%%country_id%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%emailError%%</span>Email:</div>
+		<div class="col-xs-12">%%email%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%websiteError%%</span>Web Site:</label></div>
+		<div class="col-xs-12">%%website%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%facebookError%%</span>Facebook:</label></div>
+		<div class="col-xs-12">%%facebook%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%facebookError%%</span>Indoor Space:<br/>Fri, Sat, Sun<br/><sub>Setup by 3pm on Friday</sup></label></div>
+		<div class="col-xs-12">%%indoors,false%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%facebookError%%</span>Outdoor Space:<br/>Sat, Sun only<br/><sub>Setup by 5pm on Friday</sup></label></div>
+		<div class="col-xs-12">%%outdoors,false%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-4">%%submit%%%%contactUs%%%%r_id%%%%id%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-12"><label class="col-form-label"><a href="/files/Art-Exhibitor-Final.pdf" target="_new" class="red">A printable version of this form is available here</a></label></div>
+	</div>
+</form>
+<script type="text/javascript">
+$("select[name='address[country_id]']").change(function() {
+	h = loadProvinces(this.value,{"class":"form-control","name":"address[province_id]"});
+	$("#province").html(h);
+});
+</script>

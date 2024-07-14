@@ -1,0 +1,5 @@
+echo "this is a test"
+echo "source: $1"
+echo "dest: $2"
+echo "dev mode: $3"
+echo "parms: $@"

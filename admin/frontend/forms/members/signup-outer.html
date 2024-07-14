@@ -1,0 +1,61 @@
+<div id="signup-form">
+	<div class="page-top">
+		<div class="banner">Add A Customer</div>
+	</div>
+	<div class="errmsg">%%errorMessage%%</div>
+	<form name="%%form:name%%" method="%%form:method%%" action="%%form:action%%">
+		%%signupForm%%
+		<div id="%%form:name%%_inner_div">
+			<div class='title'>Company Name</div>
+			%%company%% <span class="errmsg">%%companyError%%</span>
+			<div class='title'>Contact Person</div>
+			<div>
+				%%firstname%% <span class="errmsg">%%firstnameError%%</span>
+				%%lastname%% <span class="errmsg">%%lastnameError%%</span>
+			</div>
+			<div>
+				%%email%% <span class="errmsg">%%emailError%%</span>
+				%%email_confirm%% <span class="errmsg">%%email_confirmError%%</span>
+			</div>
+			<div>
+				%%phone1%% <span class="errmsg">%%phone1Error%%</span>
+			</div>
+			<div class='title'>Address</div>
+			<div>
+				%%line1%% <span class="errmsg">%%line1Error%%</span>
+				%%city%% <span class="errmsg">%%cityError%%</span>
+			</div>
+			<div>
+				%%postalcode%% <span class="errmsg">%%postalcodeError%%</span>
+			</div>
+			<div>
+				%%country_id%% <span class="errmsg">%%country_idError%%</span>
+				<span id='provinceWrapper'>%%province_id%%</span> <span class="errmsg">%%province_idError%%</span>
+		</div>
+		%%m_id%% %%a_id%%
+		<div class="cart_button">
+			<button onclick="formSubmit(this);return false;">Add Customer</button>
+		</div>
+		<div style='clear:both'></div>
+	</form>
+</div>
+<script language="javascript">
+$(document).ready(function() {
+	$('#province_id')[0].className = $('#country_id')[0].className;
+});
+
+$('#country_id').change(function(e) {
+	var retValue = $.ajax({
+		url: '/ajax/loadProvinces',
+		data: {'c_id':this.value,'nm':$('#province_id')[0].name},
+		async: false,
+		type:'POST'
+	});
+	try {
+		var obj = eval('('+retValue.responseText+')');
+		$('#provinceWrapper')[0].innerHTML = obj.html;
+	}
+	catch(err) {
+	}
+});
+</script>

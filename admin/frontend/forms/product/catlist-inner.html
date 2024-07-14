@@ -1,0 +1,44 @@
+
+<div class="col-md-4">
+	<div class="row">
+		<div class="col-sm-6 product-item-left p-img-scale-width">
+			<a href="%%url%%">%%img_image1%%</a>
+			<div class="product-item-bottom text-center"> 
+				<div>
+					<span class="brandon_black fontsize16">%%price_fmt%% CAD</span>
+<br>
+<!if("%%onSale%%"=="1")!>
+					<span class="fontsize16 green text-uppercase">You Save %%salePercentFormatted%%%</span>
+<!else!>
+					<span class="fontsize16 green text-uppercase">&nbsp;</span>
+<!fi!>
+				</div>
+				<div class="product-review top10">
+<!if(%%reviews%%>0)!>
+					<span class="rating star%%rating%%"></span>
+					 <a href="%%url%%">%%reviews%% Review<!if(%%reviews%% != 1)!>s<!fi!></a>
+<!else!>
+					<span class="rating star0"></span>
+					 <a href="#"></a>
+<!fi!> 
+					%%options%%
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 product-item-right">
+			<div class="product-item-top">
+				<h4 class="title"><a href="%%url%%">%%name%%</a></h4>
+<!if("%%onSale%%"=="1")!>
+				<h5 class="sub-title"><span class="strike">%%regularPriceFormatted%%</span> regular price</h5>
+<!fi!>
+				<div class="teaser tinymce">%%teaser%%</div>
+			</div>
+				<div class="top10">
+					<a title="Add to Cart" href="#" class="button button-fluid button-green fontsize12" onclick="buyIt(%%id%%,this); return false;">Add to Cart</a>
+				</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+p_urls.push("%%url%%");
+</script>

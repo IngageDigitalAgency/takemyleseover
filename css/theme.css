@@ -1,0 +1,404 @@
+/* 1. Global Reset & Fonts
+-----------------------------------------------------------------------------------------------
+===============================================================================================*/
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;	
+	font-family: "Proxima Nova"; 
+}
+
+body {
+	position: relative;
+	background-color: #f8f8f8;
+	color: #1f0706;
+	text-align: left;
+}
+
+header,
+footer,
+section {
+    margin: 0px;
+	padding: 0px;
+    position: relative;
+}
+
+a,
+a:link,
+a:visited,
+a:active
+{
+	color: #1f0706;
+	outline: none;
+	text-decoration: none;	
+}
+
+a:hover { color: #e20e0b; }
+
+/* Bootstrap Overrides/Fixes
+--------------------------------*/
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+/* Bootstrap Columns of same height styles */
+.container-md-height {
+	display: table;
+	padding-left: 0px;
+	padding-right: 0px;	
+}
+
+.row-md-height {
+	display: table-row;	
+}
+
+.col-md-height {
+	display: table-cell;
+	float: none;	
+}
+
+/* 2. General Elements
+-----------------------------------------------------------------------------------------------
+===============================================================================================*/
+
+/* Headings
+--------------------------------*/
+.top20 { margin-top:20px; }
+.bottom20 { margin-bottom:20px; }
+.top40 { margin-top:40px; }
+.bottom40 { margin-bottom:40px; }
+
+h1, h2, h3, h4, h5, h6 { 
+	margin:0; padding:0;
+}
+.p-img-scale-width img { width:100%; }
+.p-img-scale-height img { height:100%; }
+.img-scale-width { width:100%; }
+.img-scale-height { height:100%; }
+ul { padding:0; margin:0; list-style:none; }
+.red { color:#E20E0B; }
+.black { color:#1f0706; }
+.sticky ul { list-style:none; }
+#hdr-contact ul, 
+.sticky li { display:inline-block; }
+#hdr-contact { font-size: 14px; color:#1f0706; margin:10px 0; }
+#hdr-contact span { font-family: "Proxima Nova Bold"; }
+#hdr-contact .phone { font-size: 22px; }
+#hdr-contact .site { font-family: "Proxima Nova Bold"; font-size:20px; text-transform:uppercase; color:#E20E0B; }
+
+#hdr-contact .delim { padding: 10px; }
+#hdr-login { margin:10px 0; }
+#hdr-login li { text-transform: uppercase; border:1px solid #1f0706; font-size:11px; padding:2px 15px; margin-left:20px; }
+
+#hdr-login .subtitle { display:inline-block; padding-left:10px; font-family: "Proxima Nova Bold"; }
+#hdr-logo { position:absolute; }
+#hdr-logo img { max-height: 100%; }
+#header { z-index:10; }
+#topnav { background-color:#f9f9f8; padding: 50px 0 10px 0; }
+#topnav h2 { font-size:32px; }
+#topnav h3 { font-size:14px; }
+#topnav a { color:#1f0706; text-transform:uppercase; font-size:16px; border:1px solid #1f0706; padding: 5px 15px; display:inline-block; }
+#topnav span { margin-top:100px; padding:10px; border:1px solid #1f0706; border-radius:20px; display:inline-block; }
+#topnav a:hover { color:#E20E0B; border:1px solid #E20E0B; }
+#topnav .image:hover h2,
+#topnav .image:hover h3 { color:#E20E0B; }
+#topnav .spacer { background-image:url(/images/backgrounds/lease-takeover-divider.png); background-repeat:no-repeat; background-position: center center; }
+#home-thin { background-color:#E20E0B; border-top:5px solid #1f0706; border-bottom:5px solid #1f0706; }
+#home-thin .container { min-height:230px; background-repeat:no-repeat; background-position: top center; color:#ffffff; }
+#home-thin h2 { font-size: 32px; }
+#home-thin h3 { font-size: 18px; }
+#home-thin a { color:#ffffff; border:2px solid #ffffff; padding:3px 10px; font-size:18px; text-transform:uppercase; }
+#home-thin .link { margin-bottom:15px; }
+#home-2x2 .title { font-size:30px; color:#E20E0B; text-transform:uppercase; margin-bottom:10px; }
+#home-2x2 .teaser { font-size:17px; margin-bottom:10px; }
+#home-2x2 article .title { font-size:17px; color:#1f0706; text-transform:uppercase; margin-bottom:10px; }
+#home-2x2 article { margin:20px 0; }
+#home-2x2 .image { margin-top:10px; }
+#home-2x2 article .teaser { font-size:14px; color:#1f0706; margin-bottom:10px; }
+#home-2x2 article.left .title,
+#home-2x2 article.left .teaser { text-align:right; }
+#home-2x2 .container { position:relative; background-image: url(/images/backgrounds/home-2x2.jpg); background-repeat:no-repeat; background-size: cover; }
+#home-2x2 { background-color:#d7dde1; }
+#home-2x2 .image { 
+	border:2px solid #010101; 
+	border-radius: 8px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+	transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+#home-2x2 .image img {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+#home-2x2 article.hover .image img {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+}
+#home-2x2 article.hover .image {
+	background-color:#E20E0B;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+}
+#home-split { background-color:#212121; color:#d9dfe2; padding:20px 0; }
+#home-testimonial .title { font-size:32px; font-style: italic; }
+#home-testimonial ul { margin: 15px 0; }
+#home-split .flexslider { background-color:inherit; border:none; box-shadow:none; }
+#home-testimonial .box { border:4px solid #E20E0B; padding:10px 15px; font-size:18px; font-style: italic; }
+#home-testimonial .teaser { margin-bottom:10px; }
+#home-testimonial .caret { transform: rotate(90deg); -webkit-transform: rotate(90deg); border-top:8px solid; border-right:8px solid transparent; border-left:8px solid transparent; color:#E20E0B; position:absolute; left:-2px; top:45%; }
+#footer { background-color:#070707; color:#fefefe; padding:20px 0 10px 0; }
+#footer a { color:#fefefe; font-size:14px; }
+#footer a:hover { color:#E20E0B; }
+#footer .title { font-weight:bold; font-size: 20px; color:#E20E0B; margin-bottom:5px; }
+#footer .title span { color:#fefefe; }
+#footer .social li { display:inline-block; margin-right:10px; }
+#footer .social a { font-size:18px; }
+#featured article .image,
+#sidebar-featured .image { border:6px solid #cbcece; }
+#featured article .bottom,
+#sidebar-featured .bottom { background-color:#231f20; color:#ffffff; padding: 5px 15px; }
+#featured article .bottom,
+#sidebar-featured .bottom a { color:#ffffff; }
+#featured article .info,
+#sidebar-featured .info { font-size:23px; text-transform: uppercase; }
+#featured article .lease,
+#sidebar-featured .lease { margin-bottom:20px; }
+.lease #lease-id { color:#ffffff; background-color:#ea3733; padding:5px; display:inline-block; }
+.lease #lease-id span { display:inline-block; padding: 0 10px; }
+.lease .table-striped { margin-bottom:10px; }
+#lease-details #lease-id { margin-bottom:15px; }
+.featured-list .featured,
+#featured article .featured,
+#sidebar-featured .featured { position:absolute;top:0;right:10px;padding:5px 10px; background-color:#E20E0B;color:#ffffff; }
+#searchForm h1 { color:#E20E0B; font-size:29px; font-weight:bold; margin-bottom:10px; text-transform:uppercase; }
+#searchForm h2 { color:#010101; font-size:16px; font-weight:bold; text-transform:uppercase; margin-bottom:30px; }
+#searchForm form > .wrapper { border: 5px solid #E20E0B; padding: 5px 5px 15px 5px; }
+#searchForm h3 { color:#E20E0B; font-size:16px; text-transform:uppercase; }
+#searchForm h4 { color:#010101; font-size:14px; margin-bottom:10px; }
+#searchForm .input .chosen-single b { background-color:#E20E0B; }
+#searchForm input[type=submit] { background-color:#ffffff; border:2px solid #E20E0B; padding: 5px 10px; color:#E20E0B; text-transform: uppercase; font-size:16px; font-weight:bold; }
+.form-group .chosen-container.chosen-container-single { height:34px; }
+.form-group .chosen-container.chosen-container-single a { height:34px; padding-top:5px; }
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] { height:30px; }
+.chosen-container-multi .chosen-choices { border-radius:4px; border-color:#cccccc; }
+#featured .inner { overflow:hidden; position:relative; }
+#featured .bottom { position:absolute; height:60px; bottom:0; z-index:1; width:100%; }
+#featured .bottom a { color:#ffffff; }
+#featured .id { position:absolute;bottom:0;width:100%;z-index:20;color:#ffffff;background-color:#231f20;padding:5px 15px; }
+#featured .bottom { -webkit-transition: height 1s; -moz-transition: height 1s; transition: height 1s;}
+#featured .bottom:hover { height:170px; }
+#featured article { margin-bottom:20px; }
+#searchForm .wrapper,
+#featured { margin-bottom:20px; }
+.button,
+button.button,
+a.button
+{ 
+	display: inline-block;
+	background-color: #fff;
+	border: 2px solid #333;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #333;
+	letter-spacing: 2px;
+	margin: 0 0 5px 0;
+	padding: 7px 30px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: auto;
+}
+.lease-banner h1 { color:#E20E0B; font-size:29px; margin-bottom:10px; }
+.lease-banner h2 { color:#010101; font-size:16px; margin-bottom:30px; }
+.lease-banner .steps { margin-bottom:20px; }
+#vehicleInfo .wrapper { border:5px solid #E20E0B; margin-bottom:20px; padding:10px; }
+
+#lease-signup .info { min-height:34px; }
+#vehicleInfo .button,
+#lease-signup .button { border: 2px solid #E20E0B; color:#E20E0B; font-weight:bold; }
+.black { background-color:#231f20; color:#ffffff; }
+.grey {
+	background: -webkit-linear-gradient(#fefefe, #dee0e1); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#fefefe, #dee0e1); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#fefefe, #dee0e1); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#fefefe, #dee0e1); /* Standard syntax */
+}
+.nav-wrapper { padding: 10px 15px; border-left:1px solid #c2c2c2; }
+#ribbon-nav li.sequence_1 .nav-wrapper { border-left:none; }
+#ribbon-nav .title { font-weight:bold; color:#E20E0B; font-size:18px; }
+#ribbon-nav .subtitle { color:#1a191a; font-size:14px; }
+.top-to-bottom {
+	border-left-width: 2px;
+	border-right-width: 0px;
+	border-style: solid;
+	-webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) 1 100%;
+	-webkit-border-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+	-moz-border-image: -moz-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+	-o-border-image: -o-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+	border-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0)) 1 100%;
+}
+.left-sidebar #hdr-contact { margin:5px 0; color:#ffffff; }
+.left-sidebar #hdr-contact a { color:#ffffff; }
+.left-sidebar #main-wrapper { padding-top:30px; }
+#header.sticky { position:fixed;top:0;width:100%; background-color:#f9f9f8; }
+.left-sidebar #main-wrapper { padding-top:180px; }
+#wide-ad { margin-bottom:20px; }
+#refinement { background-color:#e0e3e3; padding:10px; }
+#refinement h2 { font-size:18px; color:#E20E0B; font-weight:bold; }
+#refinement h3 { font-size:14px; color:#1a191a; margin:5px 0; }
+#refinement hr { border-top: 3px solid #E20E0B; }
+#refinement .button { background-color:#E20E0B; text-align:center; font-size: 14px; color:#ffffff; letter-spacing:0 !important; border:none !important; padding:5px 0 !important; width:100%; }
+#refinement .row.sorting { margin-top:10px; margin-bottom:10px; }
+#lease-details h2 { color:#E20E0B; font-size:22px; font-weight:bold; margin-bottom:15px; }
+#lease-details .vehicle-features h3,
+#lease-details .vehicle-details h3 { color:#ffffff; background-color:#231f20; font-size: 16px; padding:5px 15px;}
+#lease-details .vehicle-details { font-size: 14px; color:#231f20; }
+#lease-details .seller h3 { color:#E20E0B; font-size: 16px; margin-bottom:20px; }
+#lease-details .incentives { background-color:#e0e3e3; color:#E20E0B; font-size:16px; font-weight:bold; padding:5px 10px; }
+#lease-details .incentives span { color:#010101; }
+#lease-details .incentives,
+#lease-details .lease-details { margin-bottom:20px; }
+#lease-details .lease-details { border:2px solid #E20E0B; }
+#lease-details .lease-details h3 { color:#ffffff; background-color:#E20E0B; padding:5px; font-size:16px; }
+.table-striped > tbody > tr:nth-of-type(odd) { background-color:#d1d3d4; }
+#lease-details .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td { border:none; }
+#lease-details .email { color:#E20E0B; }
+#lease-details .amenities .title { color:#E20E0B; font-size:16px; font-weight:bold; margin-bottom:10px; }
+#lease-details .amenities .group { margin-bottom:10px; }
+#searchForm.sidebar { background-color: #e0e3e3; margin-bottom:20px;  }
+#searchForm.sidebar .wrapper { border:none; padding:0; }
+#searchForm.sidebar { padding:10px; }
+#searchForm.sidebar h1 { font-size: 18px; color:#E20E0B; }
+#searchForm.sidebar h2 { font-size: 14px; color:#231f20; margin-bottom:20px; }
+#hdr-login .welcome, #hdr-login .action { display: inline-block; font-size:14px; color:#ffffff; }
+#hdr-login .welcome span { color:#E20E0B; }
+#hdr-login .action { border:1px solid #E20E0B; padding:2px 10px; color:#f8f8f8; }
+#hdr-login .action a { color:#E20E0B; }
+#hdr-login .welcome { margin-right:20px; margin-top:3px; }
+#credit-applications h2 { color:#E20E0B; font-size:25px; font-weight:bold; }
+#credit-applications h3 { color:#231f20; font-size:22px; margin-bottom:20px; }
+#credit-applications .tinymce { margin-bottom:20px; }
+#credit-applications .logos .p-img-scale-width { margin-bottom:10px; }
+#credit-applications .forms { background-color:#231f20; padding:10px; margin-bottom:20px; }
+#credit-applications .forms h2 { color:#ffffff; font-size:16px; }
+#credit-applications { margin-bottom:20px; }
+#latest-news { margin-bottom:20px; }
+#latest-news h2 { color:#231f20; font-size:22px; margin-bottom:20px; font-weight:bold; }
+#latest-news h3 { color:#E20E0B; font-size:25px; font-weight:bold; margin-bottom:5px; }
+#latest-news .row { margin-bottom:20px; }
+#latest-news.multi-folder li { margin-bottom:20px; }
+
+
+.tinymce h1, .tinymce h2, .tinymce h3, .tinymce h4, .tinymce h5, .tinymce h6, .tinymce .h1, .tinymce .h2, .tinymce .h3, .tinymce .h4, .tinymce .h5, .tinymce .h6 {
+	color: inherit;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	margin:0;
+	padding:0;
+}
+.tinymce h1, .tinymce .h1 { color:#E20E0B; font-size:25px; }
+.tinymce h2, .tinymce .h2 { color:#231f20; font-size: 22px; }
+.tinymce h3, .tinymce .h3 { color:#E20E0B; font-size:20px; }
+.tinymce h4, .tinymce .h4 { color:#231f20; font-size: 18px; }
+.tinymce h5, .tinymce .h5 { color:#E20E0B; font-size:16px; }
+.tinymce h6, .tinymce .h6 { color:#231f20; font-size: 14px; }
+.tinymce p { font-size: 14px; color:#231f20; margin: 0 0 10px; }
+.tinymce .red { color: #E20E0B; }
+.tinymce .black { color: #231f20; }
+.tinymce .proximaNova { font-family:"Proxima Nova" }
+.tinymce a { color:#E20E0B; text-decoration:underline; }
+.tinymce ul { list-style: disc inside none; padding-left:15px; margin-left:0; }
+.tinymce ol { list-style: decimal inside none; padding-left:15px; margin-left:0; }
+.news-details h1 { color:#E20E0B; font-size:25px; font-weight:bold; }
+.news-details h2 { color:#231f20; font-size:22px; margin-bottom:30px; }
+.news-details .images { margin-bottom:20px; }
+.featured-list h2 { font-weight:bold; font-size:22px; margin-bottom:15px; }
+.featured-list .vehicle { color:#E20E0B; }
+.featured-list .make,
+.featured-list .year { font-weight:bold; font-size:23px; }
+.featured-list .model { font-size:16px; }
+.featured-list hr { border-top:3px solid #E20E0B; margin:2px 0; }
+.featured-list .money { font-size:14px; }
+.featured-list .money span { color:#010101; font-weight:bold; }
+.featured-list .lease { margin-bottom:30px; }
+.featured-list .table { font-size:14px; }
+.featured-list .table td { padding:2px 8px; }
+#hdr-logged-in .fa { color:#ffffff; }
+header .grey.mobile { display:none; }
+#searchForm .form.closed { display:none; }
+#mobile-nav .nav-control,
+#searchForm.mobile .icon { background-color:#010101; color:#ffffff; font-size:20px; margin:5px; border-radius:25px; padding:6px; width:40px; }
+#searchForm.mobile .icon a { color:#ffffff; }
+#mobile-nav .menu.closed { display:none; }
+#mobile-nav .bar { color:#ffffff; height:3px; width:75%; border:2px solid #ffffff; margin: 2px 4px; display:inline-block;  }
+#mobile-nav .nav-control { text-align:center; font-size:1px; float:right; width:40px; }
+#mobile-site-name { text-transform:uppercase; margin-top:15px; font-size: 14px; font-weight:bold; }
+#searchForm.mobile .form { position:absolute; top:48px; z-index:100; 	background-color:#2a2a29; width:300%; color:#ffffff; }
+#searchForm.mobile .form .wrapper { margin-bottom:0; border:none; }
+#mobile-nav .menu { position:absolute; top:48px; width:300%; display:inline-block; right:10px; padding:15px; background-color:#2a2a29; font-size:18px; }
+#mobile-nav .menu a { color:#ffffff; text-transform:uppercase; }
+#mobile-nav .menu a span { color:#E20E0B; }
+#mobile-nav .menu a:hover { color:#ffffff; }
+#mobile-nav li { display:block !important; }
+#searchForm.mobile .icon.active,
+#mobile-nav .nav-control.active { background-color:#E20E0B; }
+#searchForm.refiner .form { left:0;padding:10px;width:500%; }
+#searchForm.refiner .form h3 { color:#ffffff; }
+#searchForm.refiner .form h2 { color:#E20E0B; margin-bottom:10px; }
+#searchForm.refiner .form form .row { margin-bottom:15px; }
+#searchForm.refiner .form .sorting label { margin-bottom:5px; }
+#searchForm.refiner .button { letter-spacing:inherit; border:none; background-color:#E20E0B; color:#ffffff; font-size:14px; text-transform:none; padding:5px 7px; }
+#frontpage header .mobile { display:none; background-color:#010101; color:#ffffff; font-size:14px; font-weight:bold; }
+#frontpage header .mobile a { color:#ffffff; }
+#frontpage #mobile-site-name { margin:5px 0; }
+#home-thin .container { padding:20px 0; }
+#home-thin .teaser,
+#home-thin h3,
+#home-thin h2 { margin-bottom:10px; }
+.hideIt { opacity:0; }
+.showIt { opacity:1; }
+#home-2x2 article > .row { padding-bottom:25px; }
+#topnav h2,
+#topnav h3 { text-transform:uppercase; margin-bottom:10px; }
+#account-lease-info > .row { margin-top:15px; margin-bottom: 15px; }
+.desktop { display:block; }
+.mobile { display:none; }
+#searchForm.mobile .prompt { margin-bottom:0; }
+#searchForm.mobile .form { left:0; }
+#searchResults .pagination a { border-radius:50px !important; padding:35px 15px !important; background-color:#E20E0B; color:#ffffff; }
+#searchResults .pagination a:hover { background-color:#010101; }
+#searchResults .pagination { margin-top:0; }
+#hdr-login { text-align:right; }
+.flexslider .slides > li {display: block; -webkit-backface-visibility: block;} /* incompatability it seems between bootstrap & flexslider */
+#header { z-index:20; }
+.blur img { 
+	-webkit-webkit-transition: all .5s ease;
+	-moz-webkit-transition: all .5s ease;
+	-ms-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.blur img:hover {
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+}
+#topnav .image a { border:none; }
+#hdr-logo img { width:130%; left:-15%; position:relative; }
+#inner #hdr-logo { width:70%; left:15%; }
+#inner #hdr-logo img { width:100%; left:0; }
+#home-thin { width:100%; background-position: center center; background-repeat:no-repeat; }
+#lease-details h4 { color:#E20E0B; font-size:16px; }
+#lease-gallery.flexslider { margin-bottom:10px; }
+.flexslider a.flex-prev:hover,
+.flexslider a.flex-next:hover { color:#E20E0B; }
+ins.adsbygoogle { margin:20px 0; }

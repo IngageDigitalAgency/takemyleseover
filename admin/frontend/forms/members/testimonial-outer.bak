@@ -1,0 +1,22 @@
+<div id="home-testimonial">
+	<div class='title'>%%title%%</div>
+	<div class="flexslider">
+		<ul class="slides">
+			%%members%%
+		</ul>
+	</div>
+</div>
+<script type='text/javascript'>
+$(window).load(function() {
+	ht = 0;
+	$("#home-testimonial li").each(function(idx,el) {
+		ht = Math.max(ht,$(el).height());
+	});
+	$('#home-testimonial .slides li').css("height",ht+"px");
+	$('#home-testimonial .flexslider').flexslider({
+		autoPlay:true,
+		animation:"fade",
+controlNav:false
+	});
+});
+</script>

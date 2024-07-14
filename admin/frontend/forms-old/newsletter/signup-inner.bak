@@ -1,0 +1,8 @@
+<form method="post" action="/ajax/render" onsubmit="nlSignup(this);return false;" class="form-group">
+	%%email%%
+	<button type="submit"><i class="fa fa-envelope-o"></i></button>
+	%%t_id%%%%newsletterSignup%%
+</form>
+<div class="result clearfix ptop20">
+	%%errorMessage%%
+</div><!-- /.result -->

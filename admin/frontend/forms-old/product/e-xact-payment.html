@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-xs-4 col-xs-offset-4 p-img-scalewidth top20 form-group" style="background-color:#222;"><img src="/images/logos/exact-logo.png" /></div>
+</div>
+<div class="row">
+	<div class="col-xs-12 form-group text-center">Secure Payment Processing provided by <a target="_new" href="https://www.e-xact.com/">E-xact Transactions</a></div>
+</div>
+<form method="post" action="%%merchant:url%%">
+<input type="hidden" name="x_login" value="%%merchant:payment_page%%"/>
+<input type="hidden" name="x_fp_sequence" value="%%merchant:random%%"/>
+<input type="hidden" name="x_fp_timestamp" value="%%merchant:timestamp%%"/>
+<input type="hidden" name="x_amount" value="%%session:cart:header:total%%"/>
+<input type="hidden" name="x_fp_hash" value="%%merchant:hash_value%%"/>
+<input type="hidden" name="x_show_form" value="PAYMENT_FORM"/>
+<input type="hidden" name="x_test_request" value="%%merchant:test_mode%%"/>
+<input type="hidden" name="x_type" value="AUTH_CAPTURE"/>
+<input type="hidden" name="x_currency_code" value="CAD"/>
+<input type="hidden" name="x_recurring_billing" value="FALSE"/>
+<input type="hidden" name="x_cust_id" value="%%session:user:info:id%%"/>
+<input type="hidden" name="x_invoice_num" value="%%cart:header:order_id%%"/>
+<input type="hidden" name="x_first_name" value="%%cart:addresses:billing:firstname%%"/>
+<input type="hidden" name="x_last_name" value="%%cart:addresses:billing:lastname%%"/>
+<input type="hidden" name="x_address" value="%%cart:addresses:billing:line1%%"/>
+<input type="hidden" name="x_city" value="%%cart:addresses:billing:city%%"/>
+<input type="hidden" name="x_state" value="%%cart:addresses:billing:provinceCode%%"/>
+<input type="hidden" name="x_zip" value="%%cart:addresses:billing:postalcode%%"/>
+<input type="hidden" name="x_country" value="%%cart:addresses:billing:countryCode%%"/>
+<input type="hidden" name="x_phone" value="%%cart:addresses:billing:phone1%%"/>
+<input type="hidden" name="x_customer_ip" value="<!@@($_SERVER['REMOTE_ADDR'])@@!>"/>
+<input type="hidden" name="x_email" value="%%cart:addresses:billing:email%%"/>
+<div class="row">
+	<div class="col-xs-4 col-xs-offset-4">
+		<input type="submit" value="Pay Now" class="btn btn-primary form-control" />
+	</div>
+</div>
+</form>

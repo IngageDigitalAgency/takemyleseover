@@ -1,0 +1,11 @@
+%%ads%%
+<script type="text/javascript">
+showVideo = function(el) {
+$(".overlay").toggleClass("hidden");
+$(".video-wrapper").toggleClass("hidden");
+}
+hideVideo = function() {
+$(".overlay").toggleClass("hidden");
+$(".video-wrapper").toggleClass("hidden");
+}
+</script>

@@ -1,0 +1,49 @@
+<form class="contact-form" name="contactform" id="contactform" method="post" >
+	%%errorMessage%%
+	<div class="form-group">
+		%%firstName%%
+	</div>
+	<div class="form-group">
+		%%lastName%%
+	</div>
+	<div class="form-group">
+		%%email%%
+	</div>
+	<div class="form-group">
+		%%phone%%
+	</div>
+	<div class="form-group">
+		<span>Best Contact Time %%contactTime%%</span>
+	</div>
+	<div class="form-group">
+		%%message%%
+	</div>
+	%%captcha%%
+	%%submitBtn%%
+	%%r_id%%
+	%%contactUs%%
+</form>
+<div class="clearfix"></div>
+<script type="text/javascript">
+setError = function(id,fld,msg) {
+	if (msg == "") return;
+	switch(fld) {
+	case "message":
+		$("#".concat(id," textarea[name='",fld,"']")).addClass("alert alert-error");
+		break;
+	case "contactTime":
+		$("#".concat(id," select[name='",fld,"_hh']")).addClass("alert alert-error");
+		$("#".concat(id," select[name='",fld,"_mm']")).addClass("alert alert-error");
+		$("#".concat(id," select[name='",fld,"_ampm']")).addClass("alert alert-error");
+		break;
+	default:
+		$("#".concat(id," input[name='",fld,"']")).addClass("alert alert-error");
+	}
+}
+setError("contactform","firstName","%%firstNameError%%");
+setError("contactform","lastName","%%lastNameError%%");
+setError("contactform","phone","%%phoneError%%");
+setError("contactform","email","%%emailError%%");
+setError("contactform","contactTime","%%contactTimeError%%");
+setError("contactform","message","%%messageError%%");
+</script>

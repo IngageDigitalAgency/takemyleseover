@@ -1,0 +1,41 @@
+<div id="register">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4">
+			<label class="text-center">Please Pick from One of Our Membership Packages</label>
+		</div>
+	</div>
+	<div class="form-group products">
+		<div class="field">
+			%%products%%%%addToCart%%
+			<form method="post" action="/checkout">
+<input type="hidden" name="product_id" />
+<input type="hidden" name="product_quantity" value="1" />
+<input type="hidden" name="addToCart" value="1" />
+<input type="hidden" name="recurring_qty" />
+<input type="hidden" name="recurring_period" />
+				<div class="row">
+					<div class="col-xs-8 col-xs-offset-4 form-group">
+						<input type="button" value="Renew My Subscription" class="redButton form-control" onclick="checkRenewal(this);" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+checkRenewal = function(el) {
+	f = $("#register form");
+	p = $(".products input[name='product_id']:checked");
+	if (p.length == 0) {
+		alert("You must select a renewal option");
+		return false;
+	}
+	r = $(p[0]).closest(".row");
+	$(f).find("input[name='product_id']")[0].value = p[0].value;
+	if ($(r).find("select")[0].value!="") {
+		$(f).find("input[name='recurring_qty']")[0].value = 1;
+		$(f).find("input[name='recurring_period']")[0].value = $(r).find("select")[0].value;
+	}
+	$(f).submit();
+}
+</script>

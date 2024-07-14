@@ -1,0 +1,57 @@
+<form method='post' action='/ajax/render'>
+	<div class="errmsg">%%errorMessage%%</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<div class="field">%%fromName%%</div>
+			</div>
+			<div class="form-group">
+				<div class="field">%%fromEmail%%</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group">
+				<div class="field">%%toName%%</div>
+			</div>
+			<div class="form-group">
+				<div class="field">%%toEmail%%</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">%%note%%</div>
+	</div>
+	<div class="row top20 bottom20">
+		<div class="col-sm-12">
+			<button class="button button-green top20" type="button" onClick="validateSubmit(this,'contactReal');return false;">SUBMIT</button>
+		</div>
+	</div>
+	<input type='hidden' name='t_id' value='123' /> %%emailAFriend%% %%p_id%% %%r_id%%
+</form>
+<script type="text/javascript">
+//$('.defaultReal').realperson({hashName:'realpersonHash',includeNumbers:true});
+function validateSubmit(el,elId) {
+	frm = $(el).closest('form');
+	//var s = $(frm).find('input[name=defaultReal]').val();
+	//s = s.toUpperCase();
+	//if ($.realperson._hash(s) == $(frm).find('input[name=realpersonHash]').val()) {
+		frm.ajaxSubmit({
+			success: function( obj, status, xhr ) {
+				try {
+					obj = eval("("+obj+")");
+					$("#email-a-friend").replaceWith(obj.html);
+					//$('.defaultReal').realperson({hashName:'realpersonHash',includeNumbers:true});
+					//scrollProduct();
+					$('ul#product-tabs a.active').first().trigger('click');
+				}
+				catch(err) {
+				}
+			}
+		});
+	//}
+	//else {
+	//	tmp = $("<div></div>",{class:"alert alert-error",html:"Invalid Security Code"});
+	//	$("#email-a-friend .errmsg").html("<div class='alert alert-error text-center'>Invalid Security Code</div>");
+	//}
+}
+</script>

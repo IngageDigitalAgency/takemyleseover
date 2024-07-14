@@ -1,0 +1,31 @@
+<div id="photo-cube">
+	<div class="row images">
+	</div>
+</div>
+<script type="text/javascript">
+p = [%%images%%];
+c = $("#photo-cube > .row");
+for(x=0; x<%%module:parm1%%; x++) {
+	i = $("<div/>",{class:"col-sm-4 p-img-scale-width bottom20"});
+	$(i).html($("<div/>",{class:"wrapper"}).html($("<img/>",{src:p[x],"style":"opacity:1","class":"in"})));
+	$(c).append(i);
+}
+seq = %%module:parm1%%+1;
+swap = function() {
+	seq += 1;
+	if (seq >= p.length) seq = 0;
+	t = Math.floor(Math.random()*%%module:parm1%%);
+console.log(t);
+	d = $(c).find(".p-img-scale-width");
+	o = $(d).find("img.out");
+	if (o.length > 0) $(o).remove();
+	i = $("<img/>",{src:p[seq],"style":"opacity:0","class":"out"});
+	$(d[t]).find(".wrapper").append(i);
+	x = $(d[t]).find(".out");
+	y = $(d[t]).find(".in");
+	$(x).css("opacity","1").toggleClass("out");
+	$(y).css("opacity","0").toggleClass("in");
+	//window.setTimeout(swap,5000);
+}
+window.setTimeout(swap,5000);
+</script>

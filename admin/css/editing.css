@@ -1,0 +1,4 @@
+#moduleEditingPopupOverlay.wrapper { z-index:1001; }
+#moduleEditingPopupOverlay.wrapper select { background-color:#ffffff !important ; border:1px solid rgb(169,169,169); border-radius: 5px; }
+#moduleEditingPopupOverlay.wrapper input[type="checkbox"] { height:15px !important; }
+.header-position { position:inherit; }

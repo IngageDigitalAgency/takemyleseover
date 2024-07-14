@@ -1,0 +1,52 @@
+<div id="sidebar-month">
+	<div class="row">
+		<div class="col-sm-16">
+			<div class='fullMonth col-sm-8 col-md-16'>
+				<table class="table">
+					<tr>
+						<td><a href="#" onclick="getMonth(%%prevMonth%%,%%prevYear%%);return false;"><i class="fa fa-arrow-left"></i></a></td>
+						<th class="text-center" colspan="7">%%fullMonth%%</th>
+						<td><a href="#" onclick="getMonth(%%nextMonth%%,%%nextYear%%);return false;"><i class="fa fa-arrow-right"></i></a></td>
+					</tr>
+					<tr>
+						<td></td><th class="text-center">S</th><th class="text-center">M</th><th class="text-center">T</th><th class="text-center">W</th><th class="text-center">T</th><th class="text-center">F</th><th class="text-center">S</th><td></td>
+					</tr>
+					%%weeks%%
+				</table>
+			</div>
+			<div class="month-events col-sm-8 col-md-16">
+				%%upcoming%%
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+getMonth = function(mo,yr) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:%%module:fetemplate_id%%,year:yr,month:mo,folder_id:%%module:folder_id%%},
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#sidebar-month").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+getEvents = function( yr, mo, dy ) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:31,year:yr,month:mo,day:dy,folder_id:%%module:folder_id%%},
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#sidebar-month .month-events").html(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

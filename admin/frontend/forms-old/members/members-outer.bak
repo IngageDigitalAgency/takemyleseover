@@ -1,0 +1,14 @@
+<div id="our-board">
+	<div class="row">
+		<div class="col-xs-16 text-center title top20 tinymce"><h1>%%title%%</h1></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-16 text-center subtitle top10 tinymce"><h2>%%alternate_title%%</h2></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-14 col-xs-offset-1 text-center tinymce top20">%%teaser%%</div>
+	</div>
+	<div class="members top20 bottom20">
+		%%members%%
+	</div>
+</div>

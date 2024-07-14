@@ -1,0 +1,21 @@
+<div id="featured-list">
+	<div class="row">
+	<div class="col-xs-14 col-xs-offset-1">
+		<div class="title top20">Our Featured Artists <a href="/members">DISCOVER MORE >></a></div>
+	</div>
+</div>
+	<div class="row no-gutter">
+		%%members%%
+	</div>
+</div>
+<script type="text/javascript">
+$("#featured-list .info").slideToggle("fast");
+$("#featured-list .col-xs-8").hover(
+	function() {
+		el = $(this).find(".info").slideToggle();
+	},
+	function() {
+		el = $(this).find(".info").slideToggle();
+	}
+);
+</script>

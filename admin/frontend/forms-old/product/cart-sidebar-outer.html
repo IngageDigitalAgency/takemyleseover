@@ -1,0 +1,15 @@
+<div class="bottom20" id="cart-totals-block">
+	<div class="col-xs-4">
+		%%header%%
+	</div>
+	<div class="col-xs-8">
+		<a href="/shopping-cart" class="btn btn-default form-control">CHECKOUT</a>
+		<a href="/shopping-cart" class="link">VIEW ITEMS</a>
+	</div>
+	<div class="hr"></div>
+<!if("%%session:user:info%%"!="")!>
+	<div class="menu">%%loggedIn%%</div>
+<!else!>
+	<div class="menu">%%loggedOut%%</div>
+<!fi!>
+</div>

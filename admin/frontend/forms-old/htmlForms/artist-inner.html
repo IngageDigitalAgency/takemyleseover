@@ -1,0 +1,74 @@
+<div class="row">
+	<div class="col-sm-12 col-sm-offset-4 text-center">%%errorMessage%%</div>
+</div>
+<form method="post">
+	<div class="row form-group">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-2">%%agreement%%</div>
+				<div class="col-xs-11 col-xs-offset-1">
+					<label class="col-form-label">I have read and agree to the <a href="#" target="_new">Guidelines</a></label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%mediumError%%</span>Medium Type:</label></div>
+		<div class="col-xs-12">%%medium%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%nameError%%</span>Your Name:</label></div>
+		<div class="col-xs-12">%%name%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%phoneError%%</span>Telephone:</label></div>
+		<div class="col-xs-12">%%phone%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%cellError%%</span>Cell Phone:</label></div>
+		<div class="col-xs-12">%%cell%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%addressError%%</span>Street Address:</label></div>
+		<div class="col-xs-12">%%address%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%cityError%%</span>City:</label></div>
+		<div class="col-xs-12">%%city%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%postalCodeError%%</span>Postal Code:</label></div>
+		<div class="col-xs-12">%%postalCode%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%province_idError%%</span>Province:</label></div>
+		<div class="col-xs-12"><div id="province">%%province_id%%</div></div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%country_idError%%</span>Country:</label></div>
+		<div class="col-xs-12">%%country_id%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%emailError%%</span>Email:</div>
+		<div class="col-xs-12">%%email%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%websiteError%%</span>Web Site:</label></div>
+		<div class="col-xs-12">%%website%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 text-right"><label class="col-form-label"><span>%%facebookError%%</span>Facebook:</label></div>
+		<div class="col-xs-12">%%facebook%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-4">%%submit%%%%contactUs%%%%r_id%%</div>
+	</div>
+</form>
+<script type="text/javascript">
+$("select[name='country_id']").change(function() {
+	h = loadProvinces(this.value,{"class":"form-control"});
+	$("#province").html(h);
+});
+</script>

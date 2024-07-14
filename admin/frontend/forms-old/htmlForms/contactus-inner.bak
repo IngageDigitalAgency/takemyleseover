@@ -1,0 +1,37 @@
+<div class="row"><div class="col-sm-6 col-sm-offset-3 col-xs-12">%%errorMessage%%</div></div>
+<form id="contact-form" name="contact_form" class="contact-form" action="/ajax/render" method="post" novalidate="novalidate" onsubmit="ctcSubmit (this);return false;">
+	<div class="row clearfix">
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="form-group">
+				%%name%%
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="form-group">
+				%%email%%
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="form-group">
+				%%phone%%
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="form-group">
+				%%subject%%
+			</div>
+		</div>
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="form-group">
+				%%message%%
+			</div>
+		</div>
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="form-group">
+				<input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+				<button class="thm-btn" type="submit" data-loading-text="Please wait...">send message</button>
+			</div>
+		</div>
+	</div>
+%%t_id%%%%r_id%%
+</form>

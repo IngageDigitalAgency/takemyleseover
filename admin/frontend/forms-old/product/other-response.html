@@ -1,0 +1,22 @@
+<div id='payment'>
+	%%errorMessage%%
+	<div class="row">
+		<div class="col-md-12">
+		</div>
+	</div>
+	<div id="order-details"></div>
+</div>
+<script type="text/javascript">
+$.ajax({
+	url: "/ajax/render",
+	data: {t_id:47},
+	success: function(obj, status, xhr) {
+		try {
+			obj = eval("("+obj+")");
+			$("#order-details").html(obj.html);
+		}
+		catch(err) {
+		}
+	}
+});
+</script>

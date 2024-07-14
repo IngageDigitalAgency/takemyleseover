@@ -1,0 +1,133 @@
+<div class="receipt">
+	<div class="clearfix">
+		<h3 class="pull-left">Your Receipt</h3>
+		<h3 class="pull-right">Order #: %%id%%</h3>
+	</div>
+</div>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th class="col-md-1 text-center">Quantity</th>
+			<th class="col-md-3 text-left">Product</th>
+			<th class="col-md-2 text-right">Price</th>
+			<th class="col-md-2 text-right">Extended</th>
+		</tr>
+	</thead>
+	<tbody>
+		%%lines%%
+	</tbody>
+</table>
+%%custom_note%%
+<div class="row">
+<!if(strlen("%%custom_image_1%%")>0)!>
+	<div class="col-sm-3">
+		<div class="single-project-item">
+			<div class="img-box">
+				<img class="def_field_image" src="%%custom_image_1%%" />
+				<div class="overlay">
+					<div class="box">
+						<div class="content">
+							<div class="top">
+								<ul class="list-inline">
+									<li>
+										<a data-group="1" href="%%custom_image_1%%" class="img-popup"><i class="fa fa-search-plus"></i></a>
+									</li>
+								</ul><!-- /.list-inline -->
+							</div><!-- /.top -->
+						</div><!-- /.content -->
+					</div><!-- /.box -->
+				</div><!-- /.overlay -->
+			</div><!-- /.img-box -->
+		</div>
+	</div>
+<!fi!>
+<!if(strlen("%%custom_image_2%%")>0)!>
+	<div class="col-sm-3">
+		<div class="single-project-item">
+			<div class="img-box">
+				<img class="def_field_image" src="%%custom_image_2%%" />
+				<div class="overlay">
+					<div class="box">
+						<div class="content">
+							<div class="top">
+								<ul class="list-inline">
+									<li>
+										<a data-group="1" href="%%custom_image_2%%" class="img-popup"><i class="fa fa-search-plus"></i></a>
+									</li>
+								</ul><!-- /.list-inline -->
+							</div><!-- /.top -->
+							<div class="bottom clearfix">
+								<div class="title">
+									<h3>Tree Pruning</h3>
+								</div><!-- /.title -->
+							</div><!-- /.bottom -->
+						</div><!-- /.content -->
+					</div><!-- /.box -->
+				</div><!-- /.overlay -->
+			</div><!-- /.img-box -->
+		</div>
+	</div>
+<!fi!>
+<!if(strlen("%%custom_image_3%%")>0)!>
+	<div class="col-sm-3">
+		<div class="single-project-item">
+			<div class="img-box">
+				<img class="def_field_image" src="%%custom_image_3%%" />
+				<div class="overlay">
+					<div class="box">
+						<div class="content">
+							<div class="top">
+								<ul class="list-inline">
+									<li>
+										<a data-group="1" href="%%custom_image_3%%" class="img-popup"><i class="fa fa-search-plus"></i></a>
+									</li>
+								</ul><!-- /.list-inline -->
+							</div><!-- /.top -->
+							<div class="bottom clearfix">
+								<div class="title">
+									<h3>Tree Pruning</h3>
+								</div><!-- /.title -->
+							</div><!-- /.bottom -->
+						</div><!-- /.content -->
+					</div><!-- /.box -->
+				</div><!-- /.overlay -->
+			</div><!-- /.img-box -->
+		</div>
+	</div>
+<!fi!>
+<!if(strlen("%%custom_image_4%%")>0)!>
+	<div class="col-sm-3">
+		<div class="single-project-item">
+			<div class="img-box">
+				<img class="def_field_image" src="%%custom_image_4%%" />
+				<div class="overlay">
+					<div class="box">
+						<div class="content">
+							<div class="top">
+								<ul class="list-inline">
+									<li>
+										<a data-group="1" href="%%custom_image_4%%" class="img-popup"><i class="fa fa-search-plus"></i></a>
+									</li>
+								</ul><!-- /.list-inline -->
+							</div><!-- /.top -->
+							<div class="bottom clearfix">
+								<div class="title">
+									<h3>Tree Pruning</h3>
+								</div><!-- /.title -->
+							</div><!-- /.bottom -->
+						</div><!-- /.content -->
+					</div><!-- /.box -->
+				</div><!-- /.overlay -->
+			</div><!-- /.img-box -->
+		</div>
+	</div>
+<!fi!>
+</div>
+<div id="payment-information" class="bottom40">
+	<h3 class="block-title bottom20">Customer Information</h3>
+	<table class="table table-striped table-hover">
+		<tbody>
+			%%addresses%%
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,27 @@
+<div id='paypal'>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-4">
+			%%ecomErrors%%
+			%%errorMessage%%
+<!if("0%%session:user:info:id%%" == "0")!>
+			<div class='alert alert-error'>You are not logged in</div>
+<!else!>
+<!if("0%%session:cart:header:total" == "0")!>
+			<div class='alert alert-error'>Your cart is empty</div>
+<!fi!>
+		</div>
+	</div>
+<!if("0%%session:user:info:id%%" != "0" && "0%%session:cart:header:total" != "0" )!>
+<script type="text/javascript" src="/js/paypal-button-min.js"></script>
+<script 
+    data-env="%%env%%" 
+    data-tax="%%header:taxes%%" 
+    data-shipping="%%header:shipping%%" 
+    data-currency="CAD" 
+    data-amount="%%header:value%%" 
+    data-callback="https://%%FULLDOMAIN%%/secure-checkout"
+    data-name="%%SITENAME%% Order #%%header:order_id%%"
+    data-button="buynow" src="/js/paypal-button-min.js?merchant=%%merchant%%">
+</script>
+<!fi!>
+</div>

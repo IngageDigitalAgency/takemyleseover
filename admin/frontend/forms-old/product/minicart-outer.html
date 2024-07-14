@@ -1,0 +1,33 @@
+<div id="hdr-cart">
+	<div class="header-shopping-bag">
+		%%header%%
+	</div>
+	<div class="flyout">
+		<div class="products">%%products%%</div>
+		<div class="totals">
+			<span>Total:</span><span class="amount"><span class="symbol">$</span>%%total%%</span><a href="/my-cart">CHECKOUT &#187;</a>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+</div>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript">
+$( "#hdr-cart .flyout" ).hide();
+$( "#hdr-cart" ).hover(function() {
+	$("#hdr-cart .flyout").animate({height:["toggle"]});
+});
+function removeMini(el) {
+	frm = $(el).closest("form");
+	$(frm).find("input[name='t_id']").val(%%module:fetemplate_id%%);
+	$(frm).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#hdr-cart").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

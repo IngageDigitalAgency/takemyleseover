@@ -1,0 +1,11 @@
+<div id="frontpage-banner-slideshow" style="height:578px;">
+	%%images%%
+</div>
+<script type="text/javascript">
+var g = $("#frontpage-banner-slideshow div.ls-slide");
+$(g[0]).find("img.seq_1").css("top","200px").css("left","50%").css("white-space","nowrap");
+$(g[0]).find("div.ls-l").css("top","80px").css("left","80%").css("background-color","rgba(255,255,255,0.5)").css("padding","30px").css("text-align","center").css("width","20%");
+$(g[1]).find("img.seq_0").css("top","0px").css("left","65%").css("white-space","nowrap");
+$(g[1]).find("img.seq_1").css("top","200px").css("left","50%").css("white-space","nowrap");
+$(g[1]).find("div.ls-l").css("top","80px").css("left","20%").css("background-color","rgba(255,255,255, 0.5)").css("padding","30px").css("text-align","center").css("width","20%");
+</script>

@@ -1,0 +1,17 @@
+<section class="section-top layer plans">
+	<section class="container">
+		<div class="row">
+			%%products%%
+		</div>
+	</section>
+</section>
+<script type="text/javascript">
+balancePlans = function() {
+	$("section.plans .teaser").css("height","auto");
+	if ($(".container").width() > 720)
+		balanceItems("section.plans .teaser");
+}
+$(window).on("load resize",function(e){
+	balancePlans();
+});
+</script>

@@ -1,0 +1,18 @@
+<div class="artist">
+	<div class="row gutter">
+		<div class="col-xs-10 col-xs-offset-3 col-sm-4 p-img-scalewidth col-sm-offset-1">
+			%%img_image1%%
+<!if(date("Y-m-d",strtotime("%%custom_expiry_date%%")) >= date("Y-m-d"))!>
+			%%links%%
+<!fi!>
+		</div>
+		<div class="col-xs-16 col-sm-10">
+			<div class="title">PROFILE</div>
+			<div class="name">%%firstname%% %%lastname%%</div>
+			<div class="tinymce bio">%%biography%%</div>
+		</div>
+	</div>
+</div>
+<!if(date("Y-m-d",strtotime("%%custom_expiry_date%%")) >= date("Y-m-d"))!>
+%%portfolios%%
+<!fi!>

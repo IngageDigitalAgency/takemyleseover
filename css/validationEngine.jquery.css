@@ -1,0 +1,122 @@
+
+.formError {
+    cursor: pointer;
+    display: block;
+    left: 300px;
+    padding-bottom: 13px;
+    position: absolute;
+    top: 300px;
+    z-index: 5000;
+}
+#debugMode {
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    display: block;
+    font-size: 14px;
+    height: 200px;
+    left: 0;
+    opacity: 0.8;
+    overflow: scroll;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100000;
+}
+.ajaxSubmit {
+    background: none repeat scroll 0 0 #55EA55;
+    border: 1px solid #999999;
+    display: none;
+    padding: 20px;
+}
+.formError .formErrorContent {
+    background: none repeat scroll 0 0 #023062;
+    border: 2px solid #DDDDDD;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 6px #000000;
+    color: #FFFFFF;
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    width: 150px;
+}
+.greenPopup .formErrorContent {
+    background: none repeat scroll 0 0 #33BE40;
+}
+.blackPopup .formErrorContent {
+    background: none repeat scroll 0 0 #393939;
+    color: #FFFFFF;
+}
+.formError .formErrorArrow {
+    bottom: 0;
+    height: 15px;
+    left: 20px;
+    position: absolute;
+    width: 15px;
+    z-index: 5001;
+}
+.formError .formErrorArrowBottom {
+    margin: -6px;
+    top: 0;
+}
+.formError .formErrorArrow div {
+    background: none repeat scroll 0 0 #023062;
+    border-left: 2px solid #DDDDDD;
+    border-right: 2px solid #DDDDDD;
+    box-shadow: 0 2px 3px #444444;
+    display: block;
+    font-size: 0;
+    height: 1px;
+    line-height: 0;
+    margin: 0 auto;
+}
+.formError .formErrorArrowBottom div {
+    box-shadow: none;
+}
+.greenPopup .formErrorArrow div {
+    background: none repeat scroll 0 0 #33BE40;
+}
+.blackPopup .formErrorArrow div {
+    background: none repeat scroll 0 0 #393939;
+    color: #FFFFFF;
+}
+.formError .formErrorArrow .line10 {
+    border: medium none;
+    width: 15px;
+}
+.formError .formErrorArrow .line9 {
+    border: medium none;
+    width: 13px;
+}
+.formError .formErrorArrow .line8 {
+    width: 11px;
+}
+.formError .formErrorArrow .line7 {
+    width: 9px;
+}
+.formError .formErrorArrow .line6 {
+    width: 7px;
+}
+.formError .formErrorArrow .line5 {
+    width: 5px;
+}
+.formError .formErrorArrow .line4 {
+    width: 3px;
+}
+.formError .formErrorArrow .line3 {
+    border-bottom: 0 solid #DDDDDD;
+    border-left: 2px solid #DDDDDD;
+    border-right: 2px solid #DDDDDD;
+    width: 1px;
+}
+.formError .formErrorArrow .line2 {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border: medium none;
+    width: 3px;
+}
+.formError .formErrorArrow .line1 {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border: medium none;
+    width: 1px;
+}

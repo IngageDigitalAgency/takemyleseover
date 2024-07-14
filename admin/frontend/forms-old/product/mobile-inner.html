@@ -1,0 +1,18 @@
+<!if(%%level%%==1)!>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#mobileAccordion" href="#mobileCollapse%%id%%">%%title%%<span>></span></a>
+		</h4>
+	</div>
+	<div id="mobileCollapse%%id%%" class="panel-collapse collapse">
+		<div class="panel-body">
+			%%submenu%%
+		</div>
+	</div>
+</div>
+<!else!>
+<div class="category">
+<a href="%%url%%#products" class="%%active%%">%%title%%</a>
+</div>
+<!fi!>

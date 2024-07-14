@@ -1,0 +1,23 @@
+<section class="section-top agency-2 services">
+	<div class="srv-blocks">
+		<div class="section-description">%%alternate_title%%</div>
+		<div class="section-header-2">
+			<h4>%%title%%</h4>
+		</div>
+		<div class="services-list">
+			<div class="container">
+				<div class="services-gds">
+					%%menu%%
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+$(".services .content").hover( function() {
+	$(this).parent().find(".bg").css("opacity","1");
+}, function() {
+	$(this).parent().find(".bg").css("opacity","0");
+});
+</script>

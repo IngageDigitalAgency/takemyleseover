@@ -1,0 +1,17 @@
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript">
+estSubmit = function(el) {
+	$(el).closest("form).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#estimateForm").replaceWith(h.html);
+			}
+			catch(err) {}
+		}
+	});
+};
+</script>
+<div id="estimateForm">
+%%form%%
+</div>

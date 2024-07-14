@@ -1,0 +1,109 @@
+<article class="lease">
+	<h2>%%year%% %%make_name%% %%model_name%%</h2>
+	<div id="lease-id">ID#: <span>%%id%%</span></div>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="gallery">%%gallery%%</div>
+			<div class="seller">
+				<h3>SELLER INFORMATION AND VEHICLE LOCATION</h3>
+<!if(%%contact_id%%==0)!>
+				<table class="table">
+					<tr><td>Name</td><th>%%owner:firstname%%</td></tr>
+<!if(strlen("%%owner:profile:addresses:Home:0:city%%")>0)!>
+					<tr><td>City</td><th>%%owner:profile:addresses:Home:0:city%%</th></tr>
+<!fi!>
+<!if(strlen("%%owner:profile:addresses:Home:0:province%%")>0)!>
+					<tr><td>Province</td><th>%%owner:profile:addresses:Home:0:province%%</th></tr>
+<!fi!>
+<!if(strlen("%%owner:profile:addresses:Home:0:phone2%%")>0)!>
+					<tr><td>Cellular</td><th>%%owner:profile:addresses:Home:0:phone2%%</th></tr>
+<!fi!>
+					<tr><td>E-mail:</td><th class="email">%%owner:email%%</th></tr>
+				</table>
+<!else!>
+				<table class="table">
+					<tr><td>Name</td><th>%%contact:firstname%%</td></tr>
+<!if(strlen("%%contact:profile:addresses:Home:0:city%%")>0)!>
+					<tr><td>City</td><th>%%contact:profile:addresses:Home:0:city%%</th></tr>
+<!fi!>
+<!if(strlen("%%contact:profile:addresses:Home:0:province%%")>0)!>
+					<tr><td>Province</td><th>%%contact:profile:addresses:Home:0:province%%</th></tr>
+<!fi!>
+<!if(strlen("%%contact:profile:addresses:Home:0:province%%")>0)!>
+					<tr><td>Cellular</td><th>%%contact:profile:addresses:Home:0:phone2%%</th></tr>
+<!fi!>
+					<tr><td>E-mail:</td><th class="email">%%contact:email%%</th></tr>
+				</table>
+<!fi!>
+			</div>
+			<div class="incentives">
+				<div class="row">
+					<div class="col-xs-8 text-left"><span>MONEY DOWN: </span><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%recoup%%))@@!></div>
+					<div class="col-xs-8 text-right"><span>CASH INCENTIVE: </span><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%cash_incentive%%))@@!></div>
+				</div>
+			</div>
+			<div class="teaser">
+
+<h4>Lease Take Over Summary</h4>
+<p>Take over this lease for %%lease_remaining%% months for only <!@@($GLOBALS['globals']->getConfig()->my_money_format(%%lease_pre_tax%%))@@!> per month plus taxes with <!@@($GLOBALS['globals']->getConfig()->my_money_format(%%recoup%%))@@!> total cash down. It currently has %%mileage%% km’s and you can drive it up to %%km_allowance%% km’s at no extra cost</p>
+<p>There are <span class='red'><!@@(%%km_allowance%%-%%mileage%%)@@!></span> Free KM’s Remaining.</p>
+			</div>
+			<div class="description">
+<h4>Comments</h4>
+				%%description%%
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="vehicle-details">
+				<h3><i class="fa fa-check"></i> VEHICLE INFORMATION</h3>
+				<table class="table">
+					<tr><td>Year</td><td>%%year%%</td></tr>
+					<tr><td>Make</td><td>%%make_name%%</td></tr>
+					<tr><td>Model</td><td>%%model_name%%</td></tr>
+					<tr><td>Body Style</td><td>%%options_value:Body Style:0%%</td></tr>
+					<tr><td>Exterior Color</td><td>%%options_value:Exterior Color:0%%</td></tr>
+					<tr><td>Interior Color</td><td>%%options_value:Interior Color:0%%</td></tr>
+					<tr><td>Engine</td><td>%%engine_size%%</td></tr>
+					<tr><td># of Cylinders</td><td>%%cylinders%%</td></tr>
+					<tr><td>Transmission</td><td>%%options_value:Transmission:0%%</td></tr>
+					<tr><td>Current Km</td><td>%%mileage%%</td></tr>
+				</table>
+			</div>
+			<div class="lease-details">
+				<h3>LEASE TAKE-OVER DETAILS</h3>
+				<table class="table table-striped">
+					<tr><td>LEASE COMPANY</th><td>%%lease_company%%</td></tr>
+<!if("%%transfer_costs%%"!="0.00")!>
+<tr><td>TRANSFER COST (+HST)</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%transfer_costs%%))@@!></td>
+<!fi!>
+					<tr><td>MONTHLY BEFORE TAX</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%lease_pre_tax%%))@@!></td></tr>
+					<tr><td>MONTHLY WITH TAX</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%lease_taxes_inc%%))@@!></td></tr>
+
+
+<!if("%%effective_payment%%"!="%%lease_taxes_inc%%")!>
+					<tr><td>EFFECTIVE PAYMENT</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%effective_payment%%))@@!></td></tr>
+<!fi!>
+
+					<tr><td>ORIGINAL DOWN</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%downpayment%%))@@!></td></tr>
+					<tr><td>PURCHASE OPTION</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%buyout%%))@@!></td></tr>
+					<tr><td>TOTAL KM ALLOWED</td><td>%%km_allowance%%</td></tr>
+					<tr><td>EXCESS KM CHARGE</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%km_overage%%))@@!></td></tr>
+					<tr><td>ORIGINAL LEASE TERM</td><td>%%lease_term%%</td></tr>
+					<tr><td>LEASE EXPIRY DATE</td><td>%%lease_expiry%%</td></tr>
+				</table>
+				%%applications%%
+			</div>
+			<div class="vehicle-features">
+				<h3><i class="fa fa-check"></i> VEHICLE FEATURES</h3>
+				<div class="row">
+%%amenities%%
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+<script type='text/javascript'>
+goog_report_conversion = null;
+%%adword_conversion%%
+if (goog_report_conversion != null) goog_report_conversion();
+</script>

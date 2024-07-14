@@ -1,0 +1,11 @@
+<img src="%%image%%"  alt="" width="1920" height="720" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" />
+<div %%custom_slider_data_1%%>
+	<div class="banner-caption-h2">%%custom_slider_main_1%%<br />%%custom_slider_main_2%%</div>
+	<div class="banner-caption-p">%%custom_slider_sub_1%%<br />%%custom_slider_sub_2%%</div>
+	<a href="%%url%%" class="thm-btn">%%custom_slider_button_text%%</a>  <a href="%%url%%" class="thm-btn borderd inverse">Contact Us</a>
+</div>
+<!if(strlen("%%rollover_image%%")>0)!>
+<div %%custom_slider_data_2%%>
+%%real_img_rollover%%
+</div>
+<!fi!>

@@ -1,0 +1,26 @@
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript">
+ctcSubmit = function(el) {
+	$(el).closest("form").ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#contactForm").replaceWith(h.html);
+			}
+			catch(err) {}
+		}
+	});
+}
+</script>
+<div id="contactForm" class="contact-section contact-page">
+	<div class="sec-title">
+		<div class="inner">
+			<span class="tag-line">Need Our Service Or Have Queries</span>
+			<h2>Send Us Message.</h2>
+			<span class="decor-line"></span>
+		</div><!-- /.inner-->
+	</div>
+	<div class="default-form-area">
+		%%form%%
+	</div>
+</div>

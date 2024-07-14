@@ -1,0 +1,23 @@
+<tr class="product">
+	<td class="text-center valign-middle p-img-scale-width">
+		%%img_image1%%
+	</td>
+	<td class="valign-middle">
+		<a title="" href="%%url%%">%%name%%</a>
+		<p class="fontsize10 text-uppercase">Product Code: %%code%%</p>
+	</td>
+	<td class="text-center valign-middle">
+		<div class="input-small">
+			%%quantity%%
+		</div>
+		%%remove%%
+		<input type="hidden" name="key" value="[%%key%%]" />
+		<div class="style-select top5">
+			%%formattedOptions,false%%
+		</div>
+		<div class="style-select top5">%%recurring_period%% %%recurring_qty%% %%updateCart%%</div>
+	</td>
+	<td class="text-center valign-middle"><span class="red">%%formattedSavings%%</span></td>
+	<td class="text-center valign-middle">%%formattedValue%%</td>
+	<td class="text-center valign-middle"><a title="Remove" href="#" onclick="removeProduct(this);return false;"><i class="glyphicon glyphicon-trash"></i></a></td>
+</tr>

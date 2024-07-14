@@ -1,0 +1,63 @@
+@font-face {
+	font-family: 'Proxima Nova'; 
+	src:url('/fonts/proximanova-regular-webfont.eot'); 
+	src:url('/fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('/fonts/proximanova-regular-webfont.svg#Brandon Grotesque') format('svg'), 
+		url('/fonts/proximanova-regular-webfont.woff') format('woff'), 
+		url('/fonts/proximanova-regular-webfont.ttf') format('truetype'); 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proxima Nova Bold'; 
+	src:url('/fonts/proximanova-bold-webfont.eot'); 
+	src:url('/fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('/fonts/proximanova-bold-webfont.svg#Brandon Grotesque') format('svg'), 
+		url('/fonts/proximanova-bold-webfont.woff') format('woff'), 
+		url('/fonts/proximanova-bold-webfont.ttf') format('truetype'); 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+body {
+	background-color: #f8f8f8;
+	color: #1f0706;
+	font-family: "Proxima Nova";
+	position: relative;
+	text-align: left;
+	font-size:14px;
+	line-height: 1.42857;
+}
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+}
+h1, .h1 {
+}
+h1, .h1, h2, .h2, h3, .h3 {
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	color: inherit;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	margin:0;
+	padding:0;
+}
+h1, .h1 { color:#E20E0B; font-size:25px; }
+h2, .h2 { color:#231f20; font-size: 22px; }
+h3, .h3 { color:#E20E0B; font-size:20px; }
+h4, .h4 { color:#231f20; font-size: 18px; }
+h5, .h5 { color:#E20E0B; font-size:16px; }
+h6, .h6 { color:#231f20; font-size: 14px; }
+p { font-size: 14px; color:#231f20; margin: 0 0 10px; }
+.red { color: #E20E0B; }
+.black { color: #231f20; }
+.proximaNova { font-family:"Proxima Nova" }
+a { color:#E20E0B; text-decoration:underline; }
+ul { list-style: disc inside none; }
+ul.numbered { list-style: decimal inside none; }

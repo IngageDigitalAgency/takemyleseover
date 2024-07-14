@@ -1,0 +1,55 @@
+<div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">%%errorMessage%%</div>
+<form id="contact-form" name="contact_form" class="contact-form" action="/ajax/render" method="post" onsubmit="apptSubmit(this);return false;">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%name%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%email%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%phone%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%address%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%date%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%time%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-12">
+					<div class="form-grp mb0">
+						%%message%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->	
+			</div><!-- /.row -->
+		</div><!-- /.col-md-8 -->
+		<div class="col-md-4">
+			<div class="feature-list">
+				<label>Select Your Service:</label>
+				%%workType%%
+			</div><!-- /.feature-list -->
+			<div class="form-grp mb0">
+				<input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+				<button class="thm-btn" type="submit" data-loading-text="Please wait...">send message</button>
+			</div><!-- /.form-grp -->
+		</div><!-- /.col-md-4 -->
+	</div><!-- /.row -->
+%%t_id%%%%r_id%%%%contactUs%%
+</form>

@@ -1,0 +1,11 @@
+<div class="member row gutter bottom20">
+	<div class="col-sm-4 p-img-scalewidth"><a href="%%url%%">%%img_image1%%</a></div>
+	<div class="col-sm-12">
+		<div class="name"><a href="%%url%%">%%firstname%% %%lastname%%</a></div>
+<!if(date("Y-m-d",strtotime("%%custom_expiry_date%%")) >= date("Y-m-d"))!>
+		<div class="bio tinymce"><p><!@@(substr("%%strippedBio%%",0,330))@@!>...<a class="red" href="%%url%%">View Profile >></a></p></div>
+		<div class="link"></div>
+<!fi!>
+	</div>
+</div>
+<hr/>

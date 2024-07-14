@@ -1,0 +1,3549 @@
+gadra
+ = ./admin/backend
+diff ./admin/backend/Backend.php ../gadra/./admin/backend/Backend.php
+609a610
+> 		$this->logMessage(__FUNCTION__,sprintf("id [%s] form [%s] flds [%s]", $id, print_r($form,true), print_r($flds,true)), 1);
+627a629
+> 		$this->logMessage(__FUNCTION__, sprintf("return [%s] from [%s]", $f->show(), print_r($f,true)), 1);
+diff ./admin/backend/common.html ../gadra/./admin/backend/common.html
+1c1
+< <!DOCTYPE html>
+---
+> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+Common subdirectories: ./admin/backend/forms and ../gadra/./admin/backend/forms
+Common subdirectories: ./admin/backend/images and ../gadra/./admin/backend/images
+Common subdirectories: ./admin/backend/modules and ../gadra/./admin/backend/modules
+1 = ./admin/backend/Backend.php
+609a610
+> 		$this->logMessage(__FUNCTION__,sprintf("id [%s] form [%s] flds [%s]", $id, print_r($form,true), print_r($flds,true)), 1);
+627a629
+> 		$this->logMessage(__FUNCTION__, sprintf("return [%s] from [%s]", $f->show(), print_r($f,true)), 1);
+2 = ./admin/backend/common.html
+1c1
+< <!DOCTYPE html>
+---
+> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+3 = ./admin/backend/images
+4 = ./admin/backend/images/ui-icons_228ef1_256x240.png
+5 = ./admin/backend/images/ui-bg_glass_65_ffffff_1x400.png
+6 = ./admin/backend/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+7 = ./admin/backend/images/ui-bg_glass_100_f6f6f6_1x400.png
+8 = ./admin/backend/images/ui-bg_diagonals-thick_20_666666_40x40.png
+9 = ./admin/backend/images/ui-icons_ef8c08_256x240.png
+10 = ./admin/backend/images/ui-icons_ffffff_256x240.png
+11 = ./admin/backend/images/ui-icons_222222_256x240.png
+12 = ./admin/backend/images/ui-bg_flat_10_000000_40x100.png
+13 = ./admin/backend/images/ui-icons_ffd27a_256x240.png
+14 = ./admin/backend/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+15 = ./admin/backend/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+16 = ./admin/backend/images/ui-bg_glass_100_fdf5ce_1x400.png
+17 = ./admin/backend/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+18 = ./admin/backend/modules
+Common subdirectories: ./admin/backend/modules/advert and ../gadra/./admin/backend/modules/advert
+Common subdirectories: ./admin/backend/modules/analytics and ../gadra/./admin/backend/modules/analytics
+Common subdirectories: ./admin/backend/modules/artist and ../gadra/./admin/backend/modules/artist
+Common subdirectories: ./admin/backend/modules/blog and ../gadra/./admin/backend/modules/blog
+Common subdirectories: ./admin/backend/modules/calendar and ../gadra/./admin/backend/modules/calendar
+Common subdirectories: ./admin/backend/modules/config and ../gadra/./admin/backend/modules/config
+Common subdirectories: ./admin/backend/modules/coupons and ../gadra/./admin/backend/modules/coupons
+Common subdirectories: ./admin/backend/modules/credit and ../gadra/./admin/backend/modules/credit
+Common subdirectories: ./admin/backend/modules/custom and ../gadra/./admin/backend/modules/custom
+Only in ./admin/backend/modules: custom-old
+Common subdirectories: ./admin/backend/modules/gallery and ../gadra/./admin/backend/modules/gallery
+Common subdirectories: ./admin/backend/modules/login and ../gadra/./admin/backend/modules/login
+Common subdirectories: ./admin/backend/modules/lookups and ../gadra/./admin/backend/modules/lookups
+Common subdirectories: ./admin/backend/modules/members and ../gadra/./admin/backend/modules/members
+Common subdirectories: ./admin/backend/modules/menu and ../gadra/./admin/backend/modules/menu
+Common subdirectories: ./admin/backend/modules/modules and ../gadra/./admin/backend/modules/modules
+Common subdirectories: ./admin/backend/modules/news and ../gadra/./admin/backend/modules/news
+Common subdirectories: ./admin/backend/modules/newsletter and ../gadra/./admin/backend/modules/newsletter
+Common subdirectories: ./admin/backend/modules/orders and ../gadra/./admin/backend/modules/orders
+Common subdirectories: ./admin/backend/modules/polls and ../gadra/./admin/backend/modules/polls
+Common subdirectories: ./admin/backend/modules/product and ../gadra/./admin/backend/modules/product
+Common subdirectories: ./admin/backend/modules/question and ../gadra/./admin/backend/modules/question
+Common subdirectories: ./admin/backend/modules/rss and ../gadra/./admin/backend/modules/rss
+Common subdirectories: ./admin/backend/modules/search and ../gadra/./admin/backend/modules/search
+Common subdirectories: ./admin/backend/modules/setup and ../gadra/./admin/backend/modules/setup
+Common subdirectories: ./admin/backend/modules/shipping and ../gadra/./admin/backend/modules/shipping
+Common subdirectories: ./admin/backend/modules/stores and ../gadra/./admin/backend/modules/stores
+Common subdirectories: ./admin/backend/modules/subscribers and ../gadra/./admin/backend/modules/subscribers
+Common subdirectories: ./admin/backend/modules/templates and ../gadra/./admin/backend/modules/templates
+Common subdirectories: ./admin/backend/modules/users and ../gadra/./admin/backend/modules/users
+19 = ./admin/backend/modules/custom
+skipping ../admin/backend/modules/custom
+20 = ./admin/backend/modules/custom/custom.php
+skipping ../admin/backend/modules/custom/custom.php
+21 = ./admin/backend/modules/custom/forms
+skipping ../admin/backend/modules/custom/forms
+22 = ./admin/backend/modules/custom/forms/member.html
+skipping ../admin/backend/modules/custom/forms/member.html
+23 = ./admin/backend/modules/custom/forms/galleryFolder.html
+skipping ../admin/backend/modules/custom/forms/galleryFolder.html
+24 = ./admin/backend/modules/custom/forms/product.html
+skipping ../admin/backend/modules/custom/forms/product.html
+25 = ./admin/backend/modules/custom/forms/event.html
+skipping ../admin/backend/modules/custom/forms/event.html
+26 = ./admin/backend/modules/custom/forms/newsFolder.html
+skipping ../admin/backend/modules/custom/forms/newsFolder.html
+27 = ./admin/backend/modules/custom/forms/store.html
+skipping ../admin/backend/modules/custom/forms/store.html
+28 = ./admin/backend/modules/custom/forms/gallery.html
+skipping ../admin/backend/modules/custom/forms/gallery.html
+29 = ./admin/backend/modules/custom/forms/news.html
+skipping ../admin/backend/modules/custom/forms/news.html
+30 = ./admin/backend/modules/custom/forms/order.html
+skipping ../admin/backend/modules/custom/forms/order.html
+31 = ./admin/backend/modules/custom/forms/menuFolder.html
+skipping ../admin/backend/modules/custom/forms/menuFolder.html
+32 = ./admin/backend/modules/lookups
+Common subdirectories: ./admin/backend/modules/lookups/forms and ../gadra/./admin/backend/modules/lookups/forms
+33 = ./admin/backend/modules/lookups/finalize.js
+34 = ./admin/backend/modules/lookups/lookups.css
+35 = ./admin/backend/modules/lookups/lookups.js
+36 = ./admin/backend/modules/lookups/lookups.html
+37 = ./admin/backend/modules/lookups/lookups.php
+38 = ./admin/backend/modules/lookups/forms
+39 = ./admin/backend/modules/lookups/forms/productsList.html
+40 = ./admin/backend/modules/lookups/forms/couponFoldersList.html
+41 = ./admin/backend/modules/lookups/forms/contenttree.html
+42 = ./admin/backend/modules/lookups/forms/productFoldersList.html
+43 = ./admin/backend/modules/lookups/forms/addFolder.html
+44 = ./admin/backend/modules/lookups/forms/addContent.html
+45 = ./admin/backend/modules/lookups/forms/folder.html
+46 = ./admin/backend/modules/lookups/forms/deleteItemResult.html
+47 = ./admin/backend/modules/lookups/forms/paginationWrapper.html
+48 = ./admin/backend/modules/lookups/forms/deleteItem.html
+49 = ./admin/backend/modules/lookups/forms/heading.html
+50 = ./admin/backend/modules/lookups/forms/eventsList.html
+51 = ./admin/backend/modules/lookups/forms/paginationPage.html
+52 = ./admin/backend/modules/lookups/forms/couponsList.html
+53 = ./admin/backend/modules/lookups/forms/deleteResult.html
+54 = ./admin/backend/modules/lookups/forms/paginationPrev.html
+55 = ./admin/backend/modules/lookups/forms/folderContent.html
+56 = ./admin/backend/modules/lookups/forms/folderInfo.html
+57 = ./admin/backend/modules/lookups/forms/paginationNext.html
+58 = ./admin/backend/modules/lookups/forms/editResult.html
+59 = ./admin/backend/modules/lookups/forms/searchForm.html
+60 = ./admin/backend/modules/lookups/forms/articleList.html
+61 = ./admin/backend/modules/lookups/forms/eventFoldersList.html
+62 = ./admin/backend/modules/lookups/forms/addArticle.html
+63 = ./admin/backend/modules/members
+Common subdirectories: ./admin/backend/modules/members/forms and ../gadra/./admin/backend/modules/members/forms
+diff ./admin/backend/modules/members/members.js ../gadra/./admin/backend/modules/members/members.js
+493,495d492
+< 		else {
+< 			showAltPopup(obj.html);
+< 		}
+diff ./admin/backend/modules/members/members.php ../gadra/./admin/backend/modules/members/members.php
+533c533
+< 								continue 2;
+---
+> 								continue;
+967d966
+< 		$status = true;
+1028c1027
+< 		return $this->ajaxReturn(array('status'=>$status,'html'=>$form->show()));
+---
+> 		return $this->ajaxReturn(array('status'=>'true','html'=>$form->show()));
+1068c1067
+< 			$formFlds = $form->buildForm($formFlds);
+---
+> 			$$formFlds = $form->buildForm($formFlds);
+64 = ./admin/backend/modules/members/members.css
+65 = ./admin/backend/modules/members/finalize.js
+66 = ./admin/backend/modules/members/members.php
+533c533
+< 								continue 2;
+---
+> 								continue;
+967d966
+< 		$status = true;
+1028c1027
+< 		return $this->ajaxReturn(array('status'=>$status,'html'=>$form->show()));
+---
+> 		return $this->ajaxReturn(array('status'=>'true','html'=>$form->show()));
+1068c1067
+< 			$formFlds = $form->buildForm($formFlds);
+---
+> 			$$formFlds = $form->buildForm($formFlds);
+67 = ./admin/backend/modules/members/members.js
+493,495d492
+< 		else {
+< 			showAltPopup(obj.html);
+< 		}
+68 = ./admin/backend/modules/members/members.html
+69 = ./admin/backend/modules/members/forms
+70 = ./admin/backend/modules/members/forms/editAddressSuccess.html
+71 = ./admin/backend/modules/members/forms/addFolder.html
+72 = ./admin/backend/modules/members/forms/deleteMediaSuccess.html
+73 = ./admin/backend/modules/members/forms/showOrders.html
+74 = ./admin/backend/modules/members/forms/paginationPrev.html
+75 = ./admin/backend/modules/members/forms/folderContent.html
+76 = ./admin/backend/modules/members/forms/folderInfo.html
+77 = ./admin/backend/modules/members/forms/paginationNext.html
+78 = ./admin/backend/modules/members/forms/playAudio.html
+79 = ./admin/backend/modules/members/forms/paginationPage.html
+80 = ./admin/backend/modules/members/forms/editProfile.html
+81 = ./admin/backend/modules/members/forms/searchForm.html
+82 = ./admin/backend/modules/members/forms/listMedia.html
+83 = ./admin/backend/modules/members/forms/deleteMedia.html
+84 = ./admin/backend/modules/members/forms/addressForm.html
+85 = ./admin/backend/modules/members/forms/articleList.html
+86 = ./admin/backend/modules/members/forms/memberOrder.html
+87 = ./admin/backend/modules/members/forms/addItem.html
+88 = ./admin/backend/modules/members/forms/editMediaSuccess.html
+89 = ./admin/backend/modules/members/forms/getProfile.html
+90 = ./admin/backend/modules/members/forms/contenttree.html
+91 = ./admin/backend/modules/members/forms/addContentResult.html
+92 = ./admin/backend/modules/members/forms/editAddress.html
+93 = ./admin/backend/modules/members/forms/editMedia.html
+94 = ./admin/backend/modules/members/forms/addContent.html
+95 = ./admin/backend/modules/members/forms/addressList.html
+96 = ./admin/backend/modules/members/forms/playImage.html
+97 = ./admin/backend/modules/members/forms/folder.html
+98 = ./admin/backend/modules/members/forms/deleteItemResult.html
+99 = ./admin/backend/modules/members/forms/editProfileResult.html
+100 = ./admin/backend/modules/members/forms/paginationWrapper.html
+101 = ./admin/backend/modules/members/forms/playVideo.html
+102 = ./admin/backend/modules/members/forms/loadMedia.html
+103 = ./admin/backend/modules/members/forms/deleteItem.html
+104 = ./admin/backend/modules/members/forms/heading.html
+105 = ./admin/backend/modules/gallery
+Common subdirectories: ./admin/backend/modules/gallery/forms and ../gadra/./admin/backend/modules/gallery/forms
+diff ./admin/backend/modules/gallery/gallery.php ../gadra/./admin/backend/modules/gallery/gallery.php
+380c380
+< 			$custom = $customFields->galleryFolder();
+---
+> 			$custom = $customFields->galleryDisplay();
+106 = ./admin/backend/modules/gallery/gallery.css
+107 = ./admin/backend/modules/gallery/gallery.html
+108 = ./admin/backend/modules/gallery/gallery.php
+380c380
+< 			$custom = $customFields->galleryFolder();
+---
+> 			$custom = $customFields->galleryDisplay();
+109 = ./admin/backend/modules/gallery/gallery.js
+110 = ./admin/backend/modules/gallery/forms
+111 = ./admin/backend/modules/gallery/forms/paginationNext.html
+112 = ./admin/backend/modules/gallery/forms/couponsList.html
+113 = ./admin/backend/modules/gallery/forms/paginationPrev.html
+114 = ./admin/backend/modules/gallery/forms/folderContent.html
+115 = ./admin/backend/modules/gallery/forms/folderInfo.html
+116 = ./admin/backend/modules/gallery/forms/video.html
+117 = ./admin/backend/modules/gallery/forms/searchForm.html
+118 = ./admin/backend/modules/gallery/forms/articleList.html
+119 = ./admin/backend/modules/gallery/forms/addItem.html
+120 = ./admin/backend/modules/gallery/forms/eventFoldersList.html
+121 = ./admin/backend/modules/gallery/forms/couponFoldersList.html
+122 = ./admin/backend/modules/gallery/forms/contenttree.html
+123 = ./admin/backend/modules/gallery/forms/imageList.html
+124 = ./admin/backend/modules/gallery/forms/addFolder.html
+125 = ./admin/backend/modules/gallery/forms/addContent.html
+126 = ./admin/backend/modules/gallery/forms/folder.html
+127 = ./admin/backend/modules/gallery/forms/deleteItemResult.html
+128 = ./admin/backend/modules/gallery/forms/galleryList.html
+129 = ./admin/backend/modules/gallery/forms/paginationWrapper.html
+130 = ./admin/backend/modules/gallery/forms/deleteItem.html
+131 = ./admin/backend/modules/gallery/forms/heading.html
+132 = ./admin/backend/modules/gallery/forms/eventsList.html
+133 = ./admin/backend/modules/gallery/forms/paginationPage.html
+134 = ./admin/backend/modules/subscribers
+Common subdirectories: ./admin/backend/modules/subscribers/forms and ../gadra/./admin/backend/modules/subscribers/forms
+135 = ./admin/backend/modules/subscribers/finalize.js
+136 = ./admin/backend/modules/subscribers/subscribers.html
+137 = ./admin/backend/modules/subscribers/subscribers.css
+138 = ./admin/backend/modules/subscribers/subscribers.js
+139 = ./admin/backend/modules/subscribers/subscribers.php
+140 = ./admin/backend/modules/subscribers/forms
+141 = ./admin/backend/modules/subscribers/forms/searchForm.html
+142 = ./admin/backend/modules/subscribers/forms/eventList.html
+143 = ./admin/backend/modules/subscribers/forms/articleList.html
+144 = ./admin/backend/modules/subscribers/forms/paginationPrev.html
+145 = ./admin/backend/modules/subscribers/forms/folderContent.html
+146 = ./admin/backend/modules/subscribers/forms/folderInfo.html
+147 = ./admin/backend/modules/subscribers/forms/paginationNext.html
+148 = ./admin/backend/modules/subscribers/forms/eventFoldersList.html
+149 = ./admin/backend/modules/subscribers/forms/storeList.html
+150 = ./admin/backend/modules/subscribers/forms/couponFoldersList.html
+151 = ./admin/backend/modules/subscribers/forms/contenttree.html
+152 = ./admin/backend/modules/subscribers/forms/addFolder.html
+153 = ./admin/backend/modules/subscribers/forms/productList.html
+154 = ./admin/backend/modules/subscribers/forms/addContent.html
+155 = ./admin/backend/modules/subscribers/forms/folder.html
+156 = ./admin/backend/modules/subscribers/forms/deleteItemResult.html
+157 = ./admin/backend/modules/subscribers/forms/statsRow.html
+158 = ./admin/backend/modules/subscribers/forms/addAdvert.html
+159 = ./admin/backend/modules/subscribers/forms/paginationWrapper.html
+160 = ./admin/backend/modules/subscribers/forms/couponList.html
+161 = ./admin/backend/modules/subscribers/forms/deleteItem.html
+162 = ./admin/backend/modules/subscribers/forms/stats.html
+163 = ./admin/backend/modules/subscribers/forms/heading.html
+164 = ./admin/backend/modules/subscribers/forms/eventsList.html
+165 = ./admin/backend/modules/subscribers/forms/paginationPage.html
+166 = ./admin/backend/modules/subscribers/forms/couponsList.html
+167 = ./admin/backend/modules/shipping
+Common subdirectories: ./admin/backend/modules/shipping/forms and ../gadra/./admin/backend/modules/shipping/forms
+diff ./admin/backend/modules/shipping/shipping.php ../gadra/./admin/backend/modules/shipping/shipping.php
+342c342
+< 								continue 2;
+---
+> 								continue;
+168 = ./admin/backend/modules/shipping/finalize.js
+169 = ./admin/backend/modules/shipping/shipping.html
+170 = ./admin/backend/modules/shipping/shipping.js
+171 = ./admin/backend/modules/shipping/shipping.php
+342c342
+< 								continue 2;
+---
+> 								continue;
+172 = ./admin/backend/modules/shipping/shipping.css
+173 = ./admin/backend/modules/shipping/forms
+174 = ./admin/backend/modules/shipping/forms/exportPackRow.html
+175 = ./admin/backend/modules/shipping/forms/addFolder.html
+176 = ./admin/backend/modules/shipping/forms/articleList.html
+177 = ./admin/backend/modules/shipping/forms/exportPack.html
+178 = ./admin/backend/modules/shipping/forms/pickList.html
+179 = ./admin/backend/modules/shipping/forms/confirmationOrderRow.html
+180 = ./admin/backend/modules/shipping/forms/packTotal.html
+181 = ./admin/backend/modules/shipping/forms/eventFoldersList.html
+182 = ./admin/backend/modules/shipping/forms/addArticle.html
+183 = ./admin/backend/modules/shipping/forms/packListRow.html
+184 = ./admin/backend/modules/shipping/forms/packList.html
+185 = ./admin/backend/modules/shipping/forms/productsList.html
+186 = ./admin/backend/modules/shipping/forms/couponFoldersList.html
+187 = ./admin/backend/modules/shipping/forms/contenttree.html
+188 = ./admin/backend/modules/shipping/forms/productFoldersList.html
+189 = ./admin/backend/modules/shipping/forms/addContent.html
+190 = ./admin/backend/modules/shipping/forms/exportPickRow.html
+191 = ./admin/backend/modules/shipping/forms/folder.html
+192 = ./admin/backend/modules/shipping/forms/deleteItemResult.html
+193 = ./admin/backend/modules/shipping/forms/confirmationRow.html
+194 = ./admin/backend/modules/shipping/forms/paginationWrapper.html
+195 = ./admin/backend/modules/shipping/forms/confirmationOrder.html
+196 = ./admin/backend/modules/shipping/forms/deleteItem.html
+197 = ./admin/backend/modules/shipping/forms/heading.html
+198 = ./admin/backend/modules/shipping/forms/eventsList.html
+199 = ./admin/backend/modules/shipping/forms/pickListRow.html
+200 = ./admin/backend/modules/shipping/forms/paginationPage.html
+201 = ./admin/backend/modules/shipping/forms/couponsList.html
+202 = ./admin/backend/modules/shipping/forms/deleteResult.html
+203 = ./admin/backend/modules/shipping/forms/paginationPrev.html
+204 = ./admin/backend/modules/shipping/forms/folderContent.html
+205 = ./admin/backend/modules/shipping/forms/folderInfo.html
+206 = ./admin/backend/modules/shipping/forms/paginationNext.html
+207 = ./admin/backend/modules/shipping/forms/editResult.html
+208 = ./admin/backend/modules/shipping/forms/confirmation.html
+209 = ./admin/backend/modules/shipping/forms/exportPick.html
+210 = ./admin/backend/modules/shipping/forms/searchForm.html
+211 = ./admin/backend/modules/artist
+diff ./admin/backend/modules/artist/artist.php ../gadra/./admin/backend/modules/artist/artist.php
+548c548
+< 								continue 2;
+---
+> 								continue;
+Common subdirectories: ./admin/backend/modules/artist/forms and ../gadra/./admin/backend/modules/artist/forms
+212 = ./admin/backend/modules/artist/artist.css
+213 = ./admin/backend/modules/artist/finalize.js
+214 = ./admin/backend/modules/artist/artist.html
+215 = ./admin/backend/modules/artist/artist.php
+548c548
+< 								continue 2;
+---
+> 								continue;
+216 = ./admin/backend/modules/artist/artist.js
+217 = ./admin/backend/modules/artist/forms
+218 = ./admin/backend/modules/artist/forms/addressForm.html
+219 = ./admin/backend/modules/artist/forms/editGroup.html
+220 = ./admin/backend/modules/artist/forms/editMedia.html
+221 = ./admin/backend/modules/artist/forms/addContent.html
+222 = ./admin/backend/modules/artist/forms/addressList.html
+223 = ./admin/backend/modules/artist/forms/editGroupSuccess.html
+224 = ./admin/backend/modules/artist/forms/playImage.html
+225 = ./admin/backend/modules/artist/forms/folder.html
+226 = ./admin/backend/modules/artist/forms/deleteItemResult.html
+227 = ./admin/backend/modules/artist/forms/editProfileResult.html
+228 = ./admin/backend/modules/artist/forms/paginationWrapper.html
+229 = ./admin/backend/modules/artist/forms/playVideo.html
+230 = ./admin/backend/modules/artist/forms/loadMedia.html
+231 = ./admin/backend/modules/artist/forms/deleteItem.html
+232 = ./admin/backend/modules/artist/forms/heading.html
+233 = ./admin/backend/modules/artist/forms/editPortfolio.html
+234 = ./admin/backend/modules/artist/forms/paginationPage.html
+235 = ./admin/backend/modules/artist/forms/editProfile.html
+236 = ./admin/backend/modules/artist/forms/addItem.html
+237 = ./admin/backend/modules/artist/forms/editMediaSuccess.html
+238 = ./admin/backend/modules/artist/forms/getPortfolios.html
+239 = ./admin/backend/modules/artist/forms/getProfile.html
+240 = ./admin/backend/modules/artist/forms/editSocialSuccess.html
+241 = ./admin/backend/modules/artist/forms/contenttree.html
+242 = ./admin/backend/modules/artist/forms/editSocial.html
+243 = ./admin/backend/modules/artist/forms/addFolder.html
+244 = ./admin/backend/modules/artist/forms/editAddressSuccess.html
+245 = ./admin/backend/modules/artist/forms/addContentResult.html
+246 = ./admin/backend/modules/artist/forms/editAddress.html
+247 = ./admin/backend/modules/artist/forms/memberOrder.html
+248 = ./admin/backend/modules/artist/forms/articleList.html
+249 = ./admin/backend/modules/artist/forms/deleteMediaSuccess.html
+250 = ./admin/backend/modules/artist/forms/showOrders.html
+251 = ./admin/backend/modules/artist/forms/editPortfolioSuccess.html
+252 = ./admin/backend/modules/artist/forms/getMedia.html
+253 = ./admin/backend/modules/artist/forms/paginationPrev.html
+254 = ./admin/backend/modules/artist/forms/folderContent.html
+255 = ./admin/backend/modules/artist/forms/folderInfo.html
+256 = ./admin/backend/modules/artist/forms/paginationNext.html
+257 = ./admin/backend/modules/artist/forms/playAudio.html
+258 = ./admin/backend/modules/artist/forms/searchForm.html
+259 = ./admin/backend/modules/artist/forms/getGroups.html
+260 = ./admin/backend/modules/artist/forms/listMedia.html
+261 = ./admin/backend/modules/artist/forms/deleteMedia.html
+262 = ./admin/backend/modules/artist/forms/getSocialLinks.html
+263 = ./admin/backend/modules/question
+Common subdirectories: ./admin/backend/modules/question/forms and ../gadra/./admin/backend/modules/question/forms
+264 = ./admin/backend/modules/question/question.php
+265 = ./admin/backend/modules/question/finalize.js
+266 = ./admin/backend/modules/question/question.html
+267 = ./admin/backend/modules/question/question.js
+268 = ./admin/backend/modules/question/question.css
+269 = ./admin/backend/modules/question/forms
+270 = ./admin/backend/modules/question/forms/deleteItemResult.html
+271 = ./admin/backend/modules/question/forms/paginationWrapper.html
+272 = ./admin/backend/modules/question/forms/deleteItem.html
+273 = ./admin/backend/modules/question/forms/heading.html
+274 = ./admin/backend/modules/question/forms/editQuestion.html
+275 = ./admin/backend/modules/question/forms/paginationPage.html
+276 = ./admin/backend/modules/question/forms/editResponse.html
+277 = ./admin/backend/modules/question/forms/deleteSuccess.html
+278 = ./admin/backend/modules/question/forms/editResponseSuccess.html
+279 = ./admin/backend/modules/question/forms/editQuestionSuccess.html
+280 = ./admin/backend/modules/question/forms/paginationPrev.html
+281 = ./admin/backend/modules/question/forms/folderContent.html
+282 = ./admin/backend/modules/question/forms/folderInfo.html
+283 = ./admin/backend/modules/question/forms/paginationNext.html
+284 = ./admin/backend/modules/question/forms/searchForm.html
+285 = ./admin/backend/modules/question/forms/usage.html
+286 = ./admin/backend/modules/question/forms/statsLine.html
+287 = ./admin/backend/modules/question/forms/articleList.html
+288 = ./admin/backend/modules/question/forms/questionList.html
+289 = ./admin/backend/modules/question/forms/responses.html
+290 = ./admin/backend/modules/question/forms/contenttree.html
+291 = ./admin/backend/modules/question/forms/addContent.html
+292 = ./admin/backend/modules/question/forms/folder.html
+293 = ./admin/backend/modules/stores
+Common subdirectories: ./admin/backend/modules/stores/forms and ../gadra/./admin/backend/modules/stores/forms
+diff ./admin/backend/modules/stores/stores.php ../gadra/./admin/backend/modules/stores/stores.php
+718c718
+< 								continue 2;
+---
+> 								continue;
+294 = ./admin/backend/modules/stores/stores.css
+295 = ./admin/backend/modules/stores/stores.js
+296 = ./admin/backend/modules/stores/stores.php
+718c718
+< 								continue 2;
+---
+> 								continue;
+297 = ./admin/backend/modules/stores/stores.html
+298 = ./admin/backend/modules/stores/forms
+299 = ./admin/backend/modules/stores/forms/eventList.html
+300 = ./admin/backend/modules/stores/forms/articleList.html
+301 = ./admin/backend/modules/stores/forms/addItem.html
+302 = ./admin/backend/modules/stores/forms/eventFoldersList.html
+303 = ./admin/backend/modules/stores/forms/productsList.html
+304 = ./admin/backend/modules/stores/forms/storeList.html
+305 = ./admin/backend/modules/stores/forms/couponFoldersList.html
+306 = ./admin/backend/modules/stores/forms/contenttree.html
+307 = ./admin/backend/modules/stores/forms/productFoldersList.html
+308 = ./admin/backend/modules/stores/forms/addFolder.html
+309 = ./admin/backend/modules/stores/forms/editAddressSuccess.html
+310 = ./admin/backend/modules/stores/forms/productList.html
+311 = ./admin/backend/modules/stores/forms/editAddress.html
+312 = ./admin/backend/modules/stores/forms/addContent.html
+313 = ./admin/backend/modules/stores/forms/addressList.html
+314 = ./admin/backend/modules/stores/forms/folder.html
+315 = ./admin/backend/modules/stores/forms/deleteItemResult.html
+316 = ./admin/backend/modules/stores/forms/paginationWrapper.html
+317 = ./admin/backend/modules/stores/forms/couponList.html
+318 = ./admin/backend/modules/stores/forms/deleteItem.html
+319 = ./admin/backend/modules/stores/forms/heading.html
+320 = ./admin/backend/modules/stores/forms/eventsList.html
+321 = ./admin/backend/modules/stores/forms/storesList.html
+322 = ./admin/backend/modules/stores/forms/paginationPage.html
+323 = ./admin/backend/modules/stores/forms/couponsList.html
+324 = ./admin/backend/modules/stores/forms/paginationPrev.html
+325 = ./admin/backend/modules/stores/forms/folderContent.html
+326 = ./admin/backend/modules/stores/forms/editItem.html
+327 = ./admin/backend/modules/stores/forms/folderInfo.html
+328 = ./admin/backend/modules/stores/forms/paginationNext.html
+329 = ./admin/backend/modules/stores/forms/addContentSuccess.html
+330 = ./admin/backend/modules/stores/forms/searchForm.html
+331 = ./admin/backend/modules/stores/forms/addressForm.html
+332 = ./admin/backend/modules/login
+Common subdirectories: ./admin/backend/modules/login/forms and ../gadra/./admin/backend/modules/login/forms
+333 = ./admin/backend/modules/login/login.php
+334 = ./admin/backend/modules/login/login.css
+335 = ./admin/backend/modules/login/login.js
+336 = ./admin/backend/modules/login/forms
+337 = ./admin/backend/modules/login/forms/login.html
+338 = ./admin/backend/modules/rss
+Common subdirectories: ./admin/backend/modules/rss/forms and ../gadra/./admin/backend/modules/rss/forms
+diff ./admin/backend/modules/rss/rss.php ../gadra/./admin/backend/modules/rss/rss.php
+516c516
+< 								continue 2;
+---
+> 								continue;
+339 = ./admin/backend/modules/rss/rss.php
+516c516
+< 								continue 2;
+---
+> 								continue;
+340 = ./admin/backend/modules/rss/rss.css
+341 = ./admin/backend/modules/rss/rss.html
+342 = ./admin/backend/modules/rss/finalize.js
+343 = ./admin/backend/modules/rss/rss.js
+344 = ./admin/backend/modules/rss/forms
+345 = ./admin/backend/modules/rss/forms/editResult.html
+346 = ./admin/backend/modules/rss/forms/addContentSuccess.html
+347 = ./admin/backend/modules/rss/forms/paginationNext.html
+348 = ./admin/backend/modules/rss/forms/folderInfo.html
+349 = ./admin/backend/modules/rss/forms/paginationPrev.html
+350 = ./admin/backend/modules/rss/forms/folderContent.html
+351 = ./admin/backend/modules/rss/forms/searchForm.html
+352 = ./admin/backend/modules/rss/forms/articleList.html
+353 = ./admin/backend/modules/rss/forms/video.html
+354 = ./admin/backend/modules/rss/forms/eventFoldersList.html
+355 = ./admin/backend/modules/rss/forms/addArticle.html
+356 = ./admin/backend/modules/rss/forms/productsList.html
+357 = ./admin/backend/modules/rss/forms/couponFoldersList.html
+358 = ./admin/backend/modules/rss/forms/contenttree.html
+359 = ./admin/backend/modules/rss/forms/productFoldersList.html
+360 = ./admin/backend/modules/rss/forms/addFolder.html
+361 = ./admin/backend/modules/rss/forms/addContent.html
+362 = ./admin/backend/modules/rss/forms/folder.html
+363 = ./admin/backend/modules/rss/forms/deleteItemResult.html
+364 = ./admin/backend/modules/rss/forms/paginationWrapper.html
+365 = ./admin/backend/modules/rss/forms/deleteItem.html
+366 = ./admin/backend/modules/rss/forms/heading.html
+367 = ./admin/backend/modules/rss/forms/eventsList.html
+368 = ./admin/backend/modules/rss/forms/paginationPage.html
+369 = ./admin/backend/modules/rss/forms/couponsList.html
+370 = ./admin/backend/modules/rss/forms/deleteResult.html
+371 = ./admin/backend/modules/coupons
+diff ./admin/backend/modules/coupons/coupons.php ../gadra/./admin/backend/modules/coupons/coupons.php
+568c568
+< 								continue 2;
+---
+> 								continue;
+Common subdirectories: ./admin/backend/modules/coupons/forms and ../gadra/./admin/backend/modules/coupons/forms
+372 = ./admin/backend/modules/coupons/coupons.html
+373 = ./admin/backend/modules/coupons/coupons.js
+374 = ./admin/backend/modules/coupons/coupons.php
+568c568
+< 								continue 2;
+---
+> 								continue;
+375 = ./admin/backend/modules/coupons/coupons.css
+376 = ./admin/backend/modules/coupons/forms
+377 = ./admin/backend/modules/coupons/forms/advertList.html
+378 = ./admin/backend/modules/coupons/forms/searchForm.html
+379 = ./admin/backend/modules/coupons/forms/blogList.html
+380 = ./admin/backend/modules/coupons/forms/eventList.html
+381 = ./admin/backend/modules/coupons/forms/articleList.html
+382 = ./admin/backend/modules/coupons/forms/editCoupon.html
+383 = ./admin/backend/modules/coupons/forms/newsList.html
+384 = ./admin/backend/modules/coupons/forms/storeList.html
+385 = ./admin/backend/modules/coupons/forms/contenttree.html
+386 = ./admin/backend/modules/coupons/forms/addFolder.html
+387 = ./admin/backend/modules/coupons/forms/productList.html
+388 = ./admin/backend/modules/coupons/forms/addContent.html
+389 = ./admin/backend/modules/coupons/forms/storeChainList.html
+390 = ./admin/backend/modules/coupons/forms/folder.html
+391 = ./admin/backend/modules/coupons/forms/deleteItemResult.html
+392 = ./admin/backend/modules/coupons/forms/paginationWrapper.html
+393 = ./admin/backend/modules/coupons/forms/couponList.html
+394 = ./admin/backend/modules/coupons/forms/deleteItem.html
+395 = ./admin/backend/modules/coupons/forms/heading.html
+396 = ./admin/backend/modules/coupons/forms/paginationPage.html
+397 = ./admin/backend/modules/coupons/forms/deleteResult.html
+398 = ./admin/backend/modules/coupons/forms/addCoupon.html
+399 = ./admin/backend/modules/coupons/forms/paginationPrev.html
+400 = ./admin/backend/modules/coupons/forms/folderContent.html
+401 = ./admin/backend/modules/coupons/forms/folderInfo.html
+402 = ./admin/backend/modules/coupons/forms/paginationNext.html
+403 = ./admin/backend/modules/coupons/forms/editResult.html
+404 = ./admin/backend/modules/newsletter
+Common subdirectories: ./admin/backend/modules/newsletter/forms and ../gadra/./admin/backend/modules/newsletter/forms
+diff ./admin/backend/modules/newsletter/newsletter.php ../gadra/./admin/backend/modules/newsletter/newsletter.php
+272c272,273
+< 		$frmFlds = $form->buildForm($this->getFields('folderProperties'));
+---
+> 		$frmFlds = $this->getFields('folderProperties');
+> 		$form->buildForm($frmFlds);
+405 = ./admin/backend/modules/newsletter/newsletter.html
+406 = ./admin/backend/modules/newsletter/newsletter.css
+407 = ./admin/backend/modules/newsletter/finalize.js
+408 = ./admin/backend/modules/newsletter/newsletter.php
+272c272,273
+< 		$frmFlds = $form->buildForm($this->getFields('folderProperties'));
+---
+> 		$frmFlds = $this->getFields('folderProperties');
+> 		$form->buildForm($frmFlds);
+409 = ./admin/backend/modules/newsletter/newsletter.js
+410 = ./admin/backend/modules/newsletter/forms
+411 = ./admin/backend/modules/newsletter/forms/eventFoldersList.html
+412 = ./admin/backend/modules/newsletter/forms/storeList.html
+413 = ./admin/backend/modules/newsletter/forms/searchForm.html
+414 = ./admin/backend/modules/newsletter/forms/eventList.html
+415 = ./admin/backend/modules/newsletter/forms/articleList.html
+416 = ./admin/backend/modules/newsletter/forms/couponFoldersList.html
+417 = ./admin/backend/modules/newsletter/forms/contenttree.html
+418 = ./admin/backend/modules/newsletter/forms/addFolder.html
+419 = ./admin/backend/modules/newsletter/forms/productList.html
+420 = ./admin/backend/modules/newsletter/forms/addContent.html
+421 = ./admin/backend/modules/newsletter/forms/folder.html
+422 = ./admin/backend/modules/newsletter/forms/deleteItemResult.html
+423 = ./admin/backend/modules/newsletter/forms/statsRow.html
+424 = ./admin/backend/modules/newsletter/forms/addAdvert.html
+425 = ./admin/backend/modules/newsletter/forms/paginationWrapper.html
+426 = ./admin/backend/modules/newsletter/forms/couponList.html
+427 = ./admin/backend/modules/newsletter/forms/deleteItem.html
+428 = ./admin/backend/modules/newsletter/forms/stats.html
+429 = ./admin/backend/modules/newsletter/forms/heading.html
+430 = ./admin/backend/modules/newsletter/forms/eventsList.html
+431 = ./admin/backend/modules/newsletter/forms/paginationPage.html
+432 = ./admin/backend/modules/newsletter/forms/couponsList.html
+433 = ./admin/backend/modules/newsletter/forms/paginationPrev.html
+434 = ./admin/backend/modules/newsletter/forms/folderContent.html
+435 = ./admin/backend/modules/newsletter/forms/editItem.html
+436 = ./admin/backend/modules/newsletter/forms/folderInfo.html
+437 = ./admin/backend/modules/newsletter/forms/paginationNext.html
+438 = ./admin/backend/modules/credit
+diff ./admin/backend/modules/credit/credit.php ../gadra/./admin/backend/modules/credit/credit.php
+347c347
+< 								continue 2;
+---
+> 								continue;
+Common subdirectories: ./admin/backend/modules/credit/forms and ../gadra/./admin/backend/modules/credit/forms
+439 = ./admin/backend/modules/credit/credit.css
+440 = ./admin/backend/modules/credit/finalize.js
+441 = ./admin/backend/modules/credit/credit.html
+442 = ./admin/backend/modules/credit/credit.php
+347c347
+< 								continue 2;
+---
+> 								continue;
+443 = ./admin/backend/modules/credit/credit.js
+444 = ./admin/backend/modules/credit/forms
+445 = ./admin/backend/modules/credit/forms/showPagePropertiesRemaining.html
+446 = ./admin/backend/modules/credit/forms/folder.html
+447 = ./admin/backend/modules/credit/forms/deleteItemResult.html
+448 = ./admin/backend/modules/credit/forms/altPaginationPage.html
+449 = ./admin/backend/modules/credit/forms/confirmationRow.html
+450 = ./admin/backend/modules/credit/forms/paginationWrapper.html
+451 = ./admin/backend/modules/credit/forms/exportDetails.html
+452 = ./admin/backend/modules/credit/forms/couponFoldersList.html
+453 = ./admin/backend/modules/credit/forms/contenttree.html
+454 = ./admin/backend/modules/credit/forms/productFoldersList.html
+455 = ./admin/backend/modules/credit/forms/exportSales.html
+456 = ./admin/backend/modules/credit/forms/addFolder.html
+457 = ./admin/backend/modules/credit/forms/addCurrency.html
+458 = ./admin/backend/modules/credit/forms/confirmationOrder.html
+459 = ./admin/backend/modules/credit/forms/deleteItem.html
+460 = ./admin/backend/modules/credit/forms/showPageProperties.html
+461 = ./admin/backend/modules/credit/forms/heading.html
+462 = ./admin/backend/modules/credit/forms/eventsList.html
+463 = ./admin/backend/modules/credit/forms/pickListRow.html
+464 = ./admin/backend/modules/credit/forms/paginationPage.html
+465 = ./admin/backend/modules/credit/forms/recurringOrdersRow.html
+466 = ./admin/backend/modules/credit/forms/salesReportsRow.html
+467 = ./admin/backend/modules/credit/forms/couponsList.html
+468 = ./admin/backend/modules/credit/forms/deleteResult.html
+469 = ./admin/backend/modules/credit/forms/paginationPrev.html
+470 = ./admin/backend/modules/credit/forms/dailyDetailsRow.html
+471 = ./admin/backend/modules/credit/forms/salesReports.html
+472 = ./admin/backend/modules/credit/forms/exportSalesRow.html
+473 = ./admin/backend/modules/credit/forms/exchange.html
+474 = ./admin/backend/modules/credit/forms/searchForm.html
+475 = ./admin/backend/modules/credit/forms/nightlySchedule.html
+476 = ./admin/backend/modules/credit/forms/dailyLog.html
+477 = ./admin/backend/modules/credit/forms/recurringOrders.html
+478 = ./admin/backend/modules/credit/forms/pickList.html
+479 = ./admin/backend/modules/credit/forms/confirmationOrderRow.html
+480 = ./admin/backend/modules/credit/forms/eventFoldersList.html
+481 = ./admin/backend/modules/credit/forms/showPagePropertiesRow.html
+482 = ./admin/backend/modules/credit/forms/editRecurring.html
+483 = ./admin/backend/modules/credit/forms/getRemainingRow.html
+484 = ./admin/backend/modules/credit/forms/addArticle.html
+485 = ./admin/backend/modules/credit/forms/altPaginationNext.html
+486 = ./admin/backend/modules/credit/forms/productsList.html
+487 = ./admin/backend/modules/credit/forms/folderInfo.html
+488 = ./admin/backend/modules/credit/forms/paginationNext.html
+489 = ./admin/backend/modules/credit/forms/editResult.html
+490 = ./admin/backend/modules/credit/forms/confirmation.html
+491 = ./admin/backend/modules/credit/forms/folderContent.html
+492 = ./admin/backend/modules/credit/forms/addContent.html
+493 = ./admin/backend/modules/credit/forms/nightlyScheduleRow.html
+494 = ./admin/backend/modules/credit/forms/dailyLogRow.html
+495 = ./admin/backend/modules/credit/forms/altPaginationPrev.html
+496 = ./admin/backend/modules/credit/forms/addSchedule.html
+497 = ./admin/backend/modules/credit/forms/dailyDetails.html
+498 = ./admin/backend/modules/credit/forms/getRemaining.html
+499 = ./admin/backend/modules/credit/forms/exchangeRow.html
+500 = ./admin/backend/modules/credit/forms/exportDetailsRow.html
+501 = ./admin/backend/modules/credit/forms/articleList.html
+502 = ./admin/backend/modules/credit/forms/altPaginationWrapper.html
+503 = ./admin/backend/modules/templates
+Common subdirectories: ./admin/backend/modules/templates/forms and ../gadra/./admin/backend/modules/templates/forms
+504 = ./admin/backend/modules/templates/templates.html
+505 = ./admin/backend/modules/templates/templates.php
+506 = ./admin/backend/modules/templates/templates.js
+507 = ./admin/backend/modules/templates/templates.css
+508 = ./admin/backend/modules/templates/forms
+509 = ./admin/backend/modules/templates/forms/folderInfo.html
+510 = ./admin/backend/modules/templates/forms/paginationNext.html
+511 = ./admin/backend/modules/templates/forms/copyTemplate.html
+512 = ./admin/backend/modules/templates/forms/templateListRow.html
+513 = ./admin/backend/modules/templates/forms/templateProperties.html
+514 = ./admin/backend/modules/templates/forms/articleList.html
+515 = ./admin/backend/modules/templates/forms/templateList.html
+516 = ./admin/backend/modules/templates/forms/showTemplate.html
+517 = ./admin/backend/modules/templates/forms/contenttree.html
+518 = ./admin/backend/modules/templates/forms/templateInfo.html
+519 = ./admin/backend/modules/templates/forms/editorForm.html
+520 = ./admin/backend/modules/templates/forms/addContent.html
+521 = ./admin/backend/modules/templates/forms/folder.html
+522 = ./admin/backend/modules/templates/forms/paginationWrapper.html
+523 = ./admin/backend/modules/templates/forms/templatePages.html
+524 = ./admin/backend/modules/templates/forms/heading.html
+525 = ./admin/backend/modules/templates/forms/paginationPage.html
+526 = ./admin/backend/modules/templates/forms/paginationPrev.html
+527 = ./admin/backend/modules/templates/forms/folderContent.html
+528 = ./admin/backend/modules/users
+Common subdirectories: ./admin/backend/modules/users/forms and ../gadra/./admin/backend/modules/users/forms
+529 = ./admin/backend/modules/users/users.js
+530 = ./admin/backend/modules/users/users.php
+531 = ./admin/backend/modules/users/users.css
+532 = ./admin/backend/modules/users/users.html
+533 = ./admin/backend/modules/users/finalize.js
+534 = ./admin/backend/modules/users/forms
+535 = ./admin/backend/modules/users/forms/folderInfo.html
+536 = ./admin/backend/modules/users/forms/paginationNext.html
+537 = ./admin/backend/modules/users/forms/paginationPage.html
+538 = ./admin/backend/modules/users/forms/hasAccessTo.html
+539 = ./admin/backend/modules/users/forms/couponsList.html
+540 = ./admin/backend/modules/users/forms/paginationPrev.html
+541 = ./admin/backend/modules/users/forms/folderContent.html
+542 = ./admin/backend/modules/users/forms/editItem.html
+543 = ./admin/backend/modules/users/forms/addUser.html
+544 = ./admin/backend/modules/users/forms/addContent.html
+545 = ./admin/backend/modules/users/forms/folder.html
+546 = ./admin/backend/modules/users/forms/paginationWrapper.html
+547 = ./admin/backend/modules/users/forms/heading.html
+548 = ./admin/backend/modules/users/forms/eventsList.html
+549 = ./admin/backend/modules/users/forms/myAccount.html
+550 = ./admin/backend/modules/users/forms/searchForm.html
+551 = ./admin/backend/modules/users/forms/articleList.html
+552 = ./admin/backend/modules/users/forms/myAccountSuccess.html
+553 = ./admin/backend/modules/users/forms/eventFoldersList.html
+554 = ./admin/backend/modules/users/forms/productsList.html
+555 = ./admin/backend/modules/users/forms/couponFoldersList.html
+556 = ./admin/backend/modules/users/forms/contenttree.html
+557 = ./admin/backend/modules/users/forms/productFoldersList.html
+558 = ./admin/backend/modules/analytics
+Common subdirectories: ./admin/backend/modules/analytics/forms and ../gadra/./admin/backend/modules/analytics/forms
+559 = ./admin/backend/modules/analytics/analytics.php
+560 = ./admin/backend/modules/analytics/finalize.js
+561 = ./admin/backend/modules/analytics/analytics.html
+562 = ./admin/backend/modules/analytics/analytics.js
+563 = ./admin/backend/modules/analytics/analytics.css
+564 = ./admin/backend/modules/analytics/forms
+565 = ./admin/backend/modules/analytics/forms/searchForm.html
+566 = ./admin/backend/modules/analytics/forms/dashboard.html
+567 = ./admin/backend/modules/analytics/forms/folder.html
+568 = ./admin/backend/modules/analytics/forms/demographics.html
+569 = ./admin/backend/modules/analytics/forms/paginationWrapper.html
+570 = ./admin/backend/modules/analytics/forms/heading.html
+571 = ./admin/backend/modules/analytics/forms/paginationPage.html
+572 = ./admin/backend/modules/analytics/forms/paginationPrev.html
+573 = ./admin/backend/modules/analytics/forms/folderContent.html
+574 = ./admin/backend/modules/analytics/forms/folderInfo.html
+575 = ./admin/backend/modules/analytics/forms/paginationNext.html
+576 = ./admin/backend/modules/advert
+diff ./admin/backend/modules/advert/advert.php ../gadra/./admin/backend/modules/advert/advert.php
+139c139
+< 				'destRelatedProducts'=>array('type'=>'select','database'=>false,'id'=>'relatedDestProducts','reformatting'=>false,'multiple'=>'multiple'),
+---
+> 				'destRelarelatedDestProductstedProducts'=>array('type'=>'select','database'=>false,'id'=>'relatedDestProducts','reformatting'=>false,'multiple'=>'multiple'),
+Common subdirectories: ./admin/backend/modules/advert/forms and ../gadra/./admin/backend/modules/advert/forms
+577 = ./admin/backend/modules/advert/advert.php
+139c139
+< 				'destRelatedProducts'=>array('type'=>'select','database'=>false,'id'=>'relatedDestProducts','reformatting'=>false,'multiple'=>'multiple'),
+---
+> 				'destRelarelatedDestProductstedProducts'=>array('type'=>'select','database'=>false,'id'=>'relatedDestProducts','reformatting'=>false,'multiple'=>'multiple'),
+578 = ./admin/backend/modules/advert/advert.js
+579 = ./admin/backend/modules/advert/advert.html
+580 = ./admin/backend/modules/advert/finalize.js
+581 = ./admin/backend/modules/advert/advert.css
+582 = ./admin/backend/modules/advert/forms
+diff ./admin/backend/modules/advert/forms/addContent.html ../gadra/./admin/backend/modules/advert/forms/addContent.html
+214c214
+< $("select[multiple]").chosen({width:"100%"});
+---
+> $("select[multiple]").chosen();
+583 = ./admin/backend/modules/advert/forms/searchForm.html
+584 = ./admin/backend/modules/advert/forms/productList.html
+585 = ./admin/backend/modules/advert/forms/addContent.html
+214c214
+< $("select[multiple]").chosen({width:"100%"});
+---
+> $("select[multiple]").chosen();
+586 = ./admin/backend/modules/advert/forms/deleteItemResult.html
+587 = ./admin/backend/modules/advert/forms/addAdvert.html
+588 = ./admin/backend/modules/advert/forms/paginationWrapper.html
+589 = ./admin/backend/modules/advert/forms/couponList.html
+590 = ./admin/backend/modules/advert/forms/deleteItem.html
+591 = ./admin/backend/modules/advert/forms/heading.html
+592 = ./admin/backend/modules/advert/forms/eventsList.html
+593 = ./admin/backend/modules/advert/forms/paginationPage.html
+594 = ./admin/backend/modules/advert/forms/couponsList.html
+595 = ./admin/backend/modules/advert/forms/paginationPrev.html
+596 = ./admin/backend/modules/advert/forms/folderContent.html
+597 = ./admin/backend/modules/advert/forms/folderInfo.html
+598 = ./admin/backend/modules/advert/forms/paginationNext.html
+599 = ./admin/backend/modules/advert/forms/folder.html
+600 = ./admin/backend/modules/advert/forms/eventList.html
+601 = ./admin/backend/modules/advert/forms/articleList.html
+602 = ./admin/backend/modules/advert/forms/video.html
+603 = ./admin/backend/modules/advert/forms/eventFoldersList.html
+604 = ./admin/backend/modules/advert/forms/storeList.html
+605 = ./admin/backend/modules/advert/forms/couponFoldersList.html
+606 = ./admin/backend/modules/advert/forms/contenttree.html
+607 = ./admin/backend/modules/advert/forms/addFolder.html
+608 = ./admin/backend/modules/setup
+Common subdirectories: ./admin/backend/modules/setup/forms and ../gadra/./admin/backend/modules/setup/forms
+609 = ./admin/backend/modules/setup/finalize.js
+610 = ./admin/backend/modules/setup/setup.css
+611 = ./admin/backend/modules/setup/setup.js
+612 = ./admin/backend/modules/setup/setup.php
+613 = ./admin/backend/modules/setup/setup.html
+614 = ./admin/backend/modules/setup/forms
+615 = ./admin/backend/modules/setup/forms/buildOptions.html
+616 = ./admin/backend/modules/setup/forms/relationsRow.html
+617 = ./admin/backend/modules/setup/forms/paginationPrev.html
+618 = ./admin/backend/modules/setup/forms/addSubtemplateSuccess.html
+619 = ./admin/backend/modules/setup/forms/deleteSubtemplate.html
+620 = ./admin/backend/modules/setup/forms/folder.html
+621 = ./admin/backend/modules/setup/forms/placement.html
+622 = ./admin/backend/modules/setup/forms/paginationWrapper.html
+623 = ./admin/backend/modules/setup/forms/paginationPage.html
+624 = ./admin/backend/modules/setup/forms/addContent.html
+625 = ./admin/backend/modules/setup/forms/articleList.html
+626 = ./admin/backend/modules/setup/forms/addSubtemplate.html
+627 = ./admin/backend/modules/setup/forms/contenttree.html
+628 = ./admin/backend/modules/setup/forms/subtemplate.html
+629 = ./admin/backend/modules/setup/forms/addPlacement.html
+630 = ./admin/backend/modules/setup/forms/addPlacementSuccess.html
+631 = ./admin/backend/modules/setup/forms/loadRelations.html
+632 = ./admin/backend/modules/setup/forms/searchForm.html
+633 = ./admin/backend/modules/setup/forms/deletePlacements.html
+634 = ./admin/backend/modules/setup/forms/folderContent.html
+635 = ./admin/backend/modules/setup/forms/folderInfo.html
+636 = ./admin/backend/modules/setup/forms/paginationNext.html
+637 = ./admin/backend/modules/setup/forms/addContentSuccess.html
+638 = ./admin/backend/modules/setup/forms/editSuccess.html
+639 = ./admin/backend/modules/custom-old
+skipping ../admin/backend/modules/custom-old
+640 = ./admin/backend/modules/custom-old/custom.php
+skipping ../admin/backend/modules/custom-old/custom.php
+641 = ./admin/backend/modules/custom-old/forms
+skipping ../admin/backend/modules/custom-old/forms
+642 = ./admin/backend/modules/custom-old/forms/member.html
+skipping ../admin/backend/modules/custom-old/forms/member.html
+643 = ./admin/backend/modules/custom-old/forms/galleryFolder.html
+skipping ../admin/backend/modules/custom-old/forms/galleryFolder.html
+644 = ./admin/backend/modules/custom-old/forms/product.html
+skipping ../admin/backend/modules/custom-old/forms/product.html
+645 = ./admin/backend/modules/custom-old/forms/event.html
+skipping ../admin/backend/modules/custom-old/forms/event.html
+646 = ./admin/backend/modules/custom-old/forms/newsFolder.html
+skipping ../admin/backend/modules/custom-old/forms/newsFolder.html
+647 = ./admin/backend/modules/custom-old/forms/store.html
+skipping ../admin/backend/modules/custom-old/forms/store.html
+648 = ./admin/backend/modules/custom-old/forms/gallery.html
+skipping ../admin/backend/modules/custom-old/forms/gallery.html
+649 = ./admin/backend/modules/custom-old/forms/news.html
+skipping ../admin/backend/modules/custom-old/forms/news.html
+650 = ./admin/backend/modules/custom-old/forms/order.html
+skipping ../admin/backend/modules/custom-old/forms/order.html
+651 = ./admin/backend/modules/custom-old/forms/menuFolder.html
+skipping ../admin/backend/modules/custom-old/forms/menuFolder.html
+652 = ./admin/backend/modules/custom-old/forms/advert.html
+skipping ../admin/backend/modules/custom-old/forms/advert.html
+653 = ./admin/backend/modules/blog
+diff ./admin/backend/modules/blog/blog.php ../gadra/./admin/backend/modules/blog/blog.php
+621c621
+< 								continue 2;
+---
+> 								continue;
+1374c1374
+< 				$this->execute(sprintf('delete from video where owner_type="blog" and owner_id = %d', $_POST['video']['v_id']));
+---
+> 				$this->execute(sprintf('delete from video where owner_type="blog" and owner_id = %d'));
+Common subdirectories: ./admin/backend/modules/blog/forms and ../gadra/./admin/backend/modules/blog/forms
+654 = ./admin/backend/modules/blog/blog.css
+655 = ./admin/backend/modules/blog/finalize.js
+656 = ./admin/backend/modules/blog/blog.html
+657 = ./admin/backend/modules/blog/blog.php
+621c621
+< 								continue 2;
+---
+> 								continue;
+1374c1374
+< 				$this->execute(sprintf('delete from video where owner_type="blog" and owner_id = %d', $_POST['video']['v_id']));
+---
+> 				$this->execute(sprintf('delete from video where owner_type="blog" and owner_id = %d'));
+658 = ./admin/backend/modules/blog/blog.js
+659 = ./admin/backend/modules/blog/forms
+660 = ./admin/backend/modules/blog/forms/paginationPage.html
+661 = ./admin/backend/modules/blog/forms/paginationCommentsPrev.html
+662 = ./admin/backend/modules/blog/forms/deleteItem.html
+663 = ./admin/backend/modules/blog/forms/heading.html
+664 = ./admin/backend/modules/blog/forms/eventsList.html
+665 = ./admin/backend/modules/blog/forms/editResult.html
+666 = ./admin/backend/modules/blog/forms/blogCommentRow.html
+667 = ./admin/backend/modules/blog/forms/searchForm.html
+668 = ./admin/backend/modules/blog/forms/editComment.html
+669 = ./admin/backend/modules/blog/forms/previewAudio.html
+670 = ./admin/backend/modules/blog/forms/approval.html
+671 = ./admin/backend/modules/blog/forms/blogList.html
+672 = ./admin/backend/modules/blog/forms/deleteCommentSuccess.html
+673 = ./admin/backend/modules/blog/forms/previewImage.html
+674 = ./admin/backend/modules/blog/forms/eventList.html
+675 = ./admin/backend/modules/blog/forms/addItem.html
+676 = ./admin/backend/modules/blog/forms/video.html
+677 = ./admin/backend/modules/blog/forms/eventFoldersList.html
+678 = ./admin/backend/modules/blog/forms/previewVideo.html
+679 = ./admin/backend/modules/blog/forms/productsList.html
+680 = ./admin/backend/modules/blog/forms/storeList.html
+681 = ./admin/backend/modules/blog/forms/couponFoldersList.html
+682 = ./admin/backend/modules/blog/forms/paginationPrev.html
+683 = ./admin/backend/modules/blog/forms/paginationCommentsNext.html
+684 = ./admin/backend/modules/blog/forms/blogComments.html
+685 = ./admin/backend/modules/blog/forms/couponsList.html
+686 = ./admin/backend/modules/blog/forms/contenttree.html
+687 = ./admin/backend/modules/blog/forms/productFoldersList.html
+688 = ./admin/backend/modules/blog/forms/paginationCommentsPage.html
+689 = ./admin/backend/modules/blog/forms/addFolder.html
+690 = ./admin/backend/modules/blog/forms/addContent.html
+691 = ./admin/backend/modules/blog/forms/folder.html
+692 = ./admin/backend/modules/blog/forms/deleteItemResult.html
+693 = ./admin/backend/modules/blog/forms/paginationWrapper.html
+694 = ./admin/backend/modules/blog/forms/couponList.html
+695 = ./admin/backend/modules/blog/forms/folderContent.html
+696 = ./admin/backend/modules/blog/forms/folderInfo.html
+697 = ./admin/backend/modules/blog/forms/paginationNext.html
+698 = ./admin/backend/modules/menu
+Common subdirectories: ./admin/backend/modules/menu/forms and ../gadra/./admin/backend/modules/menu/forms
+699 = ./admin/backend/modules/menu/menu.php
+700 = ./admin/backend/modules/menu/menu.js
+701 = ./admin/backend/modules/menu/menu.css
+702 = ./admin/backend/modules/menu/forms
+703 = ./admin/backend/modules/menu/forms/form.html
+704 = ./admin/backend/modules/menu/forms/elinkInfo.html
+705 = ./admin/backend/modules/menu/forms/contenttree.html
+706 = ./admin/backend/modules/menu/forms/searchForm.html
+707 = ./admin/backend/modules/menu/forms/addAPage.html
+708 = ./admin/backend/modules/menu/forms/menuInfo.html
+709 = ./admin/backend/modules/menu/forms/menuContent.html
+710 = ./admin/backend/modules/menu/forms/articleList.html
+711 = ./admin/backend/modules/menu/forms/elink.html
+712 = ./admin/backend/modules/menu/forms/iLinkContent.html
+713 = ./admin/backend/modules/menu/forms/eLinkContent.html
+714 = ./admin/backend/modules/menu/forms/ilinkInfo.html
+715 = ./admin/backend/modules/menu/forms/editorForm.html
+716 = ./admin/backend/modules/menu/forms/pageContent.html
+717 = ./admin/backend/modules/menu/forms/menu.html
+718 = ./admin/backend/modules/menu/forms/folder.html
+719 = ./admin/backend/modules/menu/forms/paginationWrapper.html
+720 = ./admin/backend/modules/menu/forms/menuContentRow.html
+721 = ./admin/backend/modules/menu/forms/heading.html
+722 = ./admin/backend/modules/menu/forms/ilink.html
+723 = ./admin/backend/modules/menu/forms/paginationPage.html
+724 = ./admin/backend/modules/menu/forms/deleteSuccess.html
+725 = ./admin/backend/modules/menu/forms/paginationPrev.html
+726 = ./admin/backend/modules/menu/forms/page.html
+727 = ./admin/backend/modules/menu/forms/paginationNext.html
+728 = ./admin/backend/modules/menu/forms/pageInfo.html
+729 = ./admin/backend/modules/modules
+Common subdirectories: ./admin/backend/modules/modules/forms and ../gadra/./admin/backend/modules/modules/forms
+730 = ./admin/backend/modules/modules/modules.css
+731 = ./admin/backend/modules/modules/finalize.js
+732 = ./admin/backend/modules/modules/modules.js
+733 = ./admin/backend/modules/modules/modules.php
+734 = ./admin/backend/modules/modules/modules.html
+735 = ./admin/backend/modules/modules/forms
+736 = ./admin/backend/modules/modules/forms/searchForm.html
+737 = ./admin/backend/modules/modules/forms/deletePlacements.html
+738 = ./admin/backend/modules/modules/forms/subtemplate.html
+739 = ./admin/backend/modules/modules/forms/editHtml.html
+740 = ./admin/backend/modules/modules/forms/addPlacement.html
+741 = ./admin/backend/modules/modules/forms/addPlacementSuccess.html
+742 = ./admin/backend/modules/modules/forms/articleList.html
+743 = ./admin/backend/modules/modules/forms/addSubtemplate.html
+744 = ./admin/backend/modules/modules/forms/contenttree.html
+745 = ./admin/backend/modules/modules/forms/addContent.html
+746 = ./admin/backend/modules/modules/forms/addSubtemplateSuccess.html
+747 = ./admin/backend/modules/modules/forms/deleteSubtemplate.html
+748 = ./admin/backend/modules/modules/forms/folder.html
+749 = ./admin/backend/modules/modules/forms/placement.html
+750 = ./admin/backend/modules/modules/forms/paginationWrapper.html
+751 = ./admin/backend/modules/modules/forms/paginationPage.html
+752 = ./admin/backend/modules/modules/forms/buildOptions.html
+753 = ./admin/backend/modules/modules/forms/paginationPrev.html
+754 = ./admin/backend/modules/modules/forms/folderContent.html
+755 = ./admin/backend/modules/modules/forms/folderInfo.html
+756 = ./admin/backend/modules/modules/forms/paginationNext.html
+757 = ./admin/backend/modules/product
+Common subdirectories: ./admin/backend/modules/product/forms and ../gadra/./admin/backend/modules/product/forms
+diff ./admin/backend/modules/product/product.php ../gadra/./admin/backend/modules/product/product.php
+294c294
+< 				'manufacturer_id'=>array('type'=>'select','idlookup'=>'manufacturer')
+---
+> 				'manufacturer_id'=>array('type'=>'select','idlookup'=>'manufacturers')
+617a618
+> 		$this->logMessage(__FUNCTION__,sprintf("form [%s]", print_r($form,true)), 1);
+922c923
+< 								continue 2;
+---
+> 								continue;
+1182c1183
+< 			$custom = $customFields->productDisplay();
+---
+> 			$custom = $customFields->productDisplay($data);
+1202a1204
+> 		$this->logMessage(__FUNCTION__,sprintf("form [%s]", print_r($form,true)), 1);
+758 = ./admin/backend/modules/product/product.html
+759 = ./admin/backend/modules/product/finalize.js
+760 = ./admin/backend/modules/product/product.css
+761 = ./admin/backend/modules/product/product.js
+762 = ./admin/backend/modules/product/product.php
+294c294
+< 				'manufacturer_id'=>array('type'=>'select','idlookup'=>'manufacturer')
+---
+> 				'manufacturer_id'=>array('type'=>'select','idlookup'=>'manufacturers')
+617a618
+> 		$this->logMessage(__FUNCTION__,sprintf("form [%s]", print_r($form,true)), 1);
+922c923
+< 								continue 2;
+---
+> 								continue;
+1182c1183
+< 			$custom = $customFields->productDisplay();
+---
+> 			$custom = $customFields->productDisplay($data);
+1202a1204
+> 		$this->logMessage(__FUNCTION__,sprintf("form [%s]", print_r($form,true)), 1);
+763 = ./admin/backend/modules/product/forms
+764 = ./admin/backend/modules/product/forms/addFolder.html
+765 = ./admin/backend/modules/product/forms/deleteComment.html
+766 = ./admin/backend/modules/product/forms/showInventory.html
+767 = ./admin/backend/modules/product/forms/productList.html
+768 = ./admin/backend/modules/product/forms/assembledFromRow.html
+769 = ./admin/backend/modules/product/forms/approveComment.html
+770 = ./admin/backend/modules/product/forms/addContent.html
+771 = ./admin/backend/modules/product/forms/editPricing.html
+772 = ./admin/backend/modules/product/forms/folder.html
+773 = ./admin/backend/modules/product/forms/deleteItemResult.html
+774 = ./admin/backend/modules/product/forms/loadRecurring.html
+775 = ./admin/backend/modules/product/forms/paginationWrapper.html
+776 = ./admin/backend/modules/product/forms/couponList.html
+777 = ./admin/backend/modules/product/forms/deleteItem.html
+778 = ./admin/backend/modules/product/forms/heading.html
+779 = ./admin/backend/modules/product/forms/inventoryAudit.html
+780 = ./admin/backend/modules/product/forms/storesList.html
+781 = ./admin/backend/modules/product/forms/pricingRow.html
+782 = ./admin/backend/modules/product/forms/addProduct.html
+783 = ./admin/backend/modules/product/forms/commentsRow.html
+784 = ./admin/backend/modules/product/forms/loadPricing.html
+785 = ./admin/backend/modules/product/forms/paginationPage.html
+786 = ./admin/backend/modules/product/forms/storeFoldersList.html
+787 = ./admin/backend/modules/product/forms/assemblyForm.html
+788 = ./admin/backend/modules/product/forms/loadOptions.html
+789 = ./admin/backend/modules/product/forms/editOptionSuccess.html
+790 = ./admin/backend/modules/product/forms/storeContentList.html
+791 = ./admin/backend/modules/product/forms/paginationNext.html
+792 = ./admin/backend/modules/product/forms/editInventorySuccess.html
+793 = ./admin/backend/modules/product/forms/couponFoldersList.html
+794 = ./admin/backend/modules/product/forms/contenttree.html
+795 = ./admin/backend/modules/product/forms/inventorySearchForm.html
+796 = ./admin/backend/modules/product/forms/inventoryList.html
+797 = ./admin/backend/modules/product/forms/eventList.html
+798 = ./admin/backend/modules/product/forms/articleList.html
+799 = ./admin/backend/modules/product/forms/inventoryFromRow.html
+800 = ./admin/backend/modules/product/forms/assemblyRow.html
+801 = ./admin/backend/modules/product/forms/editRecurringSuccess.html
+802 = ./admin/backend/modules/product/forms/video.html
+803 = ./admin/backend/modules/product/forms/editRecurring.html
+804 = ./admin/backend/modules/product/forms/newsList.html
+805 = ./admin/backend/modules/product/forms/storeList.html
+806 = ./admin/backend/modules/product/forms/editCommentSuccess.html
+807 = ./admin/backend/modules/product/forms/editInventory.html
+808 = ./admin/backend/modules/product/forms/searchForm.html
+809 = ./admin/backend/modules/product/forms/inventoryRow.html
+810 = ./admin/backend/modules/product/forms/editComment.html
+811 = ./admin/backend/modules/product/forms/comments.html
+812 = ./admin/backend/modules/product/forms/blogList.html
+813 = ./admin/backend/modules/product/forms/editOption.html
+814 = ./admin/backend/modules/product/forms/advertList.html
+815 = ./admin/backend/modules/product/forms/editItem.html
+816 = ./admin/backend/modules/product/forms/folderInfo.html
+817 = ./admin/backend/modules/product/forms/couponsList.html
+818 = ./admin/backend/modules/product/forms/paginationPrev.html
+819 = ./admin/backend/modules/product/forms/folderContent.html
+820 = ./admin/backend/modules/product/forms/inventoryAuditRow.html
+821 = ./admin/backend/modules/product/forms/editPricingSuccess.html
+822 = ./admin/backend/modules/config
+Common subdirectories: ./admin/backend/modules/config/forms and ../gadra/./admin/backend/modules/config/forms
+823 = ./admin/backend/modules/config/config.js
+824 = ./admin/backend/modules/config/config.css
+825 = ./admin/backend/modules/config/finalize.js
+826 = ./admin/backend/modules/config/config.html
+827 = ./admin/backend/modules/config/config.php
+828 = ./admin/backend/modules/config/forms
+829 = ./admin/backend/modules/config/forms/paginationPrev.html
+830 = ./admin/backend/modules/config/forms/folderContent.html
+831 = ./admin/backend/modules/config/forms/pageSubform.html
+832 = ./admin/backend/modules/config/forms/folderInfo.html
+833 = ./admin/backend/modules/config/forms/pageContent.html
+834 = ./admin/backend/modules/config/forms/addContent_paired_list.html
+835 = ./admin/backend/modules/config/forms/folder.html
+836 = ./admin/backend/modules/config/forms/addContent_paired_row.html
+837 = ./admin/backend/modules/config/forms/taxRow.html
+838 = ./admin/backend/modules/config/forms/formSuccess.html
+839 = ./admin/backend/modules/config/forms/paginationWrapper.html
+840 = ./admin/backend/modules/config/forms/taxList.html
+841 = ./admin/backend/modules/config/forms/formList.html
+842 = ./admin/backend/modules/config/forms/taxSuccess.html
+843 = ./admin/backend/modules/config/forms/eventsList.html
+844 = ./admin/backend/modules/config/forms/paginationPage.html
+845 = ./admin/backend/modules/config/forms/editForm.html
+846 = ./admin/backend/modules/config/forms/couponsList.html
+847 = ./admin/backend/modules/config/forms/formRow.html
+848 = ./admin/backend/modules/config/forms/paginationNext.html
+849 = ./admin/backend/modules/config/forms/searchForm.html
+850 = ./admin/backend/modules/config/forms/addContent_text.html
+851 = ./admin/backend/modules/config/forms/addContent_image.html
+852 = ./admin/backend/modules/config/forms/articleList.html
+853 = ./admin/backend/modules/config/forms/addContent_address.html
+854 = ./admin/backend/modules/config/forms/editTax.html
+855 = ./admin/backend/modules/config/forms/eventFoldersList.html
+856 = ./admin/backend/modules/config/forms/addContent_textarea.html
+857 = ./admin/backend/modules/config/forms/addArticle.html
+858 = ./admin/backend/modules/config/forms/productsList.html
+859 = ./admin/backend/modules/config/forms/couponFoldersList.html
+860 = ./admin/backend/modules/config/forms/contenttree.html
+861 = ./admin/backend/modules/config/forms/productFoldersList.html
+862 = ./admin/backend/modules/config/forms/addContent.html
+863 = ./admin/backend/modules/search
+Common subdirectories: ./admin/backend/modules/search/forms and ../gadra/./admin/backend/modules/search/forms
+864 = ./admin/backend/modules/search/search.css
+865 = ./admin/backend/modules/search/search.html
+866 = ./admin/backend/modules/search/finalize.js
+867 = ./admin/backend/modules/search/search.php
+868 = ./admin/backend/modules/search/search.js
+869 = ./admin/backend/modules/search/forms
+870 = ./admin/backend/modules/search/forms/searchForm.html
+871 = ./admin/backend/modules/search/forms/articleList.html
+872 = ./admin/backend/modules/search/forms/eventFoldersList.html
+873 = ./admin/backend/modules/search/forms/addArticle.html
+874 = ./admin/backend/modules/search/forms/productsList.html
+875 = ./admin/backend/modules/search/forms/couponFoldersList.html
+876 = ./admin/backend/modules/search/forms/contenttree.html
+877 = ./admin/backend/modules/search/forms/productFoldersList.html
+878 = ./admin/backend/modules/search/forms/addFolder.html
+879 = ./admin/backend/modules/search/forms/addContent.html
+880 = ./admin/backend/modules/search/forms/folder.html
+881 = ./admin/backend/modules/search/forms/deleteItemResult.html
+882 = ./admin/backend/modules/search/forms/paginationWrapper.html
+883 = ./admin/backend/modules/search/forms/deleteItem.html
+884 = ./admin/backend/modules/search/forms/heading.html
+885 = ./admin/backend/modules/search/forms/eventsList.html
+886 = ./admin/backend/modules/search/forms/paginationPage.html
+887 = ./admin/backend/modules/search/forms/couponsList.html
+888 = ./admin/backend/modules/search/forms/deleteResult.html
+889 = ./admin/backend/modules/search/forms/paginationPrev.html
+890 = ./admin/backend/modules/search/forms/folderContent.html
+891 = ./admin/backend/modules/search/forms/folderInfo.html
+892 = ./admin/backend/modules/search/forms/paginationNext.html
+893 = ./admin/backend/modules/search/forms/editResult.html
+894 = ./admin/backend/modules/polls
+Common subdirectories: ./admin/backend/modules/polls/forms and ../gadra/./admin/backend/modules/polls/forms
+895 = ./admin/backend/modules/polls/finalize.js
+896 = ./admin/backend/modules/polls/polls.css
+897 = ./admin/backend/modules/polls/polls.html
+898 = ./admin/backend/modules/polls/polls.js
+899 = ./admin/backend/modules/polls/polls.php
+900 = ./admin/backend/modules/polls/forms
+901 = ./admin/backend/modules/polls/forms/pollResponsesLink.html
+902 = ./admin/backend/modules/polls/forms/questionRow.html
+903 = ./admin/backend/modules/polls/forms/addContent.html
+904 = ./admin/backend/modules/polls/forms/compareQuestion.html
+905 = ./admin/backend/modules/polls/forms/folder.html
+906 = ./admin/backend/modules/polls/forms/viewResponse.html
+907 = ./admin/backend/modules/polls/forms/deleteItemResult.html
+908 = ./admin/backend/modules/polls/forms/responseDetails.html
+909 = ./admin/backend/modules/polls/forms/paginationWrapper.html
+910 = ./admin/backend/modules/polls/forms/compareQuestionResults.html
+911 = ./admin/backend/modules/polls/forms/questionChart.html
+912 = ./admin/backend/modules/polls/forms/contenttree.html
+913 = ./admin/backend/modules/polls/forms/comparatorRow.html
+914 = ./admin/backend/modules/polls/forms/statsLine.html
+915 = ./admin/backend/modules/polls/forms/articleList.html
+916 = ./admin/backend/modules/polls/forms/responseSearch.html
+917 = ./admin/backend/modules/polls/forms/comparePollsHeader.html
+918 = ./admin/backend/modules/polls/forms/questionList.html
+919 = ./admin/backend/modules/polls/forms/responseDetailsRow.html
+920 = ./admin/backend/modules/polls/forms/comparator.html
+921 = ./admin/backend/modules/polls/forms/viewResponseQuestion.html
+922 = ./admin/backend/modules/polls/forms/searchForm.html
+923 = ./admin/backend/modules/polls/forms/heading.html
+924 = ./admin/backend/modules/polls/forms/editQuestion.html
+925 = ./admin/backend/modules/polls/forms/questionPicker.html
+926 = ./admin/backend/modules/polls/forms/pollOther.html
+927 = ./admin/backend/modules/polls/forms/removeQuestion.html
+928 = ./admin/backend/modules/polls/forms/paginationPage.html
+929 = ./admin/backend/modules/polls/forms/pollResponses.html
+930 = ./admin/backend/modules/polls/forms/pollResponsesRow.html
+931 = ./admin/backend/modules/polls/forms/deleteSuccess.html
+932 = ./admin/backend/modules/polls/forms/comparePolls.html
+933 = ./admin/backend/modules/polls/forms/editQuestionSuccess.html
+934 = ./admin/backend/modules/polls/forms/paginationPrev.html
+935 = ./admin/backend/modules/polls/forms/copyPollSuccess.html
+936 = ./admin/backend/modules/polls/forms/folderContent.html
+937 = ./admin/backend/modules/polls/forms/folderInfo.html
+938 = ./admin/backend/modules/polls/forms/pollOtherDetail.html
+939 = ./admin/backend/modules/polls/forms/paginationNext.html
+940 = ./admin/backend/modules/polls/forms/copyPoll.html
+941 = ./admin/backend/modules/orders
+Common subdirectories: ./admin/backend/modules/orders/forms and ../gadra/./admin/backend/modules/orders/forms
+942 = ./admin/backend/modules/orders/finalize.js
+943 = ./admin/backend/modules/orders/orders.css
+944 = ./admin/backend/modules/orders/orders.js
+945 = ./admin/backend/modules/orders/orders.html
+946 = ./admin/backend/modules/orders/orders.php
+947 = ./admin/backend/modules/orders/forms
+948 = ./admin/backend/modules/orders/forms/folderInfo.html
+949 = ./admin/backend/modules/orders/forms/showRecurring.html
+950 = ./admin/backend/modules/orders/forms/paginationNext.html
+951 = ./admin/backend/modules/orders/forms/editLineResult.html
+952 = ./admin/backend/modules/orders/forms/searchForm.html
+953 = ./admin/backend/modules/orders/forms/orderLine.html
+954 = ./admin/backend/modules/orders/forms/addressForm.html
+955 = ./admin/backend/modules/orders/forms/articleList.html
+956 = ./admin/backend/modules/orders/forms/addItem.html
+957 = ./admin/backend/modules/orders/forms/contenttree.html
+958 = ./admin/backend/modules/orders/forms/recurringRow.html
+959 = ./admin/backend/modules/orders/forms/editLine.html
+960 = ./admin/backend/modules/orders/forms/addFolder.html
+961 = ./admin/backend/modules/orders/forms/showInventory.html
+962 = ./admin/backend/modules/orders/forms/editAddress.html
+963 = ./admin/backend/modules/orders/forms/addContent.html
+964 = ./admin/backend/modules/orders/forms/addressList.html
+965 = ./admin/backend/modules/orders/forms/folder.html
+966 = ./admin/backend/modules/orders/forms/paginationWrapper.html
+967 = ./admin/backend/modules/orders/forms/recurring.html
+968 = ./admin/backend/modules/orders/forms/heading.html
+969 = ./admin/backend/modules/orders/forms/addProduct.html
+970 = ./admin/backend/modules/orders/forms/paginationPage.html
+971 = ./admin/backend/modules/orders/forms/showOrder.html
+972 = ./admin/backend/modules/orders/forms/paginationPrev.html
+973 = ./admin/backend/modules/orders/forms/folderContent.html
+974 = ./admin/backend/modules/news
+Common subdirectories: ./admin/backend/modules/news/forms and ../gadra/./admin/backend/modules/news/forms
+diff ./admin/backend/modules/news/news.php ../gadra/./admin/backend/modules/news/news.php
+657c657
+< 								continue 2;
+---
+> 								continue;
+975 = ./admin/backend/modules/news/news.php
+657c657
+< 								continue 2;
+---
+> 								continue;
+976 = ./admin/backend/modules/news/finalize.js
+977 = ./admin/backend/modules/news/news.js
+978 = ./admin/backend/modules/news/news.css
+979 = ./admin/backend/modules/news/news.html
+980 = ./admin/backend/modules/news/forms
+981 = ./admin/backend/modules/news/forms/searchForm.html
+982 = ./admin/backend/modules/news/forms/articleList.html
+983 = ./admin/backend/modules/news/forms/video.html
+984 = ./admin/backend/modules/news/forms/eventFoldersList.html
+985 = ./admin/backend/modules/news/forms/addArticle.html
+986 = ./admin/backend/modules/news/forms/productsList.html
+987 = ./admin/backend/modules/news/forms/couponFoldersList.html
+988 = ./admin/backend/modules/news/forms/contenttree.html
+989 = ./admin/backend/modules/news/forms/productFoldersList.html
+990 = ./admin/backend/modules/news/forms/addFolder.html
+991 = ./admin/backend/modules/news/forms/addContent.html
+992 = ./admin/backend/modules/news/forms/folder.html
+993 = ./admin/backend/modules/news/forms/deleteItemResult.html
+994 = ./admin/backend/modules/news/forms/addContentSuccess.html
+995 = ./admin/backend/modules/news/forms/paginationWrapper.html
+996 = ./admin/backend/modules/news/forms/deleteItem.html
+997 = ./admin/backend/modules/news/forms/heading.html
+998 = ./admin/backend/modules/news/forms/eventsList.html
+999 = ./admin/backend/modules/news/forms/paginationPage.html
+1000 = ./admin/backend/modules/news/forms/couponsList.html
+1001 = ./admin/backend/modules/news/forms/deleteResult.html
+1002 = ./admin/backend/modules/news/forms/paginationPrev.html
+1003 = ./admin/backend/modules/news/forms/folderContent.html
+1004 = ./admin/backend/modules/news/forms/folderInfo.html
+1005 = ./admin/backend/modules/news/forms/paginationNext.html
+1006 = ./admin/backend/modules/news/forms/editResult.html
+1007 = ./admin/backend/modules/calendar
+diff ./admin/backend/modules/calendar/calendar.php ../gadra/./admin/backend/modules/calendar/calendar.php
+798c798
+< 								continue 2;
+---
+> 								continue;
+Common subdirectories: ./admin/backend/modules/calendar/forms and ../gadra/./admin/backend/modules/calendar/forms
+1008 = ./admin/backend/modules/calendar/calendar.html
+1009 = ./admin/backend/modules/calendar/finalize.js
+1010 = ./admin/backend/modules/calendar/calendar.js
+1011 = ./admin/backend/modules/calendar/calendar.php
+798c798
+< 								continue 2;
+---
+> 								continue;
+1012 = ./admin/backend/modules/calendar/calendar.css
+1013 = ./admin/backend/modules/calendar/forms
+1014 = ./admin/backend/modules/calendar/forms/paginationPrev.html
+1015 = ./admin/backend/modules/calendar/forms/folderContent.html
+1016 = ./admin/backend/modules/calendar/forms/editItem.html
+1017 = ./admin/backend/modules/calendar/forms/loadAddresses.html
+1018 = ./admin/backend/modules/calendar/forms/folderInfo.html
+1019 = ./admin/backend/modules/calendar/forms/paginationNext.html
+1020 = ./admin/backend/modules/calendar/forms/newsFoldersList.html
+1021 = ./admin/backend/modules/calendar/forms/searchForm.html
+1022 = ./admin/backend/modules/calendar/forms/addFolder.html
+1023 = ./admin/backend/modules/calendar/forms/weekEvents.html
+1024 = ./admin/backend/modules/calendar/forms/editAddressSuccess.html
+1025 = ./admin/backend/modules/calendar/forms/deleteAddress.html
+1026 = ./admin/backend/modules/calendar/forms/recurrenceWeekly.html
+1027 = ./admin/backend/modules/calendar/forms/recurrenceMonthly.html
+1028 = ./admin/backend/modules/calendar/forms/blogsList.html
+1029 = ./admin/backend/modules/calendar/forms/weekDay.html
+1030 = ./admin/backend/modules/calendar/forms/articleList.html
+1031 = ./admin/backend/modules/calendar/forms/headerByWeek.html
+1032 = ./admin/backend/modules/calendar/forms/newsAjaxList.html
+1033 = ./admin/backend/modules/calendar/forms/newsList.html
+1034 = ./admin/backend/modules/calendar/forms/blogAjaxList.html
+1035 = ./admin/backend/modules/calendar/forms/storeList.html
+1036 = ./admin/backend/modules/calendar/forms/couponFoldersList.html
+1037 = ./admin/backend/modules/calendar/forms/contenttree.html
+1038 = ./admin/backend/modules/calendar/forms/dayEvents.html
+1039 = ./admin/backend/modules/calendar/forms/recurrenceAnnually.html
+1040 = ./admin/backend/modules/calendar/forms/blogFoldersList.html
+1041 = ./admin/backend/modules/calendar/forms/productList.html
+1042 = ./admin/backend/modules/calendar/forms/editAddress.html
+1043 = ./admin/backend/modules/calendar/forms/addContent.html
+1044 = ./admin/backend/modules/calendar/forms/headerByDay.html
+1045 = ./admin/backend/modules/calendar/forms/folder.html
+1046 = ./admin/backend/modules/calendar/forms/deleteItemResult.html
+1047 = ./admin/backend/modules/calendar/forms/headerByMonth.html
+1048 = ./admin/backend/modules/calendar/forms/paginationWrapper.html
+1049 = ./admin/backend/modules/calendar/forms/monthDay.html
+1050 = ./admin/backend/modules/calendar/forms/recurrenceForm.html
+1051 = ./admin/backend/modules/calendar/forms/couponList.html
+1052 = ./admin/backend/modules/calendar/forms/addEvent.html
+1053 = ./admin/backend/modules/calendar/forms/dayEvent.html
+1054 = ./admin/backend/modules/calendar/forms/deleteItem.html
+1055 = ./admin/backend/modules/calendar/forms/heading.html
+1056 = ./admin/backend/modules/calendar/forms/storesList.html
+1057 = ./admin/backend/modules/calendar/forms/addProduct.html
+1058 = ./admin/backend/modules/calendar/forms/monthEvent.html
+1059 = ./admin/backend/modules/calendar/forms/monthEvents.html
+1060 = ./admin/backend/modules/calendar/forms/paginationPage.html
+1061 = ./admin/backend/modules/calendar/forms/storeFoldersList.html
+1062 = ./admin/backend/modules/calendar/forms/monthWeeks.html
+1063 = ./admin/backend/modules/calendar/forms/weekEvent.html
+1064 = ./admin/backend/modules/calendar/forms/recurrenceDaily.html
+1065 = ./admin/backend/modules/calendar/forms/couponsList.html
+1066 = ./admin/backend/forms
+1067 = ./admin/backend/forms/header.html
+1068 = ./admin/backend/forms/myAccountSuccess.html
+1069 = ./admin/backend/forms/paginationSpacer.html
+1070 = ./admin/backend/forms/mainNav.html
+1071 = ./admin/backend/forms/paginationWrapper.html
+1072 = ./admin/backend/forms/myAccount.html
+1073 = ./admin/backend/forms/paginationPrev.html
+1074 = ./admin/backend/forms/paginationNext.html
+1075 = ./admin/backend/forms/paginationPages.html
+1076 = ./admin/classes
+diff ./admin/classes/common.php ../gadra/./admin/classes/common.php
+51c51
+< 					print_r($_POST,true), print_r($_REQUEST,true),print_r(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS),true));
+---
+> 					print_r($_POST,true), print_r($_REQUEST,true),print_r(debug_backtrace(),true));
+1011c1011
+< 				$tmp = explode('.', preg_replace('#[^a-z0-9.]#i', '-',strtolower($file['name'])));
+---
+> 				$tmp = explode('.',$file['name']);
+1013,1015c1013,1014
+< 				$filename = sprintf("%s.%s", $tmp[count($tmp)-2], $tmp[count($tmp)-1]);
+< 				$name = sprintf('files/%s',implode('.',$tmp));
+< 				$return[$key] = array('filename'=>$filename,'name'=>'/'.$name,'type'=>$this->fetchScalar(sprintf('select code from code_lookups where type="MimeUploadTypes" and extra like "%%%s%%"',$file['type'])));
+---
+> 				$name = sprintf('files/%s',preg_replace('#[^a-z0-9.]#i', '-',strtolower(implode('.',$tmp))));
+> 				$return[$key] = array('name'=>'/'.$name,'type'=>$this->fetchScalar(sprintf('select code from code_lookups where type="MimeUploadTypes" and extra like "%%%s%%"',$file['type'])));
+1529c1528
+< 	static function captcha($version = 1) {
+---
+> 	static function captcha() {
+1537,1540c1536
+< 			if ($version == 1)
+< 				$html = sprintf("<script type='text/javascript' src='%s' async defer></script> <div id='recaptcha' class='g-recaptcha' data-sitekey='%s'></div>",$GLOBALS["recaptcha"]["src"],$keys["public"]);
+< 			else
+< 				$html = sprintf("<script type='text/javascript' src='%s' async defer></script> <div id='recaptcha' class='g-recaptcha' data-sitekey='%s' data-callback='icSubmit' data-size='invisible'></div>",$GLOBALS["recaptcha"]["src"],$keys["public"]);
+---
+> 			$html = sprintf("<script type='text/javascript' src='%s' async defer></script> <div id='recaptcha' class='g-recaptcha' data-sitekey='%s'></div>",$GLOBALS["recaptcha"]["src"],$keys["public"]);
+2025,2027d2020
+< 			$item['price'] = 0;
+< 			$item['regularPrice'] = 0;
+< 			$item['onSale'] = false;
+2701c2694,2697
+< 			if (DEFINED('MAILPASSWORD')) $this->Password = MAILPASSWORD;
+---
+> 			if (DEFINED('MAILPASSWORD')) {
+> 				$this->Password = MAILPASSWORD;
+> 				$this->SMTPAuth = true;
+> 			}
+Common subdirectories: ./admin/classes/CPC and ../gadra/./admin/classes/CPC
+Common subdirectories: ./admin/classes/Ctct and ../gadra/./admin/classes/Ctct
+Common subdirectories: ./admin/classes/Facebook and ../gadra/./admin/classes/Facebook
+Common subdirectories: ./admin/classes/fed-ex and ../gadra/./admin/classes/fed-ex
+diff ./admin/classes/Forms.php ../gadra/./admin/classes/Forms.php
+711d710
+< 						case "invisibleCaptcha":
+diff ./admin/classes/globals.php ../gadra/./admin/classes/globals.php
+27c27
+< 			$tmp = mysqli_error();
+---
+> 			$tmp = mysql_error();
+Common subdirectories: ./admin/classes/Google and ../gadra/./admin/classes/Google
+diff ./admin/classes/HtmlElement.php ../gadra/./admin/classes/HtmlElement.php
+9c9
+< 	protected $m_to_be_removed = array('required'=>true,'sql'=>true,'reformatting'=>true,'lookup'=>true,'AMPM'=>true,'unknown'=>true,'searchfield'=>true,'nonename'=>true,'idlookup'=>true,'sequence'=>true,'addcontentclass'=>true,'prettyname'=>true,'template'=>true);
+---
+> 	protected $m_to_be_removed = array('required'=>true,'sql'=>true,'reformatting'=>true,'lookup'=>true,'AMPM'=>true,'unknown'=>true,'searchfield'=>true,'nonename'=>true,'idlookup'=>true,'sequence'=>true,'addcontentclass'=>true,'prettyname'=>true);
+54,71c54,58
+< 		if (is_array($data)) {
+< 			$this->logMessage('show',sprintf('unexpected data found [%s] this [%s]',print_r($data,true),print_r($this,true)),1);
+< 			$tmp = array();
+< 			foreach($data as $k=>$v) {
+< 				if (strlen($v) > 0)
+< 					$tmp[] = $this->show($v);
+< 			}
+< 			$this->logMessage(__FUNCTION__,sprintf("returning [%s] from [%s]", print_r($tmp,true), print_r($this,true)), 1);
+< 			return implode("",$tmp);
+< 		}
+< 		else {
+< 			if ((strlen($data) == 0 || is_null($data)) && $this->hasAttribute('prompt')) {
+< 				$data = $this->getAttribute('prompt');
+< 				if ($this->hasAttribute('value'))
+< 					$this->m_attributes['value'] = $data;
+< 			}
+< 			$tmp = sprintf($this->GetFormat(), $this->buildAttributes(), $this->m_reformatting ? htmlspecialchars($data) : $data);
+< 			return $tmp;
+---
+> 		if (is_array($data)) $this->logMessage('show',sprintf('unexpected data found [%s] this [%s]',print_r($data,true),print_r($this,true)),1);
+> 		if ((strlen($data) == 0 || is_null($data)) && $this->hasAttribute('prompt')) {
+> 			$data = $this->getAttribute('prompt');
+> 			if ($this->hasAttribute('value'))
+> 				$this->m_attributes['value'] = $data;
+72a60,61
+> 		$tmp = sprintf($this->GetFormat(), $this->buildAttributes(), $this->m_reformatting ? htmlspecialchars($data) : $data);
+> 		return $tmp;
+193c182
+< 			$data = '<i class="icon-remove glyphicon glyphicon-remove"></i>';
+---
+> 			$data = '<i class="icon-remove"></i>';
+195c184
+< 			$data = '<i class="icon-check glyphicon glyphicon-ok"></i>';
+---
+> 			$data = '<i class="icon-check"></i>';
+418c407
+< 				if (!($this->hasAttribute('autoCheck') && $this->getAttribute('autoCheck') == 0))
+---
+> 				if (!($this->hasAttribute('autoCheck') && $this->getAttribute('autoCheck') == 0)) {
+419a409,410
+> 					$this->logMessage(__FUNCTION__,sprintf("adding checked attribute [%s]", print_r($this,true)),1);
+> 				}
+576,582c567,569
+< 				$this->logMessage(__FUNCTION__,sprintf("tmp [%s] this [%s]", print_r($tmp,true), print_r($this,true)),3);
+< 				if (array_key_exists("sortBy",$tmp)) {
+< 					$nodes = $this->sortedNodeSelect( $tmp['root'], $tmp['table'], $tmp["sortBy"], $tmp['indent'], $this->getAttribute('required'), $tmp['inclusive']);
+< 				}
+< 				else {
+< 					$nodes = $this->nodeSelect( $tmp['root'], $tmp['table'], $tmp['indent'], $this->getAttribute('required'), $tmp['inclusive']);
+< 				}
+---
+> 				//$tmp = $this->depairOptions($tmp);
+> 				$this->logMessage(__FUNCTION__,sprintf("tmp [%s] this [%s]", print_r($tmp,true), print_r($this,true)),1);
+> 				$nodes = $this->nodeSelect( $tmp['root'], $tmp['table'], $tmp['indent'], $this->getAttribute('required'), $tmp['inclusive']);
+592,604d578
+< 			if ($this->hasAttribute("nodes")) {
+< 				$parms = $this->getAttribute("nodes");
+< 				if (array_key_exists("sortBy",$parms)) {
+< 					$this->addOptions($this->sortedNodeSelect($parms[0], $parms[1], $parms["sortBy"], array_key_exists(2,$parms) ? $parms[2] : 1,
+< 						array_key_exists(3,$parms) ? $parms[3] : false, array_key_exists(4,$parms) ? $parms[4] : false,
+< 						array_key_exists(5,$parms) ? $parms[5] : "", array_key_exists(6,$parms) ? $parms[6] : null));
+< 				}
+< 				else {
+< 					$this->addOptions($this->nodeSelect($parms[0], $parms[1], array_key_exists(2,$parms) ? $parms[2] : 1,
+< 						array_key_exists(3,$parms) ? $parms[3] : false, array_key_exists(4,$parms) ? $parms[4] : false,
+< 						array_key_exists(5,$parms) ? $parms[5] : "", array_key_exists(6,$parms) ? $parms[6] : null));
+< 				}
+< 			}
+786,788c760,762
+< 			$data = "";
+< 		//if (preg_match("/[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/",$data))
+< 		//	$data = date("m/d/Y",strtotime($data));
+---
+> 			$data = "";	
+> 		if (preg_match("/[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/",$data))
+> 			$data = date("m/d/Y",strtotime($data));
+793d766
+< $this->logMessage(__FUNCTION__,sprintf("^^^this [%s] [%s]", print_r($this,true), $tmp),1);
+868d840
+< $this->logMessage(__FUNCTION__,sprintf("^^^this [%s] [%s]", print_r($this,true), $this->hasAttribute("template")),1);
+878,890c850,854
+< 			if ($this->hasAttribute("template")) {
+< 				$f = new Forms();
+< 				$f->setHTML($this->getAttribute("template"));
+< 				$f->addData(array("hh"=>$hr->show(),"mm"=>$mn->show(),"ss"=>$sec->show(),"ampm"=>$ampm->show()));
+< 				$tmp = $f->show();
+< 			}
+< 			else {
+< 				$tmp = sprintf('%s%s%s%s%s %s',
+< 					$hr->show(),get_class($hr) == 'select' && get_class($mn) == 'select' ? ':' : '',
+< 					$mn->show(),get_class($mn) == 'select' && get_class($sec) == 'select' ? ':' : '',
+< 					$sec->show(),$ampm->show());
+< 				//$this->removeAttribute('AMPM');
+< 			}
+---
+> 			$tmp = sprintf('%s%s%s%s%s %s',
+> 				$hr->show(),get_class($hr) == 'select' && get_class($mn) == 'select' ? ':' : '',
+> 				$mn->show(),get_class($mn) == 'select' && get_class($sec) == 'select' ? ':' : '',
+> 				$sec->show(),$ampm->show());
+> 			//$this->removeAttribute('AMPM');
+894,904c858,861
+< 			if ($this->hasAttribute("template")) {
+< 				$f = new Forms();
+< 				$f->setHTML($this->getAttribute("template"));
+< 				$f->addData(array("hh"=>$hr->show(),"mm"=>$mn->show(),"ss"=>$sec->show()));
+< 			}
+< 			else {
+< 				$tmp = sprintf('%s%s%s%s%s',
+< 					$hr->show(),get_class($hr) == 'select' && get_class($mn) == 'select' ? ':' : '',
+< 					$mn->show(),get_class($mn) == 'select' && get_class($sec) == 'select' ? ':' : '',
+< 					$sec->show());
+< 			}
+---
+> 			$tmp = sprintf('%s%s%s%s%s',
+> 				$hr->show(),get_class($hr) == 'select' && get_class($mn) == 'select' ? ':' : '',
+> 				$mn->show(),get_class($mn) == 'select' && get_class($sec) == 'select' ? ':' : '',
+> 				$sec->show());
+947,956c904
+< 		if ($this->hasAttribute("template")) {
+< 			$f = new Forms();
+< 			$f->setHTML($this->getAttribute("template"));
+< 			$f->setData("date",$tmp);
+< 			$f->setData("time",$tm->show());
+< 			$tmp = $f->show();
+< 			$this->logMessage(__FUNCTION__,sprintf("found a template [%s]", $this->getAttribute("template")),1);
+< 		}
+< 		else
+< 			$tmp = sprintf('<div class="datetimepicker"><div class="date">%s</div> <div class="time">%s</div></div>',$tmp,$tm->show());
+---
+> 		$tmp = sprintf('%s %s',$tmp,$tm->show());
+1088,1107d1035
+< 		if ($result['status'])
+< 			return $result['html'];
+< 		else {
+< 			$this->logMessage('show',sprintf('captcha failed, return [%s]',print_r($result,true)),1,true);
+< 			return "";
+< 		}
+< 	}
+< }
+< 
+< class invisibleCaptcha extends HtmlElement {
+< 
+< 	function __construct($reformatting = true) {
+< 		parent::__construct ($reformatting);
+< 		$this->m_format = "";
+< 		$this->m_reformatting = $reformatting;
+< 	}
+< 
+< 	function show($data = null) {
+< 		$this->logMessage(__FUNCTION__,sprintf("*** this [%s]", print_r($this,true)),1);
+< 		$result = Ajax::captcha(2);
+Common subdirectories: ./admin/classes/PHPMailer and ../gadra/./admin/classes/PHPMailer
+diff ./admin/classes/Snoopy.php ../gadra/./admin/classes/Snoopy.php
+178,179c178
+< 						//while (list(, $frameurl) = each($frameurls)) {
+< 						foreach($frameurls as $xx=>$frameurl) {
+---
+> 						while (list(, $frameurl) = each($frameurls)) {
+214c213
+< 		$this->logMessage(__FUNCTION__,sprintf("uri [%s] this [%s] vars [%s] files [%s]", print_r($URI,true), print_r($this,true), print_r($formvars,true), print_r($formfiles,true)),2);
+---
+> 		$this->logMessage(__FUNCTION__,sprintf("uri [%s] this [%s] vars [%s] files [%s]", print_r($URI,true), print_r($this,true), print_r($formvars,true), print_r($formfiles,true)),1);
+250a250
+> 					$this->logMessage(__FUNCTION__,sprintf("uri [%s] postdata [%s] this [%s]", print_r($URI,true), print_r($postdata,true), print_r($this,true)),2);
+276,277c276
+< 						//while (list(, $frameurl) = each($frameurls)) {
+< 						foreach($frameurls as $xx=>$frameurl) {
+---
+> 						while (list(, $frameurl) = each($frameurls)) {
+475,476c474
+< 		//while (list($key, $val) = each($links[2])) {
+< 		foreach($links[2] as $key=>$val) {
+---
+> 		while (list($key, $val) = each($links[2])) {
+481,482c479
+< 		//while (list($key, $val) = each($links[3])) {
+< 		foreach($links[3] as $key=>$val) {
+---
+> 		while (list($key, $val) = each($links[3])) {
+676,677c673
+< 			//while (list($headerKey, $headerVal) = each($this->rawheaders))
+< 			foreach($this->rawheaders as $headerKey=>$headerVal)
+---
+> 			while (list($headerKey, $headerVal) = each($this->rawheaders))
+701a698
+> 		$this->logMessage(__FUNCTION__,sprintf("headers [%s] body [%s]",print_r($headers,true),print_r($body,true)),2);
+703c700
+< 		$this->logMessage(__FUNCTION__,sprintf("actual transmission header [%s] body [%s]", $headers, $body), 3);
+---
+> 
+708a706
+> 
+710c708
+< 			$this->logMessage(__FUNCTION__,sprintf("returned header [%s]", $currentHeader),3);
+---
+> 			$this->logMessage(__FUNCTION__,sprintf("fp line [%s]", print_r($currentHeader,true)),1);
+753d750
+< 			$this->logMessage(__FUNCTION__,sprintf("returned data [%s]", $_data),3);
+766c763
+< 		$this->logMessage(__FUNCTION__,sprintf("raw results [%s]", print_r($results,true)),3);
+---
+> 		$this->logMessage(__FUNCTION__,sprintf("raw results [%s]", print_r($results,true)),1);
+873a871
+> 		$this->logMessage(__FUNCTION__,sprintf("opening socket opts [%s] to [%s:%s]", print_r($context_opts,true), $host, $port),1);
+894c892
+< 		$this->logMessage(__FUNCTION__,sprintf("open fp [%s] host [%s] port [%s] errno [%s] errmsg [%s] context [%s]", print_r($fp,true), $host, $port, $errno, $errmsg, print_r($context,true)),3);
+---
+> 		$this->logMessage(__FUNCTION__,sprintf("open fp [%s] host [%s] port [%s] errno [%s] errmsg [%s] context [%s]", print_r($fp,true), $host, $port, $errno, $errmsg, print_r($context,true)),1);
+948,949c946
+< //				while (list($key, $val) = each($formvars)) {
+< 				foreach($formvars as $key=>$val) {
+---
+> 				while (list($key, $val) = each($formvars)) {
+951,952c948
+< 						//while (list($cur_key, $cur_val) = each($val)) {
+< 						foreach($val as $cur_key=>$cur_val) {
+---
+> 						while (list($cur_key, $cur_val) = each($val)) {
+974,975c970
+< 				//while (list($key, $val) = each($formvars)) {
+< 				foreach($formvars as $key=>$val) {
+---
+> 				while (list($key, $val) = each($formvars)) {
+977,978c972
+< 						//while (list($cur_key, $cur_val) = each($val)) {
+< 						foreach($val as $cur_key=>$cur_val) {
+---
+> 						while (list($cur_key, $cur_val) = each($val)) {
+990,991c984
+< 				//while (list($field_name, $file_names) = each($formfiles)) {
+< 				foreach($formfiles as $field_name=>$file_name) {
+---
+> 				while (list($field_name, $file_names) = each($formfiles)) {
+993,994c986
+< 					//while (list(, $file_name) = each($file_names)) {
+< 					foreach($file_names as $xx=>$file_name) {
+---
+> 					while (list(, $file_name) = each($file_names)) {
+Only in ../gadra/./admin/classes: source.zip
+Common subdirectories: ./admin/classes/Twitter and ../gadra/./admin/classes/Twitter
+Common subdirectories: ./admin/classes/WURFL and ../gadra/./admin/classes/WURFL
+1077 = ./admin/classes/Forms.php
+711d710
+< 						case "invisibleCaptcha":
+1078 = ./admin/classes/globals.php
+27c27
+< 			$tmp = mysqli_error();
+---
+> 			$tmp = mysql_error();
+1079 = ./admin/classes/Snoopy.php
+178,179c178
+< 						//while (list(, $frameurl) = each($frameurls)) {
+< 						foreach($frameurls as $xx=>$frameurl) {
+---
+> 						while (list(, $frameurl) = each($frameurls)) {
+214c213
+< 		$this->logMessage(__FUNCTION__,sprintf("uri [%s] this [%s] vars [%s] files [%s]", print_r($URI,true), print_r($this,true), print_r($formvars,true), print_r($formfiles,true)),2);
+---
+> 		$this->logMessage(__FUNCTION__,sprintf("uri [%s] this [%s] vars [%s] files [%s]", print_r($URI,true), print_r($this,true), print_r($formvars,true), print_r($formfiles,true)),1);
+250a250
+> 					$this->logMessage(__FUNCTION__,sprintf("uri [%s] postdata [%s] this [%s]", print_r($URI,true), print_r($postdata,true), print_r($this,true)),2);
+276,277c276
+< 						//while (list(, $frameurl) = each($frameurls)) {
+< 						foreach($frameurls as $xx=>$frameurl) {
+---
+> 						while (list(, $frameurl) = each($frameurls)) {
+475,476c474
+< 		//while (list($key, $val) = each($links[2])) {
+< 		foreach($links[2] as $key=>$val) {
+---
+> 		while (list($key, $val) = each($links[2])) {
+481,482c479
+< 		//while (list($key, $val) = each($links[3])) {
+< 		foreach($links[3] as $key=>$val) {
+---
+> 		while (list($key, $val) = each($links[3])) {
+676,677c673
+< 			//while (list($headerKey, $headerVal) = each($this->rawheaders))
+< 			foreach($this->rawheaders as $headerKey=>$headerVal)
+---
+> 			while (list($headerKey, $headerVal) = each($this->rawheaders))
+701a698
+> 		$this->logMessage(__FUNCTION__,sprintf("headers [%s] body [%s]",print_r($headers,true),print_r($body,true)),2);
+703c700
+< 		$this->logMessage(__FUNCTION__,sprintf("actual transmission header [%s] body [%s]", $headers, $body), 3);
+---
+> 
+708a706
+> 
+710c708
+< 			$this->logMessage(__FUNCTION__,sprintf("returned header [%s]", $currentHeader),3);
+---
+> 			$this->logMessage(__FUNCTION__,sprintf("fp line [%s]", print_r($currentHeader,true)),1);
+753d750
+< 			$this->logMessage(__FUNCTION__,sprintf("returned data [%s]", $_data),3);
+766c763
+< 		$this->logMessage(__FUNCTION__,sprintf("raw results [%s]", print_r($results,true)),3);
+---
+> 		$this->logMessage(__FUNCTION__,sprintf("raw results [%s]", print_r($results,true)),1);
+873a871
+> 		$this->logMessage(__FUNCTION__,sprintf("opening socket opts [%s] to [%s:%s]", print_r($context_opts,true), $host, $port),1);
+894c892
+< 		$this->logMessage(__FUNCTION__,sprintf("open fp [%s] host [%s] port [%s] errno [%s] errmsg [%s] context [%s]", print_r($fp,true), $host, $port, $errno, $errmsg, print_r($context,true)),3);
+---
+> 		$this->logMessage(__FUNCTION__,sprintf("open fp [%s] host [%s] port [%s] errno [%s] errmsg [%s] context [%s]", print_r($fp,true), $host, $port, $errno, $errmsg, print_r($context,true)),1);
+948,949c946
+< //				while (list($key, $val) = each($formvars)) {
+< 				foreach($formvars as $key=>$val) {
+---
+> 				while (list($key, $val) = each($formvars)) {
+951,952c948
+< 						//while (list($cur_key, $cur_val) = each($val)) {
+< 						foreach($val as $cur_key=>$cur_val) {
+---
+> 						while (list($cur_key, $cur_val) = each($val)) {
+974,975c970
+< 				//while (list($key, $val) = each($formvars)) {
+< 				foreach($formvars as $key=>$val) {
+---
+> 				while (list($key, $val) = each($formvars)) {
+977,978c972
+< 						//while (list($cur_key, $cur_val) = each($val)) {
+< 						foreach($val as $cur_key=>$cur_val) {
+---
+> 						while (list($cur_key, $cur_val) = each($val)) {
+990,991c984
+< 				//while (list($field_name, $file_names) = each($formfiles)) {
+< 				foreach($formfiles as $field_name=>$file_name) {
+---
+> 				while (list($field_name, $file_names) = each($formfiles)) {
+993,994c986
+< 					//while (list(, $file_name) = each($file_names)) {
+< 					foreach($file_names as $xx=>$file_name) {
+---
+> 					while (list(, $file_name) = each($file_names)) {
+1080 = ./admin/classes/Batch.php
+1081 = ./admin/classes/TwitterAPIExchange.php
+1082 = ./admin/classes/HtmlElement.php
+9c9
+< 	protected $m_to_be_removed = array('required'=>true,'sql'=>true,'reformatting'=>true,'lookup'=>true,'AMPM'=>true,'unknown'=>true,'searchfield'=>true,'nonename'=>true,'idlookup'=>true,'sequence'=>true,'addcontentclass'=>true,'prettyname'=>true,'template'=>true);
+---
+> 	protected $m_to_be_removed = array('required'=>true,'sql'=>true,'reformatting'=>true,'lookup'=>true,'AMPM'=>true,'unknown'=>true,'searchfield'=>true,'nonename'=>true,'idlookup'=>true,'sequence'=>true,'addcontentclass'=>true,'prettyname'=>true);
+54,71c54,58
+< 		if (is_array($data)) {
+< 			$this->logMessage('show',sprintf('unexpected data found [%s] this [%s]',print_r($data,true),print_r($this,true)),1);
+< 			$tmp = array();
+< 			foreach($data as $k=>$v) {
+< 				if (strlen($v) > 0)
+< 					$tmp[] = $this->show($v);
+< 			}
+< 			$this->logMessage(__FUNCTION__,sprintf("returning [%s] from [%s]", print_r($tmp,true), print_r($this,true)), 1);
+< 			return implode("",$tmp);
+< 		}
+< 		else {
+< 			if ((strlen($data) == 0 || is_null($data)) && $this->hasAttribute('prompt')) {
+< 				$data = $this->getAttribute('prompt');
+< 				if ($this->hasAttribute('value'))
+< 					$this->m_attributes['value'] = $data;
+< 			}
+< 			$tmp = sprintf($this->GetFormat(), $this->buildAttributes(), $this->m_reformatting ? htmlspecialchars($data) : $data);
+< 			return $tmp;
+---
+> 		if (is_array($data)) $this->logMessage('show',sprintf('unexpected data found [%s] this [%s]',print_r($data,true),print_r($this,true)),1);
+> 		if ((strlen($data) == 0 || is_null($data)) && $this->hasAttribute('prompt')) {
+> 			$data = $this->getAttribute('prompt');
+> 			if ($this->hasAttribute('value'))
+> 				$this->m_attributes['value'] = $data;
+72a60,61
+> 		$tmp = sprintf($this->GetFormat(), $this->buildAttributes(), $this->m_reformatting ? htmlspecialchars($data) : $data);
+> 		return $tmp;
+193c182
+< 			$data = '<i class="icon-remove glyphicon glyphicon-remove"></i>';
+---
+> 			$data = '<i class="icon-remove"></i>';
+195c184
+< 			$data = '<i class="icon-check glyphicon glyphicon-ok"></i>';
+---
+> 			$data = '<i class="icon-check"></i>';
+418c407
+< 				if (!($this->hasAttribute('autoCheck') && $this->getAttribute('autoCheck') == 0))
+---
+> 				if (!($this->hasAttribute('autoCheck') && $this->getAttribute('autoCheck') == 0)) {
+419a409,410
+> 					$this->logMessage(__FUNCTION__,sprintf("adding checked attribute [%s]", print_r($this,true)),1);
+> 				}
+576,582c567,569
+< 				$this->logMessage(__FUNCTION__,sprintf("tmp [%s] this [%s]", print_r($tmp,true), print_r($this,true)),3);
+< 				if (array_key_exists("sortBy",$tmp)) {
+< 					$nodes = $this->sortedNodeSelect( $tmp['root'], $tmp['table'], $tmp["sortBy"], $tmp['indent'], $this->getAttribute('required'), $tmp['inclusive']);
+< 				}
+< 				else {
+< 					$nodes = $this->nodeSelect( $tmp['root'], $tmp['table'], $tmp['indent'], $this->getAttribute('required'), $tmp['inclusive']);
+< 				}
+---
+> 				//$tmp = $this->depairOptions($tmp);
+> 				$this->logMessage(__FUNCTION__,sprintf("tmp [%s] this [%s]", print_r($tmp,true), print_r($this,true)),1);
+> 				$nodes = $this->nodeSelect( $tmp['root'], $tmp['table'], $tmp['indent'], $this->getAttribute('required'), $tmp['inclusive']);
+592,604d578
+< 			if ($this->hasAttribute("nodes")) {
+< 				$parms = $this->getAttribute("nodes");
+< 				if (array_key_exists("sortBy",$parms)) {
+< 					$this->addOptions($this->sortedNodeSelect($parms[0], $parms[1], $parms["sortBy"], array_key_exists(2,$parms) ? $parms[2] : 1,
+< 						array_key_exists(3,$parms) ? $parms[3] : false, array_key_exists(4,$parms) ? $parms[4] : false,
+< 						array_key_exists(5,$parms) ? $parms[5] : "", array_key_exists(6,$parms) ? $parms[6] : null));
+< 				}
+< 				else {
+< 					$this->addOptions($this->nodeSelect($parms[0], $parms[1], array_key_exists(2,$parms) ? $parms[2] : 1,
+< 						array_key_exists(3,$parms) ? $parms[3] : false, array_key_exists(4,$parms) ? $parms[4] : false,
+< 						array_key_exists(5,$parms) ? $parms[5] : "", array_key_exists(6,$parms) ? $parms[6] : null));
+< 				}
+< 			}
+786,788c760,762
+< 			$data = "";
+< 		//if (preg_match("/[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/",$data))
+< 		//	$data = date("m/d/Y",strtotime($data));
+---
+> 			$data = "";	
+> 		if (preg_match("/[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/",$data))
+> 			$data = date("m/d/Y",strtotime($data));
+793d766
+< $this->logMessage(__FUNCTION__,sprintf("^^^this [%s] [%s]", print_r($this,true), $tmp),1);
+868d840
+< $this->logMessage(__FUNCTION__,sprintf("^^^this [%s] [%s]", print_r($this,true), $this->hasAttribute("template")),1);
+878,890c850,854
+< 			if ($this->hasAttribute("template")) {
+< 				$f = new Forms();
+< 				$f->setHTML($this->getAttribute("template"));
+< 				$f->addData(array("hh"=>$hr->show(),"mm"=>$mn->show(),"ss"=>$sec->show(),"ampm"=>$ampm->show()));
+< 				$tmp = $f->show();
+< 			}
+< 			else {
+< 				$tmp = sprintf('%s%s%s%s%s %s',
+< 					$hr->show(),get_class($hr) == 'select' && get_class($mn) == 'select' ? ':' : '',
+< 					$mn->show(),get_class($mn) == 'select' && get_class($sec) == 'select' ? ':' : '',
+< 					$sec->show(),$ampm->show());
+< 				//$this->removeAttribute('AMPM');
+< 			}
+---
+> 			$tmp = sprintf('%s%s%s%s%s %s',
+> 				$hr->show(),get_class($hr) == 'select' && get_class($mn) == 'select' ? ':' : '',
+> 				$mn->show(),get_class($mn) == 'select' && get_class($sec) == 'select' ? ':' : '',
+> 				$sec->show(),$ampm->show());
+> 			//$this->removeAttribute('AMPM');
+894,904c858,861
+< 			if ($this->hasAttribute("template")) {
+< 				$f = new Forms();
+< 				$f->setHTML($this->getAttribute("template"));
+< 				$f->addData(array("hh"=>$hr->show(),"mm"=>$mn->show(),"ss"=>$sec->show()));
+< 			}
+< 			else {
+< 				$tmp = sprintf('%s%s%s%s%s',
+< 					$hr->show(),get_class($hr) == 'select' && get_class($mn) == 'select' ? ':' : '',
+< 					$mn->show(),get_class($mn) == 'select' && get_class($sec) == 'select' ? ':' : '',
+< 					$sec->show());
+< 			}
+---
+> 			$tmp = sprintf('%s%s%s%s%s',
+> 				$hr->show(),get_class($hr) == 'select' && get_class($mn) == 'select' ? ':' : '',
+> 				$mn->show(),get_class($mn) == 'select' && get_class($sec) == 'select' ? ':' : '',
+> 				$sec->show());
+947,956c904
+< 		if ($this->hasAttribute("template")) {
+< 			$f = new Forms();
+< 			$f->setHTML($this->getAttribute("template"));
+< 			$f->setData("date",$tmp);
+< 			$f->setData("time",$tm->show());
+< 			$tmp = $f->show();
+< 			$this->logMessage(__FUNCTION__,sprintf("found a template [%s]", $this->getAttribute("template")),1);
+< 		}
+< 		else
+< 			$tmp = sprintf('<div class="datetimepicker"><div class="date">%s</div> <div class="time">%s</div></div>',$tmp,$tm->show());
+---
+> 		$tmp = sprintf('%s %s',$tmp,$tm->show());
+1088,1107d1035
+< 		if ($result['status'])
+< 			return $result['html'];
+< 		else {
+< 			$this->logMessage('show',sprintf('captcha failed, return [%s]',print_r($result,true)),1,true);
+< 			return "";
+< 		}
+< 	}
+< }
+< 
+< class invisibleCaptcha extends HtmlElement {
+< 
+< 	function __construct($reformatting = true) {
+< 		parent::__construct ($reformatting);
+< 		$this->m_format = "";
+< 		$this->m_reformatting = $reformatting;
+< 	}
+< 
+< 	function show($data = null) {
+< 		$this->logMessage(__FUNCTION__,sprintf("*** this [%s]", print_r($this,true)),1);
+< 		$result = Ajax::captcha(2);
+1083 = ./admin/classes/mptt.php
+1084 = ./admin/classes/Analytics.php
+1085 = ./admin/classes/conversion.php
+1086 = ./admin/classes/wurfl.php
+1087 = ./admin/classes/common.php
+51c51
+< 					print_r($_POST,true), print_r($_REQUEST,true),print_r(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS),true));
+---
+> 					print_r($_POST,true), print_r($_REQUEST,true),print_r(debug_backtrace(),true));
+1011c1011
+< 				$tmp = explode('.', preg_replace('#[^a-z0-9.]#i', '-',strtolower($file['name'])));
+---
+> 				$tmp = explode('.',$file['name']);
+1013,1015c1013,1014
+< 				$filename = sprintf("%s.%s", $tmp[count($tmp)-2], $tmp[count($tmp)-1]);
+< 				$name = sprintf('files/%s',implode('.',$tmp));
+< 				$return[$key] = array('filename'=>$filename,'name'=>'/'.$name,'type'=>$this->fetchScalar(sprintf('select code from code_lookups where type="MimeUploadTypes" and extra like "%%%s%%"',$file['type'])));
+---
+> 				$name = sprintf('files/%s',preg_replace('#[^a-z0-9.]#i', '-',strtolower(implode('.',$tmp))));
+> 				$return[$key] = array('name'=>'/'.$name,'type'=>$this->fetchScalar(sprintf('select code from code_lookups where type="MimeUploadTypes" and extra like "%%%s%%"',$file['type'])));
+1529c1528
+< 	static function captcha($version = 1) {
+---
+> 	static function captcha() {
+1537,1540c1536
+< 			if ($version == 1)
+< 				$html = sprintf("<script type='text/javascript' src='%s' async defer></script> <div id='recaptcha' class='g-recaptcha' data-sitekey='%s'></div>",$GLOBALS["recaptcha"]["src"],$keys["public"]);
+< 			else
+< 				$html = sprintf("<script type='text/javascript' src='%s' async defer></script> <div id='recaptcha' class='g-recaptcha' data-sitekey='%s' data-callback='icSubmit' data-size='invisible'></div>",$GLOBALS["recaptcha"]["src"],$keys["public"]);
+---
+> 			$html = sprintf("<script type='text/javascript' src='%s' async defer></script> <div id='recaptcha' class='g-recaptcha' data-sitekey='%s'></div>",$GLOBALS["recaptcha"]["src"],$keys["public"]);
+2025,2027d2020
+< 			$item['price'] = 0;
+< 			$item['regularPrice'] = 0;
+< 			$item['onSale'] = false;
+2701c2694,2697
+< 			if (DEFINED('MAILPASSWORD')) $this->Password = MAILPASSWORD;
+---
+> 			if (DEFINED('MAILPASSWORD')) {
+> 				$this->Password = MAILPASSWORD;
+> 				$this->SMTPAuth = true;
+> 			}
+1088 = ./admin/classes/debug.php
+1089 = ./admin/classes/mailer.php
+1090 = ./admin/classes/phRETS.php
+1091 = ./admin/classes/recaptchalib.php
+1092 = ./admin/classes/smtp.php
+1093 = ./admin/classes/Ctct
+Common subdirectories: ./admin/classes/Ctct/Auth and ../gadra/./admin/classes/Ctct/Auth
+Common subdirectories: ./admin/classes/Ctct/Components and ../gadra/./admin/classes/Ctct/Components
+Common subdirectories: ./admin/classes/Ctct/Exceptions and ../gadra/./admin/classes/Ctct/Exceptions
+Common subdirectories: ./admin/classes/Ctct/Services and ../gadra/./admin/classes/Ctct/Services
+Common subdirectories: ./admin/classes/Ctct/Util and ../gadra/./admin/classes/Ctct/Util
+Common subdirectories: ./admin/classes/Ctct/WebHooks and ../gadra/./admin/classes/Ctct/WebHooks
+1094 = ./admin/classes/Ctct/ConstantContact.php
+1095 = ./admin/classes/Ctct/SplClassLoader.php
+1096 = ./admin/classes/Ctct/autoload.php
+1097 = ./admin/classes/Ctct/WebHooks
+1098 = ./admin/classes/Ctct/WebHooks/CTCTWebhookUtil.php
+1099 = ./admin/classes/Ctct/Auth
+1100 = ./admin/classes/Ctct/Auth/CtctDataStore.php
+1101 = ./admin/classes/Ctct/Auth/CtctOAuth2.php
+1102 = ./admin/classes/Ctct/Auth/SessionDataStore.php
+1103 = ./admin/classes/Ctct/Components
+Common subdirectories: ./admin/classes/Ctct/Components/Account and ../gadra/./admin/classes/Ctct/Components/Account
+Common subdirectories: ./admin/classes/Ctct/Components/Activities and ../gadra/./admin/classes/Ctct/Components/Activities
+Common subdirectories: ./admin/classes/Ctct/Components/Contacts and ../gadra/./admin/classes/Ctct/Components/Contacts
+Common subdirectories: ./admin/classes/Ctct/Components/EmailMarketing and ../gadra/./admin/classes/Ctct/Components/EmailMarketing
+Common subdirectories: ./admin/classes/Ctct/Components/Library and ../gadra/./admin/classes/Ctct/Components/Library
+Common subdirectories: ./admin/classes/Ctct/Components/Tracking and ../gadra/./admin/classes/Ctct/Components/Tracking
+1104 = ./admin/classes/Ctct/Components/ResultSet.php
+1105 = ./admin/classes/Ctct/Components/Component.php
+1106 = ./admin/classes/Ctct/Components/Contacts
+1107 = ./admin/classes/Ctct/Components/Contacts/EmailAddress.php
+1108 = ./admin/classes/Ctct/Components/Contacts/Note.php
+1109 = ./admin/classes/Ctct/Components/Contacts/CustomField.php
+1110 = ./admin/classes/Ctct/Components/Contacts/Contact.php
+1111 = ./admin/classes/Ctct/Components/Contacts/ContactList.php
+1112 = ./admin/classes/Ctct/Components/Contacts/Address.php
+1113 = ./admin/classes/Ctct/Components/Library
+1114 = ./admin/classes/Ctct/Components/Library/Thumbnail.php
+1115 = ./admin/classes/Ctct/Components/Library/Folder.php
+1116 = ./admin/classes/Ctct/Components/Library/File.php
+1117 = ./admin/classes/Ctct/Components/Tracking
+1118 = ./admin/classes/Ctct/Components/Tracking/SendActivity.php
+1119 = ./admin/classes/Ctct/Components/Tracking/BounceActivity.php
+1120 = ./admin/classes/Ctct/Components/Tracking/TrackingActivity.php
+1121 = ./admin/classes/Ctct/Components/Tracking/OpenActivity.php
+1122 = ./admin/classes/Ctct/Components/Tracking/ForwardActivity.php
+1123 = ./admin/classes/Ctct/Components/Tracking/ClickActivity.php
+1124 = ./admin/classes/Ctct/Components/Tracking/UnsubscribeActivity.php
+1125 = ./admin/classes/Ctct/Components/Tracking/TrackingSummary.php
+1126 = ./admin/classes/Ctct/Components/EmailMarketing
+1127 = ./admin/classes/Ctct/Components/EmailMarketing/Schedule.php
+1128 = ./admin/classes/Ctct/Components/EmailMarketing/TestSend.php
+1129 = ./admin/classes/Ctct/Components/EmailMarketing/MessageFooter.php
+1130 = ./admin/classes/Ctct/Components/EmailMarketing/ClickThroughDetails.php
+1131 = ./admin/classes/Ctct/Components/EmailMarketing/Campaign.php
+1132 = ./admin/classes/Ctct/Components/Activities
+1133 = ./admin/classes/Ctct/Components/Activities/AddContactsImportData.php
+1134 = ./admin/classes/Ctct/Components/Activities/ExportContacts.php
+1135 = ./admin/classes/Ctct/Components/Activities/Activity.php
+1136 = ./admin/classes/Ctct/Components/Activities/AddContacts.php
+1137 = ./admin/classes/Ctct/Components/Activities/ActivityError.php
+1138 = ./admin/classes/Ctct/Components/Account
+1139 = ./admin/classes/Ctct/Components/Account/AccountInfo.php
+1140 = ./admin/classes/Ctct/Components/Account/VerifiedEmailAddress.php
+1141 = ./admin/classes/Ctct/Services
+1142 = ./admin/classes/Ctct/Services/LibraryService.php
+1143 = ./admin/classes/Ctct/Services/ContactTrackingService.php
+1144 = ./admin/classes/Ctct/Services/EmailMarketingService.php
+1145 = ./admin/classes/Ctct/Services/ListService.php
+1146 = ./admin/classes/Ctct/Services/AccountService.php
+1147 = ./admin/classes/Ctct/Services/ContactService.php
+1148 = ./admin/classes/Ctct/Services/CampaignTrackingService.php
+1149 = ./admin/classes/Ctct/Services/BaseService.php
+1150 = ./admin/classes/Ctct/Services/CampaignScheduleService.php
+1151 = ./admin/classes/Ctct/Services/ActivityService.php
+1152 = ./admin/classes/Ctct/Util
+1153 = ./admin/classes/Ctct/Util/CurlResponse.php
+1154 = ./admin/classes/Ctct/Util/Config.php
+1155 = ./admin/classes/Ctct/Util/RestClientInterface.php
+1156 = ./admin/classes/Ctct/Util/RestClient.php
+1157 = ./admin/classes/Ctct/Exceptions
+1158 = ./admin/classes/Ctct/Exceptions/IllegalArgumentException.php
+1159 = ./admin/classes/Ctct/Exceptions/OAuth2Exception.php
+1160 = ./admin/classes/Ctct/Exceptions/CtctException.php
+1161 = ./admin/classes/Twitter
+1162 = ./admin/classes/Twitter/OAuth.php
+1163 = ./admin/classes/Twitter/twitteroauth.php
+1164 = ./admin/classes/PHPMailer
+diff ./admin/classes/PHPMailer/PHPMailerAutoload.php ../gadra/./admin/classes/PHPMailer/PHPMailerAutoload.php
+44a45,48
+>     function __autoload($classname)
+>     {
+>         PHPMailerAutoload($classname);
+>     }
+Common subdirectories: ./admin/classes/PHPMailer/PHPMailer-master and ../gadra/./admin/classes/PHPMailer/PHPMailer-master
+1165 = ./admin/classes/PHPMailer/PHPMailer-master.zip
+1166 = ./admin/classes/PHPMailer/PHPMailerAutoload.php
+44a45,48
+>     function __autoload($classname)
+>     {
+>         PHPMailerAutoload($classname);
+>     }
+1167 = ./admin/classes/PHPMailer/class.phpmailer.php
+1168 = ./admin/classes/PHPMailer/class.phpmaileroauth.php
+1169 = ./admin/classes/PHPMailer/class.phpmaileroauthgoogle.php
+1170 = ./admin/classes/PHPMailer/class.pop3.php
+1171 = ./admin/classes/PHPMailer/class.smtp.php
+1172 = ./admin/classes/PHPMailer/get_oauth_token.php
+1173 = ./admin/classes/PHPMailer/PHPMailer-master
+Common subdirectories: ./admin/classes/PHPMailer/PHPMailer-master/examples and ../gadra/./admin/classes/PHPMailer/PHPMailer-master/examples
+Common subdirectories: ./admin/classes/PHPMailer/PHPMailer-master/extras and ../gadra/./admin/classes/PHPMailer/PHPMailer-master/extras
+Common subdirectories: ./admin/classes/PHPMailer/PHPMailer-master/language and ../gadra/./admin/classes/PHPMailer/PHPMailer-master/language
+1174 = ./admin/classes/PHPMailer/PHPMailer-master/LICENSE
+1175 = ./admin/classes/PHPMailer/PHPMailer-master/VERSION
+1176 = ./admin/classes/PHPMailer/PHPMailer-master/composer.json
+1177 = ./admin/classes/PHPMailer/PHPMailer-master/composer.lock
+1178 = ./admin/classes/PHPMailer/PHPMailer-master/examples
+Common subdirectories: ./admin/classes/PHPMailer/PHPMailer-master/examples/images and ../gadra/./admin/classes/PHPMailer/PHPMailer-master/examples/images
+Common subdirectories: ./admin/classes/PHPMailer/PHPMailer-master/examples/scripts and ../gadra/./admin/classes/PHPMailer/PHPMailer-master/examples/scripts
+Common subdirectories: ./admin/classes/PHPMailer/PHPMailer-master/examples/styles and ../gadra/./admin/classes/PHPMailer/PHPMailer-master/examples/styles
+1179 = ./admin/classes/PHPMailer/PHPMailer-master/examples/DKIM.phps
+1180 = ./admin/classes/PHPMailer/PHPMailer-master/examples/code_generator.phps
+1181 = ./admin/classes/PHPMailer/PHPMailer-master/examples/contactform.phps
+1182 = ./admin/classes/PHPMailer/PHPMailer-master/examples/contents.html
+1183 = ./admin/classes/PHPMailer/PHPMailer-master/examples/contentsutf8.html
+1184 = ./admin/classes/PHPMailer/PHPMailer-master/examples/exceptions.phps
+1185 = ./admin/classes/PHPMailer/PHPMailer-master/examples/gmail.phps
+1186 = ./admin/classes/PHPMailer/PHPMailer-master/examples/gmail_xoauth.phps
+1187 = ./admin/classes/PHPMailer/PHPMailer-master/examples/index.html
+1188 = ./admin/classes/PHPMailer/PHPMailer-master/examples/mail.phps
+1189 = ./admin/classes/PHPMailer/PHPMailer-master/examples/mailing_list.phps
+1190 = ./admin/classes/PHPMailer/PHPMailer-master/examples/pop_before_smtp.phps
+1191 = ./admin/classes/PHPMailer/PHPMailer-master/examples/send_file_upload.phps
+1192 = ./admin/classes/PHPMailer/PHPMailer-master/examples/send_multiple_file_upload.phps
+1193 = ./admin/classes/PHPMailer/PHPMailer-master/examples/sendmail.phps
+1194 = ./admin/classes/PHPMailer/PHPMailer-master/examples/signed-mail.phps
+1195 = ./admin/classes/PHPMailer/PHPMailer-master/examples/smtp.phps
+1196 = ./admin/classes/PHPMailer/PHPMailer-master/examples/smtp_check.phps
+1197 = ./admin/classes/PHPMailer/PHPMailer-master/examples/smtp_no_auth.phps
+1198 = ./admin/classes/PHPMailer/PHPMailer-master/examples/ssl_options.phps
+1199 = ./admin/classes/PHPMailer/PHPMailer-master/examples/scripts
+1200 = ./admin/classes/PHPMailer/PHPMailer-master/examples/scripts/XRegExp.js
+1201 = ./admin/classes/PHPMailer/PHPMailer-master/examples/scripts/shAutoloader.js
+1202 = ./admin/classes/PHPMailer/PHPMailer-master/examples/scripts/shBrushPhp.js
+1203 = ./admin/classes/PHPMailer/PHPMailer-master/examples/scripts/shCore.js
+1204 = ./admin/classes/PHPMailer/PHPMailer-master/examples/scripts/shLegacy.js
+1205 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles
+1206 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCore.css
+1207 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCoreDefault.css
+1208 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCoreDjango.css
+1209 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCoreEclipse.css
+1210 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCoreEmacs.css
+1211 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCoreFadeToGrey.css
+1212 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCoreMDUltra.css
+1213 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCoreMidnight.css
+1214 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shCoreRDark.css
+1215 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeAppleScript.css
+1216 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeDefault.css
+1217 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeDjango.css
+1218 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeEclipse.css
+1219 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeEmacs.css
+1220 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeFadeToGrey.css
+1221 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeMDUltra.css
+1222 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeMidnight.css
+1223 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeRDark.css
+1224 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/shThemeVisualStudio.css
+1225 = ./admin/classes/PHPMailer/PHPMailer-master/examples/styles/wrapping.png
+1226 = ./admin/classes/PHPMailer/PHPMailer-master/examples/images
+1227 = ./admin/classes/PHPMailer/PHPMailer-master/examples/images/phpmailer.png
+1228 = ./admin/classes/PHPMailer/PHPMailer-master/examples/images/phpmailer_mini.png
+1229 = ./admin/classes/PHPMailer/PHPMailer-master/extras
+1230 = ./admin/classes/PHPMailer/PHPMailer-master/extras/EasyPeasyICS.php
+1231 = ./admin/classes/PHPMailer/PHPMailer-master/extras/README.md
+1232 = ./admin/classes/PHPMailer/PHPMailer-master/extras/htmlfilter.php
+1233 = ./admin/classes/PHPMailer/PHPMailer-master/extras/ntlm_sasl_client.php
+1234 = ./admin/classes/PHPMailer/PHPMailer-master/language
+1235 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-et.php
+1236 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-fa.php
+1237 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-zh_cn.php
+1238 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-uk.php
+1239 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ro.php
+1240 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ru.php
+1241 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-sk.php
+1242 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-zh.php
+1243 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-vi.php
+1244 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-sl.php
+1245 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-sr.php
+1246 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-sv.php
+1247 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-tr.php
+1248 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-pt_br.php
+1249 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-lt.php
+1250 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-lv.php
+1251 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ms.php
+1252 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-nb.php
+1253 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-nl.php
+1254 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-pl.php
+1255 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-pt.php
+1256 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-am.php
+1257 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ar.php
+1258 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-az.php
+1259 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-be.php
+1260 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-bg.php
+1261 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ca.php
+1262 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ch.php
+1263 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-cs.php
+1264 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-da.php
+1265 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-de.php
+1266 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-el.php
+1267 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-eo.php
+1268 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-es.php
+1269 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-fi.php
+1270 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-fo.php
+1271 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-fr.php
+1272 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-gl.php
+1273 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-he.php
+1274 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-hr.php
+1275 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-hu.php
+1276 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-id.php
+1277 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-it.php
+1278 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ja.php
+1279 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ka.php
+1280 = ./admin/classes/PHPMailer/PHPMailer-master/language/phpmailer.lang-ko.php
+1281 = ./admin/classes/Google
+Common subdirectories: ./admin/classes/Google/Auth and ../gadra/./admin/classes/Google/Auth
+Common subdirectories: ./admin/classes/Google/Cache and ../gadra/./admin/classes/Google/Cache
+Common subdirectories: ./admin/classes/Google/Http and ../gadra/./admin/classes/Google/Http
+Common subdirectories: ./admin/classes/Google/IO and ../gadra/./admin/classes/Google/IO
+Common subdirectories: ./admin/classes/Google/Logger and ../gadra/./admin/classes/Google/Logger
+Common subdirectories: ./admin/classes/Google/Service and ../gadra/./admin/classes/Google/Service
+Common subdirectories: ./admin/classes/Google/Signer and ../gadra/./admin/classes/Google/Signer
+Common subdirectories: ./admin/classes/Google/Task and ../gadra/./admin/classes/Google/Task
+Common subdirectories: ./admin/classes/Google/Utils and ../gadra/./admin/classes/Google/Utils
+Common subdirectories: ./admin/classes/Google/Verifier and ../gadra/./admin/classes/Google/Verifier
+1282 = ./admin/classes/Google/Client.php
+1283 = ./admin/classes/Google/Exception.php
+1284 = ./admin/classes/Google/Service.php
+1285 = ./admin/classes/Google/Config.php
+1286 = ./admin/classes/Google/Model.php
+1287 = ./admin/classes/Google/Collection.php
+1288 = ./admin/classes/Google/Utils.php
+1289 = ./admin/classes/Google/autoload.php
+1290 = ./admin/classes/Google/Task
+1291 = ./admin/classes/Google/Task/Retryable.php
+1292 = ./admin/classes/Google/Task/Exception.php
+1293 = ./admin/classes/Google/Task/Runner.php
+1294 = ./admin/classes/Google/Service
+1295 = ./admin/classes/Google/Service/Genomics.php
+1296 = ./admin/classes/Google/Service/SQLAdmin.php
+1297 = ./admin/classes/Google/Service/Replicapoolupdater.php
+1298 = ./admin/classes/Google/Service/Customsearch.php
+1299 = ./admin/classes/Google/Service/CloudMonitoring.php
+1300 = ./admin/classes/Google/Service/Reports.php
+1301 = ./admin/classes/Google/Service/Autoscaler.php
+1302 = ./admin/classes/Google/Service/Dfareporting.php
+1303 = ./admin/classes/Google/Service/PlusDomains.php
+1304 = ./admin/classes/Google/Service/Reseller.php
+1305 = ./admin/classes/Google/Service/Container.php
+1306 = ./admin/classes/Google/Service/GamesConfiguration.php
+1307 = ./admin/classes/Google/Service/Licensing.php
+1308 = ./admin/classes/Google/Service/AdExchangeSeller.php
+1309 = ./admin/classes/Google/Service/Blogger.php
+1310 = ./admin/classes/Google/Service/Bigquery.php
+1311 = ./admin/classes/Google/Service/Audit.php
+1312 = ./admin/classes/Google/Service/Compute.php
+1313 = ./admin/classes/Google/Service/AndroidEnterprise.php
+1314 = ./admin/classes/Google/Service/Webmasters.php
+1315 = ./admin/classes/Google/Service/AndroidPublisher.php
+1316 = ./admin/classes/Google/Service/Webfonts.php
+1317 = ./admin/classes/Google/Service/Computeaccounts.php
+1318 = ./admin/classes/Google/Service/Freebase.php
+1319 = ./admin/classes/Google/Service/Urlshortener.php
+1320 = ./admin/classes/Google/Service/Cloudsearch.php
+1321 = ./admin/classes/Google/Service/Prediction.php
+1322 = ./admin/classes/Google/Service/IdentityToolkit.php
+1323 = ./admin/classes/Google/Service/MapsEngine.php
+1324 = ./admin/classes/Google/Service/QPXExpress.php
+1325 = ./admin/classes/Google/Service/Spectrum.php
+1326 = ./admin/classes/Google/Service/YouTube.php
+1327 = ./admin/classes/Google/Service/Fusiontables.php
+1328 = ./admin/classes/Google/Service/Deploymentmanager.php
+1329 = ./admin/classes/Google/Service/Books.php
+1330 = ./admin/classes/Google/Service/Fitness.php
+1331 = ./admin/classes/Google/Service/Games.php
+1332 = ./admin/classes/Google/Service/SiteVerification.php
+1333 = ./admin/classes/Google/Service/AdExchangeBuyer.php
+1334 = ./admin/classes/Google/Service/AppState.php
+1335 = ./admin/classes/Google/Service/Pagespeedonline.php
+1336 = ./admin/classes/Google/Service/Datastore.php
+1337 = ./admin/classes/Google/Service/Cloudlatencytest.php
+1338 = ./admin/classes/Google/Service/YouTubeAnalytics.php
+1339 = ./admin/classes/Google/Service/Calendar.php
+1340 = ./admin/classes/Google/Service/Replicapool.php
+1341 = ./admin/classes/Google/Service/Logging.php
+1342 = ./admin/classes/Google/Service/GamesManagement.php
+1343 = ./admin/classes/Google/Service/Mirror.php
+1344 = ./admin/classes/Google/Service/Oauth2.php
+1345 = ./admin/classes/Google/Service/Dataflow.php
+1346 = ./admin/classes/Google/Service/Translate.php
+1347 = ./admin/classes/Google/Service/Tasks.php
+1348 = ./admin/classes/Google/Service/Drive.php
+1349 = ./admin/classes/Google/Service/DoubleClickBidManager.php
+1350 = ./admin/classes/Google/Service/GroupsMigration.php
+1351 = ./admin/classes/Google/Service/Manager.php
+1352 = ./admin/classes/Google/Service/TagManager.php
+1353 = ./admin/classes/Google/Service/Storage.php
+1354 = ./admin/classes/Google/Service/Directory.php
+1355 = ./admin/classes/Google/Service/AdSenseHost.php
+1356 = ./admin/classes/Google/Service/Groupssettings.php
+1357 = ./admin/classes/Google/Service/Exception.php
+1358 = ./admin/classes/Google/Service/Gmail.php
+1359 = ./admin/classes/Google/Service/Dns.php
+1360 = ./admin/classes/Google/Service/Pubsub.php
+1361 = ./admin/classes/Google/Service/Resourceviews.php
+1362 = ./admin/classes/Google/Service/Appsactivity.php
+1363 = ./admin/classes/Google/Service/Resource.php
+1364 = ./admin/classes/Google/Service/Coordinate.php
+1365 = ./admin/classes/Google/Service/Plus.php
+1366 = ./admin/classes/Google/Service/Analytics.php
+1367 = ./admin/classes/Google/Service/Taskqueue.php
+1368 = ./admin/classes/Google/Service/Doubleclicksearch.php
+1369 = ./admin/classes/Google/Service/AdSense.php
+1370 = ./admin/classes/Google/Service/Admin.php
+1371 = ./admin/classes/Google/Service/ShoppingContent.php
+1372 = ./admin/classes/Google/Service/CivicInfo.php
+1373 = ./admin/classes/Google/Auth
+1374 = ./admin/classes/Google/Auth/Exception.php
+1375 = ./admin/classes/Google/Auth/OAuth2.php
+1376 = ./admin/classes/Google/Auth/LoginTicket.php
+1377 = ./admin/classes/Google/Auth/AssertionCredentials.php
+1378 = ./admin/classes/Google/Auth/Abstract.php
+1379 = ./admin/classes/Google/Auth/ComputeEngine.php
+1380 = ./admin/classes/Google/Auth/AppIdentity.php
+1381 = ./admin/classes/Google/Auth/Simple.php
+1382 = ./admin/classes/Google/Cache
+1383 = ./admin/classes/Google/Cache/Apc.php
+1384 = ./admin/classes/Google/Cache/Exception.php
+1385 = ./admin/classes/Google/Cache/Null.php
+1386 = ./admin/classes/Google/Cache/Memcache.php
+1387 = ./admin/classes/Google/Cache/Abstract.php
+1388 = ./admin/classes/Google/Cache/File.php
+1389 = ./admin/classes/Google/IO
+1390 = ./admin/classes/Google/IO/Exception.php
+1391 = ./admin/classes/Google/IO/cacerts.pem
+1392 = ./admin/classes/Google/IO/Stream.php
+1393 = ./admin/classes/Google/IO/Curl.php
+1394 = ./admin/classes/Google/IO/Abstract.php
+1395 = ./admin/classes/Google/Utils
+1396 = ./admin/classes/Google/Utils/URITemplate.php
+1397 = ./admin/classes/Google/Signer
+1398 = ./admin/classes/Google/Signer/P12.php
+1399 = ./admin/classes/Google/Signer/Abstract.php
+1400 = ./admin/classes/Google/Verifier
+1401 = ./admin/classes/Google/Verifier/Abstract.php
+1402 = ./admin/classes/Google/Verifier/Pem.php
+1403 = ./admin/classes/Google/Http
+1404 = ./admin/classes/Google/Http/Batch.php
+1405 = ./admin/classes/Google/Http/MediaFileUpload.php
+1406 = ./admin/classes/Google/Http/REST.php
+1407 = ./admin/classes/Google/Http/CacheParser.php
+1408 = ./admin/classes/Google/Http/Request.php
+1409 = ./admin/classes/Google/Logger
+1410 = ./admin/classes/Google/Logger/Exception.php
+1411 = ./admin/classes/Google/Logger/Null.php
+1412 = ./admin/classes/Google/Logger/Psr.php
+1413 = ./admin/classes/Google/Logger/Abstract.php
+1414 = ./admin/classes/Google/Logger/File.php
+1415 = ./admin/classes/CPC
+Common subdirectories: ./admin/classes/CPC/wsdl and ../gadra/./admin/classes/CPC/wsdl
+1416 = ./admin/classes/CPC/wsdl
+1417 = ./admin/classes/CPC/wsdl/GetRates.wsdl
+1418 = ./admin/classes/CPC/wsdl/rating.wsdl
+1419 = ./admin/classes/Facebook
+Common subdirectories: ./admin/classes/Facebook/Authentication and ../gadra/./admin/classes/Facebook/Authentication
+Common subdirectories: ./admin/classes/Facebook/Exceptions and ../gadra/./admin/classes/Facebook/Exceptions
+Common subdirectories: ./admin/classes/Facebook/FileUpload and ../gadra/./admin/classes/Facebook/FileUpload
+Common subdirectories: ./admin/classes/Facebook/GraphNodes and ../gadra/./admin/classes/Facebook/GraphNodes
+Common subdirectories: ./admin/classes/Facebook/Helpers and ../gadra/./admin/classes/Facebook/Helpers
+Common subdirectories: ./admin/classes/Facebook/Http and ../gadra/./admin/classes/Facebook/Http
+Common subdirectories: ./admin/classes/Facebook/HttpClients and ../gadra/./admin/classes/Facebook/HttpClients
+Common subdirectories: ./admin/classes/Facebook/PersistentData and ../gadra/./admin/classes/Facebook/PersistentData
+Common subdirectories: ./admin/classes/Facebook/PseudoRandomString and ../gadra/./admin/classes/Facebook/PseudoRandomString
+Common subdirectories: ./admin/classes/Facebook/Url and ../gadra/./admin/classes/Facebook/Url
+1420 = ./admin/classes/Facebook/FacebookBatchResponse.php
+1421 = ./admin/classes/Facebook/FacebookResponse.php
+1422 = ./admin/classes/Facebook/facebook.php
+1423 = ./admin/classes/Facebook/FacebookBatchRequest.php
+1424 = ./admin/classes/Facebook/SignedRequest.php
+1425 = ./admin/classes/Facebook/FacebookApp.php
+1426 = ./admin/classes/Facebook/base_facebook.php
+1427 = ./admin/classes/Facebook/FacebookRequest.php
+1428 = ./admin/classes/Facebook/FacebookClient.php
+1429 = ./admin/classes/Facebook/Facebook.php
+1430 = ./admin/classes/Facebook/FB.php
+1431 = ./admin/classes/Facebook/autoload.php
+1432 = ./admin/classes/Facebook/HttpClients
+Common subdirectories: ./admin/classes/Facebook/HttpClients/certs and ../gadra/./admin/classes/Facebook/HttpClients/certs
+1433 = ./admin/classes/Facebook/HttpClients/FacebookStream.php
+1434 = ./admin/classes/Facebook/HttpClients/FacebookStreamHttpClient.php
+1435 = ./admin/classes/Facebook/HttpClients/FacebookCurlHttpClient.php
+1436 = ./admin/classes/Facebook/HttpClients/FacebookCurl.php
+1437 = ./admin/classes/Facebook/HttpClients/FacebookHttpClientInterface.php
+1438 = ./admin/classes/Facebook/HttpClients/FacebookGuzzleHttpClient.php
+1439 = ./admin/classes/Facebook/HttpClients/certs
+1440 = ./admin/classes/Facebook/HttpClients/certs/DigiCertHighAssuranceEVRootCA.pem
+1441 = ./admin/classes/Facebook/Authentication
+1442 = ./admin/classes/Facebook/Authentication/AccessTokenMetadata.php
+1443 = ./admin/classes/Facebook/Authentication/AccessToken.php
+1444 = ./admin/classes/Facebook/Authentication/OAuth2Client.php
+1445 = ./admin/classes/Facebook/FileUpload
+1446 = ./admin/classes/Facebook/FileUpload/FacebookFile.php
+1447 = ./admin/classes/Facebook/FileUpload/FacebookVideo.php
+1448 = ./admin/classes/Facebook/FileUpload/Mimetypes.php
+1449 = ./admin/classes/Facebook/PseudoRandomString
+1450 = ./admin/classes/Facebook/PseudoRandomString/McryptPseudoRandomStringGenerator.php
+1451 = ./admin/classes/Facebook/PseudoRandomString/PseudoRandomStringGeneratorInterface.php
+1452 = ./admin/classes/Facebook/PseudoRandomString/PseudoRandomStringGeneratorTrait.php
+1453 = ./admin/classes/Facebook/PseudoRandomString/OpenSslPseudoRandomStringGenerator.php
+1454 = ./admin/classes/Facebook/PseudoRandomString/UrandomPseudoRandomStringGenerator.php
+1455 = ./admin/classes/Facebook/GraphNodes
+1456 = ./admin/classes/Facebook/GraphNodes/GraphObject.php
+1457 = ./admin/classes/Facebook/GraphNodes/GraphAlbum.php
+1458 = ./admin/classes/Facebook/GraphNodes/GraphLocation.php
+1459 = ./admin/classes/Facebook/GraphNodes/GraphPicture.php
+1460 = ./admin/classes/Facebook/GraphNodes/GraphNode.php
+1461 = ./admin/classes/Facebook/GraphNodes/GraphApplication.php
+1462 = ./admin/classes/Facebook/GraphNodes/GraphUser.php
+1463 = ./admin/classes/Facebook/GraphNodes/GraphObjectFactory.php
+1464 = ./admin/classes/Facebook/GraphNodes/GraphPage.php
+1465 = ./admin/classes/Facebook/GraphNodes/GraphSessionInfo.php
+1466 = ./admin/classes/Facebook/GraphNodes/GraphCoverPhoto.php
+1467 = ./admin/classes/Facebook/GraphNodes/GraphList.php
+1468 = ./admin/classes/Facebook/GraphNodes/GraphEvent.php
+1469 = ./admin/classes/Facebook/GraphNodes/GraphAchievement.php
+1470 = ./admin/classes/Facebook/GraphNodes/GraphGroup.php
+1471 = ./admin/classes/Facebook/GraphNodes/GraphEdge.php
+1472 = ./admin/classes/Facebook/GraphNodes/GraphNodeFactory.php
+1473 = ./admin/classes/Facebook/GraphNodes/Collection.php
+1474 = ./admin/classes/Facebook/Http
+1475 = ./admin/classes/Facebook/Http/RequestBodyMultipart.php
+1476 = ./admin/classes/Facebook/Http/RequestBodyInterface.php
+1477 = ./admin/classes/Facebook/Http/GraphRawResponse.php
+1478 = ./admin/classes/Facebook/Http/RequestBodyUrlEncoded.php
+1479 = ./admin/classes/Facebook/PersistentData
+1480 = ./admin/classes/Facebook/PersistentData/FacebookSessionPersistentDataHandler.php
+1481 = ./admin/classes/Facebook/PersistentData/PersistentDataInterface.php
+1482 = ./admin/classes/Facebook/PersistentData/FacebookMemoryPersistentDataHandler.php
+1483 = ./admin/classes/Facebook/Exceptions
+1484 = ./admin/classes/Facebook/Exceptions/FacebookAuthenticationException.php
+1485 = ./admin/classes/Facebook/Exceptions/FacebookClientException.php
+1486 = ./admin/classes/Facebook/Exceptions/FacebookResponseException.php
+1487 = ./admin/classes/Facebook/Exceptions/FacebookThrottleException.php
+1488 = ./admin/classes/Facebook/Exceptions/FacebookOtherException.php
+1489 = ./admin/classes/Facebook/Exceptions/FacebookAuthorizationException.php
+1490 = ./admin/classes/Facebook/Exceptions/FacebookServerException.php
+1491 = ./admin/classes/Facebook/Exceptions/FacebookSDKException.php
+1492 = ./admin/classes/Facebook/Helpers
+1493 = ./admin/classes/Facebook/Helpers/FacebookCanvasHelper.php
+1494 = ./admin/classes/Facebook/Helpers/FacebookPageTabHelper.php
+1495 = ./admin/classes/Facebook/Helpers/FacebookRedirectLoginHelper.php
+1496 = ./admin/classes/Facebook/Helpers/FacebookSignedRequestFromInputHelper.php
+1497 = ./admin/classes/Facebook/Helpers/FacebookJavaScriptHelper.php
+1498 = ./admin/classes/Facebook/Url
+1499 = ./admin/classes/Facebook/Url/FacebookUrlDetectionHandler.php
+1500 = ./admin/classes/Facebook/Url/FacebookUrlManipulator.php
+1501 = ./admin/classes/Facebook/Url/UrlDetectionInterface.php
+1502 = ./admin/classes/fed-ex
+Common subdirectories: ./admin/classes/fed-ex/library and ../gadra/./admin/classes/fed-ex/library
+Common subdirectories: ./admin/classes/fed-ex/wsdl and ../gadra/./admin/classes/fed-ex/wsdl
+1503 = ./admin/classes/fed-ex/wsdl
+1504 = ./admin/classes/fed-ex/wsdl/RateService_v14.wsdl
+1505 = ./admin/classes/fed-ex/wsdl/GlobalShipAddressService_v2.wsdl
+1506 = ./admin/classes/fed-ex/wsdl/PackageMovementInformationService_v5.wsdl
+1507 = ./admin/classes/fed-ex/wsdl/TrackService_v8.wsdl
+1508 = ./admin/classes/fed-ex/library
+1509 = ./admin/classes/fed-ex/library/fedex-common.php5
+1510 = ./admin/classes/WURFL
+Common subdirectories: ./admin/classes/WURFL/Configuration and ../gadra/./admin/classes/WURFL/Configuration
+Common subdirectories: ./admin/classes/WURFL/Handlers and ../gadra/./admin/classes/WURFL/Handlers
+Common subdirectories: ./admin/classes/WURFL/Logger and ../gadra/./admin/classes/WURFL/Logger
+Common subdirectories: ./admin/classes/WURFL/Reloader and ../gadra/./admin/classes/WURFL/Reloader
+Common subdirectories: ./admin/classes/WURFL/Request and ../gadra/./admin/classes/WURFL/Request
+Common subdirectories: ./admin/classes/WURFL/Storage and ../gadra/./admin/classes/WURFL/Storage
+Common subdirectories: ./admin/classes/WURFL/Utils and ../gadra/./admin/classes/WURFL/Utils
+Common subdirectories: ./admin/classes/WURFL/VirtualCapability and ../gadra/./admin/classes/WURFL/VirtualCapability
+Common subdirectories: ./admin/classes/WURFL/Xml and ../gadra/./admin/classes/WURFL/Xml
+1511 = ./admin/classes/WURFL/WURFLException.php
+1512 = ./admin/classes/WURFL/Storage.php
+1513 = ./admin/classes/WURFL/Context.php
+1514 = ./admin/classes/WURFL/Application.php
+1515 = ./admin/classes/WURFL/CustomDeviceRepository.php
+1516 = ./admin/classes/WURFL/VirtualCapabilityProvider.php
+1517 = ./admin/classes/WURFL/WURFLUtils.php
+1518 = ./admin/classes/WURFL/DeviceRepositoryBuilder.php
+1519 = ./admin/classes/WURFL/DeviceRepository.php
+1520 = ./admin/classes/WURFL/VirtualCapability.php
+1521 = ./admin/classes/WURFL/WURFLManagerFactory.php
+1522 = ./admin/classes/WURFL/ClassLoader.php
+1523 = ./admin/classes/WURFL/UserAgentHandlerChainFactory.php
+1524 = ./admin/classes/WURFL/FileUtils.php
+1525 = ./admin/classes/WURFL/UserAgentHandlerChain.php
+1526 = ./admin/classes/WURFL/WURFLManager.php
+1527 = ./admin/classes/WURFL/CustomDevice.php
+1528 = ./admin/classes/WURFL/CapabilitiesHolder.php
+1529 = ./admin/classes/WURFL/Constants.php
+1530 = ./admin/classes/WURFL/WURFLService.php
+1531 = ./admin/classes/WURFL/Configuration
+1532 = ./admin/classes/WURFL/Configuration/ConfigHolder.php
+1533 = ./admin/classes/WURFL/Configuration/ArrayConfig.php
+1534 = ./admin/classes/WURFL/Configuration/XmlConfig.php
+1535 = ./admin/classes/WURFL/Configuration/Config.php
+1536 = ./admin/classes/WURFL/Configuration/InMemoryConfig.php
+1537 = ./admin/classes/WURFL/Configuration/ConfigFactory.php
+1538 = ./admin/classes/WURFL/Xml
+1539 = ./admin/classes/WURFL/Xml/AbstractIterator.php
+1540 = ./admin/classes/WURFL/Xml/VersionIterator.php
+1541 = ./admin/classes/WURFL/Xml/Info.php
+1542 = ./admin/classes/WURFL/Xml/DeviceIterator.php
+1543 = ./admin/classes/WURFL/Xml/wurfl.rng
+1544 = ./admin/classes/WURFL/Xml/DevicePatcher.php
+1545 = ./admin/classes/WURFL/Xml/wurfl-patch.rng
+1546 = ./admin/classes/WURFL/Xml/Interface.php
+1547 = ./admin/classes/WURFL/Xml/ModelDevice.php
+1548 = ./admin/classes/WURFL/Xml/Utils.php
+1549 = ./admin/classes/WURFL/VirtualCapability
+Common subdirectories: ./admin/classes/WURFL/VirtualCapability/UserAgentTool and ../gadra/./admin/classes/WURFL/VirtualCapability/UserAgentTool
+1550 = ./admin/classes/WURFL/VirtualCapability/IsWindowsPhone.php
+1551 = ./admin/classes/WURFL/VirtualCapability/UserAgentTool.php
+1552 = ./admin/classes/WURFL/VirtualCapability/IsMobile.php
+1553 = ./admin/classes/WURFL/VirtualCapability/IsTouchscreen.php
+1554 = ./admin/classes/WURFL/VirtualCapability/Group.php
+1555 = ./admin/classes/WURFL/VirtualCapability/IsHtmlPreferred.php
+1556 = ./admin/classes/WURFL/VirtualCapability/IsFullDesktop.php
+1557 = ./admin/classes/WURFL/VirtualCapability/IsWmlPreferred.php
+1558 = ./admin/classes/WURFL/VirtualCapability/IsRobot.php
+1559 = ./admin/classes/WURFL/VirtualCapability/FormFactor.php
+1560 = ./admin/classes/WURFL/VirtualCapability/IsLargescreen.php
+1561 = ./admin/classes/WURFL/VirtualCapability/IsXhtmlmpPreferred.php
+1562 = ./admin/classes/WURFL/VirtualCapability/IsIos.php
+1563 = ./admin/classes/WURFL/VirtualCapability/IsAndroid.php
+1564 = ./admin/classes/WURFL/VirtualCapability/DeviceBrowserGroup.php
+1565 = ./admin/classes/WURFL/VirtualCapability/ManualGroupChild.php
+1566 = ./admin/classes/WURFL/VirtualCapability/IsSmartphone.php
+1567 = ./admin/classes/WURFL/VirtualCapability/CompleteDeviceName.php
+1568 = ./admin/classes/WURFL/VirtualCapability/IsApp.php
+1569 = ./admin/classes/WURFL/VirtualCapability/UserAgentTool
+1570 = ./admin/classes/WURFL/VirtualCapability/UserAgentTool/PropertyList.php
+1571 = ./admin/classes/WURFL/VirtualCapability/UserAgentTool/NameVersionPair.php
+1572 = ./admin/classes/WURFL/VirtualCapability/UserAgentTool/Device.php
+1573 = ./admin/classes/WURFL/Storage
+1574 = ./admin/classes/WURFL/Storage/Apc.php
+1575 = ./admin/classes/WURFL/Storage/Exception.php
+1576 = ./admin/classes/WURFL/Storage/Base.php
+1577 = ./admin/classes/WURFL/Storage/Null.php
+1578 = ./admin/classes/WURFL/Storage/Memory.php
+1579 = ./admin/classes/WURFL/Storage/Mysql.php
+1580 = ./admin/classes/WURFL/Storage/Memcache.php
+1581 = ./admin/classes/WURFL/Storage/File.php
+1582 = ./admin/classes/WURFL/Storage/Factory.php
+1583 = ./admin/classes/WURFL/Handlers
+Common subdirectories: ./admin/classes/WURFL/Handlers/Matcher and ../gadra/./admin/classes/WURFL/Handlers/Matcher
+1584 = ./admin/classes/WURFL/Handlers/GrundigHandler.php
+1585 = ./admin/classes/WURFL/Handlers/LGHandler.php
+1586 = ./admin/classes/WURFL/Handlers/DoCoMoHandler.php
+1587 = ./admin/classes/WURFL/Handlers/FennecOnAndroidHandler.php
+1588 = ./admin/classes/WURFL/Handlers/SmartTVHandler.php
+1589 = ./admin/classes/WURFL/Handlers/SamsungHandler.php
+1590 = ./admin/classes/WURFL/Handlers/NokiaHandler.php
+1591 = ./admin/classes/WURFL/Handlers/ChromeHandler.php
+1592 = ./admin/classes/WURFL/Handlers/OperaMiniOnAndroidHandler.php
+1593 = ./admin/classes/WURFL/Handlers/LGUPLUSHandler.php
+1594 = ./admin/classes/WURFL/Handlers/QtekHandler.php
+1595 = ./admin/classes/WURFL/Handlers/ReksioHandler.php
+1596 = ./admin/classes/WURFL/Handlers/Handler.php
+1597 = ./admin/classes/WURFL/Handlers/WindowsPhoneHandler.php
+1598 = ./admin/classes/WURFL/Handlers/BotCrawlerTranscoderHandler.php
+1599 = ./admin/classes/WURFL/Handlers/JavaMidletHandler.php
+1600 = ./admin/classes/WURFL/Handlers/NokiaOviBrowserHandler.php
+1601 = ./admin/classes/WURFL/Handlers/FirefoxHandler.php
+1602 = ./admin/classes/WURFL/Handlers/PortalmmmHandler.php
+1603 = ./admin/classes/WURFL/Handlers/KonquerorHandler.php
+1604 = ./admin/classes/WURFL/Handlers/WindowsRTHandler.php
+1605 = ./admin/classes/WURFL/Handlers/NintendoHandler.php
+1606 = ./admin/classes/WURFL/Handlers/OperaMiniHandler.php
+1607 = ./admin/classes/WURFL/Handlers/SPVHandler.php
+1608 = ./admin/classes/WURFL/Handlers/AppleHandler.php
+1609 = ./admin/classes/WURFL/Handlers/Matcher.php
+1610 = ./admin/classes/WURFL/Handlers/KindleHandler.php
+1611 = ./admin/classes/WURFL/Handlers/PantechHandler.php
+1612 = ./admin/classes/WURFL/Handlers/WebOSHandler.php
+1613 = ./admin/classes/WURFL/Handlers/Utils.php
+1614 = ./admin/classes/WURFL/Handlers/HTCHandler.php
+1615 = ./admin/classes/WURFL/Handlers/DesktopApplicationHandler.php
+1616 = ./admin/classes/WURFL/Handlers/PanasonicHandler.php
+1617 = ./admin/classes/WURFL/Handlers/PhilipsHandler.php
+1618 = ./admin/classes/WURFL/Handlers/NecHandler.php
+1619 = ./admin/classes/WURFL/Handlers/XboxHandler.php
+1620 = ./admin/classes/WURFL/Handlers/UcwebU2Handler.php
+1621 = ./admin/classes/WURFL/Handlers/TizenHandler.php
+1622 = ./admin/classes/WURFL/Handlers/WindowsPhoneDesktopHandler.php
+1623 = ./admin/classes/WURFL/Handlers/AndroidHandler.php
+1624 = ./admin/classes/WURFL/Handlers/OperaMobiOrTabletOnAndroidHandler.php
+1625 = ./admin/classes/WURFL/Handlers/SafariHandler.php
+1626 = ./admin/classes/WURFL/Handlers/AlcatelHandler.php
+1627 = ./admin/classes/WURFL/Handlers/OperaHandler.php
+1628 = ./admin/classes/WURFL/Handlers/SagemHandler.php
+1629 = ./admin/classes/WURFL/Handlers/HTCMacHandler.php
+1630 = ./admin/classes/WURFL/Handlers/MaemoHandler.php
+1631 = ./admin/classes/WURFL/Handlers/MotorolaHandler.php
+1632 = ./admin/classes/WURFL/Handlers/NetFrontOnAndroidHandler.php
+1633 = ./admin/classes/WURFL/Handlers/UcwebU3Handler.php
+1634 = ./admin/classes/WURFL/Handlers/VodafoneHandler.php
+1635 = ./admin/classes/WURFL/Handlers/Ucweb7OnAndroidHandler.php
+1636 = ./admin/classes/WURFL/Handlers/SonyEricssonHandler.php
+1637 = ./admin/classes/WURFL/Handlers/ToshibaHandler.php
+1638 = ./admin/classes/WURFL/Handlers/BenQHandler.php
+1639 = ./admin/classes/WURFL/Handlers/SanyoHandler.php
+1640 = ./admin/classes/WURFL/Handlers/BlackBerryHandler.php
+1641 = ./admin/classes/WURFL/Handlers/MitsubishiHandler.php
+1642 = ./admin/classes/WURFL/Handlers/UbuntuTouchOSHandler.php
+1643 = ./admin/classes/WURFL/Handlers/KyoceraHandler.php
+1644 = ./admin/classes/WURFL/Handlers/SharpHandler.php
+1645 = ./admin/classes/WURFL/Handlers/CatchAllRisHandler.php
+1646 = ./admin/classes/WURFL/Handlers/KDDIHandler.php
+1647 = ./admin/classes/WURFL/Handlers/CatchAllMozillaHandler.php
+1648 = ./admin/classes/WURFL/Handlers/SkyfireHandler.php
+1649 = ./admin/classes/WURFL/Handlers/MSIEHandler.php
+1650 = ./admin/classes/WURFL/Handlers/SiemensHandler.php
+1651 = ./admin/classes/WURFL/Handlers/FirefoxOSHandler.php
+1652 = ./admin/classes/WURFL/Handlers/Filter.php
+1653 = ./admin/classes/WURFL/Handlers/Matcher
+1654 = ./admin/classes/WURFL/Handlers/Matcher/RISMatcher.php
+1655 = ./admin/classes/WURFL/Handlers/Matcher/LDMatcher.php
+1656 = ./admin/classes/WURFL/Handlers/Matcher/Interface.php
+1657 = ./admin/classes/WURFL/Reloader
+1658 = ./admin/classes/WURFL/Reloader/Interface.php
+1659 = ./admin/classes/WURFL/Reloader/DefaultWURFLReloader.php
+1660 = ./admin/classes/WURFL/Utils
+1661 = ./admin/classes/WURFL/Utils/CLI.php
+1662 = ./admin/classes/WURFL/Request
+Common subdirectories: ./admin/classes/WURFL/Request/UserAgentNormalizer and ../gadra/./admin/classes/WURFL/Request/UserAgentNormalizer
+1663 = ./admin/classes/WURFL/Request/GenericRequestFactory.php
+1664 = ./admin/classes/WURFL/Request/GenericRequest.php
+1665 = ./admin/classes/WURFL/Request/MatchInfo.php
+1666 = ./admin/classes/WURFL/Request/UserAgentNormalizer.php
+1667 = ./admin/classes/WURFL/Request/UserAgentNormalizer
+Common subdirectories: ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic and ../gadra/./admin/classes/WURFL/Request/UserAgentNormalizer/Generic
+Common subdirectories: ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific and ../gadra/./admin/classes/WURFL/Request/UserAgentNormalizer/Specific
+1668 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Null.php
+1669 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Interface.php
+1670 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific
+1671 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Opera.php
+1672 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Konqueror.php
+1673 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/OperaMobiOrTabletOnAndroid.php
+1674 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/UcwebU2.php
+1675 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/MSIE.php
+1676 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/WindowsPhone.php
+1677 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Kindle.php
+1678 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Firefox.php
+1679 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Chrome.php
+1680 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Android.php
+1681 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/DesktopApplication.php
+1682 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/UcwebU3.php
+1683 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/WebOS.php
+1684 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Maemo.php
+1685 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/HTCMac.php
+1686 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/LG.php
+1687 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Apple.php
+1688 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Specific/Safari.php
+1689 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic
+1690 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/SerialNumbers.php
+1691 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/NovarraGoogleTranslator.php
+1692 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/UCWEB.php
+1693 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/TransferEncoding.php
+1694 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/BabelFish.php
+1695 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/LocaleRemover.php
+1696 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/YesWAP.php
+1697 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/BlackBerry.php
+1698 = ./admin/classes/WURFL/Request/UserAgentNormalizer/Generic/UPLink.php
+1699 = ./admin/classes/WURFL/Logger
+1700 = ./admin/classes/WURFL/Logger/FileLogger.php
+1701 = ./admin/classes/WURFL/Logger/NullLogger.php
+1702 = ./admin/classes/WURFL/Logger/Interface.php
+1703 = ./admin/classes/WURFL/Logger/LoggerFactory.php
+1704 = ./admin/js
+diff ./admin/js/cms.js ../gadra/./admin/js/cms.js
+382a383,384
+> 	if (window.self != window.top)
+> 		if (window.top.setIframe != null) window.top.setIframe();
+Common subdirectories: ./admin/js/old and ../gadra/./admin/js/old
+1705 = ./admin/js/player.swf
+1706 = ./admin/js/bootstrap.js
+1707 = ./admin/js/jquery.ui.droppable.js
+1708 = ./admin/js/jquery.js
+1709 = ./admin/js/popover.js
+1710 = ./admin/js/jquery-ui-1.8.17.custom.min.js
+1711 = ./admin/js/finalize.js
+1712 = ./admin/js/bootstrap-dropdown.js
+1713 = ./admin/js/jquery-ui-min.js
+1714 = ./admin/js/jquery-1.4.2.min.js
+1715 = ./admin/js/jquery.ui.nestedSortable.js
+1716 = ./admin/js/jwplayer.js
+1717 = ./admin/js/jquery.ui.draggable.js
+1718 = ./admin/js/common.js
+1719 = ./admin/js/jquery.form.js
+1720 = ./admin/js/datepick.js
+1721 = ./admin/js/tooltip.js
+1722 = ./admin/js/jquery-ui.js
+1723 = ./admin/js/jquery-ui.js.old
+1724 = ./admin/js/jquery.touch-punch.js
+1725 = ./admin/js/cms.js
+382a383,384
+> 	if (window.self != window.top)
+> 		if (window.top.setIframe != null) window.top.setIframe();
+1726 = ./admin/js/flot.js
+1727 = ./admin/js/chosen.jquery.js
+1728 = ./admin/js/jquery.contextMenu.js
+1729 = ./admin/js/old
+1730 = ./admin/js/old/chosen.jquery.js
+1731 = ./admin/js/old/chosen.jquery.min.js
+1732 = ./admin/css
+diff ./admin/css/common.css ../gadra/./admin/css/common.css
+990c990
+< .chosen-container-multi .chosen-choices { border:1px solid #cccccc; border-radius:4px; padding-top:4px; }
+---
+> .chosen-container-multi .chosen-choices { border:1px solid #cccccc; border-radius:4px; padding-top:4px; }
+\ No newline at end of file
+diff ./admin/css/editing.css ../gadra/./admin/css/editing.css
+1,4c1,11
+< #moduleEditingPopupOverlay.wrapper { z-index:1001; }
+< #moduleEditingPopupOverlay.wrapper select { background-color:#ffffff !important ; border:1px solid rgb(169,169,169); border-radius: 5px; }
+< #moduleEditingPopupOverlay.wrapper input[type="checkbox"] { height:15px !important; }
+< .header-position { position:inherit; }
+---
+> .mceToolbar td {
+> 	padding:0px !important;
+> }
+> #moduleEditingPopupOverlay.wrapper {
+> 	background-image:none;
+> }
+> #moduleEditingPopup {
+> 	font-size:12px !important;
+> }
+> #logo { position:inherit; }
+> .navbar-fixed-top { left:30px; }
+\ No newline at end of file
+Common subdirectories: ./admin/css/images and ../gadra/./admin/css/images
+Common subdirectories: ./admin/css/old and ../gadra/./admin/css/old
+1733 = ./admin/css/custom.css
+1734 = ./admin/css/google_analytics.css
+1735 = ./admin/css/jquery-ui-1.8.17.custom.css
+1736 = ./admin/css/jquery.contextMenu.css
+1737 = ./admin/css/chosen-sprite@2x.png
+1738 = ./admin/css/common.css
+990c990
+< .chosen-container-multi .chosen-choices { border:1px solid #cccccc; border-radius:4px; padding-top:4px; }
+---
+> .chosen-container-multi .chosen-choices { border:1px solid #cccccc; border-radius:4px; padding-top:4px; }
+\ No newline at end of file
+1739 = ./admin/css/c-css.php
+1740 = ./admin/css/chosen-sprite.png
+1741 = ./admin/css/smoothness.css
+1742 = ./admin/css/datepick.css
+1743 = ./admin/css/bootstrap.css
+1744 = ./admin/css/redmond.css
+1745 = ./admin/css/cms.css
+1746 = ./admin/css/bootstrap.grid.css
+1747 = ./admin/css/editing.css
+1,4c1,11
+< #moduleEditingPopupOverlay.wrapper { z-index:1001; }
+< #moduleEditingPopupOverlay.wrapper select { background-color:#ffffff !important ; border:1px solid rgb(169,169,169); border-radius: 5px; }
+< #moduleEditingPopupOverlay.wrapper input[type="checkbox"] { height:15px !important; }
+< .header-position { position:inherit; }
+---
+> .mceToolbar td {
+> 	padding:0px !important;
+> }
+> #moduleEditingPopupOverlay.wrapper {
+> 	background-image:none;
+> }
+> #moduleEditingPopup {
+> 	font-size:12px !important;
+> }
+> #logo { position:inherit; }
+> .navbar-fixed-top { left:30px; }
+\ No newline at end of file
+1748 = ./admin/css/chosen.css
+1749 = ./admin/css/images
+1750 = ./admin/css/images/ui-bg_diagonals-thick_20_666666_40x40.png
+1751 = ./admin/css/images/ui-icons_ef8c08_256x240.png
+1752 = ./admin/css/images/ui-icons_ffffff_256x240.png
+1753 = ./admin/css/images/ui-icons_222222_256x240.png
+1754 = ./admin/css/images/ui-bg_flat_10_000000_40x100.png
+1755 = ./admin/css/images/ui-bg_gloss-wave_35_f6a828_500x100
+1756 = copy.png
+1757 = ./admin/css/images/ui-icons_ffd27a_256x240.png
+1758 = ./admin/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+1759 = ./admin/css/images/.DS_Store
+1760 = ./admin/css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+1761 = ./admin/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+1762 = ./admin/css/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+1763 = ./admin/css/images/ui-icons_228ef1_256x240.png
+1764 = ./admin/css/images/ui-bg_glass_65_ffffff_1x400.png
+1765 = ./admin/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+1766 = ./admin/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+1767 = ./admin/css/old
+1768 = ./admin/css/old/chosen.css
+1769 = admin/config.php
+1,105c1,90
+< <?php
+< define('DEV',true);
+< define('TZ','America/New_York');
+< define('CURRENCY','en_CA');
+< //setlocale(LC_MONETARY, 'en_US');
+< define('FEATURES','|USERS|');
+< if (!defined('ADMIN')) define('ADMIN','');
+< define('GLOBAL_TRAFFIC_CUTOFF',7);
+< define('GLOBAL_PER_PAGE',10);
+< define('GLOBAL_DEFAULT_CURRENCY_FORMAT','%(n');
+< define('GLOBAL_DEFAULT_DATE_FORMAT','d-M-Y');
+< define('GLOBAL_DEFAULT_DATETIME_FORMAT','d-M-Y h:i:s a');
+< define('GLOBAL_DEFAULT_TIME_FORMAT','h:i a');
+< define('GLOBAL_PASSWORD_REGEX','^.*(?=.{6,})(?=.*[a-zA-Zd!@#$*+-/&()]).*$^');
+< define('GLOBAL_USERNAME_REGEX','/^[a-zA-Z0-9.@_\-]{6,20}$/');
+< define('STATUS_INCOMPLETE',1);
+< define('STATUS_PROCESSING',2);
+< define('STATUS_BACKORDERED',4);
+< define('STATUS_CANCELLED',8);
+< define('STATUS_SHIPPED',16);
+< define('STATUS_RECURRING',32);
+< define('STATUS_CREDIT_HOLD',64);
+< define('STATUS_PARTIAL_SHIPMENT',128);
+< define('STATUS_EXPIRING',256);
+< define('STATUS_REAUTHORIZING',512);
+< define('CUSTOMER_HOLD',1024);
+< $GLOBALS['recaptcha'] = array('url'=>'https://www.google.com/recaptcha/api/siteverify','src'=>'https://www.google.com/recaptcha/api.js');
+< if (defined('DEV') && DEV == true) {
+< 	error_reporting(E_ALL);
+< 	define('HOSTNAME','shorthill.ingagedigital.com');
+< 	define('SITENAME','shorthill');
+< 	define('DBHOST','localhost');
+< 	define('DBUSER','test');
+< 	define('DBPASSWD','qwErty');
+< 	define('DBNAME','shorthill');
+< 	define('DEBUGLOG','/home/vhosts/shorthill/logs/');
+< 	define('MAILTYPE','smtp');
+< 	//define('MAILHOST','development.ingagedigital.com');
+< 	//define('MAILPASSWORD','90210webcko');
+< 	//define('MAILUSER','mailer');
+< 	//define('MAILPORT','465');
+< 	define('SITE_ROOT','shorthill');
+< 	if (!DEFINED('DEBUG')) define('DEBUG',2);
+< 	$GLOBALS['google_api'] = array(
+< 		'apikey'=>'AIzaSyADaGI4PSa2sMdjM6QiEb5rHODLk9hb_zE',
+< 		'profile_id'=>'49692710',
+< 		'clientId'=>'388927777264-6thigqcnlktp626rk0jekqh1cjlvc16q.apps.googleusercontent.com',
+< 		'serviceAccount'=>'388927777264-6thigqcnlktp626rk0jekqh1cjlvc16q@developer.gserviceaccount.com',
+< 		'keyFile'=>'api-test-77166ce65704.p12',
+< 		'accountId'=>'103210384'
+< 	);
+< 	$GLOBALS['curl_path'] = "n/a";
+< 	$GLOBALS['other'] = array();
+< 	define('SECURE_BACKEND',0);
+< 	$GLOBALS['shipping']['cpc'] = array('username'=>'6e93d53968881714','password'=>'0bfa9fcb9853d1f51ee57a','customer'=>'2004381','contract'=>'42708517',
+< 		'rates'=>array('location'=>'https://ct.soa-gw.canadapost.ca/rs/soap/rating/v2')
+< 	);
+< 	$GLOBALS['shipping']['fedex'] = array('key'=>'3JJYb1UlIHl7Jd13','password'=>'vrB7CVYHjLMhpD3iH1rcOFf7o','shipaccount'=>'296951919','billaccount'=>'296951919','meter'=>'106281433','integratorId'=>'123','productId'=>'TEST','productVersion'=>'9999');
+< 	$GLOBALS["e-xact"] = array(
+< 		"transaction_key"=>"DKIhWUvcNlgNMvF_LgJ8",
+< 		"response_key"=>"sQaxGt_Q637LwIFDTJM1",
+< 		"merchant_id"=>"ingage813",
+< 		"test_mode"=>"TRUE",
+< 		"payment_page"=>"HCO-INGAG-800",
+< 		"url"=>"https://rpm.demo.e-xact.com/payment"
+< 	);
+< }
+< else {
+< 	error_reporting(0);
+< 	define('MAILTYPE','mail');
+< 	define('HOSTNAME','peekabooiseeu.com');
+< 	define('SITENAME','Peek-a-Boo I See U');
+< 	define('DBHOST','db688788206.db.1and1.com');
+< 	define('DBUSER','dbo688788206');
+< 	define('DBPASSWD','bre3At@e');
+< 	define('DBNAME','db688788206');
+< 	define('DEBUGLOG','/kunden/homepages/32/d243767083/htdocs/logs/');
+< 	define('SITE_ROOT','htdocs');
+< 	if (!DEFINED('DEBUG')) define('DEBUG',0);
+< 	$GLOBALS['other'] = array();
+< 	$GLOBALS['google_api'] = array(
+< 		'apikey'=>'AIzaSyADaGI4PSa2sMdjM6QiEb5rHODLk9hb_zE',
+< 		'clientId'=>'388927777264-6thigqcnlktp626rk0jekqh1cjlvc16q.apps.googleusercontent.com',
+< 		'serviceAccount'=>'388927777264-6thigqcnlktp626rk0jekqh1cjlvc16q@developer.gserviceaccount.com',
+< 		'keyFile'=>'api-test-77166ce65704.p12',
+< 		'accountId'=>'32851958'
+< 	);
+< 	define('SECURE_BACKEND',0);
+< }
+< $GALLERY = array();
+< #$GALLERY['small'] = array('dir'=>'small','height'=>100,'width'=>100,'crop'=>true);
+< #$GALLERY['medium'] = array('dir'=>'medium','height'=>200,'width'=>200,'crop'=>false);
+< #$GALLERY['large'] = array('dir'=>'large','width'=>680,'crop'=>false);
+< #$GALLERY['thumbnail'] = array('dir'=>'thumbnail','width'=>88,'height'=>88,'crop'=>false);
+< $GLOBALS['gallery'] = $GALLERY;
+< 
+< $PRODUCT = array();
+< #$PRODUCT['thumb'] = array('dir'=>'thumb','width'=>100, 'height'=>100,'crop'=>false);
+< #$PRODUCT['small'] = array('dir'=>'small','width'=>200,'crop'=>false);
+< #$PRODUCT['medium'] = array('dir'=>'medium','width'=>257,'crop'=>false);
+< #$PRODUCT['large'] = array('dir'=>'large','width'=>680,'crop'=>false);
+< $GLOBALS['product'] = $PRODUCT;
+< 
+< ?>
+< 
+---
+> <?php
+> define('DEV',true);
+> define('TZ','America/New_York');
+> define('CURRENCY','en_US');
+> //setlocale(LC_MONETARY, 'en_US');
+> define('FEATURES','|USERS|');
+> if (!defined('ADMIN')) define('ADMIN','');
+> define('GLOBAL_TRAFFIC_CUTOFF',7);
+> define('GLOBAL_PER_PAGE',10);
+> define('GLOBAL_DEFAULT_CURRENCY_FORMAT','%(n');
+> define('GLOBAL_DEFAULT_DATE_FORMAT','d-M-Y');
+> define('GLOBAL_DEFAULT_DATETIME_FORMAT','d-M-Y h:i:s a');
+> define('GLOBAL_PASSWORD_REGEX','^.*(?=.{6,}).*$^');
+> define('GLOBAL_USERNAME_REGEX','^.*(?=.{6,})(?=.*[a-z,0-9,A-Z]).*$^');
+> define('STATUS_INCOMPLETE',1);
+> define('STATUS_PROCESSING',2);
+> define('STATUS_BACKORDERED',4);
+> define('STATUS_CANCELLED',8);
+> define('STATUS_SHIPPED',16);
+> define('STATUS_RECURRING',32);
+> define('STATUS_CREDIT_HOLD',64);
+> define('STATUS_PARTIAL_SHIPMENT',128);
+> define('STATUS_EXPIRING',256);
+> define('STATUS_REAUTHORIZING',512);
+> if (defined('DEV') && DEV == true) {
+> 	error_reporting(E_ALL & ~E_STRICT);
+> 	define('SECURE_BACKEND',0);
+> 	define('HOSTNAME','gadra.ingagedigital.com');
+> 	define('SITENAME','gadra development site');
+> 	define('DBHOST','localhost');
+> 	define('DBUSER','test');
+> 	define('DBPASSWD','qwErty');
+> 	define('DBNAME','gadra');
+> 	define('DEBUGLOG','/home/vhosts/gadra/logs/');
+> 	if (!DEFINED('DEBUG')) define('DEBUG',2);
+> 	$GLOBALS['recaptcha'] = array('url'=>'https://www.google.com/recaptcha/api/siteverify','src'=>'https://www.google.com/recaptcha/api.js');
+> 	$GLOBALS['google_api'] = array(
+> 		'apikey'=>'AIzaSyAECUqEJ1SKrHxJYcDk018Ry_OLtGmEKos',
+> 		'profile_id'=>'25426866',
+> 		'clientId'=>'800088932957-dk7ic1nsm50ljl6gr65qfu0iv28em1d5.apps.googleusercontent.com',
+> 		'serviceAccount'=>'800088932957-dk7ic1nsm50ljl6gr65qfu0iv28em1d5@developer.gserviceaccount.com',
+> 		'keyFile'=>'Analytics-b4cf28d9f0cb.p12',
+> 		'accountId'=>'25426866'
+> 	);
+> 
+> 	$GLOBALS['moneris'] = array('store_id'=>'VMCUYtore1','store_key'=>'hpK638UQSOZB','moneris_url'=>'https://esqa.moneris.com/HPPDP/index.php');
+> 	$GLOBALS['other'] = array();
+> 	$GLOBALS['alt-site'] = 'gadra-quebec.moditcms.ca';
+> 	define("MAILTYPE","smtp");
+> 	//define("MAILUSER","ian");
+> 	//define("MAILPASSWORD","Palenkisfu2");
+> 	//define("MAILPORT",25);
+> 	define('SITE_ROOT','gadra');
+> 	$GLOBALS['paypal'] = array('merchant'=>'imacarthur@ediinabox.com','auth'=>'https://sandbox.paypal.com/cgi-bin/webscr','token'=>'GbA7I8dikaGBbZ19CMlBlX0Np_8CBFOWIkvxZvH0bxDzDj6goAWg6FmSwv4','env'=>'sandbox','curl_path'=>'/usr/bin/curl');
+> 	$GLOBALS['moneris'] = array('store_id'=>'29ECZ63796','store_key'=>'hpAAPQNETYCV','moneris_url'=>'https://www3.moneris.com/HPPDP/index.php');
+> }
+> else {
+> 	error_reporting(0);
+> 	define('HOSTNAME','gadra.com');
+> 	define('SITENAME','Gadra');
+> 	define('DBHOST','localhost');
+> 	define('DBUSER','gadra_usr');
+> 	define('DBPASSWD','Fr+Tred7Huz?');
+> 	define('DBNAME','gadra_db');
+> 	define('DEBUGLOG','/tmp/');
+> 	if (!DEFINED('DEBUG')) define('DEBUG',3);
+> 	$GLOBALS['google_api']['username'] = 'gadraenterprises@gmail.com';
+> 	$GLOBALS['google_api']['password'] = 'Goldengoose!79';
+> 	$GLOBALS['google_api']['profile_id'] = '25426866'; // p portion of the analytics url
+> 	$GLOBALS['moneris'] = array('store_id'=>'C7Z5Ntore1','store_key'=>'hp8OUGDR1H31','moneris_url'=>'https://esqa.moneris.com/HPPDP/index.php');
+> 	$GLOBALS['other'] = array();
+> 	$GLOBALS['alt-site'] = 'gadra-quebec.com';
+> 	$GLOBALS['recaptcha'] = array('url'=>'https://www.google.com/recaptcha/api/siteverify','src'=>'https://www.google.com/recaptcha/api.js');
+> }
+> $GALLERY = array();
+> $GALLERY['small'] = array('dir'=>'small','height'=>100,'width'=>100,'crop'=>true);
+> $GALLERY['medium'] = array('dir'=>'medium','height'=>200,'width'=>200,'crop'=>false);
+> $GALLERY['large'] = array('dir'=>'large','width'=>680,'crop'=>false);
+> $GALLERY['thumbnail'] = array('dir'=>'thumbnail','width'=>50,'height'=>50,'crop'=>false);
+> $GLOBALS['gallery'] = $GALLERY;
+> 
+> $PRODUCT = array();
+> $PRODUCT['thumb'] = array('dir'=>'thumb','width'=>100, 'height'=>100,'crop'=>false);
+> //$PRODUCT['small'] = array('dir'=>'small','width'=>200,'crop'=>false);
+> //$PRODUCT['medium'] = array('dir'=>'medium','width'=>257,'crop'=>false);
+> //$PRODUCT['large'] = array('dir'=>'large','width'=>680,'crop'=>false);
+> $GLOBALS['product'] = $PRODUCT;
+> 
+> ?>
+> 
+1770 = admin/convert.php
+1771 = admin/index.php
+1772 = admin/newsletter.php
+1773 = admin/NightlyProcessing.php
+1774 = admin/render.php
+1775 = ./admin/frontend/modules/product.php
+130d129
+< 			$data['saleDiscount'] = 0;
+137a137,139
+> 				$data['saleDiscountFormatted'] = $this->my_money_format($data['saleDiscount']);
+> 				$data['salePercentFormatted'] = round(100*(1-($data['price']/$data['regularPrice'])),1);
+> 				$data['regularPriceFormatted'] = $this->my_money_format($data['regularPrice']);
+139,141d140
+< 			$data['saleDiscountFormatted'] = $this->my_money_format($data['saleDiscount']);
+< 			$data['salePercentFormatted'] = round(100*(1-($data['price']/$data['regularPrice'])),1);
+< 			$data['regularPriceFormatted'] = $this->my_money_format($data['regularPrice']);
+148,161c147,150
+< 			if ($data['onSale']) {
+< 				if ($opt['qty_multiplier']*($opt['sale_price']+$data['price']) != 0) {
+< 					$select->addOption($opt['id'],sprintf('%s : %s',$opt['teaser'],$this->my_money_format(round($opt['qty_multiplier']*($opt['sale_price']+$data['price']),2))));
+< 				}
+< 				else
+< 					$select->addOption($opt['id'],sprintf('%s',$opt['teaser']));
+< 			}
+< 			else {
+< 				if ($opt['qty_multiplier']*(round($opt['price']+$data['price'],2)) != 0) {
+< 					$select->addOption($opt['id'],sprintf('%s : %s',$opt['teaser'],$this->my_money_format($opt['qty_multiplier']*(round($opt['price']+$data['price'],2)))));
+< 				}
+< 				else
+< 					$select->addOption($opt['id'],sprintf('%s',$opt['teaser']));
+< 			}
+---
+> 			if ($data['onSale'])
+> 				$select->addOption($opt['id'],sprintf('%s : %s',$opt['teaser'],$this->my_money_format(round($opt['qty_multiplier']*($opt['sale_price']+$data['price']),2))));
+> 			else
+> 				$select->addOption($opt['id'],sprintf('%s : %s',$opt['teaser'],$this->my_money_format($opt['qty_multiplier']*(round($opt['price']+$data['price'],2)))));
+427d415
+< 			$subMenu = "";
+429,437c417
+< 				$form->setData("hasSubmenu",1);
+< 				if (strlen($module["parm2"])>0) {
+< 					$ul = new Forms();
+< 					$ul->init($this->m_dir.$module['parm2']);
+< 					$ul->addData(array("root"=>$root, "item"=>$item, "level"=>$root_level+1, "menu"=>$form->show(), "submenu"=>$subMenu));
+< 					$tmp = $ul->show();
+< 				}
+< 				else
+< 					$tmp = sprintf('%s<ul class="level_%d submenu">%s</ul>', $form->show(), $root_level+1,$subMenu);
+---
+> 				$tmp .= sprintf('<ul class="level_%d submenu">%s</ul>',$root_level+1,$subMenu);
+625,626c605
+< 		$header->addTag('totalquantity',$qty);
+< 		$this->logMessage(__FUNCTION__,sprintf("quantity [%s] form [%s]", $qty, print_r($header,true)), 1);
+---
+> 		$header->addTag('quantity',$qty);
+809,848d787
+< 			if ($this->hasOption("e-xact") && array_key_exists("Transaction_Approved",$_POST)) {
+< 				$outer->init($this->m_dir.$errors->getOption('e-xact'));
+< 				$_POST["exact_ctr"] = nl2br($_POST["exact_ctr"]);
+< 				foreach($_POST as $key=>$value) {
+< 					$return[] = sprintf('%s = %s',$key,$value);
+< 				}
+< 				$tmp = array('authorization_amount'=>$_POST['x_amount'],
+< 					'authorization_type'=>'E-xact',
+< 					'authorization_code'=>$_POST['x_auth_code'],
+< 					'authorization_transaction'=>$_POST['x_trans_id'],
+< 					'authorization_info'=>implode("\n",$return)
+< 				);
+< 
+< 				if ($_POST["Transaction_Approved"]=="YES") {
+< 					$tmp["order_status"] = STATUS_PROCESSING;
+< 				}
+< 				else {
+< 					$outer->addFormError('There was a problem processing your information');
+< 				}
+< 				$stmt = $this->prepare(sprintf('update orders set %s where id = %d',implode('=?,',array_keys($tmp)).'=?',$_POST["x_invoice_num"]));
+< 				$stmt->bindParams(array_merge(array(str_repeat('s',count($tmp))),array_values($tmp)));
+< 				if ($stmt->execute()) {
+< 					$_SESSION['user']['lastOrder'] = $_POST["x_invoice_num"];
+< 					if ($_POST["Transaction_Approved"]=="YES") {
+< 						$outer->init($this->m_dir.$response->getOption('e-xact'));
+< 						$this->activateRecurring($_POST["x_invoice_num"]);
+< 						$this->config->postSaleProcessing($_POST["x_invoice_num"],true,$this);
+< 						unset($_SESSION['cart']);
+< 					}
+< 					else {
+< 						$f = new Forms();
+< 						$f->init($this->m_dir.$inner->getOption('e-xact'));
+< 						$outer->setData("retryForm",$f->show());
+< 					}
+< 					$outer->addData($_POST);
+< 					$outer->addData(array('cart'=>$formattedCart));
+< 					$outer->addTag('ecomErrors',$this->showEcomMessages(),false);
+< 					return $outer->show();
+< 				}
+< 			}
+1243,1253d1181
+< 		if ($this->hasOption('e-xact')) {
+< 			$this->logMessage(__FUNCTION__,sprintf('adding chase template [%s]',$this->m_dir.$inner->getOption('e-xact')),3);
+< 			$f->init($this->m_dir.$inner->getOption('e-xact'));
+< 			$merchant = $GLOBALS['e-xact'];
+< 			$merchant["timestamp"] = strtotime("now");
+< 			$merchant["random"] = rand();
+< 			$merchant["hash_key"] = sprintf("%s^%s^%s^%s^%s", $merchant["payment_page"], $merchant["random"], $merchant["timestamp"], $cart["header"]["total"], "CAD");
+< 			$merchant["hash_value"] = hash_hmac("md5", $merchant["hash_key"], $merchant["transaction_key"]);
+< 			$f->addData(array("cart"=>Ecom::formatCart($cart),"merchant"=>$merchant));
+< 			$outer->addTag('e-xact',$f->show(),false);
+< 		}
+1550,1553c1478,1492
+< 				$module['where_clause'] = '';
+< 				if (strlen($_POST['productSearch']) > 0)
+< 					$module['where_clause'] .= sprintf('(p.code like "%%%s%%" or p.name like "%%%s%%" or p.teaser like "%%%s%%" or p.description like "%%%s%%" or p.alternate_description like "%%%s%%")',
+< 						$_POST['productSearch'],$_POST['productSearch'],$_POST['productSearch'],$_POST['productSearch'],$_POST['productSearch']);
+---
+> 				$where = array("n/a"=>"1=1");
+> 				$c_prods = array(0);
+> 				if (strlen($_POST['productSearch']) > 0) {
+> 					if (method_exists('custom','productSearch')) {
+> 						$where["custom"] = $this->config->productSearch($_POST['productSearch']);
+> 						$c_prods = $this->fetchScalarAll(sprintf("select p.id from product p where p.enabled = 1 and p.deleted = 0 and p.published = 1 and %s", $where["custom"]));
+> 						$this->logMessage(__FUNCTION__,sprintf("custom search returned [%s] [%s]", $where["custom"], implode(", ", $c_prods)),1);
+> 					}
+> 					$where["code"] = sprintf('p.code like "%%%s%%"',$_POST['productSearch']);
+> 					$where["name"] = sprintf('p.name like "%%%s%%"',$_POST['productSearch']);
+> 					$where["teaser"] = sprintf('p.teaser like "%%%s%%"',$_POST['productSearch']);
+> 					$where["description"] = sprintf('p.description like "%%%s%%"',$_POST['productSearch']);
+> 					$where["alternate_description"] = sprintf('p.alternate_description like "%%%s%%"',$_POST['productSearch']);
+> 				}
+> 				$and_flds = array("n/a"=>"1=1");
+1557c1496
+< 							$module['where_clause'] .= sprintf('%s %s = "%s" ', strlen($module['where_clause']) > 0 ? 'and':'',$key, $outer->getData($key));
+---
+> 							$and_flds[$key] = sprintf('%s = "%s" ', $key, $outer->getData($key));
+1559c1498
+< 							$module['where_clause'] .= sprintf('%s %s like "%%%s%%" ', strlen($module['where_clause']) > 0 ? 'and':'',$key, $outer->getData($key));
+---
+> 							$and_flds[$key] = sprintf('%s like "%%%s%%" ', $key, $outer->getData($key));
+1562a1502,1506
+> 				unset($where["n/a"]);
+> 				unset($and_flds["n/a"]);
+> 				if (count($where) > 0) $module["where_clause"] = sprintf("(%s)", implode(" or ", array_values($where)));
+> 				if (count($and_flds) > 0) $module["where_clause"] .= sprintf(" %s %s", strlen($module["where_clause"]) > 1 ? "and ":"", implode(" and ", array_values($and_flds)));
+> $this->logMessage(__FUNCTION__,sprintf("where [%s] and [%s] clause [%s] module [%s]", print_r($where,true), print_r($and_flds,true), $module["where_clause"], print_r($module,true)),1);
+1566,1571c1510,1527
+< 				foreach($raw as $key=>$p) {
+< 					$t = strip_tags($p["teaser"]);
+< 					$b = strip_tags($p["description"]);
+< 					if (stripos($p["name"],$_POST['productSearch']) == false && stripos($t,$_POST['productSearch']) === false && stripos($b,$_POST['productSearch']) === false) {
+< 						$this->logMessage(__FUNCTION__,sprintf("dropping product [%d] after stripping tags", $p["id"]),1);
+< 						$omit[] = $p["id"];
+---
+> 				$c_prods = sprintf("|%s|",implode("|",$c_prods));
+> 				if (strlen($_POST['productSearch']) > 0) {
+> 					foreach($raw as $key=>$p) {
+> 						//
+> 						//	check all product teaser/description and eliminate if the text is not in the striiped result
+> 						//	unless the product came from the custom search term
+> 						//
+> 						$drop = false;
+> 						if (strpos(sprintf("|%d|",$p["id"]),$c_prods) === false) {
+> 							foreach($where as $k=>$v) {
+> 								if (array_key_exists($k,$p))
+> 									$drop |= stripos($p[$k], $_POST['productSearch']) && stripos(strip_tags($p[$k]), $_POST['productSearch']) === false;
+> 							}
+> 							if ($drop) {
+> 								$this->logMessage(__FUNCTION__,sprintf("dropping product [%d] after stripping tags", $p["id"]),1);
+> 								$omit[] = $p["id"];
+> 							}
+> 						}
+1574c1530,1531
+< 				$module['where_clause'] .= sprintf(" and p.id not in (%s)", implode(",",$omit));
+---
+> 				//$where["omit"] = sprintf(" p.id not in (%s)", implode(", ",$omit));
+> 				$module["where_clause"] .= sprintf("%s p.id not in (%s)", strlen($module["where_clause"]) > 1 ? " and ":"", implode(", ",$omit));
+2686c2643
+< 		$subdata = $this->subForms($module['fetemplate_id'],'',array('folder_id'=>$root['id']),'outer');
+---
+> 		$subdata = $this->subForms($module['fetemplate_id'],'',array(),'outer');
+2734d2690
+< 				$form->setData("hasSubmenu",1);
+2737,2744d2692
+< 
+< 			$subdata = $this->subForms($module['fetemplate_id'],'',array('folder_id'=>$item['id']),'inner');
+< 			$this->logMessage(__FUNCTION__,sprintf("subdata [%s]",print_r($subdata,true)),3);
+< 			foreach($subdata as $key=>$value) {
+< 				$form->addTag($key,$value,false);
+< 			}
+< 
+< 
+1776 = ./admin/frontend/modules/news.php
+1777 = ./admin/frontend/modules/advert.php
+113,114c113
+< 				$p = new product(0);
+< 				$tmp = $p->formatFolder($fldr);
+---
+> 				$tmp = product::formatFolder($fldr);
+1778 = ./admin/frontend/modules/htmlForms.php
+579c579
+< 				if (count($searchTypes) == 0 || array_key_exists("event",$searchTypes)) {
+---
+> 				if (count($searchTypes) == 0 || array_key_exists("event",$searchTypes))
+582,594c582,583
+< 					foreach($evts[$x] as $key=>$event) {
+< 						$t = strip_tags($event["teaser"]);
+< 						$b = strip_tags($event["description"]);
+< 						if (stripos($event["name"],$searchPhrase[$x]) == false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+< 							$this->logMessage(__FUNCTION__,sprintf("dropping event [%d] after stripping tags name [%s] t [%s] b [%s]", $event["id"], $event["name"], $t, $b),1);
+< 							unset($evts[$x][$key]);
+< 						}
+< 						else
+< 							$evts[$x][$key] = $event;
+< 					}
+< 				}
+< 
+< 				if (count($searchTypes) == 0 || array_key_exists("news",$searchTypes)) {
+---
+> 				else $evts = array(0=>array());
+> 				if (count($searchTypes) == 0 || array_key_exists("news",$searchTypes))
+597,607c586
+< 					foreach($news[$x] as $key=>$article) {
+< 						$t = strip_tags($article["teaser"]);
+< 						$b = strip_tags($article["body"]);
+< 						if (stripos($article["title"],$searchPhrase[$x]) === false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+< 							$this->logMessage(__FUNCTION__,sprintf("dropping article [%d] after stripping", $article["id"]),1);
+< 							unset($news[$x][$key]);
+< 						}
+< 						else
+< 							$news[$x][$key] = $article;
+< 					}
+< 				}
+---
+> 				else $news = array(0=>array());
+609c588
+< 				if (count($searchTypes) == 0 || array_key_exists("store",$searchTypes)) {
+---
+> 				if (count($searchTypes) == 0 || array_key_exists("store",$searchTypes))
+612,622c591
+< 					foreach($stores[$x] as $key=>$store) {
+< 						$t = strip_tags($store["teaser"]);
+< 						$b = strip_tags($store["description"]);
+< 						if (stripos($store["name"],$searchPhrase[$x]) == false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+< 							$this->logMessage(__FUNCTION__,sprintf("dropping store [%d] after stripping tags", $store["id"]),1);
+< 							unset($stores[$x][$key]);
+< 						}
+< 						else
+< 							$stores[$x][$key] = $store;
+< 					}
+< 				}
+---
+> 				else $stores = array(0=>array());
+624c593
+< 				if (count($searchTypes) == 0 || array_key_exists("product",$searchTypes)) {
+---
+> 				if (count($searchTypes) == 0 || array_key_exists("product",$searchTypes))
+627,637c596
+< 					foreach($products[$x] as $key=>$product) {
+< 						$t = strip_tags($product["teaser"]);
+< 						$b = strip_tags($product["description"]);
+< 						if (stripos($product["name"],$searchPhrase[$x]) == false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+< 							$this->logMessage(__FUNCTION__,sprintf("dropping product [%d] after stripping tags", $product["id"]),1);
+< 							unset($products[$x][$key]);
+< 						}
+< 						else
+< 							$products[$x][$key] = $product;
+< 					}
+< 				}
+---
+> 				else $products = array(0=>array());
+639c598
+< 				if (count($searchTypes) == 0 || array_key_exists("blog",$searchTypes)) {
+---
+> 				if (count($searchTypes) == 0 || array_key_exists("blog",$searchTypes))
+642,652c601
+< 					foreach($blogs[$x] as $key=>$blog) {
+< 						$t = strip_tags($blog["teaser"]);
+< 						$b = strip_tags($blog["body"]);
+< 						if (stripos($blog["title"],$searchPhrase[$x]) == false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+< 							$this->logMessage(__FUNCTION__,sprintf("dropping blog [%d] after stripping tags", $blog["id"]),1);
+< 							unset($blog[$x][$key]);
+< 						}
+< 						else
+< 							$blog[$x][$key] = $blog;
+< 					}
+< 				}
+---
+> 				else $blogs = array(0=>array());
+654c603
+< 				if (count($searchTypes) == 0 || array_key_exists("page",$searchTypes)) {
+---
+> 				if (count($searchTypes) == 0 || array_key_exists("page",$searchTypes))
+656,663c605,661
+< 					foreach($content[$x] as $key=>$page) {
+< 						$t = strip_tags($page["content"]);
+< 						if (stripos($t,$searchPhrase[$x]) === false) {
+< 							$this->logMessage(__FUNCTION__,sprintf("dropping store [%d] after stripping tags", $page["id"]),1);
+< 							unset($content[$x][$key]);
+< 						}
+< 						else
+< 							$content[$x][$key] = $page;
+---
+> 				else $content = array(0=>array());
+> 
+> 				foreach($news[$x] as $key=>$article) {
+> 					$t = strip_tags($article["teaser"]);
+> 					$b = strip_tags($article["body"]);
+> 					if (stripos($article["title"],$searchPhrase[$x]) === false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+> 						$this->logMessage(__FUNCTION__,sprintf("dropping article [%d] after stripping", $article["id"]),1);
+> 						unset($news[$x][$key]);
+> 					}
+> 					else
+> 						$news[$x][$key] = $article;
+> 				}
+> 				foreach($evts[$x] as $key=>$event) {
+> 					$t = strip_tags($event["teaser"]);
+> 					$b = strip_tags($event["description"]);
+> 					if (stripos($event["name"],$searchPhrase[$x]) == false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+> 						$this->logMessage(__FUNCTION__,sprintf("dropping event [%d] after stripping tags name [%s] t [%s] b [%s]", $event["id"], $event["name"], $t, $b),1);
+> 						unset($evts[$x][$key]);
+> 					}
+> 					else
+> 						$evts[$x][$key] = $event;
+> 				}
+> 				foreach($products[$x] as $key=>$product) {
+> 					$t = strip_tags($product["teaser"]);
+> 					$b = strip_tags($product["description"]);
+> 					if (stripos($product["name"],$searchPhrase[$x]) == false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+> 						$this->logMessage(__FUNCTION__,sprintf("dropping product [%d] after stripping tags", $product["id"]),1);
+> 						unset($products[$x][$key]);
+> 					}
+> 					else
+> 						$products[$x][$key] = $product;
+> 				}
+> 				foreach($stores[$x] as $key=>$store) {
+> 					$t = strip_tags($store["teaser"]);
+> 					$b = strip_tags($store["description"]);
+> 					if (stripos($store["name"],$searchPhrase[$x]) == false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+> 						$this->logMessage(__FUNCTION__,sprintf("dropping store [%d] after stripping tags", $store["id"]),1);
+> 						unset($stores[$x][$key]);
+> 					}
+> 					else
+> 						$stores[$x][$key] = $store;
+> 				}
+> 				foreach($content[$x] as $key=>$page) {
+> 					$t = strip_tags($page["content"]);
+> 					if (stripos($t,$searchPhrase[$x]) === false) {
+> 						$this->logMessage(__FUNCTION__,sprintf("dropping store [%d] after stripping tags", $page["id"]),1);
+> 						unset($content[$x][$key]);
+> 					}
+> 					else
+> 						$content[$x][$key] = $page;
+> 				}
+> 				foreach($blogs[$x] as $key=>$blog) {
+> 					$t = strip_tags($blog["teaser"]);
+> 					$b = strip_tags($blog["body"]);
+> 					if (stripos($blog["title"],$searchPhrase[$x]) == false && stripos($t,$searchPhrase[$x]) === false && stripos($b,$searchPhrase[$x]) === false) {
+> 						$this->logMessage(__FUNCTION__,sprintf("dropping blog [%d] after stripping tags", $blog["id"]),1);
+> 						unset($blog[$x][$key]);
+664a663,664
+> 					else
+> 						$blog[$x][$key] = $blog;
+666d665
+< 
+667a667
+> 
+670,710c670,698
+< 				if (count($evts) > 0) {
+< 					foreach($evts[$x] as $item) {
+< 						if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+< 							$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+< 						$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+< 					}
+< 				}
+< 				if (count($news) > 0) {
+< 					foreach($news[$x] as $item) {
+< 						if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+< 							$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+< 						$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+< 					}
+< 				}
+< 				if (count($stores) > 0) {
+< 					foreach($stores[$x] as $item) {
+< 						if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+< 							$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+< 						$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+< 					}
+< 				}
+< 				if (count($products) > 0) {
+< 					foreach($products[$x] as $item) {
+< 						if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+< 							$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+< 						$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+< 					}
+< 				}
+< 				if (count($blogs) > 0) {
+< 					foreach($blogs[$x] as $item) {
+< 						if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+< 							$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+< 						$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+< 					}
+< 				}
+< 				if (count($content) > 0) {
+< 					foreach($content[$x] as $item) {
+< 						if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+< 							$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+< 						$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+< 					}
+---
+> 				foreach($evts[$x] as $item) {
+> 					if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+> 						$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+> 					$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+> 				}
+> 				foreach($news[$x] as $item) {
+> 					if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+> 						$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+> 					$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+> 				}
+> 				foreach($stores[$x] as $item) {
+> 					if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+> 						$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+> 					$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+> 				}
+> 				foreach($products[$x] as $item) {
+> 					if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+> 						$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+> 					$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+> 				}
+> 				foreach($blogs[$x] as $item) {
+> 					if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+> 						$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+> 					$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+> 				}
+> 				foreach($content[$x] as $item) {
+> 					if (!array_key_exists($item['resultType']."_".$item['id'],$weighted))
+> 						$weighted[$item['resultType']."_".$item['id']] = array('ct'=>0,'dt'=>$item['resultDate']);
+> 					$weighted[$item['resultType']."_".$item['id']]['ct'] += 1;
+1779 = ./admin/frontend/modules/coupons.php
+1780 = ./admin/frontend/modules/itinerary.php
+1781 = ./admin/frontend/modules/menu.php
+144d143
+< 			$subMenu = "";
+168,176c167
+< 					$form->setData("hasSubmenu",1);
+< 					if (strlen($module["parm2"])>0) {
+< 						$ul = new Forms();
+< 						$ul->init($this->m_dir.$module['parm2']);
+< 						$ul->addData(array("root"=>$root, "item"=>$item, "level"=>$root_level+1, "menu"=>$form->show(), "submenu"=>$subMenu));
+< 						$tmp = $ul->show();
+< 					}
+< 					else
+< 						$tmp = sprintf('%s<ul class="level_%d submenu">%s</ul>', $form->show(), $root_level+1,$subMenu);
+---
+> 					$tmp .= sprintf('<ul class="level_%d submenu">%s</ul>',$root_level+1,$subMenu);
+213d203
+< $this->logMessage(__FUNCTION__,sprintf("^^^outer [%s]", print_r($outer,true)),1);
+256d245
+< $this->logMessage(__FUNCTION__,sprintf("^^^form[%s] menu [%s] module [%s]", print_r($form,true), print_r($menu,true), print_r($module,true)),1);
+1782 = ./admin/frontend/modules/stores.php
+1783 = ./admin/frontend/modules/calendar.php
+1784 = ./admin/frontend/modules/newsletter.php
+1785 = ./admin/frontend/modules/members.php
+682,683d681
+< 		$outer->setModule($module);
+< 		$this->logmessage(__FUNCTION__,sprintf("module [%s] outer [%s]", print_r($module,true), print_r($outer,true)),1);
+702a701
+> 		$outer->setModule($module);
+1786 = ./admin/frontend/modules/custom-old.php
+skipping ../admin/frontend/modules/custom-old.php
+1787 = ./admin/frontend/modules/blog.php
+1788 = ./admin/frontend/modules/artist.php
+1789 = ./admin/frontend/modules/feeds.php
+1790 = ./admin/frontend/modules/gallery.php
+246,251d245
+< 
+< 		$subdata = $this->subForms($this->m_module['fetemplate_id'],null,array('folder_id'=>$module['folder_id']),'outer');
+< 		foreach($subdata as $key=>$value) {
+< 			$outer->addTag($key,$value,false);
+< 		}
+< 
+1791 = ./admin/frontend/modules/rss.php
+1792 = ./admin/frontend/modules/custom.php
+skipping ../admin/frontend/modules/custom.php
+1793 = admin/frontend/forms/changeModule.html
+36,37c36,37
+< 		<a href='#' onclick='resetModule(this);return false;' class='btn' style='color:#103b6f'>Reset</a>
+< 		<a href='#' onclick='saveModule(this);return false;' class='btn btn-primary'>Save</a>
+---
+> 		<a href='#' onclick='resetModule(this);' class='btn' style='color:#103b6f'>Reset</a>
+> 		<a href='#' onclick='saveModule(this);' class='btn btn-primary'>Save</a>
+1794 = admin/frontend/forms/editorForm.html
+1795 = admin/frontend/forms/formEnd.html
+1796 = admin/frontend/forms/getFileList.html
+1797 = admin/frontend/forms/getModuleInfo.html
+1798 = admin/frontend/forms/moduleWrapper.html
+1799 = admin/frontend/forms/pageEditorForm.html
+1800 = admin/frontend/forms/paginationNext.html
+1801 = admin/frontend/forms/paginationPage.html
+1802 = admin/frontend/forms/paginationPrev.html
+1803 = admin/frontend/forms/paginationSpacer.html
+1c1
+< <li class='page'><a href='#' onclick="return false;">...</a></li>
+\ No newline at end of file
+---
+> <li class='page'><a href='#'>...</a></li>
+\ No newline at end of file
+1804 = admin/frontend/forms/paginationWrapper.html
+1c1,4
+< <ul class='pagination'>%%prev%%%%pages%%%%next%%</ul>
+\ No newline at end of file
+---
+> <div class='pagination'>
+> 	<ul>%%prev%%%%pages%%%%next%%</ul>
+> 	<div class='break'></div>
+> </div>
+\ No newline at end of file
+1805 = admin/frontend/forms/sort-spacer.html
+1806 = admin/frontend/forms/templateSuccess.html
+1807 = admin/frontend/forms/tinymceEditing.html
+1808 = admin/frontend/forms/tinymceEditor.html
+1809 = admin/frontend/forms/tinymceResult.html
+index.php
+1a2
+> 
+8c9
+< require_once(ADMIN."classes/PHPMailer/PHPMailerAutoload.php");
+---
+> require_once(ADMIN."classes/mailer.php");
+10c11
+< /*require_once(ADMIN."classes/smtp.php");*/
+---
+> require_once(ADMIN."classes/smtp.php");
+14a16
+> require_once(ADMIN."classes/wurfl.php");
+16c18
+< ob_clean();
+---
+> 
+25c27,28
+< ?>
+\ No newline at end of file
+---
+> 
+> ?>
+admin/index.php
+admin/render.php
+admin/frontend/Frontend.php
+310,311c310,312
+< 							$sql = sprintf('SELECT t.*, 0 as page_id FROM `templates` t WHERE t.deleted = 0 and t.enabled = 1 and t.template_id = %d and t.version = (select max(version) from templates t1 where t1.template_id = t.template_id)',$folder['details_id']);
+< 							$page = $this->fetchSingle($sql);
+---
+> 							$sql = sprintf('SELECT t.*, 0 as page_id FROM `templates` t WHERE t.deleted = 0 and t.enabled = 1 and t.special_processing = "product" and t.template_id = %d and t.version = (select max(version) from templates t1 where t1.template_id = t.template_id)',$folder['details_id']);
+> 							if ($tmp = $this->fetchSingle($sql))
+> 								$page = $tmp;
+318,319c319,321
+< 								$sql = sprintf('SELECT t.*, 0 as page_id FROM `templates` t WHERE t.deleted = 0 and t.enabled = 1 and t.template_id = %d and t.version = (select max(version) from templates t1 where t1.template_id = t.template_id)',$folder['details_id']);
+< 								$page = $this->fetchSingle($sql);
+---
+> 								$sql = sprintf('SELECT t.*, 0 as page_id FROM `templates` t WHERE t.deleted = 0 and t.enabled = 1 and t.special_processing = "product" and t.template_id = %d and t.version = (select max(version) from templates t1 where t1.template_id = t.template_id)',$folder['details_id']);
+> 								if ($tmp = $this->fetchSingle($sql))
+> 									$page = $tmp;
+441c443
+< //		if (array_key_exists('secure',$page)) {
+---
+> 		//if (array_key_exists('secure',$page)) {
+admin/backend/Backend.php
+609a610
+> 		$this->logMessage(__FUNCTION__,sprintf("id [%s] form [%s] flds [%s]", $id, print_r($form,true), print_r($flds,true)), 1);
+627a629
+> 		$this->logMessage(__FUNCTION__, sprintf("return [%s] from [%s]", $f->show(), print_r($f,true)), 1);

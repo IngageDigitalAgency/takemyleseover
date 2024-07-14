@@ -1,0 +1,18 @@
+<p id="footer-buy-now">Buy Now! <span class="brandon_black">%%config:mailing-address:phone1%%</span></p>
+<nav role="navigation" id="footer-menu-nav">
+	<a class="btn btn-default nav-toggler">
+		<span class="glyphicon glyphicon-align-justify"></span>Menu
+	</a>
+	%%menu%%
+</nav>
+<p class="copyright"><a href="/">Copyright &copy; 2006-<!@@(date("Y"))@@!> VitaTree &trade; Canada Nutritionals Inc. - Natural Whole Food Vitamins</a></p>
+<!if("%%session:user:info:id%%"!="")!>
+<script type="text/javascript">
+$("#footer-menu-nav a").each(function(idx,el) {
+	if (el.href.contains("login")) {
+		el.href = el.href.replace(/login/gi,"logout");
+		el.innerHTML = el.innerHTML.replace(/login/gi,"Logout");
+	}
+});
+</script>
+<!fi!>

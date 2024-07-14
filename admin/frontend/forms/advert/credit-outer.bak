@@ -1,0 +1,12 @@
+<div id="credit-applications">
+	<div class="tinymce">%%description%%</div>
+	%%forms%%
+	<div class="logos">
+		%%ads%%
+	</div>
+</div>
+<script type="text/javascript">
+$("#credit-applications .forms select").change(function() {
+	if ($(this).val() !="") document.location=$(this).val();
+});
+</script>

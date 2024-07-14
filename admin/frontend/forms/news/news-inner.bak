@@ -1,0 +1,8 @@
+<article>
+	<div class='grid_2 alpha'>%%img_image1%%</div>
+	<div class='grid_7 omega'>
+		<div class='title'><h2>%%title%%</h2></div>
+		<div class='story'>%%body%%</div>
+	</div>
+	<div class='clearfix'></div>
+</article>

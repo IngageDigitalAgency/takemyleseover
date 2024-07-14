@@ -1,0 +1,25 @@
+<div id="banner-signup">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="closer"><a href="#" onclick="$('#banner-signup').toggle();return false;"><i class="fa fa-close fa-border"></i></a></div>
+				%%errorMessage%%
+				%%form%%
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+function bannerValidate(el) {
+	$(el).closest("form").ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#banner-signup").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

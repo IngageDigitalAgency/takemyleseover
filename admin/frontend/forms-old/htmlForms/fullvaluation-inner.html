@@ -1,0 +1,77 @@
+<form class="contact-form" name="dreamfomeform" id="dreamhomeform" method="post" >
+	%%errorMessage%%
+	<div class="row">
+		<div class="col-md-6 margin-15">
+			<div class="form-group">
+				%%firstName%%
+			</div>
+			<div class="form-group">
+				%%lastName%%
+			</div>
+			<div class="form-group">
+				%%email%%
+			</div>
+			<div class="form-group">
+				%%phone%%
+			</div>
+			<div class="form-group">
+				%%keepInTouch%% Please keep me informed
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				%%province_id%%
+			</div>
+			<div class="form-group">
+				%%city%%
+			</div>
+			<div class="form-group">
+				%%propertyType%%
+			</div>
+			<div class="form-group">
+				%%bedrooms%%
+			</div>
+			<div class="form-group">
+				%%bathrooms%%
+			</div>
+			<div class="form-group">
+				%%timeframe%%
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<div class="form-group">
+				%%message%%
+			</div>
+			%%captcha%%
+			%%submitBtn%%
+			%%r_id%%
+		</div>
+		%%contactUs%%
+	</div>
+	<div class="clearfix"></div>
+</form>
+<script type="text/javascript">
+setError = function(id,fld,msg) {
+	if (msg == "") return;
+	switch(fld) {
+	case "message":
+		$("#".concat(id," textarea[name='",fld,"']")).addClass("alert alert-error");
+		break;
+	case "contactTime":
+		$("#".concat(id," select[name='",fld,"_hh']")).addClass("alert alert-error");
+		$("#".concat(id," select[name='",fld,"_mm']")).addClass("alert alert-error");
+		$("#".concat(id," select[name='",fld,"_ampm']")).addClass("alert alert-error");
+		break;
+	default:
+		$("#".concat(id," input[name='",fld,"']")).addClass("alert alert-error");
+	}
+}
+setError("contactform","firstName","%%firstNameError%%");
+setError("contactform","lastName","%%lastNameError%%");
+setError("contactform","phone","%%phoneError%%");
+setError("contactform","email","%%emailError%%");
+setError("contactform","contactTime","%%contactTimeError%%");
+setError("contactform","message","%%messageError%%");
+</script>

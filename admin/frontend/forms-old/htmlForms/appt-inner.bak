@@ -1,0 +1,61 @@
+<form id="contact-form" name="contact_form" class="contact-form" action="/ajax/render" method="post">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%name%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%email%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%phone%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%address%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%date%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-6">
+					<div class="form-grp">
+						%%time%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->
+				<div class="col-md-12">
+					<div class="form-grp mb0">
+						%%message%%
+					</div><!-- /.form-grp -->
+				</div><!-- /.col-md-6 -->	
+			</div><!-- /.row -->
+		</div><!-- /.col-md-8 -->
+		<div class="col-md-4">
+			<div class="feature-list">
+				<label>Select Your Service:</label>
+				<ul>
+					<li><input type="checkbox"> <span>Design and Planning</span></li>
+					<li><input type="checkbox"> <span>Lawn and Gardern Care</span></li>
+					<li><input type="checkbox"> <span>Irrigation and Drainage</span></li>
+					<li><input type="checkbox"> <span>Snow and Ice Removal</span></li>
+					<li><input type="checkbox"> <span>Spring and Fall Cleanup</span></li>
+					<li><input type="checkbox"> <span>Stone and Hardscaping</span></li>
+				</ul>
+			</div><!-- /.feature-list -->
+			<div class="form-grp mb0">
+				<input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+				<button class="thm-btn" type="submit" data-loading-text="Please wait...">send message</button>
+			</div><!-- /.form-grp -->
+		</div><!-- /.col-md-4 -->
+	</div><!-- /.row -->
+%%t_id%%%%r_id%%%%contactUs%%
+</form>

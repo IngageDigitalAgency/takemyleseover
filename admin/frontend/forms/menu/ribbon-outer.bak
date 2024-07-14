@@ -1,0 +1,6 @@
+<div id="ribbon-nav">
+	<div class="row">
+		<div class="col-xs-8">%%loggedIn%%</div>
+		<div class="col-xs-8">%%menu%%</div>
+	</div>
+</div>

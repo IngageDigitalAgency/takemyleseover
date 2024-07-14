@@ -1,0 +1,140 @@
+li.collapsed ol {
+	display:none;
+}
+
+#contentTree ol {
+	list-style:none inside;
+}
+
+#contentTree a.icon_page {
+	
+}
+
+#contentTree a.icon_folder {
+	
+}
+
+#leftContent {
+	float:left;
+}
+
+#middleContent {
+	float:left;
+}
+
+#rightContent {
+	float:left;
+}
+
+.propertyEditing img,
+.newsInfoTable img {
+	max-width:150px;
+	max-height:150px;
+}
+
+ol.draggable.level_1,
+ul.draggable {
+	border: 1px solid;
+	padding:10px;
+}
+
+.newsDragger {
+}
+.newsDragger:hover {
+	cursor:move;
+}
+.newsDragger .id {
+	display:none;
+}
+
+
+
+.draggerClone {
+	border: 1px solid #e0e0e0;
+	padding:5px;
+	background-color:#e0e0e0;
+}
+
+.draggerClone span {
+	float:left;
+	padding-right:5px;
+}
+#confirmationListing textarea {
+	height:75px;
+	width:500px;
+}
+tr.details td {
+	padding:0px;
+}
+table.sublisting td {
+	padding:3px;
+}
+.sublisting input.shipped {
+	text-align:right;
+	width:100px;
+}
+.subheading {
+	border-bottom:1px solid #eeeeee;
+	font-size:1.2em;
+	letter-spacing:2px;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	text-transform:uppercase;
+	text-align:center !important;
+}
+table.billingInfo {
+	width:100%;
+}
+table.billingInfo th {
+	width:30%;
+}
+span.amt {
+	width:100px;
+	text-align:right;
+	display:inline-block;
+}
+#salesReportsForm .fields {
+	padding:10px 0;
+}
+#salesReportsForm .fields span {
+	display:inline-block;
+}
+#salesReportsForm .fields .chosen-container {
+	top:-4px;
+	position:relative;
+}
+#leftContent {
+	width:1%;
+	min-width:1%;
+	max-width:1%;
+}
+#contentTree {
+	display:none;
+}
+#middleContent {
+	width:90% !important;
+}
+#recurringOrdersForm,
+#salesReportsForm,
+#exchangeForm,
+#nightlyProcessingForm,
+#dailyLogForm {
+	padding-top:15px;
+}
+#recurringOrdersForm span,
+#salesReportsForm span,
+#exchangeForm span,
+#nightlyProcessingForm span,
+#dailyLogForm span {
+	margin-right:15px;
+}
+#recurringOrdersForm .def_field_submit,
+#salesReportsForm .def_field_submit,
+#exchangeForm .def_field_submit,
+#nightlyProcessingForm .def_field_submit,
+#dailyLogForm .def_field_submit {
+	margin-top:-10px;
+}
+#recurringOrdersForm .chosen-container {
+	top:-4px;
+}
