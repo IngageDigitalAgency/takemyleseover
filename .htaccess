@@ -10,7 +10,7 @@ mod_gzip_item_exclude mime ^image/.*
 mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
 </ifModule>
 #
-#	try to capture bad url's to missing files - so they don't cause page builds
+try to capture bad url's to missing files - so they don't cause page builds
 #
 RewriteRule ^favicon.ico - [L]
 RewriteRule ^admin/images/(.*) - [L]
@@ -66,19 +66,19 @@ RewriteRule ^nlu/([0-9]+)/([0-9]+)/([0-9]+) /index.php?module=tracker&mode=unsub
 RewriteRule ^logout /index.php?logout=logout [QSA,L]
 
 #
-#	Custom
+Custom
 #
 
 RewriteRule ^reauthorize/([0-9]+)/([0-9]+) /index.php?module=page&id=reauthorize&o=$1&r=$2 [PT,QSA,L]
 RewriteRule ^billing-agreement/([0-9]+)/([0-9]+) /index.php?module=page&id=billing-agreement&o_id=$1&r=$2 [PT,QSA,L]
 
 #
-#	strip trailing /'s
+strip trailing /'s
 #
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule (.*)/ /index.php?module=page&id=$1 [PT,QSA,L]
 #
-#	assume by now we have a page
+assume by now we have a page
 #
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule (.*) /index.php?module=page&id=$1 [PT,QSA,L]
