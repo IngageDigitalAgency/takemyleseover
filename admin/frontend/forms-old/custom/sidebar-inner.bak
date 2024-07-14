@@ -1,0 +1,27 @@
+<form method="post" action="/ajax/render" onsubmit="signup(this);return false;" class="gutter">
+	<div class="row">
+		<div class="col-xs-16 text-center top20">%%errorMessage%%</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-16">
+			<div class="form-group">
+				%%firstname%%
+			</div>
+		</div>
+		<div class="col-xs-16">
+			<div class="form-group">
+				%%lastname%%
+			</div>
+		</div>
+		<div class="col-xs-16">
+			<div class="form-group">
+				%%email%%
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-6 button text-right">
+			%%submit%%%%t_id%%%%newsletterSignup%%
+		</div>
+	</div>
+</form>

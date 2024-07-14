@@ -1,0 +1,4 @@
+<li>
+	<a href="%%url%%">%%title%%</a>
+	<span class="meta-data"><!@@(date(GLOBAL_DEFAULT_DATE_FORMAT,strtotime("%%created%%")))@@!></span>
+</li>

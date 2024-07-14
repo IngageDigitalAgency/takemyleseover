@@ -1,0 +1,94 @@
+<div class="row">
+	<div class="col-sm-12 col-sm-offset-4 text-center">%%errorMessage%%</div>
+</div>
+<form method="post">
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%agreementError%%</span>I have read and agree to the Guidelines <a href="/files/Festival-Music-Guidelines-Final.pdf" target="_new">(Read here)</a></label>%%agreement%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%bandnameError%%</span>Band/Performer Name:</label>%%bandname%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%nameError%%</span>Contact or Agent Name:</label>%%contactname%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%phoneError%%</span>Telephone:</label>%%phone%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%cellError%%</span>Cell Phone:</label>%%cell%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%addressError%%</span>Street Address:</label>%%line1%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%cityError%%</span>City:</label>%%city%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%postalCodeError%%</span>Postal Code:</label>%%postalCode%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%province_idError%%</span>Province:</label><div id="province">%%province_id%%</div></div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%country_idError%%</span>Country:</label>%%country_id%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%emailError%%</span>Email:</label>%%email%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%membersError%%</span># of people:</label>%%members%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%music_performedError%%</span>Music Performed:</label>%%music_performed%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%music_genresError%%</span>Music Genres:</label>%%music_genres%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%music_additionalError%%</span>Additional Information:<p><sup>Classics, indicate era</sup></p></label>%%music_additional%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%performance_typeError%%</span>Performance Type:</label>%%performance_type%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%target_audienceError%%</span>Target Audience:
+		<p><sup>Describe your usual audience - ex age, music preference, location, etc</sup></p></label>%%target_audience%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%compensationErrorError%%</span>Expected Compensation:<p>
+		<sup>Niagara Arts Showcase is committed to compensating artists for their work. We reserve the right to reject all requests and enter into negotiation.</p></label>%%compensation%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%venue_typeError%%</span>Venue Type:</label>%%venue_type%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%websiteError%%</span>Web Site:</label>%%website%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%facebookError%%</span>Social Media Links:<p><sup>Provide links</p></label>%%facebook%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%Error%%</span></label>%%%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%terms_and_conditionsError%%</span>I have read the Terms and Conditions of Entry accompanying this form and agree to submit my application under these terms.</label>%%terms_and_conditions%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1"><label class="col-form-label"><span>%%name_and_dateError%%</span>Name & Date:<p><sup>(Considered a Signature)</p></label>%%name_and_date%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-4 col-xs-offset-6">
+%%submit%% %%contactUs%% %%r_id%% %%id%%</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-xs-14 col-xs-offset-1  text-center">
+			<label class="col-form-label"><a href="/files/Music-Vendor.pdf" target="_new">A printable version of this form is available here</a></label>
+		</div>
+	</div>
+</form>
+<script type="text/javascript">
+$("select[name='address[country_id]']").change(function() {
+	h = loadProvinces(this.value,{"class":"form-control","name":"address[province_id]","width":"100%"});
+	$("#province").html(h);
+});
+</script>

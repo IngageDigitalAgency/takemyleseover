@@ -1,0 +1,32 @@
+<div class='comments'>
+	<h3 class='green text-center'>%%reviews%% Review%%comment_plural%% <span>currently available</span></h3>
+	%%comments%%
+	<div class="row">
+		<div class="col-xs-12">
+			%%pagination%%
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<button class="button pull-middle bottom20" onclick="writeComment(this,%%id%%);return false;">Write A Review</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+pagination = function(pg,el) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:125,pagenum:pg,prod_id:%%id%%},
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#product-reviews .comments").replaceWith(obj.html);
+				$("#product-reviews").mCustomScrollbar("update");
+			}
+			catch(err) {
+alert(err.message);
+			}
+		}
+	});
+}
+</script>

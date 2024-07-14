@@ -1,0 +1,40 @@
+<div id="paypal">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-4 col-xs-12 col-xs-offset-2 text-center">
+			%%ecomErrors%%
+			%%errorMessage%%
+<!if("0%%session:user:info:id%%" == "0")!>
+			<div class='alert alert-error'>You are not logged in</div>
+<!else!>
+<!if("0%%session:cart:header:total%%" == "0")!>
+			<div class='alert alert-error'>Your cart is empty</div>
+<!fi!>
+<!fi!>
+	<!if("0%%session:cart:reauthorize:o_id%%"!="0")!>
+			<div class='alert alert-warning'>This is an authorization only. Your card will be billed on the next shipment</div>
+	<!fi!>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-16 text-center">
+			<form method='post' action='%%gateway%%'>
+				<input type='hidden' name='SECURETOKEN' value='%%SECURETOKEN%%' />
+				<input type='hidden' name='SECURETOKENID' value='%%SECURETOKENID%%' />
+	<!if(strlen('%%addresses:billing:firstname%%') > 0)!>
+				<input type='hidden' name='PARMLIST' value='INVNUM=Order#%%header:order_id%%&CURRENCY=%%currency%%&FIRSTNAME=%%addresses:billing:firstname%%&LASTNAME=%%addresses:billing:lastname%%&STREET=%%addresses:billing:line1%%&CITY=%%addresses:billing:city%%&ZIP=%%addresses:billing:postalcode%%&STATE=%%addresses:billing:provinceCode%%&PHONENUM=%%addresses:billing:phone1%%&EMAIL=%%addresses:billing:email%%&COUNTRY=%%addresses:billing:countryCode%%' />
+	<!else!>
+				<input type='hidden' name='PARMLIST' value='INVNUM=Order#%%header:order_id%%&CURRENCY=%%currency%%&FIRSTNAME=%%addresses:shipping:firstname|addresses:shipping:firstname%%&LASTNAME=%%addresses:shipping:lastname%%&STREET=%%addresses:shipping:line1%%&CITY=%%addresses:shipping:city%%&ZIP=%%addresses:shipping:postalcode%%&STATE=%%addresses:shipping:provinceCode%%&PHONENUM=%%addresses:shipping:phone1%%&EMAIL=%%addresses:shipping:email%%&COUNTRY=%%addresses:shipping:countryCode%%' />
+	<!fi!>
+				<input type='hidden' name='MODE' value='%%mode%%' />
+				<input type='image' onclick='formSubmit(this);return false;' src='/images/nav/paypal.png' alt='Pay via Payflow' />
+			</form>
+		</div>
+	</div>
+	<div class="row top20">
+		<div class="col-xs-6 col-xs-offset-1 text-right text">
+			Our Processing is handled via PayPal<br/>We do not collect or store any of your credit card information without notification. All payments are processed through PayPal
+		</div>
+		<div class="col-xs-2 divider"></div>
+		<div class="col-xs-6"><img src="/images/nav/paypal.jpg" /></div>
+	</div>
+</div>

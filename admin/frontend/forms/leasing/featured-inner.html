@@ -1,0 +1,19 @@
+<article class="lease">
+	<div class="row">
+		<div class="col-xs-16">
+<!if("%%transfer_date%%"!="0000-00-00")!>
+			<div class="featured">TRANSFERRED</div>
+<!else!>
+	<!if(%%featured%%==1)!>
+			<div class="featured">FEATURED VEHICLE</div>
+	<!fi!>
+<!fi!>			<div class="image p-img-scale-width">
+				<a href="%%url%%">%%img_image1%%</a>
+			</div>
+			<div class="bottom">
+				<div class="info text-center"><a href="%%url%%">%%year%% %%make_name%% %%model_name%%</a></div>
+				<div class="id text-right">ID: %%id%%</div>
+			</div>
+		</div>
+	</div>
+</article>

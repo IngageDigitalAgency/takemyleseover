@@ -1,0 +1,114 @@
+<div class="row">
+	<div class="col-md-6 page-left-column">
+		<div class="row">
+			<div class="col-md-5 text-center p-img-scale-width">
+				%%img_image1%%
+				<div class="addthis_sharing_toolbox"></div>
+			</div>
+			<div class="col-md-7">
+				<h1 class="title">%%name%%</h1>
+				<h4 class="sub-title">%%subtitle%%</h4>
+				<div class="top20 bottom40">
+<!if(%%reviews%%>0)!>
+					<span class="rating star%%rating%%"></span>
+					<a href="%%url%%">%%reviews%% Review<!if(%%reviews%% != 1)!>s<!fi!></a>
+<!else!>
+					<span class="rating star0"></span>
+					<a href="#"></a>
+<!fi!> 
+				</div>
+				<div class="top40 pricing">
+<!if("%%onSale%%"=="1")!>
+					<span class="fontsize16"><span class="brandon_black">%%regularPriceFormatted%% CAD</span> regular price</span><br>
+					<span class="fontsize16 text-uppercase">Your Price <span class="brandon_black red">%%price_fmt%% CAD (Save %%salePercentFormatted%%%)</span></span>
+<!else!>
+					<span class="fontsize16 text-uppercase">Your Price <span class="brandon_black red">%%price_fmt%% CAD</span></span>
+<!fi!>
+				</div>
+				<form method="POST" action="/shopping-cart">
+					<div class="top20">
+						<div class="valign-helper">
+							<input class="input-mini" type="text" name="product_quantity" size="3" value="1">
+						</div>
+						<div class="valign-helper">
+							<span class="left5">Qty.</span>
+						</div>
+					</div>
+					<div class="top20">
+						<div>
+							<div class="style-select input-large">
+								%%options%%
+							</div>
+						</div>
+					</div>
+					<div class="style-select input-large top20">
+						%%recurring_period%%
+						<input type='hidden' name='recurring_qty' value='0' />
+					</div>
+					<div class="top20">
+						%%product_id%%
+						%%addToCart%%
+						<input class="button button-green" type="submit" name="submit" value="Add to Cart">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 page-right-column">
+		<ul id="product-tabs" class="tabs">
+			<li class="active"><a href="#product-description" title="Description">Description</a></li>
+			<li><a href="#product-email-friend" title="Email A Friend">Email A Friend</a></li>
+			<li><a href="#product-label" title="Product Label">Product Label</a></li>
+			<li><a href="#product-reviews" title="Reviews">Reviews</a></li>
+			<li><a href="#product-ingredients" title="Ingredients">Ingredients</a></li>
+		</ul>
+		<div id="product-description" class="scroll-pane tinymce">
+			%%description%%
+		</div>
+		<div id="product-email-friend" class="scroll-pane">
+			%%email%%
+		</div>
+		<div id="product-label" class=" scroll-pane">
+			<div class="p-img-scale-width">
+				%%img_image2%%
+			</div>
+		</div>
+		<div id="product-reviews" class=" scroll-pane">
+			%%reviewlist%%
+		</div>
+		<div id="product-ingredients" class="scroll-pane tinymce">
+			%%custom_ingredients%%
+		</div>
+	</div>
+</div>
+<script type='text/javascript'>
+function getSavings() {
+	var i = $("#product-detail select[name=options_id]")[0].value;
+	var r_tmp = $("#product-detail select[name=recurring_period]");
+	if (r_tmp.length > 0)
+		r_id = r_tmp[0].value;
+	else {
+		r_id = 0;
+	}
+	$.ajax({
+		url: '/ajax/render',
+		data: {"t_id":134,"o_id":i,"p_id":$("#product-detail input[name=product_id]")[0].value,"r_id":r_id},
+		success:function(obj,status,xhr) {
+			obj = eval('('+obj+')');
+			eval(obj.code);
+			$("#product-detail .pricing").replaceWith(obj.html);
+		}
+	});
+}
+$("#product-detail select[name=options_id]").change(function() {
+	getSavings();
+});
+$('select[name=recurring_period]').change(function() {
+	if ($(this)[0].selectedIndex <= 0)
+		$('input[name=recurring_qty]').val(0);
+	else
+		$('input[name=recurring_qty]').val(1);
+	getSavings();
+});
+$('#email-a-friend input[name=p_id]').val(%%id%%);
+</script>

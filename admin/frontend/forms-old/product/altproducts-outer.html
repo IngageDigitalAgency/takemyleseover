@@ -1,0 +1,68 @@
+<script type="text/javascript">
+p_next = 1;
+</script>
+<a name="products"></a>
+<div id="product-listing">
+	<div class="row">
+		%%products%%
+		<div class="col-third-two p-img-scalewidth p-img-scaleheight">
+			%%img_image%%
+		</div>
+	</div>
+	<div class="row no-gutter">
+		<div class="col-xs-16">
+			<a class="text-center link btn btn-default" href="#" onclick="loadMore(p_next);return false;" >Show More</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+balanceProducts = function() {
+	$("#product-listing [class*='third']").css("height","auto");
+	if ($("#body").width() >= 480)
+		balanceItems($("#product-listing [class*='third']"));
+}
+if ($("#product-listing .ad").length == 0) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:5},
+		success:function(obj, status, xhr) {
+			try {
+				obj = eval("("+obj+")");
+				var d = $("#product-listing .col-third-one");
+				$(obj.html).insertBefore(d[3]);
+				balanceProducts();
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+loadMore = function(p) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:%%module:fetemplate_id%%,pagenum:p,folder_id:%%id%%},
+		context: {p:p},
+		success: function( obj, status, xhr ) {
+			obj = eval("("+obj+")");
+			f = $("#product-listing .col-third-two");
+			$(obj.html).find(".col-third-one").each(function(idx,el) {
+				$(el).insertBefore(f);
+			});
+			eval(obj.code);
+			if (this.p >= p_next) {
+				$("#product-listing .link").remove();
+			}
+			balanceProducts();
+		}
+	});
+}
+%%pagination%%
+$(window).on("load", function() {
+	balanceProducts();
+	if (p_next <= 1) $("#product-listing .link").remove();
+});
+$(window).resize(function() {
+	balanceProducts();
+});
+if (p_next <= 1) $("#product-listing .link").remove();
+</script>

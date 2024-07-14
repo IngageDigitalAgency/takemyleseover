@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-xs-12 text-center">
+		<h3>Forgot Password</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2 text-center">
+		%%errorMessage%%
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+		<form role="form" name="%%form:name%%" method="%%form:method%%" action="%%form:action%%">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						%%email%% %%forgotPassword%%
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group text-center">
+						%%submit%%
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-sm-6 text-center">
+		<div class="well col-xs-12">
+			<h3>Not a Member yet?</h3>
+			<p>With an account you can view past and recurring orders anytime.</p>
+			<a title="Become a Member Now" href="/create-account" class="btn">Become a Member Now</a>
+		</div>
+	</div>
+</div>

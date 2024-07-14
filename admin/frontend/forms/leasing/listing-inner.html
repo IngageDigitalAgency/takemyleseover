@@ -1,0 +1,33 @@
+<article class="lease">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-xs-8">
+<!if("%%transfer_date%%"!="0000-00-00")!>
+	<div class="featured">TRANSFERRED</div>
+<!fi!>
+					<div class="image p-img-scale-width"><a href="%%url%%">%%img_image1%%</a></div>
+				</div>
+				<div class="col-xs-8 vehicle">
+					<div class="year">%%year%%</div>
+					<div class="make">%%make_name%%</div>
+					<div class="model">%%model_name%%</div>
+					<div class="style">%%options_value:body_style:0%%</div>
+					<hr/>
+						<div class="money"><span>MONEY DOWN </span><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%recoup%%))@@!></div>
+						<div class="money"><span>CASH INCENTIVE </span><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%cash_incentive%%))@@!></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<table class="table table-striped">
+				<tr><td class="col-xs-8 col-md-10">CITY</td><td>%%owner:profile:addresses:Home:0:city%%</td></tr>
+				<tr><td>CURRENT KM'S</td><td>%%mileage%%</td></tr>
+				<tr><td>PAYMENT BEFORE TAX</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%lease_pre_tax%%))@@!></td></tr>
+				<tr><td>EFFECTIVE PAYMENT</td><td><!@@($GLOBALS['globals']->getConfig()->my_money_format(%%lease_taxes_inc%%))@@!></td></tr>
+				<tr><td>MONTHS REMAINING</td><td>%%lease_remaining%%</td></tr>
+			</table>
+			<div id="lease-id">ID#:<span>%%id%%</span></div>
+		</div>
+	</div>
+</article>

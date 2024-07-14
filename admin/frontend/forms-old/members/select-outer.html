@@ -1,0 +1,25 @@
+<div id="medium-picker" class="row">
+	<div class="title col-xs-6 col-sm-8 col-md-16">%%title%%</div>
+	<div class="select form-group col-xs-10 col-sm-8 col-md-16">
+		<select class="form-control" onchange="selectMedium(this);return false;" data-placeholder="Pick a Medium">
+<option></option>
+			%%listing%%
+		</select>
+	</div>
+</div>
+<script type="text/javascript">
+selectMedium = function(el) {
+	f = el.value;
+	if (f.length > 0) { document.location = f; return;
+		$.ajax({
+			url: "/ajax/render",
+			data: {t_id:4, folder_id:f},
+			success: function( obj, status, xhr ) {
+				h = eval("("+obj+")");
+				$("#featured-profiles").replaceWith(h.html);
+			}
+		});
+	}
+}
+$("#medium-picker select").chosen({disable_search_threshold: 99,width:"100%"});
+</script>

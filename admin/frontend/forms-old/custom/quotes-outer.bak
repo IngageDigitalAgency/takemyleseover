@@ -1,0 +1,55 @@
+<!if($this->checkArray("mgmt:user", $_SESSION))!>
+<script type="text/javascript" src="/js/datepicker.js"></script>
+<script type="text/javascript" src="/js/chosen.jquery.js"></script>
+<link rel="stylesheet" href="/css/datepicker.css">
+<link rel="stylesheet" href="/css/chosen.css">
+<h2 class="sm-top20">Quote Search</h2>
+<form method="post" id="order-search">
+	<div class="row">
+		<div class="col-sm-6 form-group">
+			<label>Order #</label>%%order_id%%
+		</div>
+		<div class="col-sm-3 form-group">
+			<label>Order Date</label>%%order_date%%
+		</div>
+		<div class="col-sm-6 form-group">
+			<label>Customer</label>%%member_id%%
+		</div>
+		<div class="col-sm-3 form-group">
+			<label> </label><input type="submit" value="Search" class="btn btn-default form-control" />%%quoteSearch%%
+		</div>
+		<div class="col-sm-3 form-group">
+			<label> </label><button class="btn btn-default form-control" onclick="startNew(0);return false;">New Quote</button>
+		</div>
+	</div>
+</form>
+<h3>Search Results</h3>
+<div class="row">
+	<div class="col-12">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Order #</th>
+					<th>Date</th>
+					<th>Customer</th>
+					<th>Total</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				%%rows%%
+			</tbody>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+initDateFields();
+$("#order-search select").chosen({width:"100%"});
+</script>
+<!else!>
+<div class="row sm-top20">
+	<div class="col-sm-6 col-sm-offset-3 text-center">
+		<div class="alert alert-danger">Unauthorized Access</div>
+	</div>
+</div>
+<!fi!>

@@ -1,0 +1,12 @@
+<li>
+	<a href="//facebook.com/%%id%%"><img width="65" height="65" alt="Dr. Bowring" src="%%picture%%" class="facebook-pic"></a>
+	<div class="facebook-post clearfix">
+		<div class="twitter-title">
+			<div class="float-left bold text-uppercase"><a href="//facebook.com/%%id%%">%%from:name%%</a></div>
+			<div class="facebook-timeago">[%%age%%]</div>
+		</div>
+		<div class="facebook-txt">
+			%%message%%
+		</div>
+	</div>
+</li>

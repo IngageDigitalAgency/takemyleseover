@@ -1,0 +1,47 @@
+<div id='payment'>
+	%%errorMessage%%
+	<div class="row">
+		<div class="col-md-12">
+			<!-- Note: Make sure there is no white between the ending </li> and starting <li>; Inline-Block is a whitespace dependent method. -->
+			<h4 class="mobile-show text-center">Checkout Step</h4>
+			<ul id="checkout-steps">
+				<li>
+					<a title="Review Your Order" href="#">
+						<span class="step-number">1</span>
+						<span class="step-txt">Review Your Order</span>
+					</a>
+				</li><li>
+					<a title="Billing Information" href="#">
+						<span class="step-number">2</span>
+						<span class="step-txt">Billing Information</span>
+					</a>
+				</li><li>
+					<a title="Pay For Your Order" href="#">
+						<span class="step-number">3</span>
+						<span class="step-txt">Pay For Your Order</span>
+					</a>
+				</li><li class="active">
+					<a title="View Your Receipt" href="#">
+						<span class="step-number">4</span>
+						<span class="step-txt">View Your Receipt</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row" id="order-details"></div>
+</div>
+<script type="text/javascript">
+$.ajax({
+	url: "/ajax/render",
+	data: {t_id:143},
+	success: function(obj, status, xhr) {
+		try {
+			obj = eval("("+obj+")");
+			$("#order-details").html(obj.html);
+		}
+		catch(err) {
+		}
+	}
+});
+</script>

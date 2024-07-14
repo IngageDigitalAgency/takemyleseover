@@ -1,0 +1,82 @@
+<div class="row">
+	<div class="col-md-12">
+		<a title="Order History" href="#" class="button button-gray button-red active fontsize10" id="order-history-link">Order History</a> 
+		<a title="Edit Account" href="#" class="button button-gray fontsize10" id="edit-account-link">Edit Account</a>
+	</div>
+</div>
+<div id="order-history">
+	<h3>Order History</h3>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th class="col-md-2 text-center">Order ID</th>
+				<th class="col-md-3 text-center">Order Date</th>
+				<th class="col-md-3 text-center">Status</th>
+				<th class="col-md-2 text-center"># of Items</th>
+				<th class="col-md-1 text-center">Total</th>
+				<th class="col-md-1 text-center"></th>
+			</tr>
+		</thead>
+		<tbody>
+			%%orders%%
+		</tbody>
+	</table>
+	<hr>
+	<div class="bottom40">
+		<ul class="list-unstyled" id="processing-legend-list">
+			<li>Processing = Received</li>
+			<li>Recurring Billing = Order Recurs</li>
+			<li>Credit Hold = Payment Failed or Order on Hold</li>
+			<li>Authorization or CC Expiring = Credit Card is denied or Card has Expired</li>
+		</ul>
+	</div>
+	<div class="row text-center">
+		<div class="col-md-12">
+			%%pagination%%
+		</div>
+	</div>
+	<div id="order-details" class="top40"></div>
+</div>
+%%account%%
+<script>
+$("#edit-account").css("display","none");
+$("#order-history tbody .order-status").each(function(idx,el) {
+	$(el).html($(el).html().replace(/,/g,"<br/>"));
+});
+$("#order-history tbody tr:odd").addClass('odd');
+function viewOrder(o_id) {
+	var retStatus = $.ajax({
+		url: '/ajax/render',
+		data: {'t_id':142,'o_id':o_id},
+		type: 'POST',
+		success: function(obj,status,xhr) {
+			try {
+				var obj = eval('('+retStatus.responseText+')');
+				$('#order-details').html(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+function pagination(p_id,el) {
+	$.ajax({
+		url: '/ajax/render',
+		data: {t_id:141,pagenum:p_id},
+		success:function(obj,status,xhr) {
+			try {
+				obj = eval('('+obj+')');
+				if (obj.status == 'true') {
+					obj.html = obj.html;
+					tmp = $("<div></div>").append(obj.html);
+					$('#order-history').replaceWith($(tmp).find("#order-history"));
+					eval(obj.code);
+				}
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

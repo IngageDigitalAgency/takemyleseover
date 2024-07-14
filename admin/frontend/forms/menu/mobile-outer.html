@@ -1,0 +1,18 @@
+<div id="mobile-nav">
+	<div class="nav-control"  onclick="toggleNav(this);return false;">
+		<a href="#" onclick="return false;">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</a>
+	</div>
+	<nav class="menu closed">
+		%%menu%%
+	</nav>
+</div>
+<script type="text/javascript">
+toggleNav = function(el) {
+	$("#mobile-nav .menu").toggleClass("closed");
+	$("#mobile-nav .nav-control").toggleClass("active");
+}
+</script>

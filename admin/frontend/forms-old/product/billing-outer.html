@@ -1,0 +1,102 @@
+<div class='wrapper col-xs-14 col-xs-offset-1 col-md-16 col-md-offset-0'>
+	<div id="billing-address" class='address'>
+		<form action="" method="post">
+			<h2>Billing Address</h2>
+			<div class='errmsg'>%%errorMessage%%</div>
+				<div class="form-group">
+					<label for="lastname">Company</label>
+<!if(strlen("%%companyError%%")>0)!>
+					<div class='field form-error'>%%company%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%company%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="firstname">First Name</label>
+<!if(strlen("%%firstnameError%%")>0)!>
+					<div class='field form-error'>%%firstname%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%firstname%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">Last Name</label>
+<!if(strlen("%%lastnameError%%")>0)!>
+					<div class='field form-error'>%%lastname%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%lastname%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+<!if(strlen("%%emailError%%")>0)!>
+					<div class='field form-error'>%%email%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%email%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="phone1">Phone Numbe</label>
+<!if(strlen("%%phone1Error%%")>0)!>
+					<div class='field form-error'>%%phone1%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%phone1%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="line1">Address</label>
+<!if(strlen("%%line1Error%%")>0)!>
+					<div class='field form-error'>%%line1%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%line1%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="city">City</label>
+<!if(strlen("%%cityError%%")>0)!>
+					<div class='field form-error'>%%city%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%city%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="postalcode">Postal Code/Zip Code</label>
+<!if(strlen("%%postalcodeError%%")>0)!>
+					<div class='field form-error'>%%postalcode%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%postalcode%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="country_id">Country</label>
+<!if(strlen("%%country_idError%%")>0)!>
+					<div class='field form-error'>%%country_id%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field'>%%country%%%%country_id%%</div>
+<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="province_id">Province/State</label>
+<!if(strlen("%%province_idError%%")>0)!>
+					<div class='field form-error' id='billing-provinceWrapper'>%%province_id%%<i class="fa fa-close form-control-feedback"></i></div>
+<!else!>
+					<div class='field' id='billing-provinceWrapper'>%%province%%%%province_id%%</div>
+<!fi!>
+				</div>
+			<div class='buttons top40'>
+				%%edit%% %%saveAddress%% %%addressId%% %%addresstype%% %%tax_address%%
+				%%editButton%% %%saveButton%% %%billingAddressForm%%
+				<div class='clearfix'></div>
+			</div>
+		</form>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!if("%%post:edit%%"=="Edit")!>
+<script type='text/javascript'>
+$('#billing-address #country_id').change(function() {
+	$('#billing-provinceWrapper')[0].innerHTML = loadProvinces(this.value);
+	$('#billing-provinceWrapper select').addClass("form-control");
+});
+</script>
+<!fi!>

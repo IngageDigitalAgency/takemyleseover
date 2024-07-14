@@ -1,0 +1,15 @@
+<li class="item property-block">
+	<a href="%%url%%" class="property-featured-image">
+		%%img_image1%% 
+<!if(%%custom_renting%%==1)!>
+		<span class="badges">Rent</span>
+<!else!>
+		<span class="badges">Buy</span>
+<!fi!>
+	</a>
+	<div class="property-info">
+		<h4><a href="%%url%%">%%storeaddress:line1%%</a></h4>
+		<span class="location">%%storeaddress:city%%</span>
+		<div class="price"><strong>$</strong><span>%%custom_price%% %%custom_rent_period%%</span></div>
+	</div>
+</li>

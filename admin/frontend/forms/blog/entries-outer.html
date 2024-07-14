@@ -1,0 +1,21 @@
+<aside class='widget results'>
+	%%entries%%
+	%%pagination%%
+</aside>
+<script type='text/javascript'>
+function pagination(p_id,el) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:158, pagenum: p_id,folder_id:%%id%%,include_subfolders:1},
+		success: function( obj, status, xhr) {
+			try {
+				obj = eval("("+obj+")");
+				$("aside.widget.results").replaceWith(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

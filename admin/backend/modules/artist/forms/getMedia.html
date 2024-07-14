@@ -1,0 +1,12 @@
+<div class="col-xs-4 form-group">
+	<div class="row">
+<!if(strlen("%%image1%%")>0)!>
+	<div class="col-xs-16 p-img-scalewidth"><img src="%%image1%%" /></div>
+<!else!>
+	<div class="col-xs-16 external"><div class="embed-container">%%external_data%%</div></div>
+<!fi!>
+	</div>
+	<div class="row">
+		<div class="caption col-xs-16 centered"><a href="#" onclick="fnEditMedia(%%portfolio_id%%,%%id%%);return false;">%%name%%</a></div>
+	</div>
+</div>

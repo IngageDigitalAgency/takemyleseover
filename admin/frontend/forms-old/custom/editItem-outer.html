@@ -1,0 +1,63 @@
+<div id="myWork">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4 text-center title">Edit an Artwork</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-2 col-sm-8 col-sm-offset-4 text-center">%%errorMessage%%</div>
+	</div>
+	<form method="post" action="/ajax/render?t_id=%%module:fetemplate_id%%" onsubmit="saveItem(this);return false;" class="bottom40">
+		<div class="row">
+			<div class="col-sm-8 form-group">
+				<label>Title</label>
+				%%name%%
+			</div>
+			<div class="col-sm-8 form-group">
+				<label>Work Type</label>
+				%%media_type%%
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 p-img-scalewidth form-group">
+				<div class="image">
+					<label>The Image to display</label>
+		<!if(strlen("%%field:tag^image1%%")==0)!>
+					<a href="#" onclick="setImage(this,'portfolios/');return false;"><img src="/images/unknown.jpg" />%%image1%%</a>
+		<!else!>
+					<a href="#" onclick="setImage(this,'portfolios/');return false;"><img src="%%field:tag^image1%%" />%%image1%%</a>
+		<!fi!>
+				</div>
+				<div class="external hidden">
+					<label>URL to the external media</label>
+					%%external_data%%
+				</div>
+			</div>
+			<div class="col-xs-8 text-center">
+				<label class="bottom20">Enabled?</label>
+				%%enabled%%
+				%%save%%%%editItem%%%%id%%%%portfolio_id%%%%seq%%
+				<a href="#" class="btn btn-default top20 form-control" onclick="editPortfolio(%%field:tag^portfolio_id%%);return false;">Back to the Portfolio</a>
+<!if("%%field:tag^id%%"!="0")!>
+<a href="#" class="btn btn-default top20 form-control" onclick="editItem(%%field:tag^portfolio_id%%,0);return false;">Add another piece</a>
+<!fi!>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+toggleMedia = function(el) {
+	t = el.value.split("|");
+	f = $(el).closest("form");
+	if (t[1] == "E") {
+		$(f).find(".external").removeClass("hidden");
+		$(f).find(".image").addClass("hidden");
+	}
+	else {
+		$(f).find(".image").removeClass("hidden");
+		$(f).find(".external").addClass("hidden");
+	}
+}
+$("select[name='media_type']").change(function() {
+	toggleMedia(this);
+});
+toggleMedia($("#myWork select")[0]);
+</script>

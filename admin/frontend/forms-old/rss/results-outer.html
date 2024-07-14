@@ -1,0 +1,36 @@
+<div id="podcastArchive">
+	<div class="row hidden-xs">
+		<div class="col-xs-16">
+			<h1>Search Results</h1>
+			<h2>We found %%searchCount%% results</h2>
+		</div>
+	</div>
+	<form method="POST" action="/ajax/render?t_id=%%module:fetemplate_id%%&folder_id=%%id%%">
+		%%items%%
+		<input type="hidden" name="rssSearchResults" value="1" />
+		<input type="hidden" name="searchText" value="<!@@(array_key_exists("searchText",$_REQUEST) ? htmlspecialchars($_REQUEST["searchText"]):'')@@!>" />
+		<input type="hidden" name="pagenum" value="1" />
+		<div class="row">
+			<div class="col-xs-16 text-right">
+				<span>WANT EVEN MORE DEPTH <span class="light">></span> </span>%%pagination%%
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript">
+pagination = function(pg,el) {
+	var f = $(el).closest("form");
+	$(f).find("input[name='pagenum']").val(pg);
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr) {
+			try {
+				obj = eval("("+obj+")");
+				$("#podcastArchive").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

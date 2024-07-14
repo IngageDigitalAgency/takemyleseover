@@ -1,0 +1,24 @@
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript">
+nlSignup = function(el) {
+	$(el).closest("form").ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#newsletterSignup").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>
+
+<div id="newsletterSignup">
+<div class="sec-title-two">
+	<h3><span class="white-color-text">Subscribe us</span></h3>
+	<span class="decor-line"></span>
+</div><!-- /.sec-title-two -->
+<p class="highlight">Not Sure Where to Start? - Contact Us today.</p>
+<p>We will get back shortly</p>
+</div>

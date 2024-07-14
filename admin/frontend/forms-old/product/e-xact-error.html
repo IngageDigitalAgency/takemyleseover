@@ -1,0 +1,21 @@
+<div id='my-cart'>
+	<div class="row">
+		<div class="col-xs-12 text-center"><h2>Transaction Declined</h2></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3 text-left">
+			<div class='alert alert-danger'>
+				<div class='msg'>STATUS: %%x_response_reason_text%%</div>
+				<div class='msg'>Transaction ID: %%x_trans_id%%</div>
+				<div class='msg'>Order #: %%x_invoice_num%%</div>
+				<div class='msg'>Message:</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3 text-left">
+			<div class='msg'>%%exact_ctr%%</div>
+		</div>
+	</div>
+</div>
+%%retryForm%%

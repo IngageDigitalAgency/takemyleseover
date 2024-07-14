@@ -1,0 +1,33 @@
+<section>
+	<div class="parallax-bg single-page-image-parallax constr-page-overlay" data-parallax="scroll" data-image-src="%%real_image%%">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h4 class="constr-p-t">%%title%%</h4>
+					<h5 class="subtitle">%%alternate_title%%</h5>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+$('.parallax-bg').parallax({
+	speed: 0.5,
+	zIndex: -100
+});
+</script>
+<section class="section-top studio-features-section ">
+	<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2 p-img-scale-width">
+%%real_img_rollover%%
+</div>
+</div>
+		<div class="row ">
+			<div class="col-md-10 col-md-offset-1 tinymce section-subtitle">
+				%%teaser%%
+			</div>
+		</div>
+	</div>
+</section>

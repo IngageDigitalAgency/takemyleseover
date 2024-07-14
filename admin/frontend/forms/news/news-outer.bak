@@ -1,0 +1,6 @@
+<div class="row">
+	<div class="col-md-4 top40">
+		<p class="bold fontsize20">%%description%%</p>
+	</div>
+	%%articles%%
+</div>

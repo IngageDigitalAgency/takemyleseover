@@ -1,0 +1,43 @@
+<div id="searchForm">
+	<form method="post" onsubmit="searchLeases(this);return false;" action="/ajax/render">
+		<div class="hidden">
+			%%body_style%%%%domestic%%%%import%%%%province_id%%%%lease_id%%%%search%%
+			<input type="hidden" name="t_id" value="%%module:fetemplate_id%%" />
+			<input type="hidden" name="pagenum" value="0" />
+		</div>
+		<div id="searchResults" class="featured-list">%%leases%%</div>
+	</form>
+</div>
+<script type="text/javascript">
+$("#searchForm .input select").chosen();
+searchLeases = function(el) {
+	$(el).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#searchForm").replaceWith(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+pagination = function(pg,el) {
+	var f = $(el).closest("form");
+	$(f).find("input[name=pagenum]").val(pg);
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				x = $($("<div/>").append(obj.html)).find("div.row.results article")
+				if (x.length > 0) $("#searchForm .row.results").append($(x));
+				x = $($("<div/>").append(obj.html)).find(".pagination")
+				if (x.length>0) $("#searchForm .pagination").replaceWith(x[0]);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

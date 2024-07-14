@@ -1,0 +1,37 @@
+<section id="product-detail">
+	<div class="container">
+		%%products%%
+		%%related%%
+	</div>
+</section>
+<script type="text/javascript">
+writeComment = function(el,b_id) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:150,prod_id:b_id},
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#product-detail .comments").replaceWith(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+alert("had an error");
+			}
+		}
+	});
+}
+validateComment = function(el) {
+	$(el).closest("form").ajaxSubmit({
+		success: function(obj,status,xhr) {
+			try {
+				obj = eval("("+obj+")");
+				$("#product-reviews").html(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

@@ -1,0 +1,25 @@
+<div class="col-sm-8 col-sm-offset-2">
+	<div class='comments'>
+		<h3 class='green text-center'>What People Are Saying</h3>
+		%%comments%%
+		<div class="row">
+			<div class="col-xs-12">%%pagination%%</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+pagination = function(pg,el) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {pagenum:pg, blog_id:%%id%%,t_id:172},
+		success: function(obj, status, xhr) {
+			try {
+				obj = eval("("+obj+")");
+				$("#blog-post-comments").html(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

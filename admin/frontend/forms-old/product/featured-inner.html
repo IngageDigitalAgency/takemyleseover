@@ -1,0 +1,26 @@
+<div class="table-row">
+	<div class="table-cell text-center valign-middle p-img-scale-width col-sm-6">
+		<a href="%%url%%">%%img_image1%%</a>
+	</div>
+	<div class="table-cell valign-middle col-sm-6">
+		<div>
+			<span class="gill_light text-uppercase">Best Seller</span>
+		</div>
+		<div class="">
+			<h5><a href="%%url%%">%%name%%</a></h5>
+			<span class="brandon_black fontsize16 pull-middle">%%price_fmt%%</span>
+<!if("%%onSale%%"=="1")!>
+			<span class="fontsize16 green text-uppercase pull-middle">You Save %%salePercentFormatted%%%</span>
+<!fi!>
+		</div>
+		<div class="product-review top10">
+<!if(%%reviews%%>0)!>
+					<span class="rating star%%rating%%"></span>
+					<a href="%%url%%">%%reviews%% Review<!if(%%reviews%% != 1)!>s<!fi!></a>
+<!else!>
+					<span class="rating star0"></span>
+					<a href="#"></a>
+<!fi!> 
+		</div>
+	</div>
+</div>

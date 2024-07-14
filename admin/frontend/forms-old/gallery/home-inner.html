@@ -1,0 +1,25 @@
+<div class="grids-item item nopadding portfolio-item %%subtitle%%">
+	<img class="grid-item" src="%%image%%" />
+	<div class="portfolio-hover">
+		<div class="action-btn">
+			<div class="port-title">%%title%%</div>
+			<br>
+<!if("%%video:id%%"=="")!>
+			<a class="lightbox" data-lightbox-gallery="gallery1" href="%%image%%"> <i class="icon-magnifying-glass"></i>  </a>
+<!else!>
+			<a href="#" onclick="showVideo(%%id%%);return false;"> <i class="icon-video"></i> </a>
+<!fi!>
+		</div>
+	</div>
+</div>
+<!if("%%video:id%%"!="")!>
+<div id="vid-%%id%%" class="video-wrapper hidden">
+	<a class="closer mouse-pointer" onclick="hideVideo(this);return false;"><i class="fa fa-close"></i></a>
+	<div class="col20">
+		<div class="video-container">
+        		 %%video:embed_code,false%%
+		</div>
+	</div>
+</div>
+<!fi!>
+

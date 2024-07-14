@@ -1,0 +1,21 @@
+<section class="bg-pattern">
+	<div class="row">
+		<div class="col-md-8 page-left-column pull-bottom">
+			<h3 class="bottom40 gill text-capitalize">Contact Us.</h3>
+			<p>If you were unable to find answers to your questions on our website, our customer support team will be happy to assist you. You may email us by completing the short form below. We do not make any claims about products or services being advertised on our website.</p>
+			%%errorMessage%%
+			%%form%%
+		</div>
+		<div class="col-md-8 page-right-column pull-bottom bottom40">
+			<div id="customer-support-img">
+				<img alt="Customer Support" src="/images/customer-support.png" class="img-scale-width">
+			</div>
+			<div class="well well-transparent">
+				<h3 class="gill green text-capitalize">%%config:mailing-address:addressname%%</h3>
+				<p>%%config:mailing-address:line1%%<br>%%config:mailing-address:city%% %%config:mailing-address:provinceCode%% %%config:mailing-address:postalcode%%</p>
+				<h4 class="gill green">Toll Free: %%config:mailing-address:phone1%%</h4>
+				<p>We promote good communication, so when you get in touch, where by phone, e-mail, fax or letter, we endeavor to respond promptly.</p>
+			</div>
+		</div>
+	</div>
+</section>

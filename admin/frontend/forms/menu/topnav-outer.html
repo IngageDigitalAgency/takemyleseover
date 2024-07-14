@@ -1,0 +1,19 @@
+<div id="topnav">
+	<div class="container" id="topnav">
+		<div class="row p-img-scale-width text-center">
+			%%menu%%
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(window).load(function() {
+	$('#topnav .left').addClass("hideIt").viewportChecker({
+		classToAdd: 'showIt animated bounceInLeft',
+		offset: 100
+	});
+	$('#topnav .right').addClass("hideIt").viewportChecker({
+		classToAdd: 'showIt animated bounceInRight',
+		offset: 100
+	});
+});
+</script>

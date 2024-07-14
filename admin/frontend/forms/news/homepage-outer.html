@@ -1,0 +1,19 @@
+<div class="article-list x4">
+	<div class='title'>%%title%%</div>
+	<div class='teaser tinymce'>%%teaser%%</div>
+	<div class='articles'>
+		%%articles%%
+		<div class="clearfix"></div>
+	</div>
+</div>
+<script type='text/javascript'>
+$(window).ready(function() {
+	var ht = 0;
+	$('#article-list .article .teaser').each(function(idx,el) {
+		ht = Math.max(ht,$(el).height());
+	});
+	$('#article-list .article .teaser').each(function(idx,el) {
+		$(el).css('height',ht+'px');
+	});
+});
+</script>

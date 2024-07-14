@@ -1,0 +1,28 @@
+<div id="property-list">
+	<div class="block-heading">
+		<h4><span class="heading-icon"><i class="fa fa-caret-right icon-design"></i><i class="fa fa-th-list"></i></span>Property Listing</h4>
+	</div>
+	<div class="property-listing">
+		<ul>
+			%%stores%%
+		</ul>
+	</div>
+	%%pagination%%
+</div>
+<script type="text/javascript">
+pagination = function(pg,el) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:23,pagenum:pg},
+		context: {el:el},
+		success: function(obj,status,xhr) {
+			try {
+				obj = eval("("+obj+")");
+				$("#property-list").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

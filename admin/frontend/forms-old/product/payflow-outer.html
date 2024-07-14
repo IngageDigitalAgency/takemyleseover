@@ -1,0 +1,32 @@
+<div id='checkout-payflow'>
+	<div class="row">
+		<div class="col-md-12">
+			<!-- Note: Make sure there is no white between the ending </li> and starting <li>; Inline-Block is a whitespace dependent method. -->
+			<h4 class="mobile-show text-center">Checkout Step</h4>
+			<ul id="checkout-steps">
+				<li>
+					<a title="Review Your Order" href="/shopping-cart"><span class="step-number">1</span><span class="step-txt">Review Your Order</span></a>
+				</li><li>
+					<a title="Billing Information" href="/checkout"><span class="step-number">2</span><span class="step-txt">Billing Information</span></a>
+				</li><li>
+					<a title="Pay For Your Order" href="#"><span class="step-number">3</span><span class="step-txt">Pay For Your Order</span></a>
+				</li><li class="active">
+					<a title="View Your Receipt" href="#"><span class="step-number">4</span><span class="step-txt">View Your Receipt</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	%%ecomErrors%%
+	%%errorMessage%%
+<!if("0%%session:user:info:id%%" == "0")!>
+	<div class='alert alert-error'>You are not logged in</div>
+<!fi!>
+<!if("0%%session:user:info:id%%" != "0" && "0%%session:cart:header:total" == "0")!>
+	<div class='alert alert-error'>Your cart is empty</div>
+<!else!>
+	<form method='post'>
+		<input type='hidden' name='isPayflow' value='1' />
+		<img onclick='formSubmit(this);' src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;" />
+	</form>
+<!fi!>
+</div>

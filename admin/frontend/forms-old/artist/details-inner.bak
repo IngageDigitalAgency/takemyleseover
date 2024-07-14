@@ -1,0 +1,14 @@
+<div class="item">
+	<div class="row">
+		<div class="col-xs-14 col-xs-offset-1 img p-img-scalewidth">
+<!if(strlen("%%image1%%")>0)!>
+			%%img_image1%%
+<!else!>
+<div class="embed-container">%%external_data%%</div>
+<!fi!>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-14 col-xs-offset-1 text-center"><div class="title">%%name%%</div>
+	</div>
+</div>

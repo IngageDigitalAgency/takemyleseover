@@ -1,0 +1,24 @@
+<div id="modelList">
+	<form id="modelListFrm" action="/modit/ajax/loadModels/leasing" method="POST">
+		<input type="button" class="def_field_submit" value="Add a Model" onclick="editModel(0,%%id%%);return false;" />
+		<div class="break"></div>
+		<div class="title">Models</div>
+		<table class="listing">
+			<thead>
+				<tr>
+					<th><a href="#" onclick="modelSort('model',this);return false;">Model</a></th>
+					<th><a href="#" onclick="modelSort('start_year',this);return false;">Start Year</a></th>
+					<th><a href="#" onclick="modelSort('end_year',this);return false;">End Year</a></th>
+					<th><a href="#" onclick="modelSort('enabled',this);return false;">Enabled</a></th>
+					<th><a href="#" onclick="modelSort('deleted',this);return false;">Deleted</a></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				%%models%%
+			</tbody>
+		</table>
+		%%pagination%%
+		%%pagenum%% %%sortby%% %%perpage%% %%loadModels%% %%p_id%% %%sortdir%%
+	</form>
+</div>

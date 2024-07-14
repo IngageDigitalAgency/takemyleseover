@@ -1,0 +1,23 @@
+<div class="blog-item-container">
+	<div class="blog-item">
+		<div class="blog-item-img">
+<!if(strlen("%%video:video_id%%") > 0)!>
+			<img src="//img.youtube.com/vi/%%video:video_id%%/mqdefault.jpg" />
+<!else!>
+			%%img_image1%%
+<!fi!>
+		</div>
+		<div class="blog-item-body">
+			<h4 class="blog-item-title">%%title%%</h4>
+			<div class="teaser">%%teaser%%</div>
+		</div>
+		<div class="btn-blog-item-read-more">
+			<a title="Read More" href="%%url%%">
+				<div class="curl"></div>
+				Read More...
+			</a>
+		</div>
+		<div class="page-border1"></div>
+		<div class="page-border2"></div>
+	</div>
+</div>

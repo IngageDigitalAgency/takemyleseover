@@ -1,0 +1,79 @@
+/**********************************************************************************************
+	Website		: VitaTree Nutritionals
+	Author		: Ecko Creative Services
+	URL			: vitatree.com
+	
+	Created		: August, 2014
+	
+	Copyright (c) Ecko Creative Services.
+	
+***********************************************************************************************
+	
+	Fonts
+
+***********************************************************************************************/
+@font-face {
+	font-family: 'Proxima Nova'; 
+	src:url('/fonts/proximanova-regular-webfont.eot'); 
+	src:url('/fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('/fonts/proximanova-regular-webfont.svg#Brandon Grotesque') format('svg'), 
+		url('/fonts/proximanova-regular-webfont.woff') format('woff'), 
+		url('/fonts/proximanova-regular-webfont.ttf') format('truetype'); 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proxima Nova Bold'; 
+	src:url('/fonts/proximanova-bold-webfont.eot'); 
+	src:url('/fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('/fonts/proximanova-bold-webfont.svg#Brandon Grotesque') format('svg'), 
+		url('/fonts/proximanova-bold-webfont.woff') format('woff'), 
+		url('/fonts/proximanova-bold-webfont.ttf') format('truetype'); 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Brandon Grotesque'; 
+	src:url('/fonts/brandon_grotesque/brandon_grotesque.eot'); 
+	src:url('/fonts/brandon_grotesque/brandon_grotesque.eot?#iefix') format('embedded-opentype'), 
+		url('/fonts/brandon_grotesque/brandon_grotesque.svg#Brandon Grotesque') format('svg'), 
+		url('/fonts/brandon_grotesque/brandon_grotesque.woff') format('woff'), 
+		url('/fonts/brandon_grotesque/brandon_grotesque.ttf') format('truetype'); 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Brandon Grotesque Black'; 
+	src:url('/fonts/brandon_grotesque_black/brandon_grotesque_black.eot'); 
+	src:url('/fonts/brandon_grotesque_black/brandon_grotesque_black.eot?#iefix') format('embedded-opentype'), 
+		url('/fonts/brandon_grotesque_black/brandon_grotesque_black.svg#Brandon Grotesque Black') format('svg'), 
+		url('/fonts/brandon_grotesque_black/brandon_grotesque_black.woff') format('woff'), 
+		url('/fonts/brandon_grotesque_black/brandon_grotesque_black.ttf') format('truetype'); 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+@font-face { 
+	font-family: 'Gill Sans MT'; 
+	src:url('/fonts/gill_sans_mt/gill_sans_mt.eot'); 
+	src:url('/fonts/gill_sans_mt/gill_sans_mt.eot?#iefix') format('embedded-opentype'), 
+		url('/fonts/gill_sans_mt/gill_sans_mt.svg#Gill Sans MT') format('svg'), 
+		url('/fonts/gill_sans_mt/gill_sans_mt.woff') format('woff'), 
+		url('/fonts/gill_sans_mt/gill_sans_mt.ttf') format('truetype'); 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+@font-face { 
+	font-family: 'Gill Sans STD Light'; 
+	src:url('/fonts/gill_sans_std_light/gill_sans_std_light.eot'); 
+	src:url('/fonts/gill_sans_std_light/gill_sans_std_light.eot?#iefix') format('embedded-opentype'), 
+		url('/fonts/gill_sans_std_light/gill_sans_std_light.svg#Gill Sans STD Light') format('svg'), 
+		url('/fonts/gill_sans_std_light/gill_sans_std_light.woff') format('woff'), 
+		url('/fonts/gill_sans_std_light/gill_sans_std_light.ttf') format('truetype'); 
+	font-weight: normal; 
+	font-style: normal;
+}

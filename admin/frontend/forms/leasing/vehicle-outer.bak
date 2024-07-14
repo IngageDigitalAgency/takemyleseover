@@ -1,0 +1,245 @@
+<script src="/admin/tinymce/tinymce.min.js"  type="text/javascript"></script>
+<div id="vehicleInfo">
+	<div class="row text-center lease-banner">
+		<h1>So you want to get out of your lease?</h1>
+		<h2>Our free lease evaluation consists of 3 short steps</h2>
+		<div class="steps">
+			<div class="row text-left">
+				<div class="col-xs-5 col-xs-offset-0 col-md-3 col-md-offset-2 left">CONTACT INFO</div>
+				<div class="col-xs-6 col-xs-offset-0 col-md-3 col-md-offset-2 center">VEHICLE INFO</div>
+				<div class="col-xs-5 col-xs-offset-0 col-md-3 col-md-offset-2 right">LEASE INFO</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-2 p-img-scale-width">
+					<img src="/images/backgrounds/step-2.png" alt="Step 1" />
+				</div>
+			</div>
+		</div>
+		%%errorMessage%%
+	</div>
+	<form method="post" role="form" action="/ajax/render">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-16"><h3>Vehicle Type</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-4">MAKE <span class="errorMessage">%%makeError%%</span></div>
+						<div class="col-xs-12">%%make%%</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-4">MODEL <span class="errorMessage">%%modelError%%</span></div>
+						<div class="col-xs-12 models">%%model%%</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-4">YEAR <span class="errorMessage">%%yearError%%</span></div>
+						<div class="col-xs-12 years">%%year%%</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-4">ENGINE SIZE <span class="errorMessage">%%engine_sizeError%%</span></div>
+						<div class="col-xs-12">%%engine_size%%</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-4"># OF CYLINDERS <span class="errorMessage">%%cylindersError%%</span></div>
+						<div class="col-xs-12">%%cylinders%%</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-4">BODY <span class="errorMessage">%%body_styleError%%</span></div>
+						<div class="col-xs-12">%%body_style%%</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-4">TRANSMISSION <span class="errorMessage">%%transmissionError%%</span></div>
+						<div class="col-xs-12">%%transmission%%</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-4">INTERIOR <span class="errorMessage">%%interior_colorError%%</span></div>
+						<div class="col-xs-12">%%interior_color%%</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-4">EXTERIOR <span class="errorMessage">%%exterior_colorError%%</span></div>
+						<div class="col-xs-12">%%exterior_color%%</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-4">CURRENT KM <span class="errorMessage">%%mileageError%%</span></div>
+						<div class="col-xs-12">%%mileage%%</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-16"><h3>Features</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>HEATING & AIR <span class="errorMessage">%%heating___airError%%</span></label>
+							%%heating___air%%
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>POWER FEATURES <span class="errorMessage">%%power_featuresError%%</span></label>
+							%%power_features%%
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>SEATING FEATURES <span class="errorMessage">%%seatingError%%</span></label>
+							%%seating%%
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-16"><h3>Tires & Warranties</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>WHEELS <span class="errorMessage">%%tires___wheelsError%%</span></label>
+							%%tires___wheels%%
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>EXTRA WHEELS </label>
+							<div><label>%%winter_wheels%% WINTER WHEELS <span class="errorMessage">%%winter_wheelsError%%</span></label></div>
+							<div><label>%%winter_tires%% TIRES INCLUDED <span class="errorMessage">%%winter_tiresError%%</span></label></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>WARRANTIES <span class="errorMessage">%%Error%%</span></label>
+							%%warranty%%
+							%%other_warranties%%
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-16"><h3>Safety & Convenience</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>SAFETY & SECURITY <span class="errorMessage">%%safety___securityError%%</span></label>
+							%%safety___security%%
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>AUDIO/VIDEO SYSTEM <span class="errorMessage">%%audio___videoError%%</span></label>
+							%%audio___video%%
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>CONVENIENCE PACKAGES <span class="errorMessage">%%convenience_featuresError%%</span></label>
+							%%convenience_features%%
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-16"><h3>Accessories & Extras</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>PICKUPS/VANS/SUVS <span class="errorMessage">%%pu_van_suv_accessoriesError%%</span></label>
+							%%pu_van_suv_accessories%%
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>AFTERMARKET ITEMS <span class="errorMessage">%%aftermarketError%%</span></label>
+							%%aftermarket%%
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-16 text-right">
+				%%submit%%%%vehicleInfo%%<input type="hidden" name="t_id" value="%%module:fetemplate_id%%" /><input type="hidden" name="f_id" value="%%module:folder_id%%" />
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+getModels = function(cVal) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:18, m_id: cVal},
+		success: function(obj, status, xhr) {
+			try {
+				obj = eval("("+obj+")");
+				$("#vehicleInfo .models").html(obj.html);
+				getYears($("#vehicleInfo .models select"));
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+getYears = function(el,cVal) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:19, m_id: $(el).val()},
+		success: function(obj, status, xhr) {
+			try {
+				obj = eval("("+obj+")");
+				$("#vehicleInfo .years").html(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+<!if(strlen("%%post:model%%")==0)!>
+getModels($("#vehicleInfo select[name=make]").val());
+<!fi!>
+$("#vehicleInfo select[multiple=multiple]").chosen();
+vehicleSubmit = function(el) {
+	var f = $(el).closest("form");
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#vehicleInfo").replaceWith(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

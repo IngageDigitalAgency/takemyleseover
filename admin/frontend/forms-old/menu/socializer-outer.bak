@@ -1,0 +1,4 @@
+<div class="social-menu no-gutter">
+	%%menu%%
+	<div style="clear:both;"></div>
+</div>

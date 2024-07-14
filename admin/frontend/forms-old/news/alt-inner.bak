@@ -1,0 +1,6 @@
+<li>%%title%%<div class="label numbers">%%subtitle%%%</div></li>
+<li>
+	<div class="progress">
+		<div class="bar" data-value="%%subtitle%%" role="progressbar">%%subtitle%%</div>
+	</div>
+</li>

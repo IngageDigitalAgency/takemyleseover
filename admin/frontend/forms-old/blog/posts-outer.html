@@ -1,0 +1,47 @@
+<div id="blog-items-container">
+	%%entries%%
+</div>
+<div class='blog-pagination'>
+	%%pagination%%
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	$container = $("#blog-items-container")
+	$container.imagesLoaded(function(){
+		$container.masonry({
+			itemSelector : '.blog-item-container',
+			gutter : 15,
+			isFitWidth : true,
+			isAnimated : true,
+			animationOptions: {
+				duration: 400
+			}
+		});
+	}); 
+});
+pagination = function(pg,el) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id:115,pagenum:pg,folder_id:%%id%%,include_subfolders:1},
+		success: function(obj,xhr,status) {
+			try {
+				obj = eval("("+obj+")");
+				$new = $("<div></div>").append(obj.html).find("div.blog-item-container");
+				$p = $("<div></div>").append(obj.html).find("div.blog-pagination");
+				$("#blog-items-container + .blog-pagination").replaceWith($p);
+				var $newElems = $( $new ).css({ opacity: 0 });
+				$container.append($newElems);
+				// ensure that images load before adding to masonry layout
+				$newElems.imagesLoaded(function(){
+					// show elems now they're ready
+					$newElems.animate({ opacity: 1 });
+					$container.masonry( 'appended', $newElems, true ); 
+				});
+			}
+			catch(err) {
+				alert(err);
+			}
+		}
+	});
+}
+</script>

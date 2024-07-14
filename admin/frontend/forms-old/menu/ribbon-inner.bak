@@ -1,0 +1,14 @@
+<div class="col-sm-8 article">
+	<div class="image" style="background-image:url(%%image1%%);">
+		<div class="info">
+			<div class="bg"></div>
+			<div class="text-center wrapper">
+				<div class="title">%%title%%</div>
+				<div class="teaser">
+					%%teaser%%
+					<div class="link"><a href="%%url%%">READ MORE</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

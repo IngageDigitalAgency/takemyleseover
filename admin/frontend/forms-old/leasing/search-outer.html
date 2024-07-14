@@ -1,0 +1,78 @@
+<div id="searchForm">
+	<div class="row">
+		<div class="col-xs-16 text-center">
+			<h1>So, You are looking for a lease?</h1>
+			<h2>Start your search here and find the exact car of your dreams</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-16 text-center">%%errorMessage%%</div>
+	</div>
+	<form method="post" action="/search-results">
+		<div class="wrapper">
+			<h3>Vehicle Search</h3>
+			<h4>You can choose multiple options from within each dropdown. You may remove items from those lists by simply clicking on the “x” next to the item.</h4>
+			<div class="row">
+				<div class="col-sm-5">
+					<div class='prompt form-group'>CHOOSE VEHICLE</div>
+					<div class='input form-group'>%%body_style%%</div>
+				</div>
+				<div class="col-sm-5">
+					<div class='prompt form-group'>CHOOSE A DOMESTIC</div>
+					<div class='input form-group'>%%domestic%%</div>
+				</div>
+				<div class="col-sm-5">
+					<div class='prompt form-group'>CHOOSE AN IMPORT</div>
+					<div class='input form-group'>%%import%%</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="prompt form-group">SEARCH AREA</div>
+					<div class="input form-group">%%province_id%%</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="prompt form-group">ALREADY KNOW THE LISTING?</div>
+					<div class="input form-group">%%lease_id%%</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-16 text-center">%%submit%%%%search%%</div>
+			</div>
+		</div>
+		<input type="hidden" name="t_id" value="%%module:fetemplate_id%%" />
+		<input type="hidden" name="pagenum" value="0" />
+		<div id="searchResults">%%leases%%</div>
+	</form>
+</div>
+<script type="text/javascript">
+$("#searchForm .input select").chosen();
+searchLeases = function(el) {
+	$(el).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#searchForm").replaceWith(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+pagination = function(pg,el) {
+	var f = $(el).closest("form");
+	$(f).find("input[name=pagenum]").val(pg);
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#searchForm").replaceWith(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

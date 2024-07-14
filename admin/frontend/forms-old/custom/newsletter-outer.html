@@ -1,0 +1,25 @@
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript">
+signup = function(f) {
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#newsletter.footer").replaceWith(h.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+	return false;
+}
+</script>
+<div id="newsletter" class="footer">
+	<div class="row">
+		<div class="col-xs-16 title">Sign-up for Updates</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-3 text-center top20">%%errorMessage%%</div>
+	</div>
+	%%form,false%%
+</div>

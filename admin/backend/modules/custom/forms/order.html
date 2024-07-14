@@ -1,0 +1,40 @@
+<div id='tabs-custom'>
+	<table class="responsive">
+		<tr>
+			<th>Notes:</th><td>%%custom_note%%</td>
+		</tr>
+		<tr>
+			<th>Image 1:</th>
+			<td>
+<!if(strlen("%%custom_image_1%%")>0)!>
+				<a href="%%custom_image_1%%" target="new"><img src="%%custom_image_1%%" /></a>
+<!fi!>
+			</td>
+		</tr>
+		<tr>
+			<th>Image 2:</th>
+			<td>
+<!if(strlen("%%custom_image_2%%")>0)!>
+				<a href="%%custom_image_2%%" target="new"><img src="%%custom_image_2%%" /></a>
+<!fi!>
+			</td>
+		</tr>
+		<tr>
+			<th>Image 3:</th>
+			<td>
+<!if(strlen("%%custom_image_3%%")>0)!>
+				<a href="%%custom_image_3%%" target="new"><img src="%%custom_image_3%%" /></a>
+<!fi!>
+			</td>
+		</tr>
+		<tr>
+			<th>Image 4:</th>
+			<td>
+<!if(strlen("%%custom_image_4%%")>0)!>
+				<a href="%%custom_image_4%%" target="new"><img src="%%custom_image_4%%" /></a>
+<!fi!>
+			</td>
+		</tr>
+	</table>
+	%%submit%%
+</div>

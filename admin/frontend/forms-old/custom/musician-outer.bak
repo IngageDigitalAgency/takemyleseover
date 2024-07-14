@@ -1,0 +1,9 @@
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<div class="fillable-form top20 bottom20">
+	<div class="col-xs-14 col-xs-offset-1">
+		%%form%%
+	</div>
+</div>
+<script type="text/javascript">
+$("form select[multiple]").chosen();
+</script>

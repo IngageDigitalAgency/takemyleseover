@@ -1,0 +1,15 @@
+<!if("%%session:cart:header:value%%"=="0.00" || "%%session:cart:header:value%%"=="")!>
+<div id='register'>
+	<div class="row no-gutter">
+		<div class="col-xs-14 col-xs-offset-1 text-center">
+			<h3>REGISTER TODAY</h3>
+			<div class='col-xs-14 col-xs-offset-1 text-center'>
+				<div class="alert alert-success">Congratulations<br/>Your Free account has been created</div>
+				<div class="info">To upgrade your account to a full listing...</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!else!>
+<script type="text/javascript">document.location = "/checkout";</script>
+<!fi!>

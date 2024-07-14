@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-sm-6 col-md-12 p-img-scale-width text-center">
+		%%img_image1%%
+	</div>
+	<div class="col-sm-6 col-md-12">
+		<h4>%%name%%</h4>
+<!if("%%onSale%%"=="1")!>
+		<p class="gray"><span class="strike">%%regularPriceFormatted%%</span> <span class="italic">regular price</span></p>
+		<h4 class="nopadding">%%price_fmt%%</h4>
+		<p class="green text-uppercase">You Save %%salePercentFormatted%%%</p>
+<!else!>
+		<p class="gray">&nbsp;</p>
+		<h4 class="nopadding">%%price_fmt%%</h4>
+		<p class="green text-uppercase">&nbsp;</p>
+<!fi!>
+		<form method="POST" action="/shopping-cart">
+			%%options%%
+			%%recurring_period%%
+			%%product_id%%
+			%%addToCart%%
+			<input type='hidden' name='recurring_qty' value='0' />
+			<input type='hidden' name='product_quantity' value='1' />
+			<a class="button button-green button-fluid fontsize10" href="#" onclick="formSubmit(this);return false;">Add to Cart</a>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="propertyEditing">
+	<div class="title">Edit A Make</div>
+	%%errorMessage%%
+	<div id="tabs">
+		<form method="post" onsubmit='formCheck_add("addContent","/modit/ajax/editMake/leasing",$("#popup"));return false;' name="addContent" id="addContent">
+			<table class="content">
+				<tbody>
+					<tr>
+						<th>Name:</th><td>%%name%%</td>
+					</tr>
+					<tr>
+						<th>Domestic:</th><td>%%domestic%%</td>
+					</tr>
+					<tr>
+						<th>Enabled:</th><td>%%enabled%%</td>
+					</tr>
+				</tbody>
+			</table>
+			%%submit%%
+			%%p_id%% %%editMake%%
+			<div class="break"></div>
+		</form>
+<!if(%%id%%!=0)!>
+		%%models%%
+<!fi!>
+	</div>
+</div>

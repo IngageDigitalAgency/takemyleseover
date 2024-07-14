@@ -1,0 +1,38 @@
+<section class="section-top" id="portfolio">
+	<div class=" nopadding">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="section-description">%%alternate_title%%</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1">
+				<div class="section-header-2"><h4>%%title%%</h4></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 mt-40">
+				<div id="even-grid">
+					<div class="isotope">
+						%%images%%
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+showVideo = function(el) {
+	$(".overlay").toggleClass("hidden");
+	$("#vid-".concat(el,".video-wrapper")).toggleClass("hidden");
+}
+hideVideo = function(el) {
+	$(".overlay").toggleClass("hidden");
+	$(el).closest(".video-wrapper").toggleClass("hidden");
+}
+$("#portfolio .grids-item").hover( function() {
+$(this).find(".portfolio-hover").css("opacity","1");
+}, function () {
+$(this).find(".portfolio-hover").css("opacity","0");
+});
+</script>

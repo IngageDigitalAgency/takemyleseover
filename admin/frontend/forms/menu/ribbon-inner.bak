@@ -1,0 +1,6 @@
+<div class='nav-wrapper text-left top-to-bottom'>
+	%%href%%
+		<div class="title">%%title%%</div>
+		<div class="subtitle">%%alternate_title%%
+	%%href_end%%
+</div>

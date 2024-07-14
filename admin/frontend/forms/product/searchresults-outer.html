@@ -1,0 +1,39 @@
+<script type="text/javascript">p_urls = Array();</script>
+<div id='product-listing' class='search-results'>
+	<div class='header col-xs-12 text-center'>
+		<h2 class='title bottom20'>Your Search Results</h2>
+		%%errorMessage%%
+	</div>		
+	<div class='products col-xs-12'>
+		%%products%%
+	</div>
+	<div class='pagination'>
+		<form method='post' action=''>
+			%%pagination%%
+			<input type='hidden' name='productSearchForm' value='1' />
+			%%productSearch%%
+			<input type='hidden' name='pagenum' value='0' />
+		</form>
+		<form action="/shopping-cart" id="addToCart" method="POST">
+			<input type="hidden" value="1" name="product_quantity" class="def_field_input">
+			<input type="hidden" class="def_field_input" value="0" name="product_id">
+			<input type="hidden" class="def_field_input" value="0" name="options_id">
+			<input type="hidden" class="def_field_input" value="0" name="addToCart">
+		</form>
+	</div>
+</div>
+<script type='text/javascript'>
+function pagination(page,obj) {
+	var frm = $(obj).closest('form');
+	frm.find('input[name="pagenum"]')[0].value = page;
+	frm.submit();
+}
+function buyIt(p_id,el) {
+	var s = $(el).closest(".product-item-bottom").find("select[name=options_id]");
+	var f = $("#addToCart");
+	f.find("input[name=product_id]").val(p_id);
+	f.find("input[name=addToCart]").val(1);
+	if (s.length > 0) f.find("input[name=options_id]").val(s[0].value);
+	f.submit();
+} 
+</script>

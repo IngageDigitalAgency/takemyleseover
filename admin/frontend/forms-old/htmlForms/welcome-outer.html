@@ -1,0 +1,26 @@
+<div id="welcome">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-0 col-sm-offset-0 col-sm-16 col-xs-5 col-xs-offset-3">
+			<div class="hello hidden-sm"> </div>
+<!if("0%%session:user:info:id%%">0)!>
+			<a href="/logout">Logout <span class="caret"></span></a>
+<!else!>
+			<a href="/become-a-member">Register <span class="caret"></span></a>
+<!fi!>
+		</div>
+		<div class="col-md-8 col-sm-16 col-xs-5">
+			<div class="hello">Hello!</div>
+<!if("0%%session:user:info:id%%">0)!>
+			<div class="name">
+				<div class="dropdown">
+					%%session:user:info:firstname%% %%session:user:info:lastname%% 
+					<button class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+					%%menu%%
+				</div>
+			</div>
+<!else!>
+			<div class="name"><a href="/login">Login Now</a></div>
+<!fi!>
+		</div>
+	</div>
+</div>

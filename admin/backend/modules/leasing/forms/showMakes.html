@@ -1,0 +1,46 @@
+<div id="middleHeading">
+	<div class="heading_title">Car Makes</div>
+	<div class="heading_options">
+		<div class="buttons">
+			<a class="btn btn-primary" href="#" onclick="editMake(0);return false">Add a Make</a>
+		</div>
+	</div>
+	<div class="break"></div>
+</div>
+<div id="foldertabs">
+	<div id="category_heading">
+	</div>
+	<div id="articleList" class="listing">
+		<div id="leasingFolderId" style="display:none">5</div>
+		<form name="showFolderContent" action="" onsubmit="return false" method="post" id="showFolderContent">
+			<input class="def_field_input" type="hidden" value="name" name="sortby">
+			<input class="def_field_input" type="hidden" value="asc" name="sortorder">
+			<input class="def_field_input" type="hidden" value="1" name="showMakes">
+			<input class="def_field_input" type="hidden" value="1" name="pagenum">
+			<div class="break"></div>
+			<table>
+				<thead>
+					<tr>
+							<th><span onclick="sort('a.make','showFolderContent','/modit/ajax/showMakes/leasing','middleContent')">Make</span></th>
+							<th><span onclick="sort('a.domestic','showFolderContent','/modit/ajax/showMakes/leasing','middleContent')">Domestic</span></th>
+							<th><span onclick="sort('a.enabled','showFolderContent','/modit/ajax/showMakes/leasing','middleContent')">Enabled</span></th>
+							<th></th>
+					</tr>
+				</thead>
+			<tbody class="ui-sortable">
+%%makes%%
+			</tbody></table>
+			<div id="pagination">
+				<span class="pagination-dropdown pull-right">Makes per page : %%pager%%</span>
+				%%pagination%% %%showMakes%%
+				<div class="break"></div>
+			</div>
+		</form>
+	</div>
+</div>
+<code>
+pagingUrl = '/modit/ajax/showMakes/leasing';
+$('#pager').change(function() {
+	formCheck("showFolderContent","/modit/ajax/showMakes/leasing","middleContent");
+});
+</code>

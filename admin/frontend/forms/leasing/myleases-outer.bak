@@ -1,0 +1,31 @@
+<div id="account-lease-info">
+	<div class="row">
+		<div class="col-md-12">
+			<a title="Order History" href="#" onclick="showLeases(true,true);return false;" class="button button-gray button-red active fontsize10" id="order-history-link">My Leases</a> 
+			<a title="Edit Account" href="#"  onclick="showAccount(true,true);return false;" class="button button-gray fontsize10" id="edit-account-link">Edit Account</a>
+		</div>
+	</div>
+	<div class="featured-list">
+		<h2>Your Leases</h2>
+		%%leases%%
+		%%pagination%%
+	</div>
+	<div class="account-info hidden">%%accountInfo%%</div>
+</div>
+<script type="text/javascript">
+showLeases = function(md,r) {
+	if (md)
+		$("#account-lease-info .featured-list").removeClass("hidden");
+	else
+		$("#account-lease-info .featured-list").addClass("hidden");
+
+	if (r) showAccount(!md,!r);
+}
+showAccount = function(md,r) {
+	if (md)
+		$("#account-lease-info .account-info").removeClass("hidden");
+	else
+		$("#account-lease-info .account-info").addClass("hidden");
+	if (r) showLeases(!md,!r);
+}
+</script>

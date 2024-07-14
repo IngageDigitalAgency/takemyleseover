@@ -1,0 +1,25 @@
+<div class="col-sm-4 col-xs-8 bottom40">
+	<div class="portfolio">
+		<div class="row form-group">
+			<div class="col-xs-16">
+				<div class="img p-img-scalewidth">
+					<img src="%%image1%%" />
+					<div class="hover">
+						<a href="#" onclick="editPortfolio(%%id%%);return false;"><i class="fa fa-pencil"></i></a>
+						<a href="#" onclick="deletePortfolio(%%id%%);return false;"><i class="fa fa-trash"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-xs-16 text-center">%%title%%</div>
+		</div>
+<!if("%%enabled%%"=="0")!>
+		<div class="row form-group">
+			<div class="col-xs-10 col-xs-offset-3 text-center">
+				<div class="alert alert-warning">Disabled</div>
+			</div>
+		</div>
+<!fi!>
+	</div>
+</div>

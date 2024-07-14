@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-6 p-img-scale-width">
+<!if(strlen("%%video:video_id%%") > 0)!>
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe src="http://www.youtube.com/embed/%%video:video_id%%" class="embed-responsive-item"></iframe>
+		</div>
+<!else!>
+		%%img_image1%%
+<!fi!>
+	</div>
+	<div class="col-md-6 top40">
+		<h4 class="title">%%title%%</h4>
+		<h5 class="sub-title">by %%author:firstname%% %%author:lastname%%, %%author:company%%</h5>
+		<div class="teaser">
+			%%teaser%%
+		</div>
+		<div class="top20">
+			<a title="Read More" href="%%url%%" class="button pull-middle">Read More</a>
+			<a title="Similar Health Post" href="#" class="fontsize16 left40 pull-middle text-uppercase valign-middle">Similar Health Post</a>
+		</div>
+	</div>
+</div>

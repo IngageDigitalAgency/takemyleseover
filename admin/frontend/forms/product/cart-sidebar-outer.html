@@ -1,0 +1,40 @@
+<div class="clearfix" id="cart-totals-block">
+	%%header%%
+	<table class="table">
+		%%totals%%
+<!if(%%freeShipping%%>0)!>
+		<tr>
+			<td class="col-sm-8 cart-totals-title">Free Shipping:</td>
+			<td class="col-sm-4 cart-totals-item text-right red">%%formattedFreeShipping%%</td>
+		</tr>
+<!fi!>
+<!if(%%totalSavings%%>0)!>
+		<tr>
+			<td class="col-sm-8 cart-totals-title">You saved:</td>
+			<td class="col-sm-4 cart-totals-item text-right red">%%formattedTotalSavings%%</td>
+		</tr>
+<!fi!>
+	</table>
+</div>
+<div class="row-fluid"><div class="alert alert-info text-center bold">All Pricing is CAD</div></div>
+<div class="row-fluid" id="discount-code-left-block">
+	<h4>Discount Code or Voucher</h4>
+	<p>Enter your discount code or voucher to receive a discount on your total order. Multiple vouchers cannot be applied.</p>
+	%%ecomErrors%%
+	<form role="form" method="POST">
+		<div class="form-group">
+			<div class="col-md-7 nopadding">
+				<input type='text' name='discount_code' value='%%discount_code%%' class='def_field_input form-control' />
+			</div>
+			<div class="col-md-5 nopadding padding-left-10">
+				<button class="button button-fluid button-green fontsize10" type="submit">Submit</button>
+			</div>
+		</div>
+		%%discountCode%%
+		<input type='hidden' value='1' name='updateCart' />
+	</form>
+	<div class='teaser'>
+		%%session:cart:header:discount:teaser%%
+	</div>
+</div>
+<div class="clearfix"></div>

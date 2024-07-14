@@ -1,0 +1,45 @@
+<div id='payment'>
+<!if(array_key_exists("billing_agreement",$_SESSION) && $_SESSION["billing_agreement"] != 0)!>
+	<div class="row">
+		<div class="col-md-12">
+			<!-- Note: Make sure there is no white between the ending </li> and starting <li>; Inline-Block is a whitespace dependent method. -->
+			<h4 class="mobile-show text-center">Checkout Step</h4>
+			<ul id="checkout-steps">
+				<li>
+					<a title="Review Your Order" href="#">
+						<span class="step-number">1</span>
+						<span class="step-txt">Review Your Order</span>
+					</a>
+				</li><li>
+					<a title="Billing Information" href="#">
+						<span class="step-number">2</span>
+						<span class="step-txt">Billing Information</span>
+					</a>
+				</li><li>
+					<a title="Pay For Your Order" href="#">
+						<span class="step-number">3</span>
+						<span class="step-txt">Pay For Your Order</span>
+					</a>
+				</li><li class="active">
+					<a title="View Your Receipt" href="#">
+						<span class="step-number">4</span>
+						<span class="step-txt">View Your Receipt</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='pmtOptions success'>
+		%%errorMessage%%
+		<div class='links'>
+			<h3>We're almost done.</h3>
+			<h5>For recurring orders paid by PayPal, you have to authorize us to keep billing you.</h5>
+			<p>Click the link below to start the authorization process. You won't be billed until your next scheduled date.</p>
+			<a href='%%ba_url%%&token=%%TOKEN%%' class='button button-green'>Create a Billing Agreement</a>
+			<div class='clearfix'></div>
+		</div>
+	</div>
+<!else!>
+	<div class="alert alert-error">Sorry, but you don't seem to have an order awaiting a Billing Agreement</div>
+<!fi!>
+</div>

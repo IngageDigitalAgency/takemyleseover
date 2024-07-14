@@ -1,0 +1,6 @@
+<div id="featured-profiles">
+	<div class="md-hidden lg-hidden col-sm-16">
+		%%picker%%
+	</div>
+	%%members%%
+</div>

@@ -1,0 +1,48 @@
+<div id="mySocial">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-4 text-center title">My Social Links</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-2 col-sm-8 col-sm-offset-4 text-center">%%errorMessage%%</div>
+	</div>
+	<form method="post" action="/ajax/render?t_id=%%module:fetemplate_id%%" onsubmit="setLink(this);return false;" class="bottom40">
+		<div class="row">
+			<div class="col-sm-8 form-group">
+				<label>Pick a supported site</label>
+				%%social_type%%
+			</div>
+			<div class="col-sm-8 form-group">
+				<label>Enter your personal link</label>
+				%%social_link%%
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8 form-group">
+				<label>Enabled?</label>
+				%%enabled%% (Only enabled links are shown)
+			</div>
+			<div class="col-sm-8 form-group">
+				<label>Deleted?</label>
+				%%deleted%%
+			</div>
+		</div>
+		<div class="row"><div class="col-xs-8 col-xs-offset-4 col-sm-4 col-sm-offset-6 form-group">%%save%%%%mySocial%%%%id%%</div></div>
+<!if("%%field:tag^id%%"!="")!>
+		<div class="row"><div class="col-xs-8 col-xs-offset-4 col-sm-4 col-sm-offset-6 form-group"><a href="#" onclick="resetSocial(this);return false;" class="btn btn-default form-control">Add Another (%%field:tag^id%%)</a></div></div>
+<!fi!>
+	</form>
+	<div class="list bottom40">
+<div class="row form-group">
+<div class="col-xs-1"></div>
+<div class="col-xs-3 text-center">Site</div>
+<div class="col-xs-6 text-center">URL</div>
+<div class="col-xs-2 text-center">Enabled</div>
+<div class="col-xs-1 text-center"></div>
+<div class="col-xs-1 text-center"></div>
+</div>
+		%%links,false%%
+	</div>
+</div>
+<script type="text/javascript">
+$.scrollTo($("#mySocial"),500,{axis:'y'});
+</script>

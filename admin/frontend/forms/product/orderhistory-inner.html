@@ -1,0 +1,30 @@
+<tr>
+	<td class="text-center">%%id%%</td>
+	<td class="text-left">%%formattedCreated%%</td>
+	<td class="text-left">%%formattedStatus%%</td>
+	<td class="text-center">%%itemCount%%</td>
+	<td class="text-right">%%formattedTotal%%</td>
+	<td class="text-center"><a title="View" href="#" onclick='viewOrder(%%id%%);return false;'>View</a></td>
+</tr>
+<!if(strpos(strtoupper("%%authorization_type%%"),"PAYPAL") !== false && strlen("%%baid%%") == 0 && strlen("%%recurringId%%") != 0 && ((int)"%%recurringStatus%%" & STATUS_PROCESSING) == STATUS_PROCESSING)!>
+<tr>
+	<td colspan='6'>
+		<div class="alert alert-error text-center">
+			This is a PayPal Recurring Order that has no Billing Agreement! <br/>
+			We cannot ship your order until we have a completed Agreement<br/>
+			Click <a href="/billing-agreement/%%id%%/%%random%%">here</a> to create one.
+		</div>
+	</td>
+</tr>
+<!fi!>
+<!if((((int)"%%order_status%%" & STATUS_CREDIT_HOLD) == STATUS_CREDIT_HOLD) || (((int)"%%order_status%%" & STATUS_EXPIRING) == STATUS_EXPIRING))!>
+<tr>
+	<td colspan='6'>
+		<div class="alert alert-error text-center">
+			There seems to be an issue with your credit card, or your order is nearing it's anniversary date.<br/>
+			To continue your shipments we need to reauthorize your credit card.<br/>
+			Click <a href="/reauthorize/%%id%%/%%random%%">here</a> to reauthorize your order.
+		</div>
+	</td>
+</tr>
+<!fi!>

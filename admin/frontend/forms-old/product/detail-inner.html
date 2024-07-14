@@ -1,0 +1,31 @@
+<div id="product-details">
+<div class="col-sm-9 p-img-scalewidth main-img">
+	%%img_image1%%
+<!if("%%onSale%%"=="1")!>
+<div class="discount">%%salePercentFormatted%%% OFF</div>
+<!fi!>
+</div>
+<div class="col-sm-3 p-img-scalewidth">
+	<a href="#" onclick="swapImg('%%image1%%');return false;">%%img_image1%%</a>
+	<a href="#" onclick="swapImg('%%image2%%');return false;">%%img_image2%%</a>
+	<a href="#" onclick="swapImg('%%image3%%');return false;">%%img_image3%%</a>
+</div>
+<div class="text-left no-gutter">
+	<form method="post" action="/shopping-cart">
+		<div class=" clearfix title">%%name%%</div>
+		<div class="subtitle">%%subtitle%%</div>
+<!if("%%onSale%%"=="1")!>
+		<div class="pricing"><!@@($this->my_money_format("%%price%%"))@@!> <span class="savings">You Save <!@@($this->my_money_format("%%saleDiscount%%"))@@!></span></div>
+<!else!>
+		<div class="pricing">%%regularPriceFormatted%%</div>
+<!fi!>
+		<div class="tinymce">%%description%%</div>
+		<div class="col-sm-4 bottom20">%%options%%</div>
+		<div class="col-sm-1 top10 clearfix">%%quantity%%</div>
+		<div class="col-sm-1 top10 text-center ">QTY</div>
+		<div class="col-sm-4"><input type="submit" class="btn btn-default" value="ADD TO CART" /></div>
+		%%addToCart%%%%product_id%%
+	</form>
+</div>
+<div class="clearfix"></div>
+</div>

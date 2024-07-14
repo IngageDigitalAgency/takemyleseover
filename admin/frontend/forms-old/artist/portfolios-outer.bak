@@ -1,0 +1,45 @@
+<script type="text/javascript">pIds = Array();</script>
+<div id="portfolio-list">
+	<div class="details"></div>
+	<div class="row no-gutter">
+		<div class="col-xs-14 col-xs-offset-1">
+			<div class="title">PORTFOLIOS OF <span>%%firstname%% %%lastname%%</div>
+		</div>
+	</div>
+	<div class="list">
+		%%portfolios,false%%
+	</div>
+</div>
+<script type="text/javascript">
+getPortfolio = function(id,s) {
+	$.ajax({
+		url: "/ajax/render",
+		data: { t_id:46, portfolio_id: id },
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#portfolio-list .details").html(h.html);
+				eval(h.obj);
+				if (s) $.scrollTo($("#portfolio-list"),500,{axis:'y'});
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+setPortfolioHt = function() {
+	$("#portfolio-list .list .img").height("auto");
+	$("#portfolio-list .list .title").height("auto");
+	$("#portfolio-list .list .teaser").height("auto");
+	balanceItems($("#portfolio-list .list .img"));
+	balanceItems($("#portfolio-list .list .title"));
+	balanceItems($("#portfolio-list .list .teaser"));
+}
+getPortfolio(pIds[0],false);
+$(window).load(function() {
+	setPortfolioHt();
+});
+$(window).resize(function() {
+	setPortfolioHt();
+});
+</script>

@@ -1,0 +1,7 @@
+<div class="row">
+	<div class="col-xs-16">
+		<div class="wide-ad p-img-scale-width">
+			%%ads%%
+		</div>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<div class="footer-widget link-widget">
+<div class="sec-title-two">
+	<h3><span class="white-color-text">%%title%%</span></h3>
+	<span class="decor-line"></span>
+</div><!-- /.sec-title-two -->
+%%menu%%

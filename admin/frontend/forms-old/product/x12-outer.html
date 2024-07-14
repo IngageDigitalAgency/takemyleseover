@@ -1,0 +1,39 @@
+<section class="section-top layer plans x6">
+	<section class="xxcontainer">
+		<div class="row">
+			%%products%%
+		</div>
+		<div class="row pagination">
+			%%pagination%%
+		</div>
+	</section>
+</section>
+<script type="text/javascript">
+balancePlans = function() {
+	$("section.plans .teaser").css("height","auto");
+	if ($(".container").width() > 720)
+		balanceItems("section.plans.x6 .teaser");
+}
+$(window).on("load resize",function(e){
+	balancePlans();
+});
+pagination = function( pg, el ) {
+	$.ajax({
+		url: "/ajax/render",
+		data: {t_id: %%module:fetemplate_id%%, pagenum: pg, folder_id: %%module:folder_id%% },
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("section.plans.x6").replaceWith(h.html);
+				balanceItems("section.plans.x6 .teaser");
+$('html, body').animate({
+	scrollTop: $("section.plans.x6").offset().top
+}, 2000);
+			}
+			catch(err) {
+			
+			}
+		}
+	})
+}
+</script>

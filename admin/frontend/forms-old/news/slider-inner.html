@@ -1,0 +1,51 @@
+<li class="row">
+<!if(%%sequence%% % 2 == 1)!>
+	<div class="col-md-4">
+		<div class="caption caption-txt">
+			<div class="caption-middle">
+				<h2 class="title">%%title%%</h2>
+				<h4 class="sub-title">%%subtitle%%</h4>
+				%%teaser%%
+				<div class="top40">
+<!if("%%custom_external_url%%"=="")!>
+					<a class="button button-dark-gray top20" href="%%url%%" title="Read More">Read More</a>
+<!else!>
+					<a class="button button-dark-gray top20" href="%%custom_external_url%%" title="Read More" target="_blank">Read More</a>
+<!fi!>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="caption">
+			<div class="caption-bottom caption-center">
+				<a href="%%url%%" title="">
+					%%img_image1%%
+				</a>
+			</div>
+		</div>
+	</div>
+<!else!>
+	<div class="col-md-8">
+		<div class="caption">
+			<div class="caption-bottom caption-center">
+				<a href="%%url%%" title="">
+					%%img_image1%%
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="caption caption-txt">
+			<div class="caption-middle">
+				<h2 class="title">%%title%%</h2>
+				<h4 class="sub-title">%%subtitle%%</h4>
+				%%teaser%%
+				<div class="top40">
+					<a class="button button-dark-gray top20" href="%%url%%" title="Read More">Read More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<!fi!>
+</li>

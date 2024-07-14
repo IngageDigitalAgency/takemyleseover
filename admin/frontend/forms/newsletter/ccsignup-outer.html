@@ -1,0 +1,54 @@
+<div id="cc-signup" class="hidden">
+	<div class="bg"></div>
+	<div class="container">
+		<div class="row">
+			%%errorMessage%%
+			%%form%%
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+var s = $.cookie("cc");
+if (typeof($.cookie("cc")) == "undefined") {
+	showOpt(true);
+}
+function hideCC(obj) {
+	//$.cookie('cc','1',{expires:7});
+	showOpt(false);
+}
+function optOut() {
+	$.cookie('cc','1',{expires:5*365});
+	showOpt(false);
+}
+function showOpt(m) {
+	if (m) {
+		$("#cc-signup").height($(document).height()+"px");
+		$("#cc-signup").removeClass("hidden");
+	}
+	else {
+		$("#cc-signup").addClass("hidden");
+	}
+}
+function validate(el) {
+	$(el).closest("form").ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#cc-signup").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+$(window).ready(function() {
+	if ($(window).width() >= 768)
+		balanceItems("#cc-signup .row.info > .col-sm-4");
+});
+$(window).resize(function() {
+	$("#cc-signup .row.info > .col-sm-4").css("height","auto");
+	if ($(window).width() >= 768)
+		balanceItems("#cc-signup .row.info > .col-sm-4");
+});
+</script>

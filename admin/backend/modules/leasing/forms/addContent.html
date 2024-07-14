@@ -1,0 +1,382 @@
+<div class='propertyEditing'>
+	<div class='title'>Add/Edit a Lease</div>
+	<div class='errorMessage'>%%errorMessage%%</div>
+	<div id='tabs'>
+		<ul>
+			<li><a href="#tabs-1">Main Info</a></li>
+			<li><a href="#tabs-2">Descriptions</a></li>
+			<li><a href="#tabs-8">SEO/SEM</a></li>
+			<li><a href="#tabs-3">Images</a></li>
+			<li><a href="#tabs-4">Lease Details</a></li>
+			<li><a href="#tabs-6">Vehicle Details</a></li>
+			<li><a href="#tabs-7">Amenities</a></li>
+			%%customTab%%
+		</ul>
+		<form method='%%form:method%%' name='%%form:name%%' onsubmit='formCheck_add("%%form:name%%","%%form:action%%",$("#popup"));return false;' id='%%form:name%%' action=''>
+			<div id='tabs-1'>
+				<table class='content'>
+					<tr>
+						<th>Lease #:</th><td>%%id%%</td>
+					</tr>
+					<tr>
+						<th>Owner:</th><td>%%owner_id%% <span class='errorMessage'>%%owner_idError%%</span></td>
+					</tr>
+					<tr>
+						<th>Contact:</th><td>%%contact_id%% <span class='errorMessage'>%%contact_idError%%</span></td>
+					</tr>
+					<tr>
+						<th>Created:</th><td>%%created%%</td>
+					</tr>
+					<tr>
+						<th>Published:</th><td>%%published%% <span class='errorMessage'>%%publishedError%% %%tooltip:Published%%</span></td>
+					</tr>
+					<tr>
+						<th>Enabled:</th><td>%%enabled%% <span class='errorMessage'>%%enabledError%% %%tooltip:Enabled%%</span></td>
+					</tr>
+					<tr>
+						<th>Deleted:</th><td>%%deleted%% <span class='errorMessage'>%%deletedError%% %%tooltip:Deleted%%</span></td>
+					</tr>
+					<tr>
+						<th>Featured:</th><td>%%featured%% <span class='errorMessage'>%%featuredError%% %%tooltip:Featured%%</span></td>
+					</tr>
+					<tr>
+						<th>Member of:</th>
+						<td>
+							%%destFolders%% <span class='errorMessage'>%%destFoldersError%% %%tooltip:Category%%</span>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id='tabs-2'>
+				<div class='title'>Teaser: %%tooltip:Teaser%%<span class='errorMessage'>%%teaserError%%</span></div>
+				%%teaser%%
+<!if(array_key_exists('twitter',$GLOBALS))!>
+				<div id='twitter'>%%twitterPublish%% Publish to Twitter</div>
+<!fi!>
+<!if(array_key_exists('facebook',$GLOBALS))!>
+				<div id='twitter'>%%facebookPublish%% Publish to Facebook</div>
+<!fi!>
+				<div class='title'>Description: %%tooltip:Description%%<span class='errorMessage'>%%descriptionError%%</span></div>
+				%%description%%
+				<div class='break'></div>
+			</div>
+			<div id='tabs-3'>
+<!if(%%id%%!=0)!>
+				<table>
+					<tr>
+						<th>Image 1:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_a%%</a> <span class='errorMessage'>%%image1Error%%</span><br/>
+							<input id="image_a" type="hidden" name="image1" value="%%image1%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 2:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_b%%</a> <span class='errorMessage'>%%image2Error%%</span><br/>
+							<input id="image_b" type="hidden" name="image2" value="%%image2%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 3:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_c%%</a> <span class='errorMessage'>%%image3Error%%</span><br/>
+							<input id="image_c" type="hidden" name="image3" value="%%image3%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 4:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_d%%</a> <span class='errorMessage'>%%image4Error%%</span><br/>
+							<input id="image_d" type="hidden" name="image4" value="%%image4%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 5:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_e%%</a> <span class='errorMessage'>%%image5Error%%</span><br/>
+							<input id="image_e" type="hidden" name="image5" value="%%image5%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 6:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_f%%</a> <span class='errorMessage'>%%image6Error%%</span><br/>
+							<input id="image_f" type="hidden" name="image6" value="%%image6%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 7:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_g%%</a> <span class='errorMessage'>%%image7Error%%</span><br/>
+							<input id="image_g" type="hidden" name="image7" value="%%image7%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 8:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_h%%</a> <span class='errorMessage'>%%image8Error%%</span><br/>
+							<input id="image_h" type="hidden" name="image8" value="%%image8%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 9:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_i%%</a> <span class='errorMessage'>%%image9Error%%</span><br/>
+							<input id="image_i" type="hidden" name="image9" value="%%image9%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Image 10:</th>
+						<td>
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">%%imagesel_j%%</a> <span class='errorMessage'>%%image10Error%%</span><br/>
+							<input id="image_j" type="hidden" name="image10" value="%%image10%%" />
+							<a href="#" onclick="setImage(this,'leases/%%id%%/');return false;">select image</a> | <a href="#" onclick="clearImage(this);return false;">set no image</a>
+						</td>
+					</tr>
+				</table>
+<!else!>
+<div class="alert alert-warning centered">The Lease must be saved first</div>
+<input type="hidden" name="image1" />
+<input type="hidden" name="image2" />
+<input type="hidden" name="image3" />
+<input type="hidden" name="image4" />
+<input type="hidden" name="image5" />
+<input type="hidden" name="image6" />
+<input type="hidden" name="image7" />
+<input type="hidden" name="image8" />
+<input type="hidden" name="image9" />
+<input type="hidden" name="image10" />
+<!fi!>
+			</div>
+			<div id="tabs-4">
+				<div class='title'>Lease Details</div>
+				<table class='content'>
+					<tr>
+						<th>Dealarship:</th><td>%%dealership%% %%dealershipError%%</td>
+					</tr>
+					<tr>
+						<th>Contact:</th><td>%%dealership_contact%% %%dealership_contactError%%</td>
+					</tr>
+					<tr>
+						<th>Lease Company:</th><td>%%lease_company%% %%lease_companyError%%</td>
+					</tr>
+					<tr>
+						<th>Amount (pre-tax):</th><td>%%lease_pre_tax%% %%lease_pre_taxError%%</td>
+					</tr>
+					<tr>
+						<th>Amount (inc tax):</th><td>%%lease_taxes_inc%% %%lease_taxes_incError%%</td>
+					</tr>
+					<tr>
+						<th>Downpayment:</th><td>%%downpayment%% %%downpaymentError%%</td>
+					</tr>
+					<tr>
+						<th>Deposit:</th><td>%%deposit%% %%depositError%%</td>
+					</tr>
+					<tr>
+						<th>Buyout:</th><td>%%buyout%% %%buyoutError%%</td>
+					</tr>
+					<tr>
+						<th>Cash Incentive:</th><td>%%cash_incentive%% %%cash_incentiveError%%</td>
+					</tr>
+					<tr>
+						<th>Amount to recoup:</th><td>%%recoup%% %%recoupError%%</td>
+					</tr>
+					<tr>
+						<th>Km Allowance:</th><td>%%km_allowance%% %%km_allowanceError%%</td>
+					</tr>
+					<tr>
+						<th>Overage ($/km):</th><td>%%km_overage%% %%km_overageError%%</td>
+					</tr>
+					<tr>
+						<th>Term:</th><td>%%lease_term%% %%lease_termError%%</td>
+					</tr>
+					<tr>
+						<th>Expiry:</th><td>%%lease_expiry%% %%lease_expiryError%%</td>
+					</tr>
+					<tr>
+						<th>Transfer Cost:</th><td>%%transfer_costs%% %%transfer_costsError%%</td>
+					</tr>
+					<tr>
+						<th>Transfer Date:</th><td>%%transfer_date%% %%transfer_dateError%%</td>
+					</tr>
+				</table>
+			</div>
+			<div id='tabs-6'>
+				<div class='title'>Vehicle Details</div>
+				<table class='content'>
+					<tr>
+						<th>Make:</th><td>%%make%% <span class='errorMessage'>%%makeError%%</span></td>
+					</tr>
+					<tr>
+						<th>Model:</th><td><div id="model-selector">%%model%% %%modelError%%</div></td>
+					</tr>
+					<tr>
+						<th>Year:</th><td><div id="year-selector">%%year%% %%yearError%%</div></td>
+					</tr>
+					<tr>
+						<th>Transmission:</th><td>%%transmission%% %%transmissionError%%</td>
+					</tr>
+					<tr>
+						<th>Body:</th><td>%%body_style%% %%body_styleError%%</td>
+					</tr>
+					<tr>
+						<th>Ext Color:</th><td>%%exterior_color%% %%exterior_colorError%%</td>
+					</tr>
+					<tr>
+						<th>Int Color:</th><td>%%interior_color%% %%interior_colorError%%</td>
+					</tr>
+					<tr>
+						<th>Engine Size:</th><td>%%engine_size%% %%engine_sizeError%%</td>
+					</tr>
+					<tr>
+						<th># of Cylinders:</th><td>%%cylinders%% %%cylindersError%%</td>
+					</tr>
+					<tr>
+						<th>Mileage:</th><td>%%mileage%% %%mileageError%%</td>
+					</tr>
+					<tr>
+						<th>Warranty:</th><td>%%warranty%% %%warrantyError%%</td>
+					</tr>
+					<tr>
+						<th>Other Warranties:</th><td>%%other_warranties%% %%other_warrantiesError%%</td>
+					</tr>
+				</table>
+			</div>		
+			<div id='tabs-7'>
+				<div class='title'>Vehicle Amenities</div>
+				<table class='content'>
+					<tr>
+						<th>Heating & Air:</th><td>%%heating___air%% <span class='errorMessage'>%%heating___airError%%</span></td>
+					</tr>
+					<tr>
+						<th>Tires & Wheels:</th><td>%%tires___wheels%% <span class='errorMessage'>%%tires___wheelsError%%</span> %%chrome_wheels%% <span class='errorMessage'>%%chrome_wheelsError%%</span> Chrome Wheels</td>
+					</tr>
+					<tr>
+						<th>Tire Type:</th><td>%%tire_type%% <span class='errorMessage'>%%tire_typeError%%</span></td>
+					</tr>
+					<tr>
+						<th>&nbsp;</th><td>%%winter_wheels%% <span class='errorMessage'>%%winter_wheelsError%%</span> Winter Wheels %%winter_tires%% Tires Included <span class='errorMessage'>%%winter_tiresError%%</span></td>
+					</tr>
+					<tr>
+						<th>Stereo System:</th><td>%%stereo_system%% <span class='errorMessage'>%%stereo_systemError%%</span></td>
+					</tr>
+					<tr>
+						<th>Additional A/V:</th><td>%%audio___video%% <span class='errorMessage'>%%audio___videoError%%</span></td>
+					</tr>
+					<tr>
+						<th>Power Features:</th><td>%%power_features%% <span class='errorMessage'>%%power_featuresError%%</span></td>
+					</tr>
+					<tr>
+						<th>Air Bags:</th><td>%%air_bags%% <span class='errorMessage'>%%air_bagsError%%</span></td>
+					</tr>
+					<tr>
+						<th>Safety & Security:</th><td>%%safety___security%% <span class='errorMessage'>%%safety___securityError%%</span></td>
+					</tr>
+					<tr>
+						<th>Seating:</th><td>%%seating%%<span class='errorMessage'>%%seatingError%%</span></td>
+					</tr>
+					<tr>
+						<th>Fabric:</th><td>%%fabric%%<span class='errorMessage'>%%fabricError%%</span></td>
+					</tr>
+					<tr>
+						<th>Convenience Features:</th><td>%%convenience_features%%<span class='errorMessage'>%%convenience_featuresError%%</span></td>
+					</tr>
+					<tr>
+						<th>Aftermarket Features:</th><td>%%aftermarket%%<span class='errorMessage'>%%afermarketError%%</span></td>
+					</tr>
+					<tr>
+						<th>Pickup/SUV/Van Accessories:</th><td>%%pu_van_suv_accessories%%<span class='errorMessage'>%%pu_van_suv_accessoriesError%%</span></td>
+					</tr>
+				</table>
+			</div>
+			<div id="tabs-8">
+				<div class='title'>SEO Content for Product Details</div>
+				<div class="alert alert-warning centered">No use of quotes (single or double) and only 1 line is allowed</div>
+				<table>
+					<tbody>
+						<tr><th>Keywords:</th><td>%%meta_keywords%%</td></tr>
+						<tr><th>Social Description:</th><td>%%social_description%%</td></tr>
+						<tr><th>Description:</th><td>%%meta_description%%</td></tr>
+						<tr><th>Title:</th><td>%%browser_title%%</td></tr>
+					</tbody>
+				</table>
+				<div class='title'>SEM Content</div>
+				<table>
+					<tbody>
+						<tr>
+							<th>Adword Conversion:</th><td>%%adword_conversion%% <span class='errorMessage'>%%adword_conversionError%%</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			%%customInfo%%
+			<input type='hidden' id='p_id' name='p_id' value='%%id%%'/> 
+			%%addContent%%
+			%%submit%%
+			<div class='break'></div>
+		</form>
+	<div class="break"></div>
+</div>
+<code>
+$("#popup select").chosen();
+$("#tabs" ).tabs();
+$('.def_field_datepicker').datepicker({
+	changeMonth: true,
+	changeYear:true
+});
+$('.def_field_datetimepicker').datepicker({
+	changeMonth: true,
+	changeYear:true
+});
+$('.popovers').popover();
+sortableOptions();
+$('#owner_id_chosen .chosen-search input').autocomplete({
+	source:function(request,response) {
+		$.ajax({
+			url:'/modit/ajax/getNames/leasing',
+			data:{'s':request.term,'m':$("input[name=p_id]").val()},
+			context:this,
+			success:function(list,status,xhr) {
+				try {
+					obj = eval("("+list+")");
+					$("select[name=owner_id]").html(obj.html).trigger("chosen:updated");
+					if (obj.messages.length > 0) showPopupError(obj.messages);
+				}
+				catch(err) {
+					showPopupError(err.message);
+				}
+			}
+		});
+	}
+});
+
+$('#contact_id_chosen .chosen-search input').autocomplete({
+	source:function(request,response) {
+		$.ajax({
+			url:'/modit/ajax/getNames/leasing',
+			data:{'s':request.term,'m':$("input[name=p_id]").val()},
+			context:this,
+			success:function(list,status,xhr) {
+				try {
+					obj = eval("("+list+")");
+					$("select[name=contact_id]").html(obj.html).trigger("chosen:updated");
+					if (obj.messages.length > 0) showPopupError(obj.messages);
+				}
+				catch(err) {
+					showPopupError(err.message);
+				}
+			}
+		});
+	}
+});
+</code>

@@ -1,0 +1,15 @@
+<div class="member row no-gutter">
+	<div class="col-sm-4">
+		<div class="row">
+			<div class="col-xs-8 col-sm-16 image p-img-scalewidth"><a href="%%url%%">%%img_image1%%</a></div>
+			<div class="col-xs-8 col-sm-16 text">
+				<a href="%%url%%">PROFILE</a>
+				<div class="right">
+					<div class="first"><a href="%%url%%">%%firstname%%</a></div>
+					<div class="last"><a href="%%url%%">%%lastname%%</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12 p-img-scalewidth work" style="background-image:url(%%image2%%);"> </div>
+</div>

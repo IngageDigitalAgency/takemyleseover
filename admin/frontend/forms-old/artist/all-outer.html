@@ -1,0 +1,34 @@
+<div id="our-members">
+	<div class="row">
+		<div class="col-xs-16 text-center top20 tinymce"><h1>View All Artists</h1></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-16 text-center top10 tinymce"><p>Want to join? <a href="/become-a-member">Become a member today</a></p></div>
+	</div>
+
+	<div class="members top20 bottom20">
+		%%members%%
+	</div>
+	<div class="row">
+		<div class="col-xs-16 text-center">
+			%%pagination%%
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+pagination = function(pg) {
+	$.ajax({
+		url: "/ajax/render",
+		data: { t_id: %%module:fetemplate_id%%, folder_id:%%module:folder_id%%, pagenum:pg,include_subfolders:%%module:include_subfolders%%},
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#our-members").replaceWith(h.html);
+$.scrollTo("#our-members",500);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

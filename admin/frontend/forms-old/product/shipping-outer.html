@@ -1,0 +1,140 @@
+<!if(%%session:cart:header:member_id%%==0&&%%FRONTEND%%==1)!>
+<script type='text/javascript'>
+	document.location='/login';
+</script>
+<!else!>
+<div id="shipping-address" class='address'>
+	<form method="post">
+		<h2>Shipping Address</h2>
+		<div class="row">
+			<div class='errmsg col-sm-6 col-sm-offset-3 text-center'>%%errorMessage%%</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="lastname">Company</label>
+	<!if(strlen("%%companyError%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%company%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%company%%</div>
+	<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">First Name</label>
+	<!if(strlen("%%firstnameError%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%firstname%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%firstname%%</div>
+	<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">Last Name</label>
+	<!if(strlen("%%lastnameError%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%lastname%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%lastname%%</div>
+	<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">Email</label>
+	<!if(strlen("%%emailError%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%email%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%email%%</div>
+	<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">Phone Number</label>
+	<!if(strlen("%%phone1Error%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%phone1%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%phone1%%</div>
+	<!fi!>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="lastname">Address</label>
+	<!if(strlen("%%line1Error%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%line1%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%line1%%</div>
+	<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">City</label>
+	<!if(strlen("%%cityError%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%city%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%city%%</div>
+	<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">Postal/Zip Code</label>
+	<!if(strlen("%%postalcodeError%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%postalcode%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%postalcode%%</div>
+	<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">Country</label>
+	<!if(strlen("%%country_idError%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%country_id%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field'>%%country%%%%country_id%%</div>
+	<!fi!>
+				</div>
+				<div class="form-group">
+					<label for="lastname">Province/State</label>
+	<!if(strlen("%%province_idError%%")>0)!>
+					<div class='field form-error alert alert-danger'>%%province_id%%<i class="fa fa-close form-control-feedback"></i></div>
+	<!else!>
+					<div class='field' id='shipping-provinceWrapper'>%%province%%%%province_id%%</div>
+	<!fi!>
+				</div>
+			</div>
+		</div>
+	<!if('%%id%%'=='0')!>
+		<div class='alert alert-warning'>
+			<a href='/my-account'>You must add a default shipping address to proceed</a>
+		</div>
+	<!fi!>
+	<!if('%%id%%'!='0' && %%session:cart:header:total%% > 0)!>
+		<div class='buttons top40'>
+			%%edit%% %%saveAddress%% %%addressId%% %%addresstype%% %%tax_address%%
+			%%editButton%% %%saveButton%% %%shippingAddressForm%%%%t_id%%
+			<a class="btn btn-default" href="/finalize" title="Finalize Quote">Finalize the Quote</a>
+		</div>
+	<!fi!>
+	<!if('%%id%%'!='0' && %%session:cart:header:total%% < 0.01)!>
+		<div class='buttons'>
+			<div class='alert alert-warning'>Your cart is empty</div>
+			<a class="checkout" href="/">Continue Shopping</a>
+		</div>
+	<!fi!>
+		<div class='clearfix'></div>
+	</form>
+	<div class="clearfix"></div>
+</div>
+<script type='text/javascript'>
+<!if("%%post:edit%%"=="Edit")!>
+$('#shipping-address #country_id').change(function() {
+	$('#shipping-provinceWrapper')[0].innerHTML = loadProvinces(this.value);
+	$('#shipping-provinceWrapper select').addClass("form-control");
+});
+<!fi!>
+editAddress = function(el) {
+	var f = $(el).closest("form");
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#shipping-address").replaceWith(h.html);
+			}
+			catch(err) {}
+		}
+	})
+}
+</script>
+<!fi!>

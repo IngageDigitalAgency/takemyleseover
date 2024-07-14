@@ -1,0 +1,18 @@
+<!if("%%seq%%"!="3")!>
+<div class="col-md-4 col-md-push-4">
+<!else!>
+<div class="col-md-4 col-md-pull-8">
+<!fi!>
+<!if("%%featured%%"=="1")!>
+	<section class="lift plan-tier callout">
+		<h6>Most popular</h6>
+<!else!>
+	<section class="lift plan-tier top50">
+<!fi!>
+		<h4>%%name%%<br/><span class="white-color">%%subtitle%%</p></span></h4>
+		<div class="img p-img-scale-width bottom20">%%img_image1%%</div>
+		<h5><sup class="superscript">$</sup><span class="plan-price">%%regularPrice%%</span></h5>
+		<div class="tinymce teaser">%%teaser%%</div>
+	<!-- //<a href="%%url%%" class="read-more">read more →</a> // -->
+	</section>
+</div>

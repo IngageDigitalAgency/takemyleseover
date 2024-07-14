@@ -1,0 +1,21 @@
+<div id="artist-category">
+	<div class="row">
+		<div class=col-xs-14 col-xs-offset-1 title top20">Artist Showcase | <span>%%title%%</div>
+	</div>
+	<div class="row no-gutter">
+		%%members%%
+	</div>
+</div>
+<script type="text/javascript">
+$("#artist-category .info").slideToggle("fast");
+$("#artist-category .member").hover(
+	function() {
+$(this).find(".bg").toggleClass("hidden");
+		el = $(this).find(".info").slideToggle();
+	},
+	function() {
+$(this).find(".bg").toggleClass("hidden");
+		el = $(this).find(".info").slideToggle();
+	}
+);
+</script>

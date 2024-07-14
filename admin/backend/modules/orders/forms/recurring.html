@@ -1,0 +1,23 @@
+<div id='recurringTab'>
+	<table class='listing'>
+		<thead>
+			<tr>
+				<th>Scheduled Date</th>
+				<th>Order #</th>
+				<th>Billed</th>
+				<th>Billing Date</th>
+				<th>Message</th>
+				<th>Attempts</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			%%data%%
+		</tbody>
+	</table>
+	<form id='recurringBilling' method='post'>
+		<input type='hidden' name='o_id' value='%%o_id%%' />
+		<input type='hidden' name='pagenum' value='%%pagenum%%' />
+		%%pagination%%
+	</form>
+</div>

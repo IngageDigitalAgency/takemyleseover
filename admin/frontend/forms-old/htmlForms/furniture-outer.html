@@ -1,0 +1,54 @@
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<section class=" contact cn-clr">
+	<div class="container ">
+		<div class="section-header-2"><h4>Order Peeka-Boo! Direct Now!</h4></div>
+		<div class="contact-box">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 form-holder">
+					%%form%%
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<h4 class="text-center">Where We Are</h4>
+<div id="map"></div>
+<script type="text/javascript">
+function initGoogleMaps(lat,lng) {
+	// Basic options for a simple Google Map
+	// For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+	var mapOptions = {
+		// How zoomed in you want the map to start at (always required)
+		zoom: 14,
+		scrollwheel: true,
+		navigationControl: true,
+		mapTypeControl: false,
+		scaleControl: true,
+		draggable: true,
+		disableDefaultUI: true,
+		center: new google.maps.LatLng(lat,lng)
+	};
+	var mapElement = document.getElementById('map');
+	myMap = new google.maps.Map(mapElement, mapOptions);
+
+	var contentString = '<div id="content">%%address:addressname%%<br/>%%address:line1%%<br/>%%address:line2%%<br/>%%address:city%%<br>Get your directions <a href="https://www.google.ca/maps/place//@%%address:latitude%%,%%address:longitude%%,16z">here</a></div>';
+	var infowindow = new google.maps.InfoWindow({
+		content: contentString
+	});
+
+	var marker = new google.maps.Marker({
+		position: new google.maps.LatLng(lat,lng),
+		map: myMap,
+		title: 'Find us here!',
+		clickable:true
+	});
+	marker.addListener('click', function() {
+		infowindow.open(myMap, marker);
+	});
+}
+$(window).on("load", function() {
+	var googleMaps = google.maps.event.addDomListener(window, 'load', initGoogleMaps(%%address:latitude%%,%%address:longitude%%));
+	myInitDateFields();
+});
+</script>

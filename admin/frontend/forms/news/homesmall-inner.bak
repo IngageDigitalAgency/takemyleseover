@@ -1,0 +1,25 @@
+<!if((%%sequence%% % 2) == 1)!>
+<article class="left">
+	<div class="row">
+		<div class="col-xs-4 p-img-scale-width col-md-push-12">
+			<div class="image">%%img_image1%%</div>
+		</div>
+		<div class="col-xs-12 col-md-pull-4">
+			<div class="title">%%title%%</div>
+			<div class="teaser">%%teaser%%</div>
+		</div>
+	</div>
+</article>
+<!else!>
+<article class="right">
+	<div class="row">
+		<div class="col-xs-4 p-img-scale-width">
+			<div class="image">%%img_image1%%</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="title">%%title%%</div>
+			<div class="teaser">%%teaser%%</div>
+		</div>
+	</div>
+</article>
+<!fi!>

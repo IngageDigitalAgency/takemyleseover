@@ -1,0 +1,23 @@
+<form method="POST" onsubmit="agentForm(this);return false;" action="/ajax/render">
+	%%errorMessage%%
+	%%email%%
+	%%message%%
+	%%captcha%%
+	%%submitBtn%% %%r_id%% %%contactUs%%
+	<input type="hidden" name="t_id" value="33" />
+</form>
+<script type="text/javascript">
+agentForm = function(frm) {
+	$(frm).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$(".agent-contact-form").replaceWith(obj.html);
+				grecaptcha.render( "recaptcha", {'sitekey':'%%config:captcha:payload:public%%'} );
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

@@ -1,0 +1,21 @@
+%%errorMessage%%
+<form method='post' id='commentForm' action="/ajax/render">
+	<div class="row top20">
+		<div class="col-sm-6">%%firstname%%</div>
+		<div class="col-sm-6">%%lastname%%</div>
+	</div>
+	<div class="row top20">
+		<div class="col-sm-6">%%email%%</div>
+		<div class="col-sm-6">%%rating%%</div>
+	</div>
+	<div class="row top20">
+		<div class="col-sm-12">
+			%%comment%%
+		</div>
+	</div>
+	%%writeaReview%%
+	<input type="hidden" name="t_id" value="150" />
+	%%product_id%%
+	<button class="button button-green top20" onClick="validateComment(this);return false;">SUBMIT</button>
+	%%r_id%%
+</form>

@@ -1,0 +1,15 @@
+<div class="forms">
+	<div class="row">
+		<div class="col-xs-16 text-center">
+			<h2>DOWNLOAD A LEASE APPLICATION TODAY</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-4 text-center">
+			<select name="application-form">
+				<option value="">Select an Application</option>
+				%%ads%%
+			</select>
+		</div>
+	</div>
+</div>

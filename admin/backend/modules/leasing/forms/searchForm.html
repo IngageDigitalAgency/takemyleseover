@@ -1,0 +1,51 @@
+%%heading%%
+<div class='status'>%%statusMessage%%</div>
+<div class='searchForm listing'>
+	<div id='search-tabs'>
+		<ul style='display:none'>
+			<li><a href="#tabs-s1">Quick Search</a></li>
+			<li><a href="#tabs-s2">Search</a></li>
+		</ul>
+		<form method='%%form:method%%' action='' name='%%form:name%%' onsubmit='formCheck("%%form:name%%","/modit/ajax/showSearchForm/leasing","middleContent");return false;' id='%%form:name%%'>
+			<div id='articleList'>
+				<div style='display:none'>%%id%% %%opt_created%% %%created%% %%opt_lease_expiry%% %%lease_expiry%% %%folder%% %%featured%% %%enabled%% %%deleted%% %%owner%% %%make%% %%model%% %%published%%</div>
+				<div class="break"></div>
+				<table>
+					<thead>
+						<tr>
+							<th><span onclick='sort("c1.name","%%form:name%%","/modit/ajax/%%form:action%%/leasing","middleContent")'>Make</span></th>
+							<th><span onclick='sort("c2.model","%%form:name%%","/modit/ajax/%%form:action%%/leasing","middleContent")'>Model</span></th>
+							<th><span onclick='sort("year","%%form:name%%","/modit/ajax/%%form:action%%/leasing","middleContent")'>Year</span></th>
+							<th><span onclick='sort("name","%%form:name%%","/modit/ajax/%%form:action%%/leasing","middleContent")'>Owner</span></th>
+							<th>Contact</th>
+							<th><span onclick='sort("created","%%form:name%%","/modit/ajax/%%form:action%%/leasing","middleContent")'>Created</span></th>
+							<th><span onclick='sort("expires","%%form:name%%","/modit/ajax/%%form:action%%/leasing","middleContent")'>Expires</span></th>
+							<th><span onclick='sort("published","%%form:name%%","/modit/ajax/%%form:action%%/leasing","middleContent")'>Published</span></th>
+							<th><span onclick='sort("enabled","%%form:name%%","/modit/ajax/%%form:action%%/leasing","middleContent")'>Enabled</span></th>
+							<th></th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					%%articles%%
+				</table>
+				<div id='pagination'>
+					<span class="pagination-dropdown pull-right">Leases per page : %%pager%%</span>
+					%%pagination%%
+					<div class="break"></div>
+				</div>
+			</div>
+			%%showSearchForm%% 
+			%%pagenum%%
+			%%sortorder%%
+			%%sortby%%
+		</form>
+	</div>
+</div>
+<code>
+<script type="text/javascript"> 
+//<![CDATA[ 
+initSearch();
+//]]> 
+</script> 
+</code>

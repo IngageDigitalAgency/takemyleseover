@@ -1,0 +1,78 @@
+<div class="title">Add/Edit a Portfolio - %%field:tag^parent:title%%</div>
+%%errorMessage%%
+<div id="portfolioTabs">
+	<ul>
+		<li><a href="#tabs-p1">Portfolio</a></li>
+		<li><a href="#tabs-p4">Descriptions</a></li>
+		<li><a href="#tabs-p2">Images</a></li>
+		<li><a href="#tabs-p3">Content</a></li>
+		%%customTab%%
+	</ul>
+	<form method='%%form:method%%' name='%%form:name%%' onsubmit='formCheck("%%form:name%%","%%form:action%%","altPopup");return false;' id='%%form:name%%' action='' class="bottom0 top20">
+		<div id='tabs-p1'>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Title</div>
+				<div class="col-xs-12">%%title%%</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Subtitle</div>
+				<div class="col-xs-12">%%subtitle%%</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Enabled</div>
+				<div class="col-xs-12">%%enabled%%</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Deleted</div>
+				<div class="col-xs-12">%%deleted%%</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Sort Sequence</div>
+				<div class="col-xs-12">%%seq%%</div>
+			</div>	
+		</div>
+		<div id="tabs-p4">
+			<div class="row form-group">
+				<div class="col-xs-16"><div class="title">Teaser</div>%%teaser%%</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-16"><div class="title">Description</div>%%description%%</div>
+			</div>
+		</div>
+		<div id="tabs-p2">
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Image 1:</div>
+				<div class="col-xs-12">
+					<a href="#" onclick="setImage(this,'members/%%field:tag^member_id%%/portfolios/');return false;">%%imagesel_c%%</a> <span class='errorMessage'>%%image1Error%%</span><br/>
+					<input id="image_c" type="hidden" name="image1" value="%%image1%%" />
+					<a href="#" onclick="setImage(this,'members/%%field:tag^member_id%%/portfolios/');return false;" class="btn">select image</a> | <a href="#" onclick="clearImage(this);return false;" class="btn">set no image</a>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-4 a-right">Image 2:</div>
+				<div class="col-xs-12">
+						<a href="#" onclick="setImage(this,'members/%%field:tag^member_id%%/portfolios/');return false;" class="bottom10">%%imagesel_d%%</a> <span class='errorMessage'>%%image2Error%%</span><br/>
+						<input id="image_d" type="hidden" name="image2" value="%%image2%%" />
+						<a href="#" onclick="setImage(this,'members/%%field:tag^member_id%%/portfolios/');return false;" class="btn" class="bottom10">select image</a> | <a href="#" onclick="clearImage(this);return false;" class="btn">set no image</a>
+				</div>
+			</div>
+		</div>
+		<div id="tabs-p3">
+<!if("%%field:tag^p_id%%" > 0)!>
+			<div class="row">
+				%%media%%
+			</div>
+			<div class="row">
+				<div class="col-xs-16 a-right"><a href="#" class="btn" onclick="fnEditMedia(%%field:tag^p_id%%,0);return false;">Add Portfolio Content</a></div>
+			</div>
+<!fi!>
+		</div>
+		%%submit%% %%editPortfolio%% %%member_id%% %%p_id%%
+		<div class="clearfix"></div>
+	</form>
+</div>
+<code>
+$('#portfolioTabs').tabs();
+initTinyMCE();
+fnReloadPortfolios(%%field:tag^member_id%%);
+</code>

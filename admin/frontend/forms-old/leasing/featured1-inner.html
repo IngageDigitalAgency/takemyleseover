@@ -1,0 +1,23 @@
+<article class="lease col-md-8">
+<!if(%%featured%%==1)!>
+	<div class="featured">FEATURED VEHICLE</div>
+<!fi!>
+	<div class="inner">
+		<div class="image p-img-scale-width">
+			<a href="%%url%%">%%img_image1%%</a>
+		</div>
+		<div class="bottom text-center">
+			<div class="wrapper">
+				<div class="info">%%year%% - %%make_name%%</div>
+				<div class="model">%%model_name%%</div>
+				<div class="km"><span class="prompt">CURRENT KM: </span><!@@(number_format(%%mileage%%,0,".",","))@@!></div>
+				<div class="remaining"><span class="prompt">MONTHS REMAINING: </span>%%lease_remaining%%</div>
+				<div class="price"><span class="prompt">EFFECTIVE PAYMENT: </span><!@@(money_format(GLOBAL_DEFAULT_CURRENCY_FORMAT,%%lease_taxes_inc%%))@@!></div>
+				<div class="link">
+					<a href="%%url%%">VIEW DETAILS</a>
+				</div>
+			</div>
+		</div>
+		<div class="id text-right">ID: %%id%%</div>
+	</div>
+</article>

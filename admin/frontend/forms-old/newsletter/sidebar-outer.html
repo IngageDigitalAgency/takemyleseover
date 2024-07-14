@@ -1,0 +1,25 @@
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<div id="sidebarSignup">
+	<div class="row text-center">
+		<div class="col-xs-16 teaser">
+<h2 class="widgettitle">Subscribe Now!</h2>
+<p>Stay up to date with new courses and exclusive information by Dr. Craig Davies.</p>
+		</div>
+	</div>
+	%%form%%
+</div>
+<script type="text/javascript">
+nlSignup = function(el) {
+	f = $(el).closest("form");
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#sidebarSignup").replaceWith(obj.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+</script>

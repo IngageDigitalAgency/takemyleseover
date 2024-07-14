@@ -1,0 +1,25 @@
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript">
+sidebarSignup = function(f) {
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				h = eval("("+obj+")");
+				$("#newsletter.sidebar").replaceWith(h.html);
+			}
+			catch(err) {
+			}
+		}
+	});
+	return false;
+}
+</script>
+<div id="newsletter" class="sidebar bottom20">
+	<div class="row">
+		<div class="col-xs-14 col-xs-offset-1 title top20 bottom20">Sign-up for Updates</div>
+	</div>
+	<div class="row gutter">
+		<div class="col-xs-16 text-center">%%errorMessage%%</div>
+	</div>
+	%%form,false%%
+</div>

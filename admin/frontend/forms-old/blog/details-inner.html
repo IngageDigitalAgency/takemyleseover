@@ -1,0 +1,28 @@
+<!if(strlen("%%video:video_id%%") > 0)!>
+<div id="blog-post-video">
+	<div class="embed-responsive embed-responsive-16by9">
+		<iframe src="http://www.youtube.com/embed/%%video:video_id%%" class="embed-responsive-item"></iframe>
+	</div>
+</div>
+<!else!>
+<div style="background-image: url('%%image1%%');" id="blog-post-banner"></div>
+<!fi!>
+<div class="page-content-fluid">
+	<div class="row" id="blog-post-content">
+		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			%%keywords%%
+			<h3 class="top40 gill green text-capitalize text-center">%%title%%</h3>
+			<div class="tinymce">%%body%%</div>
+		</div>
+	</div>
+	%%products%%
+	<div class="row" id="blog-post-pager">
+		<div class="col-md-6 top40">
+			<a title="Facebook Share" target="_new" href="http://www.facebook.com/sharer/sharer.php?u=http://%%FULLDOMAIN%%%%url%%"><img alt="Facebook" src="/images/icons/facebook-32.png"></a>
+			<a title="Twitter Share" target="_new" href="http://twitter.com/intent/tweet?text=<!@@(urlencode("%%title%%"))@@!>&url=http://%%FULLDOMAIN%%%%url%%"><img alt="Twitter" src="/images/icons/twitter-32.png"></a>
+		</div>
+		<div class="col-md-6 text-right top40">
+			%%pagination%%
+		</div>
+	</div>
+</div>

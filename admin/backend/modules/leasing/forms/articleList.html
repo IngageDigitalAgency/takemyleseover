@@ -1,0 +1,20 @@
+<tr>
+	<td>%%make%%</td>
+	<td>%%model%%</td>
+	<td>%%year%%</td>
+	<td>%%lastname%%, %%firstname%%</td>
+	<td><!if("%%c_id%%"!="")!>%%clname%%, %%cfname%%<!fi!></td>
+	<td>%%created%%</td>
+	<td>%%lease_expiry%%</td>
+	<td><div class='centered'>%%published%%</div></td>
+	<td><div class='centered'>%%enabled%%</div></td>
+	<td>
+		<a href="#" onclick='editArticle(%%id%%);return false;'><i class='icon-edit'></i></a>
+		<div id='leasingdrag_%%id%%'>
+			<div class="leasingDragger draggable">
+				<div class='id'>%%id%%/%%j_id%%</div>
+			</div>
+		</div>
+	</td>
+	<td><a href="#" onclick='deleteArticle(%%id%%,%%j_id%%);return false;'><i class='icon-trash'></i></a></td>
+</tr>

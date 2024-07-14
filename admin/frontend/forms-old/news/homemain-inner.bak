@@ -1,0 +1,8 @@
+<div class="col-md-4 list-gds text-center">
+	<div class="content">
+		<div class="constr-icon"><i class="%%icon_class%%"></i></div>
+		<h4>%%title%%</h4>
+		<div class="tinymce">%%teaser%%</div>
+	</div>
+	<div class="bg"  style="background-image:url(%%image2%%);"></div>
+</div>

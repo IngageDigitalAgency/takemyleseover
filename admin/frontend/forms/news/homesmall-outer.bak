@@ -1,0 +1,55 @@
+<section id="home-2x2">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-4 text-center">
+				<div class="title">%%title%%</div>
+				<div class="teaser">%%teaser%%</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5 left col-md-offset-2 col-sm-7"></div>
+			<div class="col-sm-2 middle">
+				<div class="row">
+					<div class="p-img-scale-width col-xs-6 col-xs-offset-5 col-sm-offset-0 col-sm-16 ">
+						%%img_image%%
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5 right col-sm-7"></div>
+		</div>
+		<div class="articles hidden">
+			%%articles%%
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+$("#home-2x2 .articles .left").each(function(idx,el) {
+	$("#home-2x2 .row > .left").append($(el));
+});
+$("#home-2x2 .articles .right").each(function(idx,el) {
+	$("#home-2x2 .row > .right").append($(el));
+});
+balanceItems($("#home-2x2 article"));
+$(window).resize( function() {
+	$("#home-2x2 article").css("height","auto");
+	balanceItems($("#home-2x2 article"));
+});
+$("#home-2x2 article").hover(
+	function() {
+		$(this).addClass("hover");
+	}, 
+	function() {
+		$(this).removeClass("hover");
+	}
+);
+$(window).load(function() {
+	$('#home-2x2 .left article').addClass("hideIt").viewportChecker({
+		classToAdd: 'showIt animated bounceInLeft',
+		offset: 100
+	});
+	$('#home-2x2 .right article').addClass("hideIt").viewportChecker({
+		classToAdd: 'showIt animated bounceInRight',
+		offset: 100
+	});
+});
+</script>

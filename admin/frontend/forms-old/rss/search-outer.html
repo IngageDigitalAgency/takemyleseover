@@ -1,0 +1,29 @@
+<div id="podcastSearch">
+	<div class="row">
+		<div class="col-sm-7 col-xs-14">
+			<span>ACHIEVE DEPTH</span><span class="red"> | PODCASTS</span>
+		</div>
+		<div class="col-sm-7 col-xs-2">
+			<div class="hidden-xs">
+				%%form%%
+			</div>
+			<div class="mobile-toggle hidden-sm hidden-md hidden-lg">
+				<a href="#" onclick="toggleSearch(this);return false;">
+					<i class="fa fa-search"></i>
+				</a>
+			</div>
+		</div>
+		<div class="col-sm-2 col-xs-16">
+			<div class="icon"><i class="fa fa-rss"></i></div>
+			<div class="link"><a href="/files/podcasts.xml">subscribe</a></div>
+		</div>
+	</div>
+	<div class="mobile-form">
+		%%form%%
+	</div>
+</div>
+<script type="text/javascript">
+toggleSearch = function(el) {
+	$("#podcastSearch .mobile-form").animate({width:"100%"});
+}
+</script>

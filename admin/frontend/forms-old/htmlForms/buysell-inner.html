@@ -1,0 +1,91 @@
+<form class="buyer-form" name="buyerform" id="buyerform" method="post" >
+	%%errorMessage%%
+	<div class="row">
+		<div class="col-md-6 margin-15">
+			<div class="form-group">
+				%%firstName%%
+			</div>
+			<div class="form-group">
+				%%lastName%%
+			</div>
+			<div class="form-group">
+				%%email%%
+			</div>
+			<div class="form-group">
+				%%phone%%
+			</div>
+			<div class="form-group">
+				%%message%%
+			</div>
+			<div class="form-group">
+				<span>I am buying: </span>%%buyer%%
+			</div>
+			<div class="form-group">
+				<span>I am selling: </span>%%seller%%
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				%%street%%
+			</div>
+			<div class="form-group">
+				%%city%%
+			</div>
+			<div class="form-group">
+				%%province_id%%
+			</div>
+			<div class="form-group">
+				%%postalcode%%
+			</div>
+			<div class="form-group">
+				%%country_id%%
+			</div>
+			<div class="form-group">
+				%%priceFrom%%
+			</div>
+			<div class="form-group">
+				%%priceTo%%
+			</div>
+			<div class="form-group">
+				%%propertyType%%
+			</div>
+			<div class="form-group">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center">
+			%%captcha%%
+			%%submitBtn%%
+			%%r_id%%
+		</div>
+		%%contactUs%%
+	</div>
+</form>
+<div class="clearfix"></div>
+<script type="text/javascript">
+$("select[name='country_id']").change( function() {
+	$("#province").html( loadProvinces( this.value, {"class":"form-control input-lg"} ) );
+});
+setError = function(id,fld,msg) {
+	if (msg == "") return;
+	switch(fld) {
+	case "message":
+		$("#".concat(id," textarea[name='",fld,"']")).addClass("alert alert-error");
+		break;
+	default:
+		$("#".concat(id," input[name='",fld,"']")).addClass("alert alert-error");
+	}
+}
+setError("buyerform","firstName","%%firstNameError%%");
+setError("buyerform","lastName","%%lastNameError%%");
+setError("buyerform","phone","%%phoneError%%");
+setError("buyerform","email","%%emailError%%");
+setError("buyerform","street","%%streetError%%");
+setError("buyerform","city","%%cityError%%");
+setError("buyerform","province_id","%%province_idError%%");
+setError("buyerform","country_id","%%country_idError%%");
+setError("buyerform","priceFrom","%%priceFromError%%");
+setError("buyerform","priceTo","%%priceToError%%");
+setError("buyerform","message","%%messageError%%");
+</script>

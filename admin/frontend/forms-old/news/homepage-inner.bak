@@ -1,0 +1,12 @@
+<div class="full-width promo-box call-color">
+	<div class="container">
+		<div class="row">
+			<div class="promo-info col-sm-6">
+				<h4>%%title%%</h4>
+			</div>
+			<div class="promo-btn col-sm-6">
+				<a href="%%url%%" class="btn btn-medium btn-rounded btn-dark-solid  text-uppercase">read more</a>
+			</div>
+		</div>
+	</div>
+</div>

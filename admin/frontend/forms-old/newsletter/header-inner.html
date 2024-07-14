@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-xs-16 text-center col-lg-8 col-lg-offset-4 col-md-12 col-md-offset-2">%%errorMessage%%</div>
+</div>
+<div class="row">
+	<div class="col-lg-6 col-xs-16 text">
+		<span>Subscribe</span> to get updates
+	</div>
+	<form action="/ajax/render?t_id=%%module:fetemplate_id%%" class="hdr-newsletter-form" name="hdr-newsletter-form" method="POST" onsubmit="hdrSignup(this);return false;">
+%%newsletterSignup%%
+		<div class="col-lg-10 col-xs-16 input btn-group">
+			%%email%%%%submitBtn%%
+		</div>
+	</form>
+</div>

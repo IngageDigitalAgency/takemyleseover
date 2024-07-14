@@ -1,0 +1,85 @@
+<div class="row podcast">
+	<div class="col-md-12 col-md-offset-2 col-sm-14 col-sm-offset-1">
+		<div class="details">
+			<div class="wrapper"></div>
+<!if(strlen("%%video:video_id%%")>0)!>
+			<div class="row">
+				<div class="col-xs-16">
+					<div class="embed-container image">%%video:embed_code,false%%</div>
+				</div>
+			</div>
+<!else!>
+			<div class="row">
+				<div class=" col-xs-16 image p-img-scalewidth">
+					%%img_image1%%
+<!if(strlen("%%attachment%%")>0)!>
+<script type="text/javascript" src="/js/jwplayer.js"></script>
+					<div id="myElement">Loading the player...</div>
+<script>
+jwplayer.key="DyA/Nn7BJvB+/zWWrMAPCq+dhIZ9d+o8OLVmEA==";
+jwplayer.defaults = {
+  autostart: false,
+  controls: true,
+  displaydescription: true,
+  displaytitle: false,
+  flashplayer: "//ssl.p.jwpcdn.com/player/v/7.2.3/jwplayer.flash.swf",
+  height: 40,
+  mute: false,
+  ph: 1,
+  preload: "auto",
+  primary: "flash",
+  repeat: false,
+  stagevideo: false,
+  stretching: "uniform",
+  visualplaylist: true,
+  width: "100%"
+};
+</script>
+<script type="text/javascript">
+var playerInstance = jwplayer("myElement");
+playerInstance.setup({
+	file: "//%%FULLDOMAIN%%%%attachment%%",
+	height: 40
+});
+</script>
+<!fi!>
+				</div>
+			</div>
+<!fi!>
+			<div class="row">
+				<div class="col-xs-3 pubdate text-center">
+					<div class="month"><!@@(date("M",strtotime("%%created%%")))@@!></div>
+					<div class="day"><!@@(date("d",strtotime("%%created%%")))@@!></div>
+					<div class="year"><!@@(date("Y",strtotime("%%created%%")))@@!></div>
+				</div>
+				<div class="col-xs-12">
+					<h1>%%title%%</h1>
+					<div class="teaser tinymce">%%teaser%%</div>
+				</div>
+			</div>
+		</div>
+		<div class="sharing">
+			<div class="row">
+				<div class="col-xs-14 text-right">
+					<span class="prompt">SHARE WITH YOUR CIRCLE</span>
+					<div class="addthis_sharing_toolbox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="paging"></div>
+	</div>
+</div>
+<script type="text/javascript">
+$.ajax({
+	url: "/ajax/render",
+	data: {t_id:27,rss_id:%%id%%,rsscat:%%folder_id%%},
+	success: function( obj, status, xhr ) {
+		try {
+			obj = eval("("+obj+")");
+			$("#podcast-details .paging").html(obj.html);
+		}
+		catch(err) {
+		}
+	}
+});
+</script>

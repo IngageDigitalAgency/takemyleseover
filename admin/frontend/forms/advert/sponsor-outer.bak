@@ -1,0 +1,7 @@
+<div id="home-sponsors" class="col-xs-10 col-xs-offset-3 col-sm-16 col-sm-offset-0">
+	<div class="flexslider">
+		<ul class="slides">
+			%%ads%%
+		</ul>
+	</div>
+</div>

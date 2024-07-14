@@ -1,0 +1,6 @@
+<div id="hdr-contact" class="col-xs-16 text-right">
+<div class="site hidden-sm">%%FULLDOMAIN%%</div>
+	<span class="phone">%%config:mailing-address:phone1%%</span>
+	<span class="delim">|</span>
+	%%menu%%
+</div>

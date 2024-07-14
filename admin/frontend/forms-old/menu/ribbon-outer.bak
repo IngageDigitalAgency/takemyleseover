@@ -1,0 +1,31 @@
+<div id="home-x4" class="top40 bottom20">
+	<div class="row">
+		<div class="col-xs-16 text-center title">%%title%%</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-16 text-center subtitle">%%alternate_title%%</div>
+	</div>
+	<div class="row top20">
+		<div class="col-xs-14 col-xs-offset-1 teaser text-center">%%teaser%%</div>
+	</div>
+	<div class="row top20 bottom20">
+		%%menu%%
+	</div>
+</div>
+<script type="text/javascript">
+$("#home-x4 .article .teaser").hide();
+$("#home-x4 .info").bind("touchstart",function(e) {
+	$(e).find(".teaser").show("medium");
+});
+$("#home-x4 .info").bind("touchend",function(e) {
+	$(e).find(".teaser").hide();
+});
+
+$("#home-x4 .info").hover( 
+function() {
+	$(this).find(".teaser").show("medium");
+}, 
+function () {
+	$(this).find(".teaser").hide();
+});
+</script>

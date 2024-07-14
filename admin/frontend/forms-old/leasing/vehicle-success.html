@@ -1,0 +1,24 @@
+<div id="vehicleInfo">
+	<div class="row">
+		<div class="col-xs-16 text-center">
+			<div class="alert alert-success">On to step 3</div>
+		</div>
+	</div>
+</div>
+<!if(%%FRONTEND%%==1)!>
+<script type="text/javascript">
+$.ajax({
+	url: "/ajax/render",
+	data: {t_id:21},
+	success: function( obj, status, xhr ) {
+		try {
+			obj = eval("("+obj+")");
+			$("#vehicleInfo").replaceWith(obj.html);
+			eval(obj.code);
+		}
+		catch(err) {
+		}
+	}
+});
+</script>
+<!fi!>

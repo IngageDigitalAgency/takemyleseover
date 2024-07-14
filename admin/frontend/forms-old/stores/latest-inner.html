@@ -1,0 +1,27 @@
+<li class="col-md-4 col-sm-6 type-rent">
+	<div class="property-block">
+		<a class="property-featured-image" href="%%url%%">
+			<img alt="" src="%%image1%%">
+<!if("%%custom_renting%%"==0)!>
+			<span class="badges">Buy</span>
+<!else!>
+			<span class="badges">Rent</span>
+<!fi!>
+		</a>
+		<div class="property-info">
+			<h4><a href="%%url%%">%%storeaddress:line1%%</a></h4>
+			<span class="location"> %%storeaddress:city%%</span>
+<!if("%%custom_renting%%"==0)!>
+			<div class="price"><strong>$</strong><span>%%custom_price%%</span></div>
+<!else!>
+			<div class="price"><strong>$</strong><span>%%custom_price%% %%custom_rent_period%%</span></div>
+<!fi!>
+		</div>
+		<div class="property-amenities clearfix">
+			<span class="area"><strong>%%custom_area_size%%</strong>Area</span>
+			<span class="baths"><strong>%%custom_bathrooms%%</strong>Baths</span>
+			<span class="beds"><strong>%%custom_bedrooms%%</strong>Beds</span>
+			<span class="parking">%%custom_property_type||custom_construction_style%%</span>
+		</div>
+	</div>
+</li>

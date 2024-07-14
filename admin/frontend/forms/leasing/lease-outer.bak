@@ -1,0 +1,258 @@
+<div id="leaseInfo">
+	<div class="row text-center lease-banner">
+		<h1>So you want to get out of your lease?</h1>
+		<h2>Our free lease evaluation consists of 3 short steps</h2>
+		<div class="steps">
+			<div class="row text-left">
+				<div class="col-md-3 col-md-offset-2">CONTACT INFO</div>
+				<div class="col-md-3 col-md-offset-2">VEHICLE INFO</div>
+				<div class="col-md-3 col-md-offset-2">LEASE INFO</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-2 p-img-scale-width">
+					<img src="/images/backgrounds/step-3.png" alt="Step 3" />
+				</div>
+			</div>
+		</div>
+		%%errorMessage%%
+	</div>
+	<form method="post" role="form" action="/ajax/render">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-16"><h3>Lease Information</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-16">
+					<label>Vehicle Description <span class="errorMessage">%%dealershipError%%</span></label>
+					%%teaser%%
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>DEALERSHIP NAME <span class="errorMessage">%%dealershipError%%</span></label>
+							%%dealership%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>CONTACT NAME <span class="errorMessage">%%dealership_contactError%%</span></label>
+							%%dealership_contact%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>LEASING COMPANY <span class="errorMessage">%%lease_companyError%%</span></label>
+							%%lease_company%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>MONTHLY PAYMENT BEFORE TAXES <span class="errorMessage">%%lease_pre_taxError%%</span></label>
+							%%lease_pre_tax%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>MONTHLY PAYMENT INCLUDING TAXES <span class="errorMessage">%%lease_taxes_incError%%</span></label>
+							%%lease_taxes_inc%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>ORIGINAL DOWNPAYMENT <span class="errorMessage">%%downpaymentError%%</span></label>
+							%%downpayment%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>TRANSFER COST <span class="errorMessage">%%transfer_costsError%%</span></label>
+							%%transfer_costs%%
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>SECURITY DEPOSIT <span class="errorMessage">%%depositError%%</span></label>
+							%%deposit%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>PURCHASE OPTION AT END OF LEASE <span class="errorMessage">%%buyoutError%%</span></label>
+							%%buyout%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>TOTAL KILOMETRE ALLOWANCE <span class="errorMessage">%%km_allowanceError%%</span></label>
+							%%km_allowance%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>KILOMETRE OVERAGE ($/km) <span class="errorMessage">%%km_overageError%%</span></label>
+							%%km_overage%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>ORIGINAL LEASE TERM <span class="errorMessage">%%lease_termError%%</span></label>
+							%%lease_term%%
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>LEASE EXPIRY <span class="errorMessage">%%lease_expiryError%%</span></label>
+							%%lease_expiry%%
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="incentives">
+			<div class="row">
+				<div class="col-xs-16 text-center">
+					<h2>Cash Incentive or Down Payment?</h2>
+					<h3>Please indicate whether you would like to offer an incentive to someone taking over your lease or whether you would like to recoup some of your down payment</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>I AM OFFERING A CASH INCENTIVE OF <span class="errorMessage">%%cash_incentiveError%%</span></label>
+							%%cash_incentive%%
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>I WOULD LIKE TO RECOUP A DOWNPAYMENT OF <span class="errorMessage">%%recoupError%%</span></label>
+							%%recoup%%
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="images">
+			<div class="row">
+				<div class="col-xs-16 text-center">
+					<h2>Cash Incentive or Down Payment?</h2>
+					<h3>Please indicate whether you would like to offer an incentive to someone taking over your lease or whether you would like to recoup some of your down payment</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-16 p-img-scale-width">
+							<label>Image 1 <span class="errorMessage">%%image1Error%%</span></label>
+							<div class="image p-img-scale-width">
+	<!if(strlen("%%session:lease:financial:data:image1%%")>0)!>
+								<img src="%%session:lease:financial:data:image1%%" />
+								<input type="hidden" name="image1" value="%%session:lease:financial:data:image1%%" />
+								<a href="#" onclick="removeImage(this,'image1');return false;">Remove Image</a>
+	<!else!>
+								%%image1%%
+	<!fi!>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>Image 2 <span class="errorMessage">%%image2Error%%</span></label>
+							<div class="image p-img-scale-width">
+	<!if(strlen("%%session:lease:financial:data:image2%%")>0)!>
+								<img src="%%session:lease:financial:data:image2%%" />
+								<input type="hidden" name="image2" value="%%session:lease:financial:data:image2%%" />
+								<a href="#" onclick="removeImage(this,'image2');return false;">Remove Image</a>
+	<!else!>
+								%%image2%%
+	<!fi!>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>Image 3 <span class="errorMessage">%%image3Error%%</span></label>
+							<div class="image p-img-scale-width">
+	<!if(strlen("%%session:lease:financial:data:image3%%")>0)!>
+								<img src="%%session:lease:financial:data:image3%%" />
+								<input type="hidden" name="image3" value="%%session:lease:financial:data:image3%%" />
+								<a href="#" onclick="removeImage(this,'image3');return false;">Remove Image</a>
+	<!else!>
+								%%image3%%
+	<!fi!>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row form-group">
+						<div class="col-xs-16">
+							<label>Image 4 <span class="errorMessage">%%image4Error%%</span></label>
+							<div class="image p-img-scale-width">
+	<!if(strlen("%%session:lease:financial:data:image4%%")>0)!>
+								<img src="%%session:lease:financial:data:image4%%" />
+								<input type="hidden" name="image4" value="%%session:lease:financial:data:image4%%" />
+								<a href="#" onclick="removeImage(this,'image4');return false;">Remove Image</a>
+	<!else!>
+								%%image4%%
+	<!fi!>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-16 text-right">
+				%%submit%%%%leaseInfo%%<input type="hidden" name="t_id" value="%%module:fetemplate_id%%" />
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+$("#leaseInfo .def_field_datepicker").datepicker({changeYear:true,yearRange:"-0:+6"});
+financialSubmit = function(el) {
+	var f = $(el).closest("form");
+	tinyMCE.triggerSave();
+	tinyMCE.activeEditor.remove();
+	$(f).ajaxSubmit({
+		success: function( obj, status, xhr ) {
+			try {
+				obj = eval("("+obj+")");
+				$("#leaseInfo").replaceWith(obj.html);
+				eval(obj.code);
+			}
+			catch(err) {
+			}
+		}
+	});
+}
+removeImage = function(el,nm) {
+	var u = $("<input>",{type:"file",name:nm,class:"def_field_fileupload"});
+	$(el).closest(".image").html(u);
+}
+tinymce.init({
+	selector:'textarea.mceSimple',
+	content_css:"/css/tinymce.css",
+	importcss_file_filter: "/css/tinymce.css",
+	importcss_append:true,
+	remove_script_host:true,
+	plugins: [
+		"advlist lists charmap preview",
+		"searchreplace visualblocks",
+		"insertdatetime media table contextmenu paste code importcss"
+	],
+	toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+});
+</script>

@@ -1,0 +1,39 @@
+<!if(%%count%%>0)!>
+<div class="container-fluid no-gutter">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="row no-gutter">
+			<div class="col-xs-14">
+				<div class="carousel-inner" role="listbox">
+					%%events%%
+				</div>
+			</div>
+			<div class="col-xs-2 nav height" style="background-image:url(%%image%%);">
+				<div class="bg"></div>
+				<div class="controller">
+					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+						<img src="/images/backgrounds/arrow.png" />
+					</a>
+					<div class="red">NEXT</div><div class="white">EVENT</div>
+					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+						<img src="/images/backgrounds/arrow.png" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+wd = $(".container").width();
+setEventSlider = function() {
+	$("#myCarousel .height").css("height","auto");
+	balanceItems("#myCarousel .height");
+}
+$(window).load(function() {
+	setEventSlider();
+	$("#myCarousel").carousel({interval:5000});
+});
+$(window).resize(function() {
+	setEventSlider();
+});
+</script>
+<!fi!>

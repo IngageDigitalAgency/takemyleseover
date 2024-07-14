@@ -1,0 +1,38 @@
+<div id="lease-gallery" class="flexslider">
+	<ul class="slides">
+		%%images%%
+	</ul>
+</div>
+<div id="lease-th" class="flexslider">
+	<ul class="slides">
+		%%images%%
+	</ul>
+</div>
+<script type="text/javascript">
+$(window).load(function() {
+	ht = 0;
+	$("#lease-gallery li").each(function(idx,el) {
+		ht = Math.max(ht,$(el).height());
+	});
+	$('#lease-gallery .slides li').css("height",ht+"px");
+	$('#lease-th.flexslider').flexslider({
+		autoPlay:false,
+		animation:"slide",
+		controlNav:false,
+		animationLoop:false,
+		slideshow:false,
+		asNavFor:"#lease-gallery",
+		itemWidth:210,
+		itemMargin:5
+	});
+
+	$('#lease-gallery.flexslider').flexslider({
+		autoPlay:true,
+		animation:"fade",
+		controlNav:false,
+		animationLoop:false,
+		slideshow:false,
+		sync: "#lease-th"
+	});
+});
+</script>

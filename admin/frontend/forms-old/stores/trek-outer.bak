@@ -1,0 +1,7 @@
+<div class="sec-title-two">
+	<h3><span class="white-color-text">Contact Details</span></h3>
+	<span class="decor-line"></span>
+</div><!-- /.sec-title-two -->
+<div class="footer-contact-info-carousel owl-theme xowl-carousel">
+	%%stores%%
+</div><!-- /.contact-info-carousel owl-theme owl-carousel -->

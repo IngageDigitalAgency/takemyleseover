@@ -1,0 +1,30 @@
+<!if(strlen("%%video:video_id%%") > 0)!>
+<div id="blog-post-video">
+	<div class="embed-responsive embed-responsive-16by9">
+		<iframe src="//www.youtube.com/embed/%%video:video_id%%" class="embed-responsive-item"></iframe>
+	</div>
+</div>
+<!else!>
+<div style="background-image: url('%%image1%%');" id="blog-post-banner"></div>
+<!fi!>
+<div class="page-content-fluid">
+	<div class="row" id="blog-post-content">
+		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			%%keywords%%
+			<h2 class="top40 gill green text-capitalize text-center">%%title%%</h2>
+			<div class="tinymce">%%body%%</div>
+			<div class="addthis_sharing_toolbox"></div>
+		</div>
+	</div>
+	<div class="row" id="blog-post-comment">
+		%%addcomment%%
+	</div>
+	<div class="row" id="blog-post-comments">
+		%%comments%%
+	</div>
+	%%products%%
+	<div class="row" id="blog-post-pager">
+		<div class="col-md-6 top40">
+		</div>
+	</div>
+</div>

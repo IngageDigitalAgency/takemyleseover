@@ -1,0 +1,22 @@
+<div class="title">Edit a Social Link</div>
+<div class="centered">%%errorMessage%%</div>
+<form method="post" onsubmit='formCheck("editSocial","/modit/ajax/editSocial/artist",$("#altPopup"));return false;' name="editSocial" id="editSocial">
+	<table>
+		<tr>
+			<th>Social Type:</th><td>%%social_type%% %%social_typeError%%</td>
+		</tr>
+		<tr>
+			<th>Link:</th><td>%%social_link%% %%social_linkError%%</td>
+		</tr>
+		<tr>
+			<th>Enabled:</th><td>%%enabled%% %%enabledError%%</td>
+		</tr>
+		<tr>
+			<th>Deleted:</th><td>%%deleted%% %%deletedError%%</td>
+		</tr>
+		<tr>
+			<th></th><td>%%save%%</td>
+		</tr>
+	</table>
+	%%member_id%% %%s_id%% %%editSocial%%
+</form>

@@ -1,0 +1,9 @@
+<section class="constr-funfactor" id="funfactor" style="background-image:url(%%image%%);">
+	<div class="color-overlay">
+		<div class="container">
+			<div class="row">
+				%%articles%%
+			</div>
+		</div>
+	</div>
+</section>
