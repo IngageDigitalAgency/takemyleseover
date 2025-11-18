@@ -1,1 +1,12 @@
-{}
+{
+    "name": "ingage/takemyleseover",
+    "description": "Take My Lease Over - Property lease management system",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.4"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

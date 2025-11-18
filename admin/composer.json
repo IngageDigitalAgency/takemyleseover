@@ -1,1 +1,12 @@
-
+{
+    "name": "ingage/takemyleseover-admin",
+    "description": "Administrative interface for Take My Lease Over system",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.4"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

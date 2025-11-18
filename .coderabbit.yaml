@@ -28,10 +28,6 @@ reviews:
   auto_review:
     enabled: true
     drafts: false
-    # Remove branch restrictions to enable review on all PRs
-    # base_branches:
-    #   - main
-    #   - master
 
 # Chat settings
 chat:
