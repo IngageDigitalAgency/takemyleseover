@@ -1,0 +1,45 @@
+# cPanel Deployment - Ignore files that shouldn't be deployed
+
+# Logs
+logs/
+*.log
+
+# Backups and zips
+*.zip
+*.sql
+backup.sh
+diff.sh
+diff.txt
+relabel.sh
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Session files
+*.session.sql
+
+# Development/testing files
+test/
+test.html
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Vendor dependencies (if you want to deploy vendor, comment this out)
+# vendor/
+
+# Admin zip backup
+admin.zip
+
+# Folders directory (if it's for development only)
+Folders/
