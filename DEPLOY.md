@@ -33,6 +33,21 @@ After creation, cPanel will display:
 
 ### 1. Add cPanel as a Remote Repository
 
+**Option A: Use the Helper Script (Recommended)**
+
+Run the provided setup script which will guide you through the configuration:
+
+```bash
+./setup-cpanel-remote.sh
+```
+
+The script will:
+- Prompt you for cPanel connection details
+- Configure the remote repository URL
+- Provide next steps for deployment
+
+**Option B: Manual Configuration**
+
 In your local repository, add the cPanel server as a remote:
 
 ```bash

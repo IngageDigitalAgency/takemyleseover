@@ -13,6 +13,13 @@ This project is configured for easy deployment to cPanel hosting using Git.
 ### Quick Deployment Steps
 
 1. **Add cPanel remote** (one-time setup):
+   
+   Option A - Use the helper script:
+   ```bash
+   ./setup-cpanel-remote.sh
+   ```
+   
+   Option B - Manual setup:
    ```bash
    git remote add cpanel ssh://username@yourdomain.com/home/username/repositories/takemyleseover
    ```
