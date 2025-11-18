@@ -1,0 +1,25 @@
+---
+# cPanel Deployment Configuration
+# This file defines how your application is deployed when you push to the cPanel Git repository
+
+deployment:
+  tasks:
+    # Copy files from the repository to the deployment target directory
+    - export DEPLOYPATH=/home/username/public_html/
+    # Create necessary directories if they don't exist
+    - /bin/mkdir -p $DEPLOYPATH
+    # Sync repository files to deployment path (excluding .git directory)
+    - /bin/rsync -av --delete --exclude='.git' --exclude='.cpanel.yml' $REPO $DEPLOYPATH
+    # Set proper permissions for web files
+    - /bin/chmod -R 755 $DEPLOYPATH
+    # Set proper permissions for config files (more restrictive)
+    - /bin/chmod 600 $DEPLOYPATH/config.php
+    # Install/update composer dependencies if composer.json exists
+    - "[ -f $DEPLOYPATH/composer.json ] && cd $DEPLOYPATH && /usr/local/bin/ea-php80 /opt/cpanel/composer/bin/composer install --no-dev --optimize-autoloader || echo 'No composer.json found, skipping composer install'"
+
+# Notes:
+# 1. Replace 'username' in DEPLOYPATH with your actual cPanel username
+# 2. Adjust the PHP version in ea-php80 to match your requirements (ea-php74, ea-php80, ea-php81, etc.)
+# 3. Adjust the deployment path if your application should be deployed to a subdirectory
+# 4. The --delete flag in rsync will remove files from deployment that are not in the repository
+# 5. Make sure sensitive files are listed in .gitignore and not tracked by Git
