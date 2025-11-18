@@ -1,0 +1,96 @@
+# CodeRabbit Configuration File
+# https://docs.coderabbit.ai/guides/configure-coderabbit
+
+# Language settings
+language: en-US
+
+# Review settings
+reviews:
+  # Review profile: chill, assertive, or balanced
+  profile: balanced
+
+  # Request changes workflow
+  request_changes_workflow: false
+
+  # High level summary
+  high_level_summary: true
+
+  # Poem generation
+  poem: true
+
+  # Review status
+  review_status: true
+
+  # Collapse walkthrough
+  collapse_walkthrough: false
+
+  # Auto review settings
+  auto_review:
+    enabled: true
+    drafts: false
+    # Remove branch restrictions to enable review on all PRs
+    # base_branches:
+    #   - main
+    #   - master
+
+# Chat settings
+chat:
+  auto_reply: true
+
+# Tone instructions
+tone_instructions: ""
+
+# Early access features
+early_access: false
+
+# Enable free tier
+enable_free_tier: true
+
+# Path filters
+path_filters:
+  included:
+    - "**/*.php"
+    - "**/*.js"
+    - "**/*.css"
+    - "**/*.html"
+    - "**/*.yml"
+    - "**/*.yaml"
+    - "**/*.json"
+    - "**/*.sh"
+  excluded:
+    - "vendor/**"
+    - "node_modules/**"
+    - "**/*.min.js"
+    - "**/*.min.css"
+    - "admin.zip"
+    - "diff.txt"
+    - "logs/**"
+    - "tinymce/**"
+
+# Path instructions
+path_instructions:
+  - path: "**/*.php"
+    instructions: |
+      - Follow PSR-12 coding standards
+      - Ensure proper error handling and input validation
+      - Check for SQL injection vulnerabilities
+      - Verify XSS prevention measures
+      - Review session and authentication security
+  - path: "**/*.js"
+    instructions: |
+      - Check for modern JavaScript best practices
+      - Ensure proper error handling
+      - Verify DOM manipulation is safe
+  - path: "**/*.sh"
+    instructions: |
+      - Check for proper error handling
+      - Verify safe command execution
+      - Review for shell injection vulnerabilities
+
+# Knowledge base
+knowledge_base:
+  learnings:
+    scope: auto
+
+  # Opt-out of knowledge base
+  opt_out: false

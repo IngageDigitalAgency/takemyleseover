@@ -7,19 +7,13 @@
             },
             "ssh": "Disabled",
             "previewLimit": 50,
-            "server": "localhost",
+            "server": "takemyleaseover.ca",
             "port": 3306,
-            "sshOptions": {
-                "port": 22,
-                "privateKeyPath": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZEwrumkiJwJLXsXw6yrfzyHQb84pOKVho8536jgbrETwdok+Ep5QB3NS04g0/cSECMpY1zORiOdVZabIPxDj3gdvfpJeDSWqUEZATnQlTsdjdeGNVVKedBVGGvWFnKqQackoNif/kdIeaHijl6hq9RvtdT7yPHSr6cuM4MH6qVdWv2c8bWSX9MY/rz02vnm3zq1eBChdavqhzKVanyLs/N5sJAbYL/7kmekPKYCBSrOXt1UM+WxNQPnFukhAxj9A1v3AtJlD3kQYHHbCaFkk1qbQqNe1kf8xgf6nx58y4EAcqL0HCdhrHZuPgYEeWKsx+lpQalsymXFVlvkSZop8b sysop@BD1",
-                "host": "70.32.112.250",
-                "username": "takemyle_usr",
-                "password": "vSH!*PCRlTN~"
-            },
             "driver": "MySQL",
-            "name": "Takemyleaseover.ca",
+            "name": "takemyleaseover.ca",
             "database": "takemyle_db",
-            "username": "takemyle_usr"
+            "username": "takemyle_usr",
+            "password": "vSH!*PCRlTN~"
         }
     ]
 }

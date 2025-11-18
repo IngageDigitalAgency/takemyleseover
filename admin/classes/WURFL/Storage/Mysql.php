@@ -17,7 +17,7 @@
  * @version	$id$
  */
 /**
- * WURFL Storage
+ * WURFL Storage using PDO (PHP 8+ compatible)
  * @package	WURFL_Storage
  */
 class WURFL_Storage_Mysql extends WURFL_Storage_Base {
@@ -33,7 +33,7 @@ class WURFL_Storage_Mysql extends WURFL_Storage_Base {
 		"valuecolumn" => "value"
 	);
 
-	private $link;
+	private $pdo;
 	private $host;
 	private $db;
 	private $user;
@@ -54,101 +54,112 @@ class WURFL_Storage_Mysql extends WURFL_Storage_Base {
 	private function initialize() {
 		$this->_ensureModuleExistance();
 
-		/* Initializes link to MySql */
-		$this->link = mysql_connect("$this->host:$this->port",$this->user,$this->pass);
-		if (mysql_error($this->link)) {
-			throw new WURFL_Storage_Exception("Couldn't link to $this->host (".mysql_error($this->link).")");
-		}
-
-		/* Initializes link to database */
-		$success=mysql_select_db($this->db,$this->link);
-		if (!$success) {
-			throw new WURFL_Storage_Exception("Couldn't change to database $this->db (".mysql_error($this->link).")");
+		/* Initializes PDO connection to MySQL */
+		try {
+			$dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->db}";
+			$this->pdo = new PDO($dsn, $this->user, $this->pass, array(
+				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+				PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+			));
+		} catch (PDOException $e) {
+			throw new WURFL_Storage_Exception("Couldn't connect to {$this->host}:{$this->port} - " . $e->getMessage());
 		}
 
 		/* Is Table there? */
-		$test = mysql_query("SHOW TABLES FROM `$this->db` LIKE '$this->table'",$this->link);
-		if (!is_resource($test)) {
-			throw new WURFL_Storage_Exception("Couldn't show tables from database $this->db (".mysql_error($this->link).")");
+		try {
+			$stmt = $this->pdo->prepare("SHOW TABLES FROM `{$this->db}` LIKE :table");
+			$stmt->bindParam(':table', $this->table);
+			$stmt->execute();
+			$result = $stmt->fetch();
+		} catch (PDOException $e) {
+			throw new WURFL_Storage_Exception("Couldn't show tables from database {$this->db} - " . $e->getMessage());
 		}
 
 		// create table if it's not there.
-		if (mysql_num_rows($test)==0) {
-			$sql="CREATE TABLE `$this->db`.`$this->table` (
-					  `$this->keycolumn` varchar(255) collate latin1_general_ci NOT NULL,
-					  `$this->valuecolumn` mediumblob NOT NULL,
+		if (!$result) {
+			$sql = "CREATE TABLE `{$this->db}`.`{$this->table}` (
+					  `{$this->keycolumn}` varchar(255) collate latin1_general_ci NOT NULL,
+					  `{$this->valuecolumn}` mediumblob NOT NULL,
 					  `ts` timestamp NOT NULL default CURRENT_TIMESTAMP,
-					  PRIMARY KEY  (`$this->keycolumn`)
+					  PRIMARY KEY  (`{$this->keycolumn}`)
 					) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci";
-			$success=mysql_query($sql,$this->link);
-			if (!$success) {
-				throw new WURFL_Storage_Exception("Table $this->table missing in $this->db (".mysql_error($this->link).")");
+			try {
+				$this->pdo->exec($sql);
+			} catch (PDOException $e) {
+				throw new WURFL_Storage_Exception("Table {$this->table} missing in {$this->db} - " . $e->getMessage());
 			}
 		}
-
-		if (is_resource($test)) mysql_free_result($test);
 	}
 	
 	public function save($objectId, $object, $expiration=null) {
-		$object=mysql_real_escape_string(serialize($object));
-		$objectId=$this->encode("",$objectId);
-		$objectId=mysql_real_escape_string($objectId);
-		$sql = "delete from `$this->db`.`$this->table` where `$this->keycolumn`='$objectId'";
-		$success=mysql_query($sql,$this->link);
-		if (!$success) {
-			throw new WURFL_Storage_Exception("MySql error ".mysql_error($this->link)."deleting $objectId in $this->db");
-		}
+		$serializedObject = serialize($object);
+		$encodedId = $this->encode("", $objectId);
+		
+		try {
+			// Delete existing entry
+			$sql = "DELETE FROM `{$this->db}`.`{$this->table}` WHERE `{$this->keycolumn}` = :key";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindParam(':key', $encodedId);
+			$stmt->execute();
 
-		$sql="insert into `$this->db`.`$this->table` (`$this->keycolumn`,`$this->valuecolumn`) VALUES ('$objectId','$object')";
-		$success=mysql_query($sql,$this->link);
-		if (!$success) {
-			throw new WURFL_Storage_Exception("MySQL error ".mysql_error($this->link)."setting $objectId in $this->db");
+			// Insert new entry
+			$sql = "INSERT INTO `{$this->db}`.`{$this->table}` (`{$this->keycolumn}`, `{$this->valuecolumn}`) VALUES (:key, :value)";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindParam(':key', $encodedId);
+			$stmt->bindParam(':value', $serializedObject);
+			$success = $stmt->execute();
+			
+			return $success;
+		} catch (PDOException $e) {
+			throw new WURFL_Storage_Exception("MySQL error setting $objectId in {$this->db} - " . $e->getMessage());
 		}
-		return $success;
 	}
 
 	public function load($objectId) {
 		$return = null;
-		$objectId = $this->encode("", $objectId);
-		$objectId = mysql_real_escape_string($objectId);
+		$encodedId = $this->encode("", $objectId);
 
-		$sql = "select `$this->valuecolumn` from `$this->db`.`$this->table` where `$this->keycolumn`='$objectId'";
-		$result = mysql_query($sql,$this->link);
-		if (!is_resource($result)) {
-			throw new WURFL_Storage_Exception("MySql error ".mysql_error($this->link)."in $this->db");
-		}
-
-		$row = mysql_fetch_assoc($result);
-		if (is_array($row)) {
-			$return = @unserialize($row['value']);
-			if ($return === false) {
-				$return = null;
+		try {
+			$sql = "SELECT `{$this->valuecolumn}` FROM `{$this->db}`.`{$this->table}` WHERE `{$this->keycolumn}` = :key";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindParam(':key', $encodedId);
+			$stmt->execute();
+			
+			$row = $stmt->fetch();
+			if ($row && isset($row['value'])) {
+				$return = @unserialize($row['value']);
+				if ($return === false) {
+					$return = null;
+				}
 			}
+		} catch (PDOException $e) {
+			throw new WURFL_Storage_Exception("MySQL error loading $objectId from {$this->db} - " . $e->getMessage());
 		}
-		
-		if (is_resource($result)) mysql_free_result($result);
 		
 		return $return;
 	}
 
 	public function clear() {
-		$sql = "truncate table `$this->db`.`$this->table`";
-		$success=mysql_query($sql,$this->link);
-		if (mysql_error($this->link)) {
-			throw new WURFL_Storage_Exception("MySql error ".mysql_error($this->link)." clearing $this->db.$this->table");
+		try {
+			$sql = "TRUNCATE TABLE `{$this->db}`.`{$this->table}`";
+			$success = $this->pdo->exec($sql);
+			return $success !== false;
+		} catch (PDOException $e) {
+			throw new WURFL_Storage_Exception("MySQL error clearing {$this->db}.{$this->table} - " . $e->getMessage());
 		}
-		return $success;
 	}
 
-
-
 	/**
-	 * Ensures the existance of the the PHP Extension mysql
+	 * Ensures the existence of the PHP Extension PDO and PDO_MYSQL
 	 * @throws WURFL_Storage_Exception required extension is unavailable
 	 */
 	private function _ensureModuleExistance() {
-		if(!extension_loaded("mysql")) {
-			throw new WURFL_Storage_Exception("The PHP extension mysql must be installed and loaded in order to use the mysql.");
+		if (!extension_loaded("pdo")) {
+			throw new WURFL_Storage_Exception("The PHP extension PDO must be installed and loaded in order to use the MySQL storage.");
+		}
+		if (!extension_loaded("pdo_mysql")) {
+			throw new WURFL_Storage_Exception("The PHP extension PDO_MYSQL must be installed and loaded in order to use the MySQL storage.");
 		}
 	}
 
