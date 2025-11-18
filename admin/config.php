@@ -1,5 +1,5 @@
 <?php
-define('DEV',true);
+define('DEV',false);
 define('TZ','America/New_York');
 define('CURRENCY','en_US');
 //setlocale(LC_MONETARY, 'en_US');
